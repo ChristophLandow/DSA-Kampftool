@@ -6,7 +6,5 @@ public record character(
     int pa,
     int fk,
     int ini
-
     ){
-
 }
