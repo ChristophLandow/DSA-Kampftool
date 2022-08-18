@@ -88,8 +88,19 @@ Um das Tool benutzen zu können muss Java installiert sein. Das Tool funktionier
 ## Roadmap
 
 - [X] Models anlegen
-    - [X] Nahkampf/Fernkampf Waffen
-    - [X] Rüstungen
+  - [X] Nahkampf/Fernkampf Waffen
+  - [X] Rüstungen
+  - [X] Fernkampfwaffen
+  - [ ] Parierwaffen
+- [ ] FXMLs anlegen
+  - [X] MainSetup.fxml
+  - [ ] ClosedCombatScreen.fxml
+  - [ ] RangedCombat.fxml
+  - [ ] ParryWeapons.fxml
+  - [ ] Shilds.fxml
+- [X] Launcher.java anlegen
+- [X] Tool.java anlegen
+- [X] globals CSS-File anlegen
 
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
@@ -101,7 +112,7 @@ Um das Tool benutzen zu können muss Java installiert sein. Das Tool funktionier
 ## Changelog
 
 - Version 0.1
-    - grundliegende Funktionalität 
+  - grundliegende Funktionalität
 
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
