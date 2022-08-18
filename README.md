@@ -117,10 +117,3 @@ Um das Tool benutzen zu können muss Java installiert sein. Das Tool funktionier
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
 
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/sekassel/stp-22-team-h.svg?style=for-the-badge
-[contributors-url]: https://github.com/sekassel/stp-22-team-h/graphs/contributors
-[product-screenshot]: images/pioneers.png
