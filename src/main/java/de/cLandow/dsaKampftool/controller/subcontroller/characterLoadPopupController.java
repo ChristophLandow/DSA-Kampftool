@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.ScreenController;
+import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.FileService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,13 +16,15 @@ import java.io.IOException;
 
 public class CharacterLoadPopupController implements ScreenController {
 
+    private final Tool tool;
     @FXML ChoiceBox<String> characterChoiceBox;
     @FXML TextField newCharacterNameField;
     @FXML Text noNameWarning;
 
     private final FileService fileService;
 
-    public CharacterLoadPopupController(){
+    public CharacterLoadPopupController( Tool tool){
+        this.tool = tool;
         this.fileService = new FileService();
     }
 
@@ -49,16 +52,19 @@ public class CharacterLoadPopupController implements ScreenController {
     }
 
 
-    public boolean createNewCharacter(ActionEvent actionEvent) {
+    public void createNewCharacter(ActionEvent actionEvent) {
         if(newCharacterNameField.getText().length() == 0) {
             noNameWarning.setVisible(true);
-            return false;
         } else {
             fileService.saveNewCharacter(newCharacterNameField.getText());
+            stop();
         }
-        return true;
     }
 
     public void loadCharacter(ActionEvent actionEvent) {
+        Character loadedCharacter = fileService.loadCharacter(characterChoiceBox.getValue());
+        tool.setActualCharacter(loadedCharacter);
+        stop();
+        //TODO: ChoiceBox initialisieren
     }
 }
