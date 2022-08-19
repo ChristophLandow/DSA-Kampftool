@@ -23,11 +23,11 @@ public class FileService {
         return false;
     }
 
-    public void saveFile(){
+    public void saveNewCharacter(String name){
         createFolder();
-        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//test.txt");
-        String test = "test";
-        byte[] bs = test.getBytes();
+        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//" + name + ".txt");
+        String characterData = name + " 0000";
+        byte[] bs = characterData.getBytes();
         try {
             Files.write(path, bs);
         } catch (IOException e) {

@@ -25,14 +25,13 @@ public class Tool extends Application {
 
     private static Stage primaryStage;
 
-    private final FileService fileService;
+
     private Character actualCharacter;
 
     private CharacterScreenController characterScreenController;
     private CharacterLoadPopupController characterLoadPopupController;
 
     public Tool(){
-        this.fileService = new FileService();
     }
 
     @Override
@@ -90,8 +89,6 @@ public class Tool extends Application {
         infoStage.initModality(Modality.WINDOW_MODAL);
         characterLoadPopupController = new CharacterLoadPopupController();
         infoStage.setScene(new Scene(characterLoadPopupController.render()));
-        fileService.saveFile();
         infoStage.show();
-
     }
 }
