@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="541.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController">
+   <children>
+      <Label alignment="CENTER" layoutX="99.0" layoutY="23.0" prefHeight="82.0" prefWidth="343.0" text="Kein Streiter ausgewählt!">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Button layoutX="398.0" layoutY="239.0" mnemonicParsing="false" onAction="#createNewCharacter" text="Neu">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Button layoutX="398.0" layoutY="332.0" mnemonicParsing="false" onAction="#loadCharacter" text="Laden">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="characterChoiceBox" layoutX="42.0" layoutY="332.0" prefHeight="46.0" prefWidth="296.0" />
+      <Text layoutX="10.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Es ist nun an dir einen Streiter aus der Liste auszuwählen oder einen neuen anzulegen:" wrappingWidth="520.25244140625">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <TextField fx:id="newCharacterNameField" layoutX="42.0" layoutY="244.0" prefHeight="35.0" prefWidth="296.0" promptText="Name">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Text fx:id="noNameWarning" fill="RED" layoutX="42.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht einen Namen...." wrappingWidth="265.13671875" />
+   </children>
+</AnchorPane>

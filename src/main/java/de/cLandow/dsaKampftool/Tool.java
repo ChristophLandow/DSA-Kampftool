@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool;
 
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
+import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.FileService;
 
 import javafx.application.Application;
@@ -25,14 +26,13 @@ public class Tool extends Application {
 
     private static Stage primaryStage;
 
-    private final FileService fileService;
+
     private Character actualCharacter;
 
     private CharacterScreenController characterScreenController;
     private CharacterLoadPopupController characterLoadPopupController;
 
     public Tool(){
-        this.fileService = new FileService();
     }
 
     @Override
@@ -40,7 +40,9 @@ public class Tool extends Application {
         primaryStage = stage;
         showSetupScreen();
         primaryStage.show();
-        loadCharacter();
+        if(actualCharacter == null) {
+            callCharacterLoadPopup();
+        }
     }
 
     @Override
@@ -68,16 +70,6 @@ public class Tool extends Application {
         }
     }
 
-    private void loadCharacter() {
-        //TODO: Wenn das charakter erstellen und bearbeiten implementiert wurde muss hier beim öffnen des Tools einer
-        // ausgewählt oder neu erstellt werden
-        if(actualCharacter == null){
-            callAlert();
-        } else {
-            System.out.println("test");
-        }
-    }
-
     public void openCharacterScreen(ActionEvent actionEvent) {
         screenBox.getChildren().clear();
         characterScreenController = new CharacterScreenController();
@@ -85,13 +77,16 @@ public class Tool extends Application {
         characterScreenController.init();
     }
 
-    public void callAlert(){
+    public void callCharacterLoadPopup(){
         Stage infoStage = new Stage();
         infoStage.initModality(Modality.WINDOW_MODAL);
-        characterLoadPopupController = new CharacterLoadPopupController();
+        characterLoadPopupController = new CharacterLoadPopupController(this);
         infoStage.setScene(new Scene(characterLoadPopupController.render()));
-        fileService.saveFile();
+        characterLoadPopupController.init();
         infoStage.show();
+    }
 
+    public void setActualCharacter(Character character){
+        this.actualCharacter = character;
     }
 }

@@ -1,6 +1,6 @@
 package de.cLandow.dsaKampftool.model;
 
-public record weapon_closeCombat(
+public record Weapon_closeCombat(
         String name,
         String tp,
         String tpkk,

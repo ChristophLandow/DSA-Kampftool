@@ -1,6 +1,6 @@
 package de.cLandow.dsaKampftool.model;
 
-public record character(
+public record Character(
     String name,
     int at,
     int pa,
