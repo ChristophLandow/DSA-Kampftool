@@ -1,17 +1,26 @@
 .button{
- -fx-background-color: rgb(22, 50, 75);
+    -fx-background-color: rgb(53, 62, 63);
     -fx-text-fill: WHITE;
 }
 
 .button:hover{
-    -fx-background-color: rgb(9, 65, 114);
+    -fx-background-color: rgb(95, 109, 110);
     -fx-text-fill: WHITE;
 }
 
+.circle{
+    -fx-border-color: BLACK;
+    -fx-border-width: 3;
+}
+
 .anchor_id{
-    -fx-background-color: rgb(22, 50, 75);
+    -fx-background-color: rgb(53, 62, 63);
 }
 
 .label {
     -fx-text-fill: WHITE;
+}
+
+.tab-pane {
+    -fx-border-color: BLACK;
 }
