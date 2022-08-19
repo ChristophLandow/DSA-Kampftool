@@ -1,6 +1,6 @@
 package de.cLandow.dsaKampftool.model;
 
-public record armor(
+public record Armor(
         String name,
         int kopf,
         int brust,

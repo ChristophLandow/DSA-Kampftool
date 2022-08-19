@@ -2,7 +2,7 @@ package de.cLandow.dsaKampftool.model;
 
 import java.util.List;
 
-public record weapon_rangedCombat(
+public record Weapon_rangedCombat(
         String name,
         String tp,
         List reichweiten,
