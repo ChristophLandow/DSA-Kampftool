@@ -2,18 +2,17 @@ package de.cLandow.dsaKampftool;
 
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
+import de.cLandow.dsaKampftool.services.FileService;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -22,13 +21,19 @@ import java.util.Objects;
 
 public class Tool extends Application {
 
-    private Character actualCharacter;
     @FXML VBox screenBox;
+
     private static Stage primaryStage;
+
+    private final FileService fileService;
+    private Character actualCharacter;
 
     private CharacterScreenController characterScreenController;
     private CharacterLoadPopupController characterLoadPopupController;
 
+    public Tool(){
+        this.fileService = new FileService();
+    }
 
     @Override
     public void start(Stage stage) {
@@ -85,6 +90,7 @@ public class Tool extends Application {
         infoStage.initModality(Modality.WINDOW_MODAL);
         characterLoadPopupController = new CharacterLoadPopupController();
         infoStage.setScene(new Scene(characterLoadPopupController.render()));
+        fileService.saveFile();
         infoStage.show();
 
     }
