@@ -23,9 +23,31 @@ dependencies {
 
 	// https://mvnrepository.com/artifact/org.openjfx/javafx-base
     implementation group: 'org.openjfx', name: 'javafx-base', version: '19-ea+5'
+
+	// https://mvnrepository.com/artifact/io.reactivex.rxjava3/rxjava
+	implementation group: 'io.reactivex.rxjava3', name: 'rxjava', version: '3.1.4'
+
+	// -------------------- Dagger (Dependency Injetion) --------------------------------------------------
+	implementation 'com.google.dagger:dagger:2.41'
+	annotationProcessor 'com.google.dagger:dagger-compiler:2.41'
+	testAnnotationProcessor 'com.google.dagger:dagger-compiler:2.41'
+
+	//RXJava
+	implementation group: 'io.reactivex.rxjava3', name: 'rxjava', version: '3.1.4'
 }
 
 javafx {
     version = '18'
     modules = [ 'javafx.controls', 'javafx.graphics', 'javafx.fxml', 'javafx.media'  ]
+}
+
+jar {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+	manifest {
+		attributes "Main-Class": "de.cLandow.dsaKampftool.Main"
+	}
+	from {
+		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+	}
 }
