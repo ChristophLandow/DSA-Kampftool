@@ -1,62 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
-<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="662.0" fitWidth="340.0" layoutX="14.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="662.0" fitWidth="340.0" layoutX="31.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/hero.png" />
          </image>
       </ImageView>
-      <Circle fill="DODGERBLUE" layoutX="65.0" layoutY="73.0" radius="51.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label layoutX="136.0" layoutY="33.0" prefHeight="31.0" prefWidth="187.0" text="Name">
-         <font>
-            <Font name="System Bold" size="21.0" />
-         </font>
-      </Label>
-      <VBox layoutX="364.0" layoutY="14.0" prefHeight="380.0" prefWidth="435.0" style="-fx-border-color: BLACK;" />
-      <VBox layoutX="364.0" layoutY="405.0" prefHeight="380.0" prefWidth="435.0" style="-fx-border-color: BLACK;" />
-      <Button layoutX="136.0" layoutY="85.0" mnemonicParsing="false" text="Design" />
-      <Button layoutX="207.0" layoutY="85.0" mnemonicParsing="false" text="Neu" />
-      <TextField layoutX="39.0" layoutY="430.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="174.0" layoutY="458.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="317.0" layoutY="448.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="121.0" layoutY="675.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="277.0" layoutY="675.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="205.0" layoutY="327.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="169.0" layoutY="327.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="196.0" layoutY="230.0" prefHeight="25.0" prefWidth="22.0" />
-      <Circle fill="DODGERBLUE" layoutX="179.0" layoutY="207.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="206.0" layoutY="208.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="234.0" layoutY="208.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="170.0" layoutY="304.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="224.0" layoutY="305.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="197.0" layoutY="304.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="311.0" layoutY="417.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="295.0" layoutY="380.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="278.0" layoutY="344.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="137.0" layoutY="346.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="109.0" layoutY="373.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="80.0" layoutY="402.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="158.0" layoutY="435.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="185.0" layoutY="435.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="213.0" layoutY="435.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="152.0" layoutY="553.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="145.0" layoutY="597.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="138.0" layoutY="642.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="238.0" layoutY="553.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="257.0" layoutY="597.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="277.0" layoutY="642.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button layoutX="258.0" layoutY="85.0" mnemonicParsing="false" text="Wechsel" />
+      <TextField layoutX="55.0" layoutY="418.0" prefHeight="25.0" prefWidth="22.0" />
+      <TextField layoutX="190.0" layoutY="447.0" prefHeight="25.0" prefWidth="22.0" />
+      <TextField layoutX="333.0" layoutY="438.0" prefHeight="25.0" prefWidth="22.0" />
+      <TextField layoutX="137.0" layoutY="665.0" prefHeight="25.0" prefWidth="22.0" />
+      <TextField layoutX="294.0" layoutY="666.0" prefHeight="25.0" prefWidth="22.0" />
+      <TextField layoutX="222.0" layoutY="315.0" prefHeight="25.0" prefWidth="22.0" />
+      <TextField layoutX="186.0" layoutY="316.0" prefHeight="25.0" prefWidth="22.0" />
+      <TextField layoutX="213.0" layoutY="220.0" prefHeight="25.0" prefWidth="22.0" />
+      <Circle fill="DODGERBLUE" layoutX="196.0" layoutY="196.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="224.0" layoutY="195.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="250.0" layoutY="195.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="187.0" layoutY="293.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="241.0" layoutY="293.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="214.0" layoutY="292.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="329.0" layoutY="404.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="312.0" layoutY="367.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="295.0" layoutY="332.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="155.0" layoutY="334.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="126.0" layoutY="361.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="97.0" layoutY="390.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="175.0" layoutY="423.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="203.0" layoutY="423.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="229.0" layoutY="423.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="169.0" layoutY="542.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="162.0" layoutY="585.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="155.0" layoutY="631.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="255.0" layoutY="541.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="274.0" layoutY="586.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="294.0" layoutY="631.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="83.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="109.0" layoutY="83.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="288.0" layoutY="83.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="354.0" layoutY="83.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <TabPane layoutX="426.0" layoutY="11.0" prefHeight="772.0" prefWidth="532.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="747.0" prefWidth="532.0" />
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" styleClass="anchor_id" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.Tool">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="anchor_id" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.Tool">
    <children>
       <VBox layoutX="-1.0" prefHeight="808.0" prefWidth="204.0">
          <children>
@@ -92,6 +92,6 @@
             </Button>
          </children>
       </VBox>
-      <VBox fx:id="screenBox" layoutX="203.0" layoutY="-2.0" prefHeight="808.0" prefWidth="802.0" />
+      <VBox fx:id="screenBox" layoutX="224.0" prefHeight="808.0" prefWidth="970.0" />
    </children>
 </AnchorPane>
