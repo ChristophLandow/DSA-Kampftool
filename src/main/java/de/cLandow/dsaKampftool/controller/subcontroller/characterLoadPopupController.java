@@ -7,20 +7,25 @@ import de.cLandow.dsaKampftool.services.FileService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class CharacterLoadPopupController implements ScreenController {
+public class CharacterLoadPopupController implements ScreenController, Initializable {
 
     private final Tool tool;
     @FXML ChoiceBox<String> characterChoiceBox;
     @FXML TextField newCharacterNameField;
     @FXML Text noNameWarning;
 
+    private ArrayList<String> characterNames = new ArrayList<>();
     private final FileService fileService;
 
     public CharacterLoadPopupController( Tool tool){
@@ -35,6 +40,12 @@ public class CharacterLoadPopupController implements ScreenController {
 
     @Override
     public void stop() {
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        characterNames = fileService.loadCharakterNamesForChoiceBox();
+        characterChoiceBox.getItems().addAll(characterNames);
     }
 
     @Override
@@ -67,4 +78,6 @@ public class CharacterLoadPopupController implements ScreenController {
         stop();
         //TODO: ChoiceBox initialisieren
     }
+
+
 }
