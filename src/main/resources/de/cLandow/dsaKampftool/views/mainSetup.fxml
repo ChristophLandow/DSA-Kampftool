@@ -16,7 +16,7 @@
          <children>
             <Pane prefHeight="231.0" prefWidth="204.0">
                <children>
-                  <Circle fx:id="avatarCircle" fill="DODGERBLUE" layoutX="109.0" layoutY="80.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 5; -fx-stroke-type: ridge;" />
+                  <Circle fx:id="avatarCircle" fill="DODGERBLUE" layoutX="109.0" layoutY="80.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 5; -fx-stroke-type: inside;" />
                   <Label fx:id="characterNameLabel" alignment="CENTER" layoutX="10.0" layoutY="179.0" prefHeight="30.0" prefWidth="191.0" text="Label">
                      <font>
                         <Font name="System Bold" size="20.0" />
@@ -92,6 +92,6 @@
             </Button>
          </children>
       </VBox>
-      <VBox fx:id="screenBox" layoutX="224.0" prefHeight="808.0" prefWidth="970.0" />
+      <VBox fx:id="screenBox" layoutX="230.0" prefHeight="800.0" prefWidth="970.0" />
    </children>
 </AnchorPane>

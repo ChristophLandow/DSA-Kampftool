@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,11 +27,13 @@ public class CloseCombatScreenController implements ScreenController, Initializa
     @FXML CheckBox falscheHandBox;
     @FXML CheckBox ausweichenDreiBox;
     @FXML CheckBox waffenmeisterBox;
+    @FXML ChoiceBox<String> lichtBox;
+    @FXML ChoiceBox<String> wasserBox;
+
+
 
     private final ArrayList<String> lichtverhaeltnisse = new ArrayList<>();
     private final ArrayList<String> wasserstand = new ArrayList<>();
-    private final ArrayList<String> eigenePosition = new ArrayList<>();
-    private final ArrayList<String> gegnerPosition = new ArrayList<>();
 
     public CloseCombatScreenController(){
 
@@ -69,9 +72,7 @@ public class CloseCombatScreenController implements ScreenController, Initializa
         wasserstand.add("hüfttief");
         wasserstand.add("schultertief");
         wasserstand.add("unter Wasser");
-        eigenePosition.add("kniend");
-        eigenePosition.add("liegend");
-        gegnerPosition.add("kniend");
-        gegnerPosition.add("liegend");
+        lichtBox.getItems().addAll(lichtverhaeltnisse);
+        wasserBox.getItems().addAll(wasserstand);
     }
 }

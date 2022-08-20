@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.CloseCombatScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.CloseCombatScreenController">
    <children>
       <CheckBox fx:id="kampfreflexeBox" layoutX="23.0" layoutY="33.0" mnemonicParsing="false" text="Kampfreflexe">
          <opaqueInsets>
@@ -39,26 +39,16 @@
          <font>
             <Font name="System Bold" size="16.0" />
          </font></CheckBox>
-      <ChoiceBox layoutX="614.0" layoutY="28.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="lichtBox" layoutX="614.0" layoutY="28.0" prefWidth="150.0" />
       <Text layoutX="468.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lichtverhältnisse :">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Text>
-      <ChoiceBox layoutX="614.0" layoutY="101.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="wasserBox" layoutX="614.0" layoutY="101.0" prefWidth="150.0" />
       <Text layoutX="455.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampf im Wasser :">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Text>
-      <Text layoutX="471.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kämpfer Position:">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font></Text>
-      <ChoiceBox layoutX="628.0" layoutY="193.0" prefWidth="150.0" />
-      <Text layoutX="438.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampf gegen Position :">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font></Text>
-      <ChoiceBox layoutX="628.0" layoutY="272.0" prefWidth="150.0" />
       <CheckBox fx:id="ausweichenEinsBox" layoutX="21.0" layoutY="277.0" mnemonicParsing="false" text="Ausweichen I">
          <opaqueInsets>
             <Insets />
@@ -80,16 +70,6 @@
          <font>
             <Font name="System Bold" size="16.0" />
          </font></CheckBox>
-      <ChoiceBox layoutX="628.0" layoutY="367.0" prefWidth="150.0" />
-      <Text layoutX="469.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Mitstreiter :">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font></Text>
-      <Text layoutX="478.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Feinde :">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font></Text>
-      <ChoiceBox layoutX="628.0" layoutY="473.0" prefWidth="150.0" />
       <CheckBox fx:id="beidhaendigKaempfenEinsBox" layoutX="215.0" layoutY="193.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="197.0" text="Beidhändiger Kampf I">
          <font>
             <Font name="System Bold" size="16.0" />
@@ -106,7 +86,7 @@
          <font>
             <Font name="System Bold" size="16.0" />
          </font></CheckBox>
-      <Button layoutX="287.0" layoutY="531.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="197.0" text="Hauptwaffe eintragen">
+      <Button layoutX="516.0" layoutY="215.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="197.0" text="Hauptwaffe eintragen">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
