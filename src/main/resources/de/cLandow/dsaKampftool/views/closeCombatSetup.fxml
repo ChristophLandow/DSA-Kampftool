@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,85 +10,106 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.CloseCombatScreenController">
    <children>
-      <CheckBox fx:id="kampfreflexeBox" layoutX="23.0" layoutY="20.0" mnemonicParsing="false" text="Kampfreflexe">
+      <CheckBox fx:id="kampfreflexeBox" layoutX="23.0" layoutY="33.0" mnemonicParsing="false" text="Kampfreflexe">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
-      <CheckBox fx:id="kampfgespuehrBox" layoutX="215.0" layoutY="20.0" mnemonicParsing="false" text="Kampfgespühr">
+      <CheckBox fx:id="kampfgespuehrBox" layoutX="217.0" layoutY="33.0" mnemonicParsing="false" text="Kampfgespühr">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
       <CheckBox fx:id="schwertmeisterBox" layoutX="23.0" layoutY="190.0" mnemonicParsing="false" text="Schwermeister">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
       <CheckBox fx:id="beengtBox" layoutX="215.0" layoutY="100.0" mnemonicParsing="false" text="Beengt">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
       <CheckBox fx:id="falscheHandBox" layoutX="215.0" layoutY="368.0" mnemonicParsing="false" text="falsche Hand">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
-      <ChoiceBox layoutX="600.0" layoutY="20.0" prefWidth="150.0" />
-      <Text layoutX="470.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lichtverhältnisse :" />
-      <ChoiceBox layoutX="600.0" layoutY="60.0" prefWidth="150.0" />
-      <Text layoutX="469.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampf im Wasser :" />
-      <ChoiceBox layoutX="600.0" layoutY="332.0" prefWidth="150.0" />
-      <Text layoutX="501.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hauptwaffe :" />
-      <Text layoutX="478.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kämpfer Position:" />
-      <ChoiceBox layoutX="600.0" layoutY="100.0" prefWidth="150.0" />
-      <Text layoutX="439.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampf gegen Position :" />
-      <ChoiceBox layoutX="600.0" layoutY="140.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="614.0" layoutY="28.0" prefWidth="150.0" />
+      <Text layoutX="468.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lichtverhältnisse :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <ChoiceBox layoutX="614.0" layoutY="101.0" prefWidth="150.0" />
+      <Text layoutX="455.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampf im Wasser :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <Text layoutX="471.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kämpfer Position:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <ChoiceBox layoutX="628.0" layoutY="193.0" prefWidth="150.0" />
+      <Text layoutX="438.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampf gegen Position :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <ChoiceBox layoutX="628.0" layoutY="272.0" prefWidth="150.0" />
       <CheckBox fx:id="ausweichenEinsBox" layoutX="21.0" layoutY="277.0" mnemonicParsing="false" text="Ausweichen I">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
       <CheckBox fx:id="ausweichenZweiBox" layoutX="19.0" layoutY="368.0" mnemonicParsing="false" text="Ausweichen II">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
       <CheckBox fx:id="ausweichenDreiBox" layoutX="19.0" layoutY="473.0" mnemonicParsing="false" text="Ausweichen III">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
-      <ChoiceBox layoutX="600.0" layoutY="180.0" prefWidth="150.0" />
-      <Text layoutX="465.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Mitstreiter :" />
-      <Text layoutX="493.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Feinde :" />
-      <ChoiceBox layoutX="600.0" layoutY="220.0" prefWidth="150.0" />
-      <CheckBox fx:id="beidhaendigKaempfenEinsBox" layoutX="215.0" layoutY="193.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="181.0" text="Beidhändiger Kampf I">
+      <ChoiceBox layoutX="628.0" layoutY="367.0" prefWidth="150.0" />
+      <Text layoutX="469.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Mitstreiter :">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <Text layoutX="478.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Feinde :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Text>
+      <ChoiceBox layoutX="628.0" layoutY="473.0" prefWidth="150.0" />
+      <CheckBox fx:id="beidhaendigKaempfenEinsBox" layoutX="215.0" layoutY="193.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="197.0" text="Beidhändiger Kampf I">
+         <font>
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
-      <CheckBox fx:id="beidhaendigKaempfenZweiBox" layoutX="215.0" layoutY="273.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="181.0" text="Beidhändiger Kampf II">
+      <CheckBox fx:id="beidhaendigKaempfenZweiBox" layoutX="215.0" layoutY="273.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="206.0" text="Beidhändiger Kampf II">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
       <CheckBox fx:id="linkhandBox" layoutX="23.0" layoutY="101.0" mnemonicParsing="false" text="Linkhand">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
       <CheckBox fx:id="waffenmeisterBox" layoutX="216.0" layoutY="473.0" mnemonicParsing="false" text="Waffenmeister">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
          </font></CheckBox>
+      <Button layoutX="287.0" layoutY="531.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="197.0" text="Hauptwaffe eintragen">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
