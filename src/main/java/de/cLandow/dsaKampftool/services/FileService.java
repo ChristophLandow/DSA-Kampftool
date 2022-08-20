@@ -58,21 +58,15 @@ public class FileService {
         return null;
     }
 
-    public ArrayList<String> loadCharaktersForChoiceBox(){
+    public ArrayList<String> loadCharakterNamesForChoiceBox(){
         ArrayList<String> characterArray = new ArrayList<>();
         File characterDirectory = new File(Paths.get(System.getProperty("user.home") + "//DSAKampftool").toUri());
         File[] characterList = characterDirectory.listFiles();
         if (characterList != null) {
             for (File character : characterList) {
-                Scanner myReader = null;
-                try {
-                    myReader = new Scanner(character);
-                    String data = myReader.nextLine();
-                    int index = data.indexOf(" ");
-                    characterArray.add("".substring(0,index));
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                int index = character.getName().indexOf(".");
+                String name = character.getName().substring(0,index);
+                characterArray.add(name);
             }
         } else {
             return null;
