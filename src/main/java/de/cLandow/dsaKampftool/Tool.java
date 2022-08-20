@@ -82,7 +82,7 @@ public class Tool extends Application {
         infoStage.initModality(Modality.WINDOW_MODAL);
         characterLoadPopupController = new CharacterLoadPopupController(this);
         infoStage.setScene(new Scene(characterLoadPopupController.render()));
-        infoStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");
+        infoStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
         characterLoadPopupController.init();
         infoStage.show();
     }
