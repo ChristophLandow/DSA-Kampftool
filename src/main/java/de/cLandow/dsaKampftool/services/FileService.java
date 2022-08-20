@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -55,5 +56,27 @@ public class FileService {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public ArrayList<String> loadCharaktersForChoiceBox(){
+        ArrayList<String> characterArray = new ArrayList<>();
+        File characterDirectory = new File(Paths.get(System.getProperty("user.home") + "//DSAKampftool").toUri());
+        File[] characterList = characterDirectory.listFiles();
+        if (characterList != null) {
+            for (File character : characterList) {
+                Scanner myReader = null;
+                try {
+                    myReader = new Scanner(character);
+                    String data = myReader.nextLine();
+                    int index = data.indexOf(" ");
+                    characterArray.add("".substring(0,index));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        } else {
+            return null;
+        }
+        return characterArray;
     }
 }
