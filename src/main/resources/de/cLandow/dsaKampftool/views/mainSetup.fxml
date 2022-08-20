@@ -16,14 +16,14 @@
          <children>
             <Pane prefHeight="231.0" prefWidth="204.0">
                <children>
-                  <Circle fx:id="avatarCircle" fill="DODGERBLUE" layoutX="109.0" layoutY="80.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="avatarCircle" fill="DODGERBLUE" layoutX="109.0" layoutY="80.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 5; -fx-stroke-type: ridge;" />
                   <Label fx:id="characterNameLabel" alignment="CENTER" layoutX="10.0" layoutY="179.0" prefHeight="30.0" prefWidth="191.0" text="Label">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
                </children></Pane>
-            <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="210.0" text="Nahkampf">
+            <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#openCloseCombatScreen" prefHeight="90.0" prefWidth="210.0" text="Nahkampf">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>

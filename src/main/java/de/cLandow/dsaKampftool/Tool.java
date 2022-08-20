@@ -1,6 +1,7 @@
 package de.cLandow.dsaKampftool;
 
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
+import de.cLandow.dsaKampftool.controller.CloseCombatScreenController;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.FileService;
@@ -31,6 +32,7 @@ public class Tool extends Application {
 
     private CharacterScreenController characterScreenController;
     private CharacterLoadPopupController characterLoadPopupController;
+    private CloseCombatScreenController closeCombatScreenController;
 
     public Tool(){
     }
@@ -72,9 +74,12 @@ public class Tool extends Application {
 
     public void openCharacterScreen(ActionEvent actionEvent) {
         screenBox.getChildren().clear();
-        characterScreenController = new CharacterScreenController();
+        if(characterScreenController == null){
+            characterScreenController = new CharacterScreenController();
+            screenBox.getChildren().add(characterScreenController.render());
+            characterScreenController.init();
+        }
         screenBox.getChildren().add(characterScreenController.render());
-        characterScreenController.init();
     }
 
     public void callCharacterLoadPopup(){
@@ -89,5 +94,15 @@ public class Tool extends Application {
 
     public void setActualCharacter(Character character){
         this.actualCharacter = character;
+    }
+
+    public void openCloseCombatScreen(ActionEvent actionEvent) {
+        screenBox.getChildren().clear();
+        if(closeCombatScreenController == null){
+            closeCombatScreenController = new CloseCombatScreenController();
+            screenBox.getChildren().add(closeCombatScreenController.render());
+            closeCombatScreenController.init();
+        }
+        screenBox.getChildren().add(closeCombatScreenController.render());
     }
 }

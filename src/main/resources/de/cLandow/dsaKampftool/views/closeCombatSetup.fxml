@@ -7,34 +7,34 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.CloseCombatScreenController">
    <children>
-      <CheckBox layoutX="23.0" layoutY="20.0" mnemonicParsing="false" text="Kampfreflexe">
+      <CheckBox fx:id="kampfreflexeBox" layoutX="23.0" layoutY="20.0" mnemonicParsing="false" text="Kampfreflexe">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
             <Font size="16.0" />
          </font></CheckBox>
-      <CheckBox layoutX="215.0" layoutY="20.0" mnemonicParsing="false" text="Kampfgespühr">
+      <CheckBox fx:id="kampfgespuehrBox" layoutX="215.0" layoutY="20.0" mnemonicParsing="false" text="Kampfgespühr">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
             <Font size="16.0" />
          </font></CheckBox>
-      <CheckBox layoutX="23.0" layoutY="190.0" mnemonicParsing="false" text="Schwermeister">
+      <CheckBox fx:id="schwertmeisterBox" layoutX="23.0" layoutY="190.0" mnemonicParsing="false" text="Schwermeister">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
             <Font size="16.0" />
          </font></CheckBox>
-      <CheckBox layoutX="215.0" layoutY="100.0" mnemonicParsing="false" text="Beengt">
+      <CheckBox fx:id="beengtBox" layoutX="215.0" layoutY="100.0" mnemonicParsing="false" text="Beengt">
          <font>
             <Font size="16.0" />
          </font></CheckBox>
-      <CheckBox layoutX="215.0" layoutY="368.0" mnemonicParsing="false" text="falsche Hand">
+      <CheckBox fx:id="falscheHandBox" layoutX="215.0" layoutY="368.0" mnemonicParsing="false" text="falsche Hand">
          <font>
             <Font size="16.0" />
          </font></CheckBox>
@@ -48,21 +48,21 @@
       <ChoiceBox layoutX="600.0" layoutY="100.0" prefWidth="150.0" />
       <Text layoutX="439.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampf gegen Position :" />
       <ChoiceBox layoutX="600.0" layoutY="140.0" prefWidth="150.0" />
-      <CheckBox layoutX="21.0" layoutY="277.0" mnemonicParsing="false" text="Ausweichen I">
+      <CheckBox fx:id="ausweichenEinsBox" layoutX="21.0" layoutY="277.0" mnemonicParsing="false" text="Ausweichen I">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
             <Font size="16.0" />
          </font></CheckBox>
-      <CheckBox layoutX="19.0" layoutY="368.0" mnemonicParsing="false" text="Ausweichen II">
+      <CheckBox fx:id="ausweichenZweiBox" layoutX="19.0" layoutY="368.0" mnemonicParsing="false" text="Ausweichen II">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <font>
             <Font size="16.0" />
          </font></CheckBox>
-      <CheckBox layoutX="19.0" layoutY="473.0" mnemonicParsing="false" text="Ausweichen III">
+      <CheckBox fx:id="ausweichenDreiBox" layoutX="19.0" layoutY="473.0" mnemonicParsing="false" text="Ausweichen III">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -73,19 +73,19 @@
       <Text layoutX="465.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Mitstreiter :" />
       <Text layoutX="493.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anzahl Feinde :" />
       <ChoiceBox layoutX="600.0" layoutY="220.0" prefWidth="150.0" />
-      <CheckBox layoutX="215.0" layoutY="193.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="181.0" text="Beidhändiger Kampf I">
+      <CheckBox fx:id="beidhaendigKaempfenEinsBox" layoutX="215.0" layoutY="193.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="181.0" text="Beidhändiger Kampf I">
          <font>
             <Font size="16.0" />
          </font></CheckBox>
-      <CheckBox layoutX="215.0" layoutY="273.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="181.0" text="Beidhändiger Kampf II">
+      <CheckBox fx:id="beidhaendigKaempfenZweiBox" layoutX="215.0" layoutY="273.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="181.0" text="Beidhändiger Kampf II">
          <font>
             <Font size="16.0" />
          </font></CheckBox>
-      <CheckBox layoutX="23.0" layoutY="101.0" mnemonicParsing="false" text="Linkhand">
+      <CheckBox fx:id="linkhandBox" layoutX="23.0" layoutY="101.0" mnemonicParsing="false" text="Linkhand">
          <font>
             <Font size="16.0" />
          </font></CheckBox>
-      <CheckBox layoutX="216.0" layoutY="473.0" mnemonicParsing="false" text="Waffenmeister">
+      <CheckBox fx:id="waffenmeisterBox" layoutX="216.0" layoutY="473.0" mnemonicParsing="false" text="Waffenmeister">
          <font>
             <Font size="16.0" />
          </font></CheckBox>
