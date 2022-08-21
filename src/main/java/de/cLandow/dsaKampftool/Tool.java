@@ -95,6 +95,10 @@ public class Tool extends Application {
         this.actualCharacter = character;
     }
 
+    public Character getActualCharacter(){
+        return this.actualCharacter;
+    }
+
     public void openCloseCombatScreen(ActionEvent actionEvent) {
         screenBox.getChildren().clear();
         if(closeCombatScreenController == null){

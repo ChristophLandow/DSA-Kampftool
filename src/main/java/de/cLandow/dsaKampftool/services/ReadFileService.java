@@ -33,6 +33,7 @@ public class ReadFileService {
             FileReadHandler handler = new FileReadHandler();
 
             saxParser.parse(path, handler);
+            return handler.getCharacter();
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();

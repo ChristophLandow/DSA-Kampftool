@@ -18,7 +18,6 @@ public class FileReadHandler extends DefaultHandler {
 
     @Override
     public void startDocument(){
-
     }
 
     @Override
@@ -40,7 +39,6 @@ public class FileReadHandler extends DefaultHandler {
         if("Initiative".equals(qName)){
             initiative = Integer.parseInt(attributes.getValue("INI"));
         }
-
     }
 
     @Override
@@ -53,6 +51,10 @@ public class FileReadHandler extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int length){
         nameBuilder.append(ch, start, length);
+    }
+
+    public Character getCharacter(){
+        return this.character;
     }
 
 
