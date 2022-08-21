@@ -1,12 +1,14 @@
 package de.cLandow.dsaKampftool.services;
 
+import de.cLandow.dsaKampftool.model.Character;
+
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 import java.io.*;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 
 import static de.cLandow.dsaKampftool.Constants.FILEPATH;
 
@@ -17,22 +19,24 @@ public class WriteFileService {
 
     }
 
-    public void saveNewCharacterAsFXM(String name){
+    public void saveCharacterAsFXM(Character character){
         // writes the users
         createFolder();
-        createFile(name);
+        createFile(character);
     }
 
-    public void createFile(String name){
+    public void saveNewCharacterAsFXM(String name) {
+        createFolder();
+        createFile(new Character(name,0,0,0,0));
+    }
+
+    public void createFile(Character character){
         // send the output to a xml file
-        try(FileOutputStream out = new FileOutputStream(FILEPATH + name + ".xml")){
-            writeXml(out);
+        try(FileOutputStream out = new FileOutputStream(FILEPATH + character.name() + ".xml")){
+            writeXml(out, character);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        // send the output to System.out
-        // writeXml(System.out);
     }
 
     public boolean createFolder(){
@@ -44,63 +48,47 @@ public class WriteFileService {
         return false;
     }
 
-    private static void writeXml(OutputStream out)  {
+    private static void writeXml(OutputStream out, Character character)  {
 
         XMLOutputFactory output = XMLOutputFactory.newInstance();
 
         XMLStreamWriter writer = null;
         try {
-            writer = output.createXMLStreamWriter(out);
-            writer.writeStartDocument("utf-8", "1.0");
-            // <company>
-            writer.writeStartElement("company");
-
-            // <staff>
-
-            // add XML comment
-            writer.writeComment("This is Staff 1001");
-
-            writer.writeStartElement("staff");
-            writer.writeAttribute("id", "1001");
+            writer = output.createXMLStreamWriter(out, "UTF-8");
+            writer.writeStartDocument("UTF-8", "1.0");
+            // <Charakter>
+            writer.writeStartElement(character.name());
+            // als Kommentar
+            writer.writeComment("Dies ist ein Charakter für das DSA4.1 Kampftool https://github.com/ChristophLandow/DSA-Kampftool");
+            // </Attribute>
+            writer.writeStartElement("Held");
+            writer.writeAttribute("erstellt", String.valueOf(LocalDate.now()));
 
             writer.writeStartElement("name");
-            writer.writeCharacters("mkyong");
+            writer.writeCharacters(character.name());
             writer.writeEndElement();
 
-            writer.writeStartElement("salary");
-            writer.writeAttribute("currency", "USD");
-            writer.writeCharacters("5000");
+            writer.writeStartElement("Attacke-Wert");
+            writer.writeAttribute("AT", String.valueOf(character.at()));
             writer.writeEndElement();
 
-            writer.writeStartElement("bio");
-            writer.writeCData("HTML tag <code>testing</code>");
+            writer.writeStartElement("Parade-Wert");
+            writer.writeAttribute("PA", String.valueOf(character.pa()));
             writer.writeEndElement();
 
-            writer.writeEndElement();
-            // </staff>
-
-            // <staff>
-            writer.writeStartElement("staff");
-            writer.writeAttribute("id", "1002");
-
-            writer.writeStartElement("name");
-            writer.writeCharacters("yflow");
+            writer.writeStartElement("Fernkampf-Wert");
+            writer.writeAttribute("FK", String.valueOf(character.fk()));
             writer.writeEndElement();
 
-            writer.writeStartElement("salary");
-            writer.writeAttribute("currency", "EUR");
-            writer.writeCharacters("8000");
-            writer.writeEndElement();
-
-            writer.writeStartElement("bio");
-            writer.writeCData("a & b");
+            writer.writeStartElement("Initiative-Wert");
+            writer.writeAttribute("INI", String.valueOf(character.ini()));
             writer.writeEndElement();
 
             writer.writeEndElement();
-            // </staff>
+            // </Attribute>
 
             writer.writeEndDocument();
-            // </company>
+            // <Charakter>
 
             writer.flush();
 
@@ -109,4 +97,6 @@ public class WriteFileService {
             e.printStackTrace();
         }
     }
+
+
 }
