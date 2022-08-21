@@ -4,7 +4,6 @@ import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.CloseCombatScreenController;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
 import de.cLandow.dsaKampftool.model.Character;
-import de.cLandow.dsaKampftool.services.FileService;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -94,6 +93,10 @@ public class Tool extends Application {
 
     public void setActualCharacter(Character character){
         this.actualCharacter = character;
+    }
+
+    public Character getActualCharacter(){
+        return this.actualCharacter;
     }
 
     public void openCloseCombatScreen(ActionEvent actionEvent) {

@@ -27,6 +27,13 @@ dependencies {
 	// https://mvnrepository.com/artifact/io.reactivex.rxjava3/rxjava
 	implementation group: 'io.reactivex.rxjava3', name: 'rxjava', version: '3.1.4'
 
+	// https://mvnrepository.com/artifact/sax/sax
+	implementation group: 'sax', name: 'sax', version: '2.0.1'
+
+	// https://mvnrepository.com/artifact/stax/stax-api
+	implementation group: 'stax', name: 'stax-api', version: '1.0.1'
+
+
 	// -------------------- Dagger (Dependency Injetion) --------------------------------------------------
 	implementation 'com.google.dagger:dagger:2.41'
 	annotationProcessor 'com.google.dagger:dagger-compiler:2.41'
