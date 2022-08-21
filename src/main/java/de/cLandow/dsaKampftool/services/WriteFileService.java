@@ -68,19 +68,19 @@ public class WriteFileService {
             writer.writeCharacters(character.name());
             writer.writeEndElement();
 
-            writer.writeStartElement("Attacke-Wert");
+            writer.writeStartElement("Attacke");
             writer.writeAttribute("AT", String.valueOf(character.at()));
             writer.writeEndElement();
 
-            writer.writeStartElement("Parade-Wert");
+            writer.writeStartElement("Parade");
             writer.writeAttribute("PA", String.valueOf(character.pa()));
             writer.writeEndElement();
 
-            writer.writeStartElement("Fernkampf-Wert");
+            writer.writeStartElement("Fernkampf");
             writer.writeAttribute("FK", String.valueOf(character.fk()));
             writer.writeEndElement();
 
-            writer.writeStartElement("Initiative-Wert");
+            writer.writeStartElement("Initiative");
             writer.writeAttribute("INI", String.valueOf(character.ini()));
             writer.writeEndElement();
 
