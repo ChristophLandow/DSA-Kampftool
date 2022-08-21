@@ -40,12 +40,12 @@
             <Font name="System Bold" size="16.0" />
          </font></CheckBox>
       <ChoiceBox fx:id="lichtBox" layoutX="614.0" layoutY="28.0" prefWidth="150.0" />
-      <Text layoutX="468.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lichtverhältnisse :">
+      <Text layoutX="468.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_id" text="Lichtverhältnisse :">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Text>
       <ChoiceBox fx:id="wasserBox" layoutX="614.0" layoutY="101.0" prefWidth="150.0" />
-      <Text layoutX="455.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampf im Wasser :">
+      <Text layoutX="455.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_id" text="Kampf im Wasser :">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Text>

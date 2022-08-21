@@ -31,7 +31,7 @@ public class FileService {
     public void saveNewCharacter(String name){
         createFolder();
         Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//" + name + ".txt");
-        String characterData = name + " 0000";
+        String characterData = name + "_0000";
         byte[] bs = characterData.getBytes();
         try {
             Files.write(path, bs);
@@ -46,7 +46,7 @@ public class FileService {
         try {
             Scanner myReader = new Scanner(file);
             String data = myReader.nextLine();
-            int index = data.indexOf(" ");
+            int index = data.indexOf("_");
             int at = Integer.parseInt(data.substring(index+1,index+1));
             int pa = Integer.parseInt(data.substring(index+2,index+2));
             int fk = Integer.parseInt(data.substring(index+3,index+3));
