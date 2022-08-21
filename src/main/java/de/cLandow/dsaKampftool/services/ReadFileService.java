@@ -2,46 +2,32 @@ package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.model.Character;
 
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
+import static de.cLandow.dsaKampftool.Constants.*;
+
+public class ReadFileService {
 
 
-public class FileService {
 
-
-    public FileService(){
-
+    public ReadFileService(){
     }
 
-    public boolean createFolder(){
-        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool");
-        File folder = new File(path.toUri());
-        if(!folder.exists()){
-            return folder.mkdirs();
-        }
-        return false;
-    }
 
-    public void saveNewCharacter(String name){
-        createFolder();
-        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//" + name + ".txt");
-        String characterData = name + "_0000";
-        byte[] bs = characterData.getBytes();
-        try {
-            Files.write(path, bs);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
+
 
     public Character loadCharacter(String name){
-        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//" + name + ".txt");
+        Path path = Paths.get(FILEPATH + name + ".txt");
         File file = new File(path.toUri());
         try {
             Scanner myReader = new Scanner(file);

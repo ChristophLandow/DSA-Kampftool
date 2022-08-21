@@ -3,7 +3,8 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.ScreenController;
 import de.cLandow.dsaKampftool.model.Character;
-import de.cLandow.dsaKampftool.services.FileService;
+import de.cLandow.dsaKampftool.services.ReadFileService;
+import de.cLandow.dsaKampftool.services.WriteFileService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,11 +27,13 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
     @FXML Text noNameWarning;
 
     private ArrayList<String> characterNames = new ArrayList<>();
-    private final FileService fileService;
+    private final ReadFileService readFileService;
+    private final WriteFileService writeFileService;
 
     public CharacterLoadPopupController( Tool tool){
         this.tool = tool;
-        this.fileService = new FileService();
+        this.readFileService = new ReadFileService();
+        this.writeFileService = new WriteFileService();
     }
 
     @Override
@@ -44,7 +47,7 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        characterNames = fileService.loadCharakterNamesForChoiceBox();
+        characterNames = readFileService.loadCharakterNamesForChoiceBox();
         characterChoiceBox.getItems().addAll(characterNames);
     }
 
@@ -67,16 +70,15 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
         if(newCharacterNameField.getText().length() == 0) {
             noNameWarning.setVisible(true);
         } else {
-            fileService.saveNewCharacter(newCharacterNameField.getText());
+            writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText());
             stop();
         }
     }
 
     public void loadCharacter(ActionEvent actionEvent) {
-        Character loadedCharacter = fileService.loadCharacter(characterChoiceBox.getValue());
+        Character loadedCharacter = readFileService.loadCharacter(characterChoiceBox.getValue());
         tool.setActualCharacter(loadedCharacter);
         stop();
-        //TODO: ChoiceBox initialisieren
     }
 
 
