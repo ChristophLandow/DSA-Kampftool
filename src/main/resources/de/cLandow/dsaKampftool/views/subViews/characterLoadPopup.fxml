@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +15,7 @@
             <Font name="System Bold" size="29.0" />
          </font>
       </Label>
-      <Button layoutX="398.0" layoutY="239.0" mnemonicParsing="false" onAction="#createNewCharacter" text="Neu">
+      <Button layoutX="398.0" layoutY="217.0" mnemonicParsing="false" onAction="#createNewCharacter" prefHeight="35.0" prefWidth="71.0" text="Neu">
          <font>
             <Font size="22.0" />
          </font>
@@ -25,17 +25,17 @@
             <Font size="22.0" />
          </font>
       </Button>
-      <ChoiceBox fx:id="characterChoiceBox" layoutX="42.0" layoutY="332.0" prefHeight="46.0" prefWidth="296.0" />
-      <Text layoutX="10.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Es ist nun an dir einen Streiter aus der Liste auszuwählen oder einen neuen anzulegen:" wrappingWidth="520.25244140625">
+      <Text layoutX="10.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_id" text="Es ist nun an dir einen Streiter aus der Liste auszuwählen oder einen neuen anzulegen:" wrappingWidth="520.25244140625">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="newCharacterNameField" layoutX="42.0" layoutY="244.0" prefHeight="35.0" prefWidth="296.0" promptText="Name">
+      <TextField fx:id="newCharacterNameField" layoutX="42.0" layoutY="222.0" prefHeight="35.0" prefWidth="296.0" promptText="Name">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Text fx:id="noNameWarning" fill="RED" layoutX="42.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht einen Namen...." wrappingWidth="265.13671875" />
+      <Text fx:id="noNameWarning" fill="RED" layoutX="42.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht einen Namen...." wrappingWidth="265.13671875" />
+      <ComboBox fx:id="characterBox" layoutX="42.0" layoutY="333.0" prefHeight="45.0" prefWidth="296.0" />
    </children>
 </AnchorPane>

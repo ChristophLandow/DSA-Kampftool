@@ -90,12 +90,12 @@ Das Tool legt im Heimverzeichnis (also unter Windows in C:\Users\user) einen Ord
 ## Roadmap
 
 - [X] Models anlegen
-  - [X] Close Combat Weapons
-  - [X] Armor
-  - [X] Ranged Weapons
-  - [ ] Shields
-  - [ ] Parry Weapons
-  - [X] Character
+  - [X] Nahkampfwaffen
+  - [X] Rüstung
+  - [X] Fernkampfwaffen
+  - [ ] Schilde
+  - [ ] Parierwaffen
+  - [X] Charakter
 - [ ] FXMLs anlegen
   - [X] MainSetup.fxml
   - [ ] ClosedCombatScreen.fxml
@@ -105,8 +105,11 @@ Das Tool legt im Heimverzeichnis (also unter Windows in C:\Users\user) einen Ord
 - [X] Launcher.java anlegen
 - [X] Tool.java anlegen
 - [X] globals CSS-File anlegen
-- [X] Service (Daten in .xml speichern)
-- [X] Service (Daten aus .xml lesen)
+- [X] Services
+  - [X] Daten in .xml speichern
+  - [X] Daten aus .xml lesen
+  - [X] Preferences speichern/lesen
+
 
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>

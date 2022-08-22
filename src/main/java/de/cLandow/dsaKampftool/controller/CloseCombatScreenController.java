@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,13 +28,15 @@ public class CloseCombatScreenController implements ScreenController, Initializa
     @FXML CheckBox falscheHandBox;
     @FXML CheckBox ausweichenDreiBox;
     @FXML CheckBox waffenmeisterBox;
-    @FXML ChoiceBox<String> lichtBox;
-    @FXML ChoiceBox<String> wasserBox;
+    @FXML ComboBox<String> lichtBox;
+    @FXML ComboBox<String> wasserBox;
 
 
 
     private final ArrayList<String> lichtverhaeltnisse = new ArrayList<>();
     private final ArrayList<String> wasserstand = new ArrayList<>();
+
+    private Parent combatScreenParent;
 
     public CloseCombatScreenController(){
 
@@ -60,6 +63,7 @@ public class CloseCombatScreenController implements ScreenController, Initializa
             e.printStackTrace();
             return null;
         }
+        combatScreenParent = closeCombatScreenParent;
         return closeCombatScreenParent;
     }
 
@@ -74,5 +78,9 @@ public class CloseCombatScreenController implements ScreenController, Initializa
         wasserstand.add("unter Wasser");
         lichtBox.getItems().addAll(lichtverhaeltnisse);
         wasserBox.getItems().addAll(wasserstand);
+    }
+
+    public Parent getCombatScreenParent(){
+        return this.combatScreenParent;
     }
 }

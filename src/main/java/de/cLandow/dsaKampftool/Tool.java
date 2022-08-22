@@ -32,6 +32,7 @@ public class Tool extends Application {
     private CharacterScreenController characterScreenController;
     private CharacterLoadPopupController characterLoadPopupController;
     private CloseCombatScreenController closeCombatScreenController;
+    private Stage popupStage;
 
     public Tool(){
     }
@@ -77,18 +78,19 @@ public class Tool extends Application {
             characterScreenController = new CharacterScreenController();
             screenBox.getChildren().add(characterScreenController.render());
             characterScreenController.init();
+        } else {
+            screenBox.getChildren().add(characterScreenController.getCharacterScreenParent());
         }
-        screenBox.getChildren().add(characterScreenController.render());
     }
 
     public void callCharacterLoadPopup(){
-        Stage infoStage = new Stage();
-        infoStage.initModality(Modality.WINDOW_MODAL);
+        popupStage = new Stage();
+        popupStage.initModality(Modality.WINDOW_MODAL);
         characterLoadPopupController = new CharacterLoadPopupController(this);
-        infoStage.setScene(new Scene(characterLoadPopupController.render()));
-        infoStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
+        popupStage.setScene(new Scene(characterLoadPopupController.render()));
+        popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");
         characterLoadPopupController.init();
-        infoStage.show();
+        popupStage.show();
     }
 
     public void setActualCharacter(Character character){
@@ -105,7 +107,12 @@ public class Tool extends Application {
             closeCombatScreenController = new CloseCombatScreenController();
             screenBox.getChildren().add(closeCombatScreenController.render());
             closeCombatScreenController.init();
+        } else {
+            screenBox.getChildren().add(closeCombatScreenController.getCombatScreenParent());
         }
-        screenBox.getChildren().add(closeCombatScreenController.render());
+    }
+
+    public Stage getPopupStage(){
+        return this.popupStage;
     }
 }
