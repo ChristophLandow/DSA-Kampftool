@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
@@ -22,13 +23,14 @@ import java.util.ResourceBundle;
 public class CharacterLoadPopupController implements ScreenController, Initializable {
 
     private final Tool tool;
-    @FXML ChoiceBox<String> characterChoiceBox;
+    @FXML ComboBox<String> characterBox;
     @FXML TextField newCharacterNameField;
     @FXML Text noNameWarning;
 
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
     private final WriteFileService writeFileService;
+
 
     public CharacterLoadPopupController( Tool tool){
         this.tool = tool;
@@ -43,12 +45,13 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
 
     @Override
     public void stop() {
+        tool.getPopupStage().close();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         characterNames = readFileService.loadCharakterNamesForChoiceBox();
-        characterChoiceBox.getItems().addAll(characterNames);
+        characterBox.getItems().addAll(characterNames);
     }
 
     @Override
@@ -71,12 +74,13 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
             noNameWarning.setVisible(true);
         } else {
             writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText());
+            //tool.setActualCharacter(new Character(newCharacterNameField.getText()));
             stop();
         }
     }
 
     public void loadCharacter(ActionEvent actionEvent) {
-        Character loadedCharacter = readFileService.loadCharacter(characterChoiceBox.getValue());
+        Character loadedCharacter = readFileService.loadCharacter(characterBox.getValue());
         tool.setActualCharacter(loadedCharacter);
         stop();
     }

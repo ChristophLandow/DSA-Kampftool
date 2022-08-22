@@ -51,6 +51,7 @@ Das Kampftool bietet dem Spieler die Möglichkeit einen Charakter anzulegen, des
 * [JavaFX 18](https://openjfx.io/)
 * [RxJava](https://reactivex.io/)
 
+
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
 
 <!-- ALLER ANFANG -->
@@ -58,7 +59,8 @@ Das Kampftool bietet dem Spieler die Möglichkeit einen Charakter anzulegen, des
 
 ## Aller Anfang....
 
-Um das Tool benutzen zu können muss Java installiert sein. Das Tool funktioniert nur unter Windows, an einer Apple Unterstützung wird gearbeitet...
+Um das Tool benutzen zu können muss Java installiert sein. Das Tool funktioniert nur unter Windows, an einer Apple Unterstützung wird gearbeitet.
+Das Tool legt im Heimverzeichnis (also unter Windows in C:\Users\user) einen Ordner "DSA4.1 Kampftool" an in dem die angelegten Charaktere gespeichert werden. Der Speicherort lässt sich nicht ändern.
 
 
 <div id="prerequisites"></div>
@@ -88,12 +90,12 @@ Um das Tool benutzen zu können muss Java installiert sein. Das Tool funktionier
 ## Roadmap
 
 - [X] Models anlegen
-  - [X] Close Combat Weapons
-  - [X] Armor
-  - [X] Ranged Weapons
-  - [ ] Shields
-  - [ ] Parry Weapons
-  - [X] Character
+  - [X] Nahkampfwaffen
+  - [X] Rüstung
+  - [X] Fernkampfwaffen
+  - [ ] Schilde
+  - [ ] Parierwaffen
+  - [X] Charakter
 - [ ] FXMLs anlegen
   - [X] MainSetup.fxml
   - [ ] ClosedCombatScreen.fxml
@@ -103,6 +105,11 @@ Um das Tool benutzen zu können muss Java installiert sein. Das Tool funktionier
 - [X] Launcher.java anlegen
 - [X] Tool.java anlegen
 - [X] globals CSS-File anlegen
+- [X] Services
+  - [X] Daten in .xml speichern
+  - [X] Daten aus .xml lesen
+  - [X] Preferences speichern/lesen
+
 
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>

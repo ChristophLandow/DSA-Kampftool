@@ -6,4 +6,4 @@ public class Main {
     }
 }
 //TODO: Patzer auswirkungen im fxml einbinden
-//TODO: Waffen und Rüstungen m,üssen vom Anwender eingegeben werden
+//TODO: Waffen und Rüstungen muessen vom Anwender im Charakter fenster eingegeben werden

@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class CharacterScreenController implements ScreenController{
 
-
+    private Parent characterScreenParent;
 
     public CharacterScreenController() {
 
@@ -34,6 +34,11 @@ public class CharacterScreenController implements ScreenController{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        characterScreenParent = parent;
         return parent;
+    }
+
+    public Parent getCharacterScreenParent() {
+        return this.characterScreenParent;
     }
 }

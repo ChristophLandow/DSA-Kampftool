@@ -10,7 +10,6 @@ public record Armor(
         int bein_l,
         int bein_r,
         int gRS,
-        int gBE,
-        int gewicht
+        int gBE
 ){
 }

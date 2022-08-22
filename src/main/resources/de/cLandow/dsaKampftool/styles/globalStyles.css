@@ -26,9 +26,46 @@
 }
 
 .choice-box{
+    -fx-background-color: rgb(95, 109, 110);
     -fx-text-fill: WHITE;
+    -fx-background-radius: 7px;
 }
 
+.choice-box .context-menu {
+    -fx-background-color: rgb(95, 109, 110);
+    -fx-pref-width: 180;
+    -fx-background-radius: 7px;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: rgb(76, 141, 145);
+}
+
+.choice-box .menu-item > .label {
+    -fx-text-fill: white;
+}
+
+.choice-box .menu-item:focused > .label {
+    -fx-text-fill: white;
+}
+
+.combo-box{
+    -fx-background-color: rgb(95, 109, 110);
+    -fx-background-radius: 7px;
+}
+
+.combo-box .list-view .list-cell{
+    -fx-background-color: rgb(95, 109, 110);
+    -fx-pref-width: 150;
+}
+
+.combo-box .list-view .list-cell:filled:hover {
+    -fx-background-color: rgb(76, 141, 145);
+}
+
+.combo-box .cell:selected {
+    -fx-text-fill: WHITE;
+}
 
 .anchor_id{
     -fx-background-color: rgb(53, 62, 63);
