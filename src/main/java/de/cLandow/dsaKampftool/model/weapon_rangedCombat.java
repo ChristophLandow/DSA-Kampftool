@@ -7,7 +7,6 @@ public record Weapon_rangedCombat(
         String tp,
         List reichweiten,
         List tpPlus,
-        int gewicht,
         int laden
 ){
 }
