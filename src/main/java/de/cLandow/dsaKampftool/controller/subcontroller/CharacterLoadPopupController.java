@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.ScreenController;
+import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import de.cLandow.dsaKampftool.services.WriteFileService;
@@ -22,7 +23,8 @@ import java.util.ResourceBundle;
 
 public class CharacterLoadPopupController implements ScreenController, Initializable {
 
-    private final Tool tool;
+
+    private final SetupScreenController setupScreenController;
     @FXML ComboBox<String> characterBox;
     @FXML TextField newCharacterNameField;
     @FXML Text noNameWarning;
@@ -32,8 +34,8 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
     private final WriteFileService writeFileService;
 
 
-    public CharacterLoadPopupController( Tool tool){
-        this.tool = tool;
+    public CharacterLoadPopupController(SetupScreenController setupScreenController){
+        this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
         this.writeFileService = new WriteFileService();
     }
@@ -45,7 +47,7 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
 
     @Override
     public void stop() {
-        tool.getPopupStage().close();
+        setupScreenController.getPopupStage().close();
     }
 
     @Override
@@ -80,8 +82,8 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
     }
 
     public void loadCharacter(ActionEvent actionEvent) {
-        Character loadedCharacter = readFileService.loadCharacter(characterBox.getValue());
-        tool.setActualCharacter(loadedCharacter);
+        setupScreenController.setActualCharacter(readFileService.loadCharacter(characterBox.getValue()));
+
         stop();
     }
 

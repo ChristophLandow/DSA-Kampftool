@@ -1,40 +1,15 @@
 package de.cLandow.dsaKampftool;
 
-import de.cLandow.dsaKampftool.controller.CharacterScreenController;
-import de.cLandow.dsaKampftool.controller.CloseCombatScreenController;
-import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
-import de.cLandow.dsaKampftool.model.Character;
-
+import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.Objects;
 
 public class Tool extends Application {
 
-    @FXML VBox screenBox;
-
     private static Stage primaryStage;
-
-
-    private Character actualCharacter;
-
-    private CharacterScreenController characterScreenController;
-    private CharacterLoadPopupController characterLoadPopupController;
-    private CloseCombatScreenController closeCombatScreenController;
-    private Stage popupStage;
-
-    public Tool(){
+    private SetupScreenController setupScreenController;
+    public Tool() {
     }
 
     @Override
@@ -42,77 +17,21 @@ public class Tool extends Application {
         primaryStage = stage;
         showSetupScreen();
         primaryStage.show();
-        if(actualCharacter == null) {
-            callCharacterLoadPopup();
-        }
+        setupScreenController.init();
     }
 
     @Override
-    public  void stop(){
-        cleanup();
-    }
+    public void stop() {
 
-    private static void cleanup() {
     }
 
     private void showSetupScreen() {
-        cleanup();
-        try {
-            // load setup view
-            Parent manScreenRoot = FXMLLoader.load(Objects.requireNonNull(Tool.class.getResource("views/mainSetup.fxml")));
-            Scene newestScene = new Scene(manScreenRoot);
-            //init controller
-            // display scene on primary stage
-            newestScene.getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");
-            primaryStage.setScene(newestScene);
-            //Otherwise, the window was always minimized at TestFX later.
-            primaryStage.centerOnScreen();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public void openCharacterScreen(ActionEvent actionEvent) {
-        screenBox.getChildren().clear();
-        if(characterScreenController == null){
-            characterScreenController = new CharacterScreenController();
-            screenBox.getChildren().add(characterScreenController.render());
-            characterScreenController.init();
-        } else {
-            screenBox.getChildren().add(characterScreenController.getCharacterScreenParent());
-        }
-    }
-
-    public void callCharacterLoadPopup(){
-        popupStage = new Stage();
-        popupStage.initModality(Modality.WINDOW_MODAL);
-        characterLoadPopupController = new CharacterLoadPopupController(this);
-        popupStage.setScene(new Scene(characterLoadPopupController.render()));
-        popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");
-        characterLoadPopupController.init();
-        popupStage.show();
-    }
-
-    public void setActualCharacter(Character character){
-        this.actualCharacter = character;
-    }
-
-    public Character getActualCharacter(){
-        return this.actualCharacter;
-    }
-
-    public void openCloseCombatScreen(ActionEvent actionEvent) {
-        screenBox.getChildren().clear();
-        if(closeCombatScreenController == null){
-            closeCombatScreenController = new CloseCombatScreenController();
-            screenBox.getChildren().add(closeCombatScreenController.render());
-            closeCombatScreenController.init();
-        } else {
-            screenBox.getChildren().add(closeCombatScreenController.getCombatScreenParent());
-        }
-    }
-
-    public Stage getPopupStage(){
-        return this.popupStage;
+        setupScreenController = new SetupScreenController(this);
+        Scene newestScene = new Scene(setupScreenController.render());
+        newestScene.getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");
+        primaryStage.setScene(newestScene);
+        primaryStage.centerOnScreen();
     }
 }
+
