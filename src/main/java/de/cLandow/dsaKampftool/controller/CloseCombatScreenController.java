@@ -8,13 +8,14 @@ import javafx.scene.Parent;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CloseCombatScreenController implements ScreenController, Initializable {
+public class CloseCombatScreenController implements ScreenController {
 
     @FXML CheckBox kampfreflexeBox;
     @FXML CheckBox linkhandBox;
@@ -28,13 +29,13 @@ public class CloseCombatScreenController implements ScreenController, Initializa
     @FXML CheckBox falscheHandBox;
     @FXML CheckBox ausweichenDreiBox;
     @FXML CheckBox waffenmeisterBox;
-    @FXML ComboBox<String> lichtBox;
-    @FXML ComboBox<String> wasserBox;
-
-
-
-    private final ArrayList<String> lichtverhaeltnisse = new ArrayList<>();
-    private final ArrayList<String> wasserstand = new ArrayList<>();
+    @FXML RadioButton sternenlichtRadioButton;
+    @FXML RadioButton mondlichtRadioButton;
+    @FXML RadioButton dunkelheitRadioButton;
+    @FXML RadioButton knietiefRadioButton;
+    @FXML RadioButton huefttiefRadioButton;
+    @FXML RadioButton schultertiefRadioButton;
+    @FXML RadioButton unterWasserRadioButton;
 
     private Parent combatScreenParent;
 
@@ -67,20 +68,9 @@ public class CloseCombatScreenController implements ScreenController, Initializa
         return closeCombatScreenParent;
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        lichtverhaeltnisse.add("Mondlicht");
-        lichtverhaeltnisse.add("Sternenlicht");
-        lichtverhaeltnisse.add("totale Dunkelheit");
-        wasserstand.add("knietief");
-        wasserstand.add("hüfttief");
-        wasserstand.add("schultertief");
-        wasserstand.add("unter Wasser");
-        lichtBox.getItems().addAll(lichtverhaeltnisse);
-        wasserBox.getItems().addAll(wasserstand);
-    }
-
     public Parent getCombatScreenParent(){
         return this.combatScreenParent;
     }
+
+
 }
