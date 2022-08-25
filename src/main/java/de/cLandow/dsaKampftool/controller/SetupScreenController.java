@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
 import de.cLandow.dsaKampftool.model.Character;
+import de.cLandow.dsaKampftool.services.PrefService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,11 +17,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SetupScreenController implements ScreenController{
-
     @FXML VBox screenBox;
     @FXML Label nameLabel;
 
     private final Tool tool;
+    private final PrefService prefService;
     private Stage popupStage;
     private CharacterLoadPopupController characterLoadPopupController;
     private Character actualCharacter;
@@ -29,6 +30,7 @@ public class SetupScreenController implements ScreenController{
 
     public SetupScreenController(Tool tool){
         this.tool = tool;
+        this.prefService = new PrefService();
     }
     @Override
     public void init() {
@@ -82,7 +84,7 @@ public class SetupScreenController implements ScreenController{
     public void openCloseCombatScreen(ActionEvent actionEvent) {
         screenBox.getChildren().clear();
         if (closeCombatScreenController == null) {
-            closeCombatScreenController = new CloseCombatScreenController();
+            closeCombatScreenController = new CloseCombatScreenController(prefService);
             screenBox.getChildren().add(closeCombatScreenController.render());
             closeCombatScreenController.init();
         } else {

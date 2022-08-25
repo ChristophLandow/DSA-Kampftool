@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.CloseCombatScreenController">
    <children>
-      <CheckBox fx:id="kampfreflexeBox" layoutX="23.0" layoutY="33.0" mnemonicParsing="false" text="Kampfreflexe">
+      <CheckBox fx:id="kampfreflexeBox" layoutX="23.0" layoutY="33.0" mnemonicParsing="false" onAction="#saveKampfrefelxe" text="Kampfreflexe">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>

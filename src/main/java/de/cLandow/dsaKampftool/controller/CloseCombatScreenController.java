@@ -1,6 +1,8 @@
 package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
+import de.cLandow.dsaKampftool.services.PrefService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,7 +18,6 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CloseCombatScreenController implements ScreenController {
-
     @FXML CheckBox kampfreflexeBox;
     @FXML CheckBox linkhandBox;
     @FXML CheckBox kampfgespuehrBox;
@@ -36,16 +37,17 @@ public class CloseCombatScreenController implements ScreenController {
     @FXML RadioButton huefttiefRadioButton;
     @FXML RadioButton schultertiefRadioButton;
     @FXML RadioButton unterWasserRadioButton;
+    private final PrefService prefService;
 
     private Parent combatScreenParent;
 
-    public CloseCombatScreenController(){
-
+    public CloseCombatScreenController(PrefService prefService){
+        this.prefService = prefService;
     }
 
     @Override
     public void init() {
-
+        kampfreflexeBox.setSelected(prefService.getKampfreflexeButton());
     }
 
     @Override
@@ -73,4 +75,7 @@ public class CloseCombatScreenController implements ScreenController {
     }
 
 
+    public void saveKampfrefelxe(ActionEvent actionEvent) {
+        prefService.saveKampfreflexeBox(kampfreflexeBox.isSelected());
+    }
 }

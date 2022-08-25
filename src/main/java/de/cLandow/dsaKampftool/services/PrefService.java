@@ -1,8 +1,11 @@
 package de.cLandow.dsaKampftool.services;
 
+import de.cLandow.dsaKampftool.model.Character;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.prefs.Preferences;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 @Singleton
 public class PrefService {
@@ -10,8 +13,16 @@ public class PrefService {
     private final Preferences preferences;
 
     @Inject
-    public PrefService(Preferences preferences){
-        this.preferences = preferences;
+    public PrefService(){
+        this.preferences = Preferences.userRoot().node(this.getClass().getName());
+    }
+
+    public void saveKampfreflexeBox(Boolean bool){
+        preferences.putBoolean(KAMPFREFLEXE, bool);
+    }
+
+    public boolean getKampfreflexeButton(){
+        return preferences.getBoolean(KAMPFREFLEXE, false);
     }
 
     /*public void save {
