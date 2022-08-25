@@ -16,27 +16,21 @@ public class WriteFileService {
 
     // Write wirth StAX Cursor API
     public WriteFileService(){
-
     }
 
-    public void saveCharacterAsFXM(Character character){
-        // writes the users
+    public Character saveNewCharacterAsFXM(String name) {
         createFolder();
-        createFile(character);
+         return createFile(new Character(name,0,0,0,0, false));
     }
 
-    public void saveNewCharacterAsFXM(String name) {
-        createFolder();
-        createFile(new Character(name,0,0,0,0));
-    }
-
-    public void createFile(Character character){
+    public Character createFile(Character character){
         // send the output to a xml file
         try(FileOutputStream out = new FileOutputStream(FILEPATH + character.name() + ".xml")){
             writeXml(out, character);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return character;
     }
 
     public boolean createFolder(){
@@ -82,6 +76,10 @@ public class WriteFileService {
 
             writer.writeStartElement("Initiative");
             writer.writeAttribute("INI", String.valueOf(character.ini()));
+            writer.writeEndElement();
+
+            writer.writeStartElement("Kampfreflexe");
+            writer.writeAttribute("kmpfRef", String.valueOf(character.kampfreflexe()));
             writer.writeEndElement();
 
             writer.writeEndElement();

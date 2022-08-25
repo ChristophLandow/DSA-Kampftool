@@ -1,10 +1,14 @@
 package de.cLandow.dsaKampftool.model;
 
 public record Character(
+    //Attribute
     String name,
     int at,
     int pa,
     int fk,
-    int ini
+    int ini,
+
+    //Boxes&Buttons
+    boolean kampfreflexe
     ){
 }

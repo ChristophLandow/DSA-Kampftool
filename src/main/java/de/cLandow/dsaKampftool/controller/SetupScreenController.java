@@ -84,7 +84,7 @@ public class SetupScreenController implements ScreenController{
     public void openCloseCombatScreen(ActionEvent actionEvent) {
         screenBox.getChildren().clear();
         if (closeCombatScreenController == null) {
-            closeCombatScreenController = new CloseCombatScreenController(prefService);
+            closeCombatScreenController = new CloseCombatScreenController(prefService, this);
             screenBox.getChildren().add(closeCombatScreenController.render());
             closeCombatScreenController.init();
         } else {

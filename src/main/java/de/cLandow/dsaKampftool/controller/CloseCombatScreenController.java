@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CloseCombatScreenController implements ScreenController {
+
     @FXML CheckBox kampfreflexeBox;
     @FXML CheckBox linkhandBox;
     @FXML CheckBox kampfgespuehrBox;
@@ -38,16 +39,18 @@ public class CloseCombatScreenController implements ScreenController {
     @FXML RadioButton schultertiefRadioButton;
     @FXML RadioButton unterWasserRadioButton;
     private final PrefService prefService;
+    private final SetupScreenController setupScreenController;
 
     private Parent combatScreenParent;
 
-    public CloseCombatScreenController(PrefService prefService){
+    public CloseCombatScreenController(PrefService prefService, SetupScreenController setupScreenController){
         this.prefService = prefService;
+        this.setupScreenController = setupScreenController;
     }
 
     @Override
     public void init() {
-        kampfreflexeBox.setSelected(prefService.getKampfreflexeButton());
+        kampfreflexeBox.setSelected(setupScreenController.getActualCharacter().kampfreflexe());
     }
 
     @Override
