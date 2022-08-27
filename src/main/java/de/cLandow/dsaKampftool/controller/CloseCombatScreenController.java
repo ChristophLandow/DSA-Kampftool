@@ -20,12 +20,8 @@ import java.util.ResourceBundle;
 public class CloseCombatScreenController implements ScreenController {
 
     @FXML CheckBox kampfreflexeBox;
-    @FXML CheckBox linkhandBox;
     @FXML CheckBox kampfgespuehrBox;
     @FXML CheckBox beengtBox;
-    @FXML CheckBox schwertmeisterBox;
-    @FXML CheckBox beidhaendigKaempfenEinsBox;
-    @FXML CheckBox beidhaendigKaempfenZweiBox;
     @FXML CheckBox ausweichenEinsBox;
     @FXML CheckBox ausweichenZweiBox;
     @FXML CheckBox falscheHandBox;
@@ -40,8 +36,10 @@ public class CloseCombatScreenController implements ScreenController {
     @FXML RadioButton unterWasserRadioButton;
     private final PrefService prefService;
     private final SetupScreenController setupScreenController;
-
     private Parent combatScreenParent;
+    private int atCounter;
+    private int paCounter;
+    private int iniCounter;
 
     public CloseCombatScreenController(PrefService prefService, SetupScreenController setupScreenController){
         this.prefService = prefService;
@@ -78,7 +76,13 @@ public class CloseCombatScreenController implements ScreenController {
     }
 
 
-    public void saveKampfrefelxe(ActionEvent actionEvent) {
+    public void setKampfreflexeBox(ActionEvent actionEvent) {
         prefService.saveKampfreflexeBox(kampfreflexeBox.isSelected());
+    }
+
+    public void setKampfgespuehrBox(ActionEvent actionEvent) {
+    }
+
+    public void setBeengtBox(ActionEvent actionEvent) {
     }
 }
