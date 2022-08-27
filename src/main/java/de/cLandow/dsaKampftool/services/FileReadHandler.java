@@ -13,6 +13,7 @@ public class FileReadHandler extends DefaultHandler {
     private int parade;
     private int fernkampf;
     private int initiative;
+    private boolean kampfreflexe;
 
     StringBuilder nameBuilder = new StringBuilder();
 
@@ -22,7 +23,7 @@ public class FileReadHandler extends DefaultHandler {
 
     @Override
     public void endDocument(){
-        character = new Character(name,attacke,parade,fernkampf,initiative);
+        character = new Character(name,attacke,parade,fernkampf,initiative,kampfreflexe);
     }
 
     @Override

@@ -1,6 +1,8 @@
 package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
+import de.cLandow.dsaKampftool.services.PrefService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,12 +20,8 @@ import java.util.ResourceBundle;
 public class CloseCombatScreenController implements ScreenController {
 
     @FXML CheckBox kampfreflexeBox;
-    @FXML CheckBox linkhandBox;
     @FXML CheckBox kampfgespuehrBox;
     @FXML CheckBox beengtBox;
-    @FXML CheckBox schwertmeisterBox;
-    @FXML CheckBox beidhaendigKaempfenEinsBox;
-    @FXML CheckBox beidhaendigKaempfenZweiBox;
     @FXML CheckBox ausweichenEinsBox;
     @FXML CheckBox ausweichenZweiBox;
     @FXML CheckBox falscheHandBox;
@@ -36,16 +34,21 @@ public class CloseCombatScreenController implements ScreenController {
     @FXML RadioButton huefttiefRadioButton;
     @FXML RadioButton schultertiefRadioButton;
     @FXML RadioButton unterWasserRadioButton;
-
+    private final PrefService prefService;
+    private final SetupScreenController setupScreenController;
     private Parent combatScreenParent;
+    private int atCounter;
+    private int paCounter;
+    private int iniCounter;
 
-    public CloseCombatScreenController(){
-
+    public CloseCombatScreenController(PrefService prefService, SetupScreenController setupScreenController){
+        this.prefService = prefService;
+        this.setupScreenController = setupScreenController;
     }
 
     @Override
     public void init() {
-
+        kampfreflexeBox.setSelected(setupScreenController.getActualCharacter().kampfreflexe());
     }
 
     @Override
@@ -73,4 +76,13 @@ public class CloseCombatScreenController implements ScreenController {
     }
 
 
+    public void setKampfreflexeBox(ActionEvent actionEvent) {
+        prefService.saveKampfreflexeBox(kampfreflexeBox.isSelected());
+    }
+
+    public void setKampfgespuehrBox(ActionEvent actionEvent) {
+    }
+
+    public void setBeengtBox(ActionEvent actionEvent) {
+    }
 }

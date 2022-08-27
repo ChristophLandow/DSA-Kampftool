@@ -12,21 +12,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.CharacterScreenController">
    <children>
       <ImageView fitHeight="662.0" fitWidth="340.0" layoutX="31.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/hero.png" />
          </image>
       </ImageView>
-      <TextField layoutX="55.0" layoutY="418.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="190.0" layoutY="447.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="333.0" layoutY="438.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="137.0" layoutY="665.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="294.0" layoutY="666.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="222.0" layoutY="315.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="186.0" layoutY="316.0" prefHeight="25.0" prefWidth="22.0" />
-      <TextField layoutX="213.0" layoutY="220.0" prefHeight="25.0" prefWidth="22.0" />
+      <TextField fx:id="behinderungArmRechtsBox" layoutX="51.0" layoutY="418.0" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" />
+      <TextField fx:id="behinderungBauchBox" layoutX="188.0" layoutY="447.0" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" />
+      <TextField fx:id="behinderungArmLinksBox" layoutX="330.0" layoutY="438.0" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" />
+      <TextField fx:id="behinderungBeinRechtsBox" layoutX="134.0" layoutY="665.0" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" />
+      <TextField fx:id="behinderungBeinLinksBox" layoutX="291.0" layoutY="666.0" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" />
+      <TextField fx:id="behinderungRueckenBox" layoutX="218.0" layoutY="315.0" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" />
+      <TextField fx:id="behinderungBrustBox" layoutX="181.0" layoutY="316.0" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" />
+      <TextField fx:id="behinderungKopfBox" layoutX="209.0" layoutY="220.0" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: TRANSPARENT;" />
       <Circle fill="DODGERBLUE" layoutX="196.0" layoutY="196.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="224.0" layoutY="195.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="250.0" layoutY="195.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
@@ -48,10 +48,10 @@
       <Circle fill="DODGERBLUE" layoutX="255.0" layoutY="541.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="274.0" layoutY="586.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="294.0" layoutY="631.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="50.0" layoutY="83.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="109.0" layoutY="83.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="288.0" layoutY="83.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="354.0" layoutY="83.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="52.0" layoutY="45.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="109.0" layoutY="45.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="282.0" layoutY="45.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="344.0" layoutY="45.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
       <TabPane layoutX="424.0" layoutY="20.0" prefHeight="487.0" prefWidth="532.0" style="-fx-border-color: BLACK;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Nahkampf">
@@ -80,5 +80,10 @@
       <ChoiceBox layoutX="424.0" layoutY="644.0" prefWidth="150.0" />
       <Button layoutX="633.0" layoutY="566.0" mnemonicParsing="false" text="Hauptwaffe eintragen" />
       <Button layoutX="789.0" layoutY="566.0" mnemonicParsing="false" text="Nebenwaffe eintragen" />
+      <Text fx:id="warnungText" layoutX="56.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: RED;" text="Es können nur Zahlen ausgewertet werden !" visible="false" wrappingWidth="323.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

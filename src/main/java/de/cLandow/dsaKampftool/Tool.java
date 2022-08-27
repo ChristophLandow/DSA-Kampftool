@@ -2,8 +2,10 @@ package de.cLandow.dsaKampftool;
 
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class Tool extends Application {
 
@@ -32,6 +34,7 @@ public class Tool extends Application {
         newestScene.getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");
         primaryStage.setScene(newestScene);
         primaryStage.centerOnScreen();
+        //primaryStage.setOnCloseRequest(event -> ));
     }
 }
 

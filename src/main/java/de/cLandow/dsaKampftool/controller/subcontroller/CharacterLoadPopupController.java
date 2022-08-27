@@ -75,8 +75,7 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
         if(newCharacterNameField.getText().length() == 0) {
             noNameWarning.setVisible(true);
         } else {
-            writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText());
-            //tool.setActualCharacter(new Character(newCharacterNameField.getText()));
+            setupScreenController.setActualCharacter(writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText()));
             stop();
         }
     }
