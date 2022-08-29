@@ -20,7 +20,7 @@ public class WriteFileService {
 
     public Character saveNewCharacterAsFXM(String name) {
         createFolder();
-         return createFile(new Character(name,0,0,0,0, false));
+         return createFile(new Character(name,0,0,0,0, false, false,false));
     }
 
     public Character createFile(Character character){
@@ -80,6 +80,14 @@ public class WriteFileService {
 
             writer.writeStartElement("Kampfreflexe");
             writer.writeAttribute("kmpfRef", String.valueOf(character.kampfreflexe()));
+            writer.writeEndElement();
+
+            writer.writeStartElement("Kampfgespuehr");
+            writer.writeAttribute("kmpfGesp", String.valueOf(character.kampfgespuehr()));
+            writer.writeEndElement();
+
+            writer.writeStartElement("Beengt");
+            writer.writeAttribute("beengt", String.valueOf(character.beengt()));
             writer.writeEndElement();
 
             writer.writeEndElement();

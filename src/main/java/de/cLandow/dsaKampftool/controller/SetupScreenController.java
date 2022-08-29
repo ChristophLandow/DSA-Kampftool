@@ -63,7 +63,7 @@ public class SetupScreenController implements ScreenController{
         popupStage.initModality(Modality.WINDOW_MODAL);
         characterLoadPopupController = new CharacterLoadPopupController(this);
         popupStage.setScene(new Scene(characterLoadPopupController.render()));
-        popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");
+        popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
         characterLoadPopupController.init();
         popupStage.show();
     }

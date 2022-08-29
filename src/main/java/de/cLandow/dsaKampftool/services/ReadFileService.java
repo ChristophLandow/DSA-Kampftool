@@ -22,7 +22,6 @@ public class ReadFileService {
         SAXParserFactory factory = SAXParserFactory.newInstance();
 
         try {
-            // XXE attack, see https://rules.sonarsource.com/java/RSPEC-2755
             SAXParser saxParser = factory.newSAXParser();
 
             FileReadHandler handler = new FileReadHandler();
