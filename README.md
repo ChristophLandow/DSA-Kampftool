@@ -39,7 +39,7 @@
 ## Was soll das hier sein ?
 <br>
 <br>
-Das Kampftool bietet dem Spieler die Möglichkeit einen Charakter anzulegen, dessen Ausrüstung und Werte einzutragen und sich auf alle für den Kampf wichtigen Werte berechnen zu lassen. 
+Das Kampftool soll dem Spieler die Möglichkeit geben einen Charakter anzulegen, dessen Ausrüstung und Werte einzutragen und sich auf alle für den Kampf wichtigen Werte berechnen zu lassen. 
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
 
@@ -49,7 +49,6 @@ Das Kampftool bietet dem Spieler die Möglichkeit einen Charakter anzulegen, des
 
 * [Java 17](https://www.oracle.com/java/)
 * [JavaFX 18](https://openjfx.io/)
-* [RxJava](https://reactivex.io/)
 
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
@@ -70,9 +69,7 @@ Das Tool legt im Heimverzeichnis (also unter Windows in C:\Users\user) einen Ord
 
 ### Das Tool nutzen
 
-1. Java downloaden und installieren
-2. die DSA_Kampftool.jar aus dem Programm  herunterladen
-3. DSA_Kampftool.jar ausführen und möge die Leuin mit dir sein!
+Sobald Version 1.0 fertig gestellt ist, wird hier eine Anleitung gegeben werden. 
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
 
