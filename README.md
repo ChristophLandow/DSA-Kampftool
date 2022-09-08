@@ -16,11 +16,10 @@
     <li>
       <a href="#Was-soll-das-hier-sein">Was soll das hier sein</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#Was-soll-das-hier-sein">Was soll das hier sein</a></li>
       </ul>
     </li>
     <li>
-      <a href="#Was-soll-das-hier-sein">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
