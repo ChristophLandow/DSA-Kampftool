@@ -36,7 +36,6 @@ public class Tool extends Application {
     }
 
     private void showSetupScreen() {
-
         setupScreenController = new SetupScreenController(this);
         Scene newestScene = new Scene(setupScreenController.render());
         newestScene.getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");

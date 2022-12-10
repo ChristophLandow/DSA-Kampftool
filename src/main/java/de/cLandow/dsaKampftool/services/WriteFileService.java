@@ -58,7 +58,7 @@ public class WriteFileService {
             writer.writeStartElement("Held");
             writer.writeAttribute("erstellt", String.valueOf(LocalDate.now()));
 
-            writer.writeStartElement("name");
+            writer.writeStartElement("Name");
             writer.writeCharacters(character.name());
             writer.writeEndElement();
 
