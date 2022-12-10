@@ -82,7 +82,6 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
 
     public void loadCharacter(ActionEvent actionEvent) {
         setupScreenController.setActualCharacter(readFileService.loadCharacter(characterBox.getValue()));
-
         stop();
     }
 

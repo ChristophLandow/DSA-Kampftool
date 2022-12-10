@@ -1,6 +1,7 @@
 package de.cLandow.dsaKampftool;
 
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
+import de.cLandow.dsaKampftool.services.WriteFileService;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -20,6 +21,13 @@ public class Tool extends Application {
         showSetupScreen();
         primaryStage.show();
         setupScreenController.init();
+        primaryStage.setOnCloseRequest(e -> {
+            if(setupScreenController.getActualCharacter() != null){
+                WriteFileService service = new WriteFileService();
+                service.createFile(setupScreenController.getActualCharacter());
+                primaryStage.close();
+            }
+        });
     }
 
     @Override
@@ -28,7 +36,6 @@ public class Tool extends Application {
     }
 
     private void showSetupScreen() {
-
         setupScreenController = new SetupScreenController(this);
         Scene newestScene = new Scene(setupScreenController.render());
         newestScene.getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");

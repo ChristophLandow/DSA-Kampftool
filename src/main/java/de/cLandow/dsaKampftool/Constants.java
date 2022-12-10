@@ -9,6 +9,8 @@ public class Constants {
     //CloseCombatScreen
 
     public static final String KAMPFREFLEXE = "Kampfreflexe";
+    public static final String KAMPFGESPUEHR = "Kampfgespuehr";
+    public static final String BEENGT = "Beengt";
 
 
 

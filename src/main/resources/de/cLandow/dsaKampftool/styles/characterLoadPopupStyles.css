@@ -1,0 +1,21 @@
+.button{
+    -fx-background-color: rgb(95, 109, 110);
+    -fx-text-fill: WHITE;
+}
+
+.button:hover{
+    -fx-background-color: rgb(65, 134, 138);
+    -fx-text-fill: WHITE;
+}
+
+.anchor_id{
+    -fx-background-color: rgb(53, 62, 63);
+}
+
+.text_id{
+    -fx-fill: WHITE;
+}
+
+.label {
+    -fx-text-fill: WHITE;
+}

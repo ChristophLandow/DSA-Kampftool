@@ -9,6 +9,8 @@ public record Character(
     int ini,
 
     //Boxes&Buttons
-    boolean kampfreflexe
+    boolean kampfreflexe,
+    boolean kampfgespuehr,
+    boolean beengt
     ){
 }

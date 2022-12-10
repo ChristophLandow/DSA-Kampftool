@@ -2,20 +2,15 @@ package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.services.PrefService;
+import static de.cLandow.dsaKampftool.Constants.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
-
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+
 
 public class CloseCombatScreenController implements ScreenController {
 
@@ -49,6 +44,8 @@ public class CloseCombatScreenController implements ScreenController {
     @Override
     public void init() {
         kampfreflexeBox.setSelected(setupScreenController.getActualCharacter().kampfreflexe());
+        kampfgespuehrBox.setSelected(setupScreenController.getActualCharacter().kampfgespuehr());
+        beengtBox.setSelected(setupScreenController.getActualCharacter().beengt());
     }
 
     @Override
@@ -71,18 +68,32 @@ public class CloseCombatScreenController implements ScreenController {
         return closeCombatScreenParent;
     }
 
+    public int getAtCounter(){
+        return atCounter;
+    }
+
+    public int getPaCounter() {
+        return paCounter;
+    }
+
+    public int getIniCounter() {
+        return iniCounter;
+    }
+
     public Parent getCombatScreenParent(){
         return this.combatScreenParent;
     }
 
 
     public void setKampfreflexeBox(ActionEvent actionEvent) {
-        prefService.saveKampfreflexeBox(kampfreflexeBox.isSelected());
+        prefService.saveBox(KAMPFREFLEXE ,kampfreflexeBox.isSelected());
     }
 
     public void setKampfgespuehrBox(ActionEvent actionEvent) {
+        prefService.saveBox(KAMPFGESPUEHR, kampfgespuehrBox.isSelected());
     }
 
     public void setBeengtBox(ActionEvent actionEvent) {
+        prefService.saveBox(BEENGT, beengtBox.isSelected());
     }
 }
