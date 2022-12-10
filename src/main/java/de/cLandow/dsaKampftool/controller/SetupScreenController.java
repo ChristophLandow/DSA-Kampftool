@@ -26,7 +26,6 @@ public class SetupScreenController implements ScreenController{
     private CharacterLoadPopupController characterLoadPopupController;
     private Character actualCharacter;
     private CharacterScreenController characterScreenController;
-    private CloseCombatScreenController closeCombatScreenController;
 
     public SetupScreenController(Tool tool){
         this.tool = tool;
@@ -70,7 +69,7 @@ public class SetupScreenController implements ScreenController{
 
     public void setActualCharacter(Character character){
         this.actualCharacter = character;
-        nameLabel.setText(actualCharacter.name());
+        nameLabel.setText(actualCharacter.getName());
     }
 
     public Character getActualCharacter(){
@@ -79,17 +78,6 @@ public class SetupScreenController implements ScreenController{
 
     public Stage getPopupStage(){
         return this.popupStage;
-    }
-
-    public void openCloseCombatScreen(ActionEvent actionEvent) {
-        screenBox.getChildren().clear();
-        if (closeCombatScreenController == null) {
-            closeCombatScreenController = new CloseCombatScreenController(prefService, this);
-            screenBox.getChildren().add(closeCombatScreenController.render());
-            closeCombatScreenController.init();
-        } else {
-            screenBox.getChildren().add(closeCombatScreenController.getCombatScreenParent());
-        }
     }
 
     public void openCharacterScreen(ActionEvent actionEvent) {

@@ -23,18 +23,6 @@
                      </font>
                   </Label>
                </children></Pane>
-            <Button graphicTextGap="10.0" mnemonicParsing="false" onAction="#openCloseCombatScreen" prefHeight="90.0" prefWidth="210.0" text="Nahkampf">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/sword.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
             <Button graphicTextGap="10.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="210.0" text="Fernkampf">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">

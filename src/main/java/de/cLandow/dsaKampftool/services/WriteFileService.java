@@ -25,7 +25,7 @@ public class WriteFileService {
 
     public Character createFile(Character character){
         // send the output to a xml file
-        try(FileOutputStream out = new FileOutputStream(FILEPATH + character.name() + ".xml")){
+        try(FileOutputStream out = new FileOutputStream(FILEPATH + character.getName() + ".xml")){
             writeXml(out, character);
         } catch (IOException e) {
             e.printStackTrace();
@@ -51,7 +51,7 @@ public class WriteFileService {
             writer = output.createXMLStreamWriter(out, "UTF-8");
             writer.writeStartDocument("UTF-8", "1.0");
             // <Charakter>
-            writer.writeStartElement(character.name());
+            writer.writeStartElement(character.getName());
             // als Kommentar
             writer.writeComment("Dies ist ein Charakter für das DSA4.1 Kampftool https://github.com/ChristophLandow/DSA-Kampftool");
             // </Attribute>
@@ -59,35 +59,23 @@ public class WriteFileService {
             writer.writeAttribute("erstellt", String.valueOf(LocalDate.now()));
 
             writer.writeStartElement("Name");
-            writer.writeCharacters(character.name());
+            writer.writeCharacters(character.getName());
             writer.writeEndElement();
 
             writer.writeStartElement("Attacke");
-            writer.writeAttribute("AT", String.valueOf(character.at()));
+            writer.writeAttribute("AT", String.valueOf(character.getAt()));
             writer.writeEndElement();
 
             writer.writeStartElement("Parade");
-            writer.writeAttribute("PA", String.valueOf(character.pa()));
+            writer.writeAttribute("PA", String.valueOf(character.getPa()));
             writer.writeEndElement();
 
             writer.writeStartElement("Fernkampf");
-            writer.writeAttribute("FK", String.valueOf(character.fk()));
+            writer.writeAttribute("FK", String.valueOf(character.getFk()));
             writer.writeEndElement();
 
             writer.writeStartElement("Initiative");
-            writer.writeAttribute("INI", String.valueOf(character.ini()));
-            writer.writeEndElement();
-
-            writer.writeStartElement("Kampfreflexe");
-            writer.writeAttribute("kmpfRef", String.valueOf(character.kampfreflexe()));
-            writer.writeEndElement();
-
-            writer.writeStartElement("Kampfgespuehr");
-            writer.writeAttribute("kmpfGesp", String.valueOf(character.kampfgespuehr()));
-            writer.writeEndElement();
-
-            writer.writeStartElement("Beengt");
-            writer.writeAttribute("beengt", String.valueOf(character.beengt()));
+            writer.writeAttribute("INI", String.valueOf(character.getIni()));
             writer.writeEndElement();
 
             writer.writeEndElement();
