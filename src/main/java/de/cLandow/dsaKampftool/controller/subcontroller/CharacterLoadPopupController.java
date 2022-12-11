@@ -47,7 +47,7 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
 
     @Override
     public void stop() {
-        setupScreenController.getPopupStage().close();
+        setupScreenController.closeCharacterLoadPopup();
     }
 
     @Override

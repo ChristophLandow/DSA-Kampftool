@@ -67,6 +67,11 @@ public class SetupScreenController implements ScreenController{
         popupStage.show();
     }
 
+    public void closeCharacterLoadPopup(){
+        this.getPopupStage().close();
+        openCharacterScreen();
+    }
+
     public void setActualCharacter(Character character){
         this.actualCharacter = character;
         nameLabel.setText(actualCharacter.getName());
@@ -80,7 +85,7 @@ public class SetupScreenController implements ScreenController{
         return this.popupStage;
     }
 
-    public void openCharacterScreen(ActionEvent actionEvent) {
+    public void openCharacterScreen() {
         screenBox.getChildren().clear();
         if (characterScreenController == null) {
             characterScreenController = new CharacterScreenController();
