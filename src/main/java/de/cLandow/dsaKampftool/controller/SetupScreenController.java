@@ -19,6 +19,10 @@ import java.io.IOException;
 public class SetupScreenController implements ScreenController{
     @FXML VBox screenBox;
     @FXML Label nameLabel;
+    @FXML Label baseAtLabel;
+    @FXML Label basePaLabel;
+    @FXML Label baseFkLabel;
+    @FXML Label baseIniLabel;
 
     private final Tool tool;
     private final PrefService prefService;
@@ -69,6 +73,7 @@ public class SetupScreenController implements ScreenController{
 
     public void closeCharacterLoadPopup(){
         this.getPopupStage().close();
+        loadStats();
         openCharacterScreen();
     }
 
@@ -94,5 +99,12 @@ public class SetupScreenController implements ScreenController{
         } else {
             screenBox.getChildren().add(characterScreenController.getCharacterScreenParent());
         }
+    }
+
+    public void loadStats(){
+        baseAtLabel.setText(Integer.toString(actualCharacter.getAt()));
+        basePaLabel.setText(Integer.toString(actualCharacter.getPa()));
+        baseFkLabel.setText(Integer.toString(actualCharacter.getFk()));
+        baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
     }
 }

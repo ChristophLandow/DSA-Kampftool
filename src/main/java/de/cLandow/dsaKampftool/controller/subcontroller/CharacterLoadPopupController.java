@@ -96,7 +96,6 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
                 newCharFkField.clear();
                 newCharIniField.clear();
             }
-
         }
     }
 
@@ -108,11 +107,6 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
     public boolean checkTextField(TextField field){
         return field.getText().length() == 0;
     }
-
-    public int checkStatField(TextField field){
-       return 0;
-    }
-
 
     public void close(ActionEvent actionEvent) {
     }
