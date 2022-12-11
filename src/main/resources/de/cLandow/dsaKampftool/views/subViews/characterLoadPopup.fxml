@@ -45,23 +45,23 @@
             <Font size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="newCharAtField" layoutX="104.0" layoutY="365.0" prefHeight="35.0" prefWidth="89.0" promptText="Name" text="Base-At">
+      <TextField fx:id="newCharAtField" layoutX="104.0" layoutY="365.0" prefHeight="35.0" prefWidth="89.0" promptText="Base-At">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
       <Line endX="593.0" layoutX="159.0" layoutY="244.0" startX="-100.0" />
-      <TextField fx:id="newCharFkField" layoutX="311.0" layoutY="365.0" prefHeight="35.0" prefWidth="89.0" promptText="Name" text="Base-Fk">
+      <TextField fx:id="newCharFkField" layoutX="311.0" layoutY="365.0" prefHeight="35.0" prefWidth="89.0" promptText="Base-Fk">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="newCharPaField" layoutX="104.0" layoutY="422.0" prefHeight="35.0" prefWidth="89.0" promptText="Name" text="Base-Pa">
+      <TextField fx:id="newCharPaField" layoutX="104.0" layoutY="422.0" prefHeight="35.0" prefWidth="89.0" promptText="Base-Pa">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="newCharIniField" layoutX="311.0" layoutY="422.0" prefHeight="35.0" prefWidth="89.0" promptText="Name" text="Base-Ini">
+      <TextField fx:id="newCharIniField" layoutX="311.0" layoutY="422.0" prefHeight="35.0" prefWidth="89.0" promptText="Base-Ini">
          <font>
             <Font size="16.0" />
          </font>
