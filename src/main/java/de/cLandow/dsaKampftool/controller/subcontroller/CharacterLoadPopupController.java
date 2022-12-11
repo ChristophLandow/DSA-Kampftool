@@ -76,24 +76,41 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
     }
 
 
-    public void createNewCharacter(ActionEvent actionEvent) {
+    public void createNewCharacter() {
         if(checkTextField(newCharacterNameField)) {
             noNameWarning.setVisible(true);
         } else if ((checkTextField(newCharAtField)) || (checkTextField(newCharPaField)) || (checkTextField(newCharFkField)) || (checkTextField(newCharIniField))){
             noStatsWarning.setVisible(true);
         } else {
-            setupScreenController.setActualCharacter(writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText()));
-            stop();
+            try {
+                int attack = Integer.parseInt(newCharAtField.getCharacters().toString());
+                int parade = Integer.parseInt(newCharPaField.getCharacters().toString());
+                int shoot =  Integer.parseInt(newCharFkField.getCharacters().toString());
+                int initiative = Integer.parseInt(newCharAtField.getCharacters().toString());
+                setupScreenController.setActualCharacter(writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative));
+                stop();
+            } catch (NumberFormatException e) {
+                noStatsWarning.setVisible(true);
+                newCharAtField.clear();
+                newCharPaField.clear();
+                newCharFkField.clear();
+                newCharIniField.clear();
+            }
+
         }
     }
 
-    public void loadCharacter(ActionEvent actionEvent) {
+    public void loadCharacter() {
         setupScreenController.setActualCharacter(readFileService.loadCharacter(characterBox.getValue()));
         stop();
     }
 
     public boolean checkTextField(TextField field){
         return field.getText().length() == 0;
+    }
+
+    public int checkStatField(TextField field){
+       return 0;
     }
 
 

@@ -18,9 +18,9 @@ public class WriteFileService {
     public WriteFileService(){
     }
 
-    public Character saveNewCharacterAsFXM(String name) {
+    public Character saveNewCharacterAsFXM(String name, int attack, int parade, int shooting, int initiative) {
         createFolder();
-         return createFile(new Character(name,0,0,0,0, false, false,false));
+        return createFile(new Character(name,attack,parade,shooting,initiative));
     }
 
     public Character createFile(Character character){

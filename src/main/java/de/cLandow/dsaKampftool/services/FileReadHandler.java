@@ -13,9 +13,6 @@ public class FileReadHandler extends DefaultHandler {
     private int parade;
     private int fernkampf;
     private int initiative;
-    private boolean kampfreflexe;
-    private boolean kampfgespuehr;
-    private boolean beengt;
 
     StringBuilder nameBuilder = new StringBuilder();
 
@@ -25,7 +22,7 @@ public class FileReadHandler extends DefaultHandler {
 
     @Override
     public void endDocument(){
-        character = new Character(name, attacke, parade, fernkampf, initiative, kampfreflexe, kampfgespuehr, beengt);
+        character = new Character(name, attacke, parade, fernkampf, initiative);
     }
 
     @Override
@@ -41,15 +38,6 @@ public class FileReadHandler extends DefaultHandler {
         }
         if("Initiative".equals(qName)){
             initiative = Integer.parseInt(attributes.getValue("INI"));
-        }
-        if("Kampfreflexe".equals(qName)){
-            kampfreflexe = Boolean.parseBoolean(attributes.getValue("kmpfRef"));
-        }
-        if("Kampfgespuehr".equals(qName)){
-            kampfgespuehr = Boolean.parseBoolean(attributes.getValue("kmpfGesp"));
-        }
-        if("Beengt".equals(qName)){
-            beengt = Boolean.parseBoolean(attributes.getValue("beengt"));
         }
     }
 
