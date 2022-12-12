@@ -48,7 +48,7 @@
       <Circle fill="DODGERBLUE" layoutX="274.0" layoutY="586.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="294.0" layoutY="631.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="51.0" layoutY="92.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
-      <TabPane layoutX="424.0" layoutY="28.0" prefHeight="487.0" prefWidth="532.0" style="-fx-border-color: BLACK;" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="421.0" layoutY="118.0" prefHeight="487.0" prefWidth="532.0" style="-fx-border-color: BLACK;" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Nahkampf">
             <content>
@@ -62,18 +62,18 @@
           </Tab>
         </tabs>
       </TabPane>
-      <Text layoutX="424.0" layoutY="591.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patzer">
+      <Text layoutX="424.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patzer">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Text>
-      <ChoiceBox layoutX="424.0" layoutY="607.0" prefWidth="150.0" />
-      <Text layoutX="421.0" layoutY="683.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distanzklasse">
+      <ChoiceBox layoutX="421.0" layoutY="665.0" prefWidth="150.0" />
+      <Text layoutX="421.0" layoutY="724.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distanzklasse">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Text>
-      <ChoiceBox layoutX="424.0" layoutY="691.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="421.0" layoutY="737.0" prefWidth="150.0" />
       <Text fx:id="warnungText" layoutX="56.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: RED;" text="Es können nur Zahlen ausgewertet werden !" visible="false" wrappingWidth="323.0">
          <font>
             <Font size="16.0" />
@@ -84,5 +84,11 @@
       <Circle fill="DODGERBLUE" layoutX="253.0" layoutY="92.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="300.0" layoutY="92.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="345.0" layoutY="92.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="424.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SF Hinzufügen">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <ChoiceBox layoutX="543.0" layoutY="60.0" prefHeight="25.0" prefWidth="191.0" />
    </children>
 </AnchorPane>

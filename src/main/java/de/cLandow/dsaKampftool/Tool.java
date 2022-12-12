@@ -32,7 +32,6 @@ public class Tool extends Application {
 
     @Override
     public void stop() {
-
     }
 
     private void showSetupScreen() {
@@ -41,7 +40,8 @@ public class Tool extends Application {
         newestScene.getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");
         primaryStage.setScene(newestScene);
         primaryStage.centerOnScreen();
-        //primaryStage.setOnCloseRequest(event -> ));
     }
+
+    
 }
 

@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
 
@@ -10,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -23,6 +25,7 @@ public class SetupScreenController implements ScreenController{
     @FXML Label basePaLabel;
     @FXML Label baseFkLabel;
     @FXML Label baseIniLabel;
+    @FXML HBox menuBox;
 
     private final Tool tool;
     private final PrefService prefService;
@@ -30,6 +33,7 @@ public class SetupScreenController implements ScreenController{
     private CharacterLoadPopupController characterLoadPopupController;
     private Character actualCharacter;
     private CharacterScreenController characterScreenController;
+    private MenuController menuController;
 
     public SetupScreenController(Tool tool){
         this.tool = tool;
@@ -40,6 +44,8 @@ public class SetupScreenController implements ScreenController{
         if(actualCharacter == null) {
             callCharacterLoadPopup();
         }
+        menuController = new MenuController();
+        menuBox.getChildren().add(menuController.render());
     }
 
     @Override
