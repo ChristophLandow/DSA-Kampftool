@@ -5,7 +5,6 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.MenuController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="1200.0">
@@ -17,14 +16,14 @@
                         <MenuItem mnemonicParsing="false" text="Pfad" />
                      </items>
                   </Menu>
-                  <MenuItem mnemonicParsing="false" text="Verzeichnis bearbeiten" />
+                  <MenuItem mnemonicParsing="false" onAction="#editDirectory" text="Verzeichnis bearbeiten" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Charakter">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Neu" />
-                  <MenuItem mnemonicParsing="false" text="Bearbeiten" />
-                  <MenuItem mnemonicParsing="false" text="Löschen" />
+                  <MenuItem mnemonicParsing="false" onAction="#createNewChar" text="Neu" />
+                  <MenuItem mnemonicParsing="false" onAction="#editChar" text="Bearbeiten" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteChar" text="Löschen" />
                </items>
             </Menu>
          </menus>

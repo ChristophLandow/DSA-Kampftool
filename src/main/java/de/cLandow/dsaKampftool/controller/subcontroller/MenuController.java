@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.ScreenController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
@@ -35,5 +36,17 @@ public class MenuController implements ScreenController {
             return null;
         }
         return menuBarParent;
+    }
+
+    public void createNewChar(ActionEvent actionEvent) {
+    }
+
+    public void editChar(ActionEvent actionEvent) {
+    }
+
+    public void deleteChar(ActionEvent actionEvent) {
+    }
+
+    public void editDirectory(ActionEvent actionEvent) {
     }
 }
