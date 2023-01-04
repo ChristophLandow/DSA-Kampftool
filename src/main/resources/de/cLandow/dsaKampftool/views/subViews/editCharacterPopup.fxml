@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="800.0" styleClass="anchor_id" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController">
+   <children>
+      <Button layoutX="226.0" layoutY="389.0" mnemonicParsing="false" onAction="#createNewCharacter" prefHeight="46.0" prefWidth="123.0" text="Erstellen">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Text layoutX="226.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_id" text="Charakter : " wrappingWidth="142.25244140625">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="newCharacterNameField" layoutX="104.0" layoutY="133.0" prefHeight="35.0" prefWidth="296.0" promptText="Name" text="Anderer Name?">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Text fx:id="noNameWarning" fill="RED" layoutX="104.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht einen Namen...." wrappingWidth="265.13671875" />
+      <Button layoutX="463.0" layoutY="389.0" mnemonicParsing="false" onAction="#close" prefHeight="46.0" prefWidth="151.0" text="Abbrechen">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <TextField fx:id="newCharAtField" layoutX="104.0" layoutY="237.0" prefHeight="35.0" prefWidth="89.0" promptText="Base-At">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="newCharFkField" layoutX="287.0" layoutY="237.0" prefHeight="35.0" prefWidth="89.0" promptText="Base-Fk">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="newCharPaField" layoutX="104.0" layoutY="290.0" prefHeight="35.0" prefWidth="89.0" promptText="Base-Pa">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="newCharIniField" layoutX="287.0" layoutY="290.0" prefHeight="35.0" prefWidth="89.0" promptText="Base-Ini">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Circle fx:id="characterImageCircle" fill="WHITE" layoutX="679.0" layoutY="228.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="noStatsWarning" fill="RED" layoutX="104.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht At, Pa, Fk und Ini Basiswerte...." wrappingWidth="265.13671875" />
+      <Spinner fx:id="newCharacterProtraitSpinner" layoutX="480.0" layoutY="203.0" prefHeight="25.0" prefWidth="81.0" />
+      <Button layoutX="480.0" layoutY="242.0" mnemonicParsing="false" onAction="#uploadOwnPicture" prefHeight="25.0" prefWidth="81.0" text="Hochladen" />
+      <Text fx:id="characterNameText" layoutX="383.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="238.13671875">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

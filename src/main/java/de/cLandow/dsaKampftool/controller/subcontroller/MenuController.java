@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.ScreenController;
+import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,8 +11,10 @@ import java.io.IOException;
 
 public class MenuController implements ScreenController {
 
-    public MenuController(){
+    private final SetupScreenController setupScreenController;
 
+    public MenuController(SetupScreenController setupScreenController){
+        this.setupScreenController = setupScreenController;
     }
 
     @Override
@@ -39,6 +42,7 @@ public class MenuController implements ScreenController {
     }
 
     public void createNewChar(ActionEvent actionEvent) {
+        setupScreenController.callCharacterLoadPopup();
     }
 
     public void editChar(ActionEvent actionEvent) {

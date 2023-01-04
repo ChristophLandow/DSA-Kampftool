@@ -44,7 +44,7 @@ public class SetupScreenController implements ScreenController{
         if(actualCharacter == null) {
             callCharacterLoadPopup();
         }
-        menuController = new MenuController();
+        menuController = new MenuController(this);
         menuBox.getChildren().add(menuController.render());
     }
 
