@@ -85,7 +85,6 @@ public class SetupScreenController implements ScreenController{
 
     public void setActualCharacter(Character character){
         this.actualCharacter = character;
-        nameLabel.setText(actualCharacter.getName());
     }
 
     public Character getActualCharacter(){
@@ -107,7 +106,7 @@ public class SetupScreenController implements ScreenController{
         }
     }
 
-    public void loadStats(){
+    public void loadStats() {
         baseAtLabel.setText(Integer.toString(actualCharacter.getAt()));
         basePaLabel.setText(Integer.toString(actualCharacter.getPa()));
         baseFkLabel.setText(Integer.toString(actualCharacter.getFk()));

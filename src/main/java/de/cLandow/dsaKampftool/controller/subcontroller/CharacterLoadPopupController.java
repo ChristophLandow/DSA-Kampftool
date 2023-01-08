@@ -88,6 +88,7 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
                 int shoot =  Integer.parseInt(newCharFkField.getCharacters().toString());
                 int initiative = Integer.parseInt(newCharAtField.getCharacters().toString());
                 setupScreenController.setActualCharacter(writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative));
+                setupScreenController.loadStats();
                 stop();
             } catch (NumberFormatException e) {
                 noStatsWarning.setVisible(true);
@@ -101,6 +102,7 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
 
     public void loadCharacter() {
         setupScreenController.setActualCharacter(readFileService.loadCharacter(characterBox.getValue()));
+        setupScreenController.loadStats();
         stop();
     }
 

@@ -21,13 +21,6 @@ public class Tool extends Application {
         showSetupScreen();
         primaryStage.show();
         setupScreenController.init();
-        primaryStage.setOnCloseRequest(e -> {
-            if(setupScreenController.getActualCharacter() != null){
-                WriteFileService service = new WriteFileService();
-                service.createFile(setupScreenController.getActualCharacter());
-                primaryStage.close();
-            }
-        });
     }
 
     @Override
@@ -41,6 +34,7 @@ public class Tool extends Application {
         primaryStage.setScene(newestScene);
         primaryStage.centerOnScreen();
     }
+
 
     
 }
