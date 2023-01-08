@@ -40,7 +40,8 @@ public class EditCharacterController implements ScreenController {
         return characterEditParent;
     }
 
-    public void createNewCharacter(ActionEvent actionEvent) {
+    public void editCharacter(ActionEvent actionEvent) {
+
     }
 
     public void close(ActionEvent actionEvent) {

@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="800.0" styleClass="anchor_id" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.EditCharacterController">
    <children>
-      <Button layoutX="226.0" layoutY="389.0" mnemonicParsing="false" onAction="#createNewCharacter" prefHeight="46.0" prefWidth="123.0" text="Erstellen">
+      <Button layoutX="226.0" layoutY="389.0" mnemonicParsing="false" onAction="#editCharacter" prefHeight="46.0" prefWidth="123.0" text="Ändern">
          <font>
             <Font size="22.0" />
          </font>
