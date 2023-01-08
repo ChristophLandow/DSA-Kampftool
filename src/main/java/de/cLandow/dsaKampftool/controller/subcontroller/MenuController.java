@@ -6,15 +6,22 @@ import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MenuController implements ScreenController {
 
-    private final SetupScreenController setupScreenController;
 
-    public MenuController(SetupScreenController setupScreenController){
+    private final SetupScreenController setupScreenController;
+    private Stage popupStage;
+    private EditCharacterController editCharacterController;
+
+    public MenuController(SetupScreenController setupScreenController, Stage popupStage){
         this.setupScreenController = setupScreenController;
+        this.popupStage = popupStage;
     }
 
     @Override
@@ -46,11 +53,21 @@ public class MenuController implements ScreenController {
     }
 
     public void editChar(ActionEvent actionEvent) {
+        popupStage = new Stage();
+        popupStage.initModality(Modality.WINDOW_MODAL);
+        editCharacterController = new EditCharacterController(this.getSetupScreenController());
+        popupStage.setScene(new Scene(editCharacterController.render()));
+        editCharacterController.init();
+        popupStage.show();
     }
 
     public void deleteChar(ActionEvent actionEvent) {
     }
 
     public void editDirectory(ActionEvent actionEvent) {
+    }
+
+    public SetupScreenController getSetupScreenController() {
+        return setupScreenController;
     }
 }

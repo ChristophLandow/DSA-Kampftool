@@ -4,13 +4,33 @@ import de.cLandow.dsaKampftool.model.Character;
 
 public class CharacterService {
 
-    private Character character;
 
-    public Character getCharacter() {
+    public CharacterService(){
+    }
+
+    public Character createCharacter(String name, Integer at, Integer pa, Integer fk, Integer ini){
+        return new Character(name, at, pa, fk, ini);
+    }
+
+    public Character modifyNameOfCharacter(Character character, String newName){
+        character.setName(newName);
         return character;
     }
 
-    public void setCharacter(Character character) {
-        this.character = character;
+    public Character modifyAttackOfCharacter(Character character, Integer newAttack){
+        character.setAt(newAttack);
+        return character;
     }
+
+    public Character modifyParadeOfCharacter(Character character, Integer newParade){
+        character.setPa(newParade);
+        return character;
+    }
+
+    public Character modifyDistancefightingOfCharacter(Character character, Integer newDf){
+        character.setPa(newDf);
+        return character;
+    }
+
+
 }
