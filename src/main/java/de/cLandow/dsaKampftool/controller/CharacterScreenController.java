@@ -1,8 +1,6 @@
 package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -67,8 +65,8 @@ public class CharacterScreenController implements ScreenController{
         for(TextField field : behinderungKoerperzonen){
             field.textProperty().addListener((observable, oldValue, newValue) -> {
                 if(!field.getText().isEmpty()){
-                    if(field.getText().length() > 3){
-                        field.setText(field.getText().substring(0,3));
+                    if(field.getText().length() > 2){
+                        field.setText(field.getText().substring(0,2));
                     }
                     float testInput = 0;
                     try
@@ -91,7 +89,7 @@ public class CharacterScreenController implements ScreenController{
         return this.characterScreenParent;
     }
 
-    public int getAddedUpBehinderung(){
+    public int getSummBehinderung(){
         int result = 0;
         for(TextField field : behinderungKoerperzonen){
             if(field.getText().isEmpty()){

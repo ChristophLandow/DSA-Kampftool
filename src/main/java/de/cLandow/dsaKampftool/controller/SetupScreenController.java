@@ -2,14 +2,16 @@ package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -19,6 +21,11 @@ import java.io.IOException;
 public class SetupScreenController implements ScreenController{
     @FXML VBox screenBox;
     @FXML Label nameLabel;
+    @FXML Label baseAtLabel;
+    @FXML Label basePaLabel;
+    @FXML Label baseFkLabel;
+    @FXML Label baseIniLabel;
+    @FXML HBox menuBox;
 
     private final Tool tool;
     private final PrefService prefService;
@@ -26,7 +33,7 @@ public class SetupScreenController implements ScreenController{
     private CharacterLoadPopupController characterLoadPopupController;
     private Character actualCharacter;
     private CharacterScreenController characterScreenController;
-    private CloseCombatScreenController closeCombatScreenController;
+    private MenuController menuController;
 
     public SetupScreenController(Tool tool){
         this.tool = tool;
@@ -37,6 +44,8 @@ public class SetupScreenController implements ScreenController{
         if(actualCharacter == null) {
             callCharacterLoadPopup();
         }
+        menuController = new MenuController(this, popupStage);
+        menuBox.getChildren().add(menuController.render());
     }
 
     @Override
@@ -68,9 +77,14 @@ public class SetupScreenController implements ScreenController{
         popupStage.show();
     }
 
+    public void closeCharacterLoadPopup(){
+        this.getPopupStage().close();
+        loadStats();
+        openCharacterScreen();
+    }
+
     public void setActualCharacter(Character character){
         this.actualCharacter = character;
-        nameLabel.setText(actualCharacter.name());
     }
 
     public Character getActualCharacter(){
@@ -81,18 +95,7 @@ public class SetupScreenController implements ScreenController{
         return this.popupStage;
     }
 
-    public void openCloseCombatScreen(ActionEvent actionEvent) {
-        screenBox.getChildren().clear();
-        if (closeCombatScreenController == null) {
-            closeCombatScreenController = new CloseCombatScreenController(prefService, this);
-            screenBox.getChildren().add(closeCombatScreenController.render());
-            closeCombatScreenController.init();
-        } else {
-            screenBox.getChildren().add(closeCombatScreenController.getCombatScreenParent());
-        }
-    }
-
-    public void openCharacterScreen(ActionEvent actionEvent) {
+    public void openCharacterScreen() {
         screenBox.getChildren().clear();
         if (characterScreenController == null) {
             characterScreenController = new CharacterScreenController();
@@ -101,5 +104,12 @@ public class SetupScreenController implements ScreenController{
         } else {
             screenBox.getChildren().add(characterScreenController.getCharacterScreenParent());
         }
+    }
+
+    public void loadStats() {
+        baseAtLabel.setText(Integer.toString(actualCharacter.getAt()));
+        basePaLabel.setText(Integer.toString(actualCharacter.getPa()));
+        baseFkLabel.setText(Integer.toString(actualCharacter.getFk()));
+        baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
     }
 }
