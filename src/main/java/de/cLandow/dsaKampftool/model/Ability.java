@@ -2,7 +2,12 @@ package de.cLandow.dsaKampftool.model;
 
 public record Ability(
         String abilityName,
-        String modifiedStat,
-        int modificator
+
+        int attackModificator,
+        int paradeModificator,
+
+        int initiativeModificator,
+
+        String modifiedArmorPiece
 ) {
 }
