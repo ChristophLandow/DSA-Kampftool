@@ -36,6 +36,7 @@ public class SetupScreenController implements ScreenController{
     private CharacterScreenController characterScreenController;
     private MenuController menuController;
 
+
     public SetupScreenController(Tool tool){
         this.tool = tool;
         this.prefService = new PrefService();
