@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
+import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
 
@@ -34,6 +35,7 @@ public class SetupScreenController implements ScreenController{
     private Character actualCharacter;
     private CharacterScreenController characterScreenController;
     private MenuController menuController;
+
 
     public SetupScreenController(Tool tool){
         this.tool = tool;
@@ -87,6 +89,10 @@ public class SetupScreenController implements ScreenController{
         this.actualCharacter = character;
     }
 
+    public void loadCharacterName(){
+        nameLabel.setText(actualCharacter.getName());
+    }
+
     public Character getActualCharacter(){
         return this.actualCharacter;
     }
@@ -112,4 +118,6 @@ public class SetupScreenController implements ScreenController{
         baseFkLabel.setText(Integer.toString(actualCharacter.getFk()));
         baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
     }
+
+
 }

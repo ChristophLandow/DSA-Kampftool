@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.ScreenController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
+import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import de.cLandow.dsaKampftool.services.WriteFileService;
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -52,6 +54,7 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
 
     @Override
     public void stop() {
+        setupScreenController.loadCharacterName();
         setupScreenController.closeCharacterLoadPopup();
     }
 
@@ -101,7 +104,8 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
     }
 
     public void loadCharacter() {
-        setupScreenController.setActualCharacter(readFileService.loadCharacter(characterBox.getValue()));
+        Character character = readFileService.loadCharacter(characterBox.getValue());
+        setupScreenController.setActualCharacter(character);
         setupScreenController.loadStats();
         stop();
     }
