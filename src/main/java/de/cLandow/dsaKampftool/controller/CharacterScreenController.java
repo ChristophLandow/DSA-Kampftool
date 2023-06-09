@@ -1,9 +1,11 @@
 package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
+import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
@@ -20,13 +22,16 @@ public class CharacterScreenController implements ScreenController{
     @FXML TextField behinderungRueckenBox;
     @FXML TextField behinderungArmRechtsBox;
     @FXML TextField behinderungArmLinksBox;
+    @FXML ChoiceBox<String> specialAbilityChoiceBox;
     @FXML Text warnungText;
 
     private Parent characterScreenParent;
+
+    private SpecialAbilityController specialAbilityController;
     private final ArrayList<TextField> behinderungKoerperzonen = new ArrayList<>();
 
     public CharacterScreenController() {
-
+        loadSpecialAblilitys();
     }
 
     @Override
@@ -99,5 +104,9 @@ public class CharacterScreenController implements ScreenController{
             }
         }
         return  result;
+    }
+
+    public void loadSpecialAblilitys(){
+        specialAbilityController = new SpecialAbilityController(specialAbilityChoiceBox);
     }
 }

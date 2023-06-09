@@ -1,12 +1,10 @@
 package de.cLandow.dsaKampftool;
 
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
-import de.cLandow.dsaKampftool.services.WriteFileService;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
+
 
 public class Tool extends Application {
 
