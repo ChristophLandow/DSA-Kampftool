@@ -1,14 +1,19 @@
 package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
-import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityController;
+import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,15 +29,14 @@ public class CharacterScreenController implements ScreenController{
     @FXML TextField behinderungArmRechtsBox;
     @FXML TextField behinderungArmLinksBox;
     @FXML Text warnungText;
-    @FXML HBox specialAbilityBox;
+    @FXML Button addSpecialAbilityButton;
 
     private Parent characterScreenParent;
 
-    private final SpecialAbilityController specialAbilityController;
+    private Stage popupStage;
     private final ArrayList<TextField> behinderungKoerperzonen = new ArrayList<>();
 
     public CharacterScreenController() {
-        specialAbilityController = new SpecialAbilityController();
     }
 
     @Override
@@ -46,8 +50,7 @@ public class CharacterScreenController implements ScreenController{
         behinderungKoerperzonen.add(behinderungRueckenBox);
         behinderungKoerperzonen.add(behinderungBauchBox);
         setListenertoBehinderungsliste();
-        specialAbilityBox.getChildren().add(specialAbilityController.render());
-        specialAbilityController.init();
+
     }
 
     @Override
@@ -107,5 +110,22 @@ public class CharacterScreenController implements ScreenController{
             }
         }
         return  result;
+    }
+
+    public void openAddSpecialAbilityPopup(ActionEvent actionEvent) {
+        popupStage = new Stage();
+        popupStage.initModality(Modality.WINDOW_MODAL);
+        SpecialAbilityPopupController specialAbilityPopupController = new SpecialAbilityPopupController(this);
+        popupStage.setScene(new Scene(specialAbilityPopupController.render()));
+        specialAbilityPopupController.init();
+        popupStage.show();
+    }
+
+    public void closeAddSpecialAbilityPopup(){
+        this.getPopupStage().close();
+    }
+
+    public Stage getPopupStage(){
+        return this.popupStage;
     }
 }
