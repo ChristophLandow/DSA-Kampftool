@@ -4,16 +4,19 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.ScreenController;
 import de.cLandow.dsaKampftool.model.Ability;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class SpecialAbilityPopupController implements ScreenController {
+
+    @FXML ListView<String> abilityListView = new ListView<>();
 
     private final CharacterScreenController characterScreenController;
 
@@ -21,6 +24,7 @@ public class SpecialAbilityPopupController implements ScreenController {
 
     public  SpecialAbilityPopupController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
+        abilityListView.setEditable(false);
     }
 
     @Override
@@ -46,15 +50,19 @@ public class SpecialAbilityPopupController implements ScreenController {
         return parent;
     }
 
-    private void loadSpecialAbilityList() {
-        specialAbilityList.add(new Ability("Kampfreflexe",0,0,4,
-                ""));
-    }
-
     public void closeAddSpecialAbilityPopup(ActionEvent actionEvent) {
         characterScreenController.closeAddSpecialAbilityPopup();
     }
 
     public void addSpecialAbilityToHero(ActionEvent actionEvent) {
+        ObservableList<String> auswahl = abilityListView.getSelectionModel().getSelectedItems();
     }
+
+    private void loadSpecialAbilityList() {
+        specialAbilityList.add(new Ability("Kampfreflexe",0,0,4,
+                ""));
+        abilityListView.getItems().add("Kampfreflexe");
+    }
+
+
 }
