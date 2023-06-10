@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class SpecialAbilityPopupController implements ScreenController {
 
-    @FXML ListView<String> abilityListView;
+    @FXML ListView<String> abilityListView = new ListView<>();
 
     private final CharacterScreenController characterScreenController;
 
