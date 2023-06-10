@@ -13,6 +13,9 @@ import java.util.ArrayList;
 
 public class SpecialAbilityController implements ScreenController {
 
+    //TODO: Daas Hinzufügen neuer Sonderfertigkeiten ist so nervig, am besten Popup Fenster machen mit dem man aus einer
+    // Liste alle auswählen kann und gut
+
     @FXML ChoiceBox<String> specialAbilityChoiceBox;
 
     private final ArrayList<Ability> specialAbilityList = new ArrayList<>();
