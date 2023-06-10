@@ -11,7 +11,7 @@ import javafx.scene.control.ChoiceBox;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class SpecialAbilityController implements ScreenController {
+public class SpecialAbilityPopupController implements ScreenController {
 
     //TODO: Daas Hinzufügen neuer Sonderfertigkeiten ist so nervig, am besten Popup Fenster machen mit dem man aus einer
     // Liste alle auswählen kann und gut
@@ -20,7 +20,7 @@ public class SpecialAbilityController implements ScreenController {
 
     private final ArrayList<Ability> specialAbilityList = new ArrayList<>();
 
-    public  SpecialAbilityController(){
+    public  SpecialAbilityPopupController(){
 
     }
 

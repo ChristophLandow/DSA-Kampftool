@@ -3,7 +3,7 @@ package de.cLandow.dsaKampftool.controller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
-import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityController;
+import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
 

@@ -1,7 +1,7 @@
 package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
-import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityController;
+import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,11 +28,11 @@ public class CharacterScreenController implements ScreenController{
 
     private Parent characterScreenParent;
 
-    private final SpecialAbilityController specialAbilityController;
+    private final SpecialAbilityPopupController specialAbilityController;
     private final ArrayList<TextField> behinderungKoerperzonen = new ArrayList<>();
 
     public CharacterScreenController() {
-        specialAbilityController = new SpecialAbilityController();
+        specialAbilityController = new SpecialAbilityPopupController();
     }
 
     @Override
