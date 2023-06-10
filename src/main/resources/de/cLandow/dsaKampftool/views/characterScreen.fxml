@@ -85,6 +85,6 @@
       <Circle fill="DODGERBLUE" layoutX="253.0" layoutY="92.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="300.0" layoutY="92.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="345.0" layoutY="92.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button fx:id="addSpecialAbilityButton" layoutX="423.0" layoutY="34.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="179.0" text="Sonderfertigkeit hinzufügen" />
+      <Button fx:id="addSpecialAbilityButton" layoutX="423.0" layoutY="34.0" mnemonicParsing="false" onAction="#openAddSpecialAbilityPopup" prefHeight="51.0" prefWidth="179.0" text="Sonderfertigkeit hinzufügen" />
    </children>
 </AnchorPane>
