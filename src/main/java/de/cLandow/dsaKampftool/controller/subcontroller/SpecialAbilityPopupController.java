@@ -46,15 +46,17 @@ public class SpecialAbilityPopupController implements ScreenController {
         return parent;
     }
 
-    private void loadSpecialAbilityList() {
-        specialAbilityList.add(new Ability("Kampfreflexe",0,0,4,
-                ""));
-    }
-
     public void closeAddSpecialAbilityPopup(ActionEvent actionEvent) {
         characterScreenController.closeAddSpecialAbilityPopup();
     }
 
     public void addSpecialAbilityToHero(ActionEvent actionEvent) {
     }
+
+    private void loadSpecialAbilityList() {
+        specialAbilityList.add(new Ability("Kampfreflexe",0,0,4,
+                ""));
+    }
+
+
 }

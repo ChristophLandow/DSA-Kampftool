@@ -29,19 +29,15 @@ public class FileReadHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         if ("Attacke".equals(qName)) {
             attacke = Integer.parseInt(attributes.getValue("AT"));
-            System.out.println("at");
         }
         if ("Parade".equals(qName)) {
             parade = Integer.parseInt(attributes.getValue("PA"));
-            System.out.println("pa");
         }
         if ("Fernkampf".equals(qName)) {
             fernkampf = Integer.parseInt(attributes.getValue("FK"));
-            System.out.println("fk");
         }
         if("Initiative".equals(qName)){
             initiative = Integer.parseInt(attributes.getValue("INI"));
-            System.out.println("ini");
         }
     }
 
