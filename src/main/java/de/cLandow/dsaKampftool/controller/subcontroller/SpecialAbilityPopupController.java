@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -63,6 +64,4 @@ public class SpecialAbilityPopupController implements ScreenController {
                 ""));
         abilityListView.getItems().add("Kampfreflexe");
     }
-
-
 }
