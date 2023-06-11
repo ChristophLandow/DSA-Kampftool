@@ -52,7 +52,7 @@ public class SpecialAbilityPopupController implements ScreenController {
     }
 
     public void closeAddSpecialAbilityPopup(ActionEvent actionEvent) {
-        characterScreenController.closeAddSpecialAbilityPopup();
+        characterScreenController.closePopup();
     }
 
     public void addSpecialAbilityToHero(ActionEvent actionEvent) {

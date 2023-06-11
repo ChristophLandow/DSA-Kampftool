@@ -1,6 +1,7 @@
 package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
+import de.cLandow.dsaKampftool.controller.subcontroller.AddGearPopupController;
 import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -110,6 +111,7 @@ public class CharacterScreenController implements ScreenController{
     }
 
     public void openAddSpecialAbilityPopup(ActionEvent actionEvent) {
+        closePopup();
         popupStage = new Stage();
         popupStage.initModality(Modality.WINDOW_MODAL);
         SpecialAbilityPopupController specialAbilityPopupController = new SpecialAbilityPopupController(this);
@@ -118,8 +120,10 @@ public class CharacterScreenController implements ScreenController{
         popupStage.show();
     }
 
-    public void closeAddSpecialAbilityPopup(){
-        this.getPopupStage().close();
+    public void closePopup(){
+        if(popupStage != null){
+            popupStage.close();
+        }
     }
 
     public Stage getPopupStage(){
@@ -127,5 +131,13 @@ public class CharacterScreenController implements ScreenController{
     }
 
     public void openAddGearPopup(ActionEvent actionEvent) {
+        closePopup();
+        popupStage = new Stage();
+        popupStage.initModality(Modality.WINDOW_MODAL);
+        AddGearPopupController addGearPopupController = new AddGearPopupController(this);
+        popupStage.setScene(new Scene(addGearPopupController.render()));
+        addGearPopupController.init();
+        popupStage.show();
     }
+
 }
