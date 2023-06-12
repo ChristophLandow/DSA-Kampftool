@@ -33,6 +33,8 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
     @FXML TextField newCharIniField;
     @FXML Text noNameWarning;
     @FXML Text noStatsWarning;
+    @FXML TextField newCharEnduranceField;
+    @FXML TextField newCharLifepointsField;
 
 
     private ArrayList<String> characterNames = new ArrayList<>();
