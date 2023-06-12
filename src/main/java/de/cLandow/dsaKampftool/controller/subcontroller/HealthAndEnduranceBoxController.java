@@ -16,8 +16,6 @@ public class HealthAndEnduranceBoxController implements ScreenController {
     @FXML Spinner<Integer> healthPointsCounter;
     @FXML Spinner<Integer> endurancePointsCounter;
 
-    SpinnerValueFactory<Integer> healthSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,1000,1);
-    SpinnerValueFactory<Integer> enduranceSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,1000,1);
 
     private final CharacterScreenController characterScreenController;
 
@@ -27,8 +25,11 @@ public class HealthAndEnduranceBoxController implements ScreenController {
     }
     @Override
     public void init() {
+        SpinnerValueFactory<Integer> healthSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,1000,characterScreenController.getActualCharacter().getLp());
+        SpinnerValueFactory<Integer> enduranceSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(1,1000,characterScreenController.getActualCharacter().getAup());
         healthPointsCounter.setValueFactory(healthSpinner);
         endurancePointsCounter.setValueFactory(enduranceSpinner);
+
     }
 
     @Override

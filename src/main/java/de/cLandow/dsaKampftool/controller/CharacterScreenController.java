@@ -4,6 +4,7 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.AddGearPopupController;
 import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
+import de.cLandow.dsaKampftool.model.Character;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,11 +33,13 @@ public class CharacterScreenController implements ScreenController{
     @FXML HBox healthAndEnduranceBox;
 
     private Parent characterScreenParent;
+    private Character actualCharacter;
     private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private Stage popupStage;
     private final ArrayList<TextField> behinderungKoerperzonen = new ArrayList<>();
 
-    public CharacterScreenController() {
+    public CharacterScreenController(Character actualCharacter) {
+        this.actualCharacter = actualCharacter;
         this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(this);
     }
 
@@ -131,6 +134,10 @@ public class CharacterScreenController implements ScreenController{
 
     public Stage getPopupStage(){
         return this.popupStage;
+    }
+
+    public Character getActualCharacter() {
+        return actualCharacter;
     }
 
     public void openAddGearPopup(ActionEvent actionEvent) {

@@ -45,7 +45,7 @@ public class FileReadHandler extends DefaultHandler {
             lifePoints = Integer.parseInt(attributes.getValue("LP"));
         }
         if("Ausdauerpunkte".equals(qName)){
-            lifePoints = Integer.parseInt(attributes.getValue("AUP"));
+            endurancePoints = Integer.parseInt(attributes.getValue("AUP"));
         }
     }
 

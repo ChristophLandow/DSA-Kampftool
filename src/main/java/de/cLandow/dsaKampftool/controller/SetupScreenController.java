@@ -104,7 +104,7 @@ public class SetupScreenController implements ScreenController{
     public void openCharacterScreen() {
         screenBox.getChildren().clear();
         if (characterScreenController == null) {
-            characterScreenController = new CharacterScreenController();
+            characterScreenController = new CharacterScreenController(actualCharacter);
             screenBox.getChildren().add(characterScreenController.render());
             characterScreenController.init();
         } else {
