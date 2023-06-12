@@ -7,14 +7,18 @@ public class Character {
     private int pa;
     private int fk;
     private int ini;
+    private int lp;
+    private int aup;
 
 
-    public Character(String name, int at, int pa, int fk, int ini){
+    public Character(String name, int at, int pa, int fk, int ini, int lp, int aup){
         this.name = name;
         this.at = at;
         this.pa = pa;
         this.fk = fk;
         this.ini = ini;
+        this.lp = lp;
+        this.aup = aup;
     }
 
     public String getName() {
@@ -35,6 +39,13 @@ public class Character {
 
     public int getIni() {
         return ini;
+    }
+    public int getAup() {
+        return aup;
+    }
+
+    public int getLp() {
+        return lp;
     }
 
     public void setName(String name) {
@@ -57,4 +68,11 @@ public class Character {
         this.ini = ini;
     }
 
+    public void setAup(int aup) {
+        this.aup = aup;
+    }
+
+    public void setLp(int lp) {
+        this.lp = lp;
+    }
 }

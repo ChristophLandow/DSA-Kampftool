@@ -13,6 +13,8 @@ public class FileReadHandler extends DefaultHandler {
     private int parade;
     private int fernkampf;
     private int initiative;
+    private int lifePoints;
+    private int endurancePoints;
 
     StringBuilder nameBuilder = new StringBuilder();
 
@@ -22,7 +24,7 @@ public class FileReadHandler extends DefaultHandler {
 
     @Override
     public void endDocument(){
-        character = new Character(name, attacke, parade, fernkampf, initiative);
+        character = new Character(name, attacke, parade, fernkampf, initiative, lifePoints, endurancePoints);
     }
 
     @Override
@@ -38,6 +40,12 @@ public class FileReadHandler extends DefaultHandler {
         }
         if("Initiative".equals(qName)){
             initiative = Integer.parseInt(attributes.getValue("INI"));
+        }
+        if("Lebenspunkte".equals(qName)){
+            lifePoints = Integer.parseInt(attributes.getValue("LP"));
+        }
+        if("Ausdauerpunkte".equals(qName)){
+            lifePoints = Integer.parseInt(attributes.getValue("AUP"));
         }
     }
 
