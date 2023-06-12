@@ -92,7 +92,9 @@ public class CharacterLoadPopupController implements ScreenController, Initializ
                 int parade = Integer.parseInt(newCharPaField.getCharacters().toString());
                 int shoot =  Integer.parseInt(newCharFkField.getCharacters().toString());
                 int initiative = Integer.parseInt(newCharAtField.getCharacters().toString());
-                setupScreenController.setActualCharacter(writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative));
+                int lifePoints = Integer.parseInt(newCharLifepointsField.getCharacters().toString());
+                int endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
+                setupScreenController.setActualCharacter(writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints));
                 setupScreenController.loadStats();
                 stop();
             } catch (NumberFormatException e) {
