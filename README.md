@@ -27,13 +27,12 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#changelog">Changelog</a></li>
   </ol>
 </details>
 
 
 <!-- WAS SOLL DAS HIER SEIN -->
-<div id="Was-soll-das-hier-sein"></div>
+<div id="Was-soll-das-hier-sein?"></div>
 
 ## Was soll das hier sein ?
 <br>
@@ -57,9 +56,8 @@ Das Kampftool soll dem Spieler die Möglichkeit geben einen Charakter anzulegen,
 
 ## Aller Anfang....
 
-Um das Tool benutzen zu können muss Java installiert sein. Das Tool funktioniert nur unter Windows, an einer Apple Unterstützung wird gearbeitet.
-Das Tool legt im Heimverzeichnis (also unter Windows in C:\Users\user) einen Ordner "DSA4.1 Kampftool" an in dem die angelegten Charaktere gespeichert werden. Der Speicherort lässt sich nicht ändern.
-
+Um das Tool benutzen zu können, muss Java installiert/aktualisiert sein. Das Programm muss .xml Dateien in einem Verzeichnis speichern können, der Speicherort ist jedoch 
+frei wählbar und kann im Nachhinein geändert werden. 
 
 <div id="prerequisites"></div>
   https://www.oracle.com/java/technologies/downloads/#java17
@@ -68,7 +66,7 @@ Das Tool legt im Heimverzeichnis (also unter Windows in C:\Users\user) einen Ord
 
 ### Das Tool nutzen
 
-Sobald Version 1.0 fertig gestellt ist, wird hier eine Anleitung gegeben werden. 
+Sobald die Beta fertiggestellt ist, wird es hier präziser...
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
 
@@ -76,6 +74,8 @@ Sobald Version 1.0 fertig gestellt ist, wird hier eine Anleitung gegeben werden.
 
 <!-- USAGE EXAMPLES -->
 ## Anleitung
+
+Sobald die Beta fertiggestellt ist, wird es hier präziser...
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
 
@@ -85,40 +85,21 @@ Sobald Version 1.0 fertig gestellt ist, wird hier eine Anleitung gegeben werden.
 
 ## Roadmap
 
-- [X] Models anlegen
-  - [X] Nahkampfwaffen
-  - [X] Rüstung
-  - [X] Fernkampfwaffen
-  - [ ] Schilde
-  - [ ] Parierwaffen
-  - [X] Charakter
-- [ ] FXMLs anlegen
-  - [X] MainSetup.fxml
-  - [ ] ClosedCombatScreen.fxml
-  - [ ] RangedCombat.fxml
-  - [ ] ParryWeapons.fxml
-  - [ ] Shields.fxml
-- [X] Launcher.java anlegen
-- [X] Tool.java anlegen
-- [X] globals CSS-File anlegen
-- [X] Services
-  - [X] Daten in .xml speichern
-  - [X] Daten aus .xml lesen
-  - [X] Preferences speichern/lesen
+ - [ ] Basisprogramm vollständig
+   - [X] Charakter kann mit Grundwerten angelegt werden
+   - [X] Charakter kann als .xml gespeichert werden
+   - [X] Charakter kann aus .xml geladen werden
+   - [ ] Charakter verfügt über Lebenspunkte und Ausdauer (inklusive Schwellenwerte)
+   - [ ] Charakter kann mit Sonderfertigkeiten versehen werden
+   - [ ] Charakter kann mit Ausrüstung versehen werden
+   - [ ] Kampf ausführbar
+ - [ ] Basisprogramm ausführbar unter Windows 10/11
+ - [ ] Ansprechende UI 
+ - [ ] Websocket basierte Kommunikation zwischen Programmen
+ - [ ] Programm ausführbar unter Apple und Linux
 
 
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
 
-
-<div id="changelog"></div>
-<!-- CHANGELOG -->
-
-## Changelog
-
-- Version 0.1
-  - grundliegende Funktionalität
-
-
-<p style="text-align: right;">(<a href="#top">back to top</a>)</p>
 
