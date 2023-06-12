@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.AddGearPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,15 +33,18 @@ public class CharacterScreenController implements ScreenController{
     @FXML HBox healthAndEnduranceBox;
 
     private Parent characterScreenParent;
-
+    private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private Stage popupStage;
     private final ArrayList<TextField> behinderungKoerperzonen = new ArrayList<>();
 
     public CharacterScreenController() {
+        this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(this);
     }
 
     @Override
     public void init() {
+        healthAndEnduranceBox.getChildren().add(healthAndEnduranceBoxController.render());
+        healthAndEnduranceBoxController.init();
         behinderungKoerperzonen.add(armor_encumbrance_leftArm);
         behinderungKoerperzonen.add(armor_encumbrance_rightArm);
         behinderungKoerperzonen.add(armor_encumbrance_leftLeg);

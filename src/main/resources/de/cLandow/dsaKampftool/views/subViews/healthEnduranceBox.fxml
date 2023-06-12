@@ -5,20 +5,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="healthEnduranceBoxAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lebenspunkte : ">
+      <Text layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lebenspunkte : ">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Spinner fx:id="healthPointsCounter" layoutX="134.0" layoutY="18.0" prefHeight="25.0" prefWidth="83.0" />
-      <Text layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ausdauer : ">
+      <Spinner fx:id="healthPointsCounter" layoutX="134.0" layoutY="43.0" prefHeight="25.0" prefWidth="83.0" />
+      <Text layoutX="14.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ausdauer : ">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Spinner fx:id="endurancePointsCounter" layoutX="134.0" layoutY="65.0" prefHeight="25.0" prefWidth="83.0" />
+      <Spinner fx:id="endurancePointsCounter" layoutX="134.0" layoutY="77.0" prefHeight="25.0" prefWidth="83.0" />
    </children>
 </AnchorPane>
