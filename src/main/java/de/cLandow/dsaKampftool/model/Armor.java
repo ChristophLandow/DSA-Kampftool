@@ -5,11 +5,18 @@ public record Armor(
         int kopf,
         int brust,
         int ruecken,
+
+        int bauch,
         int arm_l,
         int arm_r,
         int bein_l,
         int bein_r,
-        int gRS,
-        int gBE
+        double gRS,
+        double gBE,
+
+        int gewicht
 ){
+    public String toString(){
+        return name;
+    }
 }

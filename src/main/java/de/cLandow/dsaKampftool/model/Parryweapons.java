@@ -1,6 +1,6 @@
 package de.cLandow.dsaKampftool.model;
 
-public record Parryweapons(
+public record Parryweapons (
         String name,
         String tp,
         String tpkk,
