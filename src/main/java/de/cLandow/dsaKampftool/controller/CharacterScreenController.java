@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
@@ -21,14 +22,14 @@ import java.util.ArrayList;
 
 public class CharacterScreenController implements ScreenController{
 
-    @FXML TextField armor_encumbrance_rightArm;
-    @FXML TextField armor_encumbrance_tummy;
-    @FXML TextField armor_encumbrance_leftArm;
-    @FXML TextField armor_encumbrance_rightLeg;
-    @FXML TextField armor_encumbrance_leftLeg;
-    @FXML TextField armor_encumbrance_backside;
-    @FXML TextField armor_encumbrance_chest;
-    @FXML TextField armor_encumbrance_head;
+    @FXML Label armor_encumbrance_rightArm_Label;
+    @FXML Label armor_encumbrance_leftLeg_label;
+    @FXML Label armor_encumbrance_tummy_label;
+    @FXML Label armor_encumbrance_leftArm_label;
+    @FXML Label armor_encumbrance_rightArm_label;
+    @FXML Label armor_encumbrance_chest_label;
+    @FXML Label armor_encumbrance_backside_label;
+    @FXML Label armor_encumbrance_head_label;
     @FXML Button addSpecialAbilityButton;
     @FXML HBox healthAndEnduranceBox;
 
@@ -47,14 +48,6 @@ public class CharacterScreenController implements ScreenController{
     public void init() {
         healthAndEnduranceBox.getChildren().add(healthAndEnduranceBoxController.render());
         healthAndEnduranceBoxController.init();
-        behinderungKoerperzonen.add(armor_encumbrance_leftArm);
-        behinderungKoerperzonen.add(armor_encumbrance_rightArm);
-        behinderungKoerperzonen.add(armor_encumbrance_leftLeg);
-        behinderungKoerperzonen.add(armor_encumbrance_rightLeg);
-        behinderungKoerperzonen.add(armor_encumbrance_head);
-        behinderungKoerperzonen.add(armor_encumbrance_chest);
-        behinderungKoerperzonen.add(armor_encumbrance_backside);
-        behinderungKoerperzonen.add(armor_encumbrance_tummy);
         setListenertoBehinderungsliste();
 
     }
