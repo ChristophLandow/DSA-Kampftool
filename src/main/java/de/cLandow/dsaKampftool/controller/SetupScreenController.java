@@ -3,7 +3,6 @@ package de.cLandow.dsaKampftool.controller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
-import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
 
@@ -26,6 +25,8 @@ public class SetupScreenController implements ScreenController{
     @FXML Label basePaLabel;
     @FXML Label baseFkLabel;
     @FXML Label baseIniLabel;
+    @FXML Label baseAupLabel;
+    @FXML Label baseLepLabel;
     @FXML HBox menuBox;
 
     private final Tool tool;
@@ -117,6 +118,8 @@ public class SetupScreenController implements ScreenController{
         basePaLabel.setText(Integer.toString(actualCharacter.getPa()));
         baseFkLabel.setText(Integer.toString(actualCharacter.getFk()));
         baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
+        baseAupLabel.setText(Integer.toString(actualCharacter.getAup()));
+        baseLepLabel.setText(Integer.toString(actualCharacter.getLp()));
     }
 
 

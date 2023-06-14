@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
@@ -21,14 +22,14 @@ import java.util.ArrayList;
 
 public class CharacterScreenController implements ScreenController{
 
-    @FXML TextField armor_encumbrance_rightArm;
-    @FXML TextField armor_encumbrance_tummy;
-    @FXML TextField armor_encumbrance_leftArm;
-    @FXML TextField armor_encumbrance_rightLeg;
-    @FXML TextField armor_encumbrance_leftLeg;
-    @FXML TextField armor_encumbrance_backside;
-    @FXML TextField armor_encumbrance_chest;
-    @FXML TextField armor_encumbrance_head;
+    @FXML Label armor_encumbrance_rightArm_Label;
+    @FXML Label armor_encumbrance_leftLeg_label;
+    @FXML Label armor_encumbrance_tummy_label;
+    @FXML Label armor_encumbrance_leftArm_label;
+    @FXML Label armor_encumbrance_rightArm_label;
+    @FXML Label armor_encumbrance_chest_label;
+    @FXML Label armor_encumbrance_backside_label;
+    @FXML Label armor_encumbrance_head_label;
     @FXML Button addSpecialAbilityButton;
     @FXML HBox healthAndEnduranceBox;
 
@@ -36,7 +37,6 @@ public class CharacterScreenController implements ScreenController{
     private Character actualCharacter;
     private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private Stage popupStage;
-    private final ArrayList<TextField> behinderungKoerperzonen = new ArrayList<>();
 
     public CharacterScreenController(Character actualCharacter) {
         this.actualCharacter = actualCharacter;
@@ -47,15 +47,6 @@ public class CharacterScreenController implements ScreenController{
     public void init() {
         healthAndEnduranceBox.getChildren().add(healthAndEnduranceBoxController.render());
         healthAndEnduranceBoxController.init();
-        behinderungKoerperzonen.add(armor_encumbrance_leftArm);
-        behinderungKoerperzonen.add(armor_encumbrance_rightArm);
-        behinderungKoerperzonen.add(armor_encumbrance_leftLeg);
-        behinderungKoerperzonen.add(armor_encumbrance_rightLeg);
-        behinderungKoerperzonen.add(armor_encumbrance_head);
-        behinderungKoerperzonen.add(armor_encumbrance_chest);
-        behinderungKoerperzonen.add(armor_encumbrance_backside);
-        behinderungKoerperzonen.add(armor_encumbrance_tummy);
-        setListenertoBehinderungsliste();
 
     }
 
@@ -78,42 +69,8 @@ public class CharacterScreenController implements ScreenController{
         return parent;
     }
 
-    private void setListenertoBehinderungsliste(){
-        for(TextField field : behinderungKoerperzonen){
-            field.textProperty().addListener((observable, oldValue, newValue) -> {
-                if(!field.getText().isEmpty()){
-                    if(field.getText().length() > 2){
-                        field.setText(field.getText().substring(0,2));
-                    }
-                    float testInput = 0;
-                    try
-                    {
-                        testInput = Float.parseFloat(field.getText());
-
-                    }
-                    catch (NumberFormatException e)
-                    {
-                        field.clear();
-                    }
-                }
-            });
-        }
-    }
-
     public Parent getCharacterScreenParent() {
         return this.characterScreenParent;
-    }
-
-    public int getSummBehinderung(){
-        int result = 0;
-        for(TextField field : behinderungKoerperzonen){
-            if(field.getText().isEmpty()){
-                result += 0;
-            } else {
-                result += Integer.parseInt(field.getText());
-            }
-        }
-        return  result;
     }
 
     public void openAddSpecialAbilityPopup(ActionEvent actionEvent) {

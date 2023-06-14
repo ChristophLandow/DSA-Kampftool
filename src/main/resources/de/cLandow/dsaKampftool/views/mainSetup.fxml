@@ -58,5 +58,25 @@
          </font>
       </Text>
       <HBox fx:id="menuBox" layoutY="2.0" prefHeight="25.0" prefWidth="1200.0" />
+      <Text layoutX="40.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max-LeP : ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="40.0" layoutY="591.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max-AuP : ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="baseLepLabel" alignment="CENTER" layoutX="144.0" layoutY="519.0" prefHeight="30.0" prefWidth="50.0" text="0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="baseAupLabel" alignment="CENTER" layoutX="144.0" layoutY="569.0" prefHeight="30.0" prefWidth="50.0" text="0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
