@@ -26,18 +26,18 @@
       <Circle fill="DODGERBLUE" layoutX="187.0" layoutY="293.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="241.0" layoutY="293.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="214.0" layoutY="292.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="329.0" layoutY="404.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="328.0" layoutY="404.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="312.0" layoutY="367.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="295.0" layoutY="332.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="154.0" layoutY="334.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="126.0" layoutY="361.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="97.0" layoutY="390.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="97.0" layoutY="389.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="175.0" layoutY="423.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="203.0" layoutY="423.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="229.0" layoutY="423.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="169.0" layoutY="542.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="162.0" layoutY="585.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fill="DODGERBLUE" layoutX="155.0" layoutY="631.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="DODGERBLUE" layoutX="155.0" layoutY="630.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="255.0" layoutY="541.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="274.0" layoutY="586.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="DODGERBLUE" layoutX="294.0" layoutY="631.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
@@ -78,5 +78,17 @@
       <Label fx:id="armor_encumbrance_chest_label" layoutX="182.0" layoutY="316.0" prefHeight="25.0" prefWidth="30.0" />
       <Label fx:id="armor_encumbrance_backside_label" layoutX="217.0" layoutY="316.0" prefHeight="25.0" prefWidth="30.0" />
       <Label fx:id="armor_encumbrance_head_label" layoutX="210.0" layoutY="220.0" prefHeight="25.0" prefWidth="30.0" />
+      <ChoiceBox layoutX="591.0" layoutY="667.0" prefWidth="150.0" />
+      <Text layoutX="591.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Umgebung">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <ChoiceBox layoutX="591.0" layoutY="737.0" prefWidth="150.0" />
+      <Text layoutX="591.0" layoutY="723.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lichtverhältnisse">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
