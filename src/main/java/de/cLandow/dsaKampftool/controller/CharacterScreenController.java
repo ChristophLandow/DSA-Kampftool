@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.AddGearPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.CharModelController;
 import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
 import de.cLandow.dsaKampftool.model.Character;
@@ -10,45 +11,43 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class CharacterScreenController implements ScreenController{
 
-    @FXML Label armor_encumbrance_rightArm_Label;
-    @FXML Label armor_encumbrance_leftLeg_label;
-    @FXML Label armor_encumbrance_tummy_label;
-    @FXML Label armor_encumbrance_leftArm_label;
-    @FXML Label armor_encumbrance_rightArm_label;
-    @FXML Label armor_encumbrance_chest_label;
-    @FXML Label armor_encumbrance_backside_label;
-    @FXML Label armor_encumbrance_head_label;
+    @FXML HBox charModelHBox;
     @FXML Button addSpecialAbilityButton;
     @FXML HBox healthAndEnduranceBox;
 
     private Parent characterScreenParent;
     private Character actualCharacter;
     private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
+    private final CharModelController charModelController;
     private Stage popupStage;
+    private ToggleGroup rightArm_toggleGroup = new ToggleGroup();
 
     public CharacterScreenController(Character actualCharacter) {
         this.actualCharacter = actualCharacter;
         this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(this);
+        this.charModelController = new CharModelController(this);
     }
 
     @Override
     public void init() {
+        //load healthAndEndurance HBox
         healthAndEnduranceBox.getChildren().add(healthAndEnduranceBoxController.render());
         healthAndEnduranceBoxController.init();
-
+        //load charModel HBox
+        charModelHBox.getChildren().add(charModelController.render());
+        charModelController.init();
     }
+
+
 
     @Override
     public void stop() {
