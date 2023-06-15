@@ -19,7 +19,6 @@ public class CharacterScreenController implements RenderController {
 
     @FXML HBox tabPaneHBox;
     @FXML HBox charModelHBox;
-    @FXML Button addSpecialAbilityButton;
     @FXML HBox healthAndEnduranceBox;
 
     private Parent characterScreenParent;
@@ -29,7 +28,6 @@ public class CharacterScreenController implements RenderController {
 
     private final TabPaneController tabPaneController;
     private Stage popupStage;
-    private ToggleGroup rightArm_toggleGroup = new ToggleGroup();
 
     public CharacterScreenController(Character actualCharacter) {
         this.actualCharacter = actualCharacter;
@@ -51,11 +49,8 @@ public class CharacterScreenController implements RenderController {
         tabPaneController.init();
     }
 
-
-
     @Override
     public void stop() {
-
     }
 
     @Override
@@ -109,5 +104,4 @@ public class CharacterScreenController implements RenderController {
         addGearPopupController.init();
         popupStage.show();
     }
-
 }

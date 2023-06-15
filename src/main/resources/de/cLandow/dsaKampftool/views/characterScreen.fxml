@@ -21,8 +21,8 @@
          </font>
       </Text>
       <ChoiceBox layoutX="421.0" layoutY="737.0" prefWidth="150.0" />
-      <Button fx:id="addSpecialAbilityButton" layoutX="421.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddSpecialAbilityPopup" prefHeight="51.0" prefWidth="179.0" text="Sonderfertigkeit hinzufügen" />
-      <Button fx:id="addGearButton" layoutX="622.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddGearPopup" prefHeight="51.0" prefWidth="179.0" text="Ausrüstung hinzufügen" />
+      <Button layoutX="421.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddSpecialAbilityPopup" prefHeight="51.0" prefWidth="179.0" text="Sonderfertigkeit hinzufügen" />
+      <Button layoutX="622.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddGearPopup" prefHeight="51.0" prefWidth="179.0" text="Ausrüstung hinzufügen" />
       <HBox fx:id="healthAndEnduranceBox" layoutX="13.0" layoutY="14.0" prefHeight="110.0" prefWidth="390.0" />
       <ChoiceBox layoutX="591.0" layoutY="667.0" prefWidth="150.0" />
       <Text layoutX="591.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Umgebung">
@@ -37,6 +37,6 @@
          </font>
       </Text>
       <HBox fx:id="charModelHBox" layoutX="38.0" layoutY="124.0" prefHeight="653.0" prefWidth="340.0" />
-      <HBox fx:id="tabPaneHBox" layoutX="396.0" layoutY="124.0" prefHeight="490.0" prefWidth="540.0" />
+      <HBox fx:id="tabPaneHBox" layoutX="396.0" layoutY="124.0" prefHeight="490.0" prefWidth="540.0" style="-fx-border-color: BLACK;" />
    </children>
 </AnchorPane>
