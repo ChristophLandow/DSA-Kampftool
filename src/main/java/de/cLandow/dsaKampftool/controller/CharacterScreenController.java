@@ -10,9 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -30,6 +28,7 @@ public class CharacterScreenController implements ScreenController{
     @FXML Label armor_encumbrance_chest_label;
     @FXML Label armor_encumbrance_backside_label;
     @FXML Label armor_encumbrance_head_label;
+
     @FXML Button addSpecialAbilityButton;
     @FXML HBox healthAndEnduranceBox;
 
@@ -37,6 +36,7 @@ public class CharacterScreenController implements ScreenController{
     private Character actualCharacter;
     private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private Stage popupStage;
+    private ToggleGroup rightArm_toggleGroup = new ToggleGroup();
 
     public CharacterScreenController(Character actualCharacter) {
         this.actualCharacter = actualCharacter;
@@ -49,6 +49,8 @@ public class CharacterScreenController implements ScreenController{
         healthAndEnduranceBoxController.init();
 
     }
+
+
 
     @Override
     public void stop() {
