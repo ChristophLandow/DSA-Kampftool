@@ -1,10 +1,7 @@
 package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
-import de.cLandow.dsaKampftool.controller.subcontroller.AddGearPopupController;
-import de.cLandow.dsaKampftool.controller.subcontroller.CharModelController;
-import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxController;
-import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.*;
 import de.cLandow.dsaKampftool.model.Character;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,8 +15,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CharacterScreenController implements ScreenController{
+public class CharacterScreenController implements RenderController {
 
+    @FXML HBox tabPaneHBox;
     @FXML HBox charModelHBox;
     @FXML Button addSpecialAbilityButton;
     @FXML HBox healthAndEnduranceBox;
@@ -28,6 +26,8 @@ public class CharacterScreenController implements ScreenController{
     private Character actualCharacter;
     private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private final CharModelController charModelController;
+
+    private final TabPaneController tabPaneController;
     private Stage popupStage;
     private ToggleGroup rightArm_toggleGroup = new ToggleGroup();
 
@@ -35,6 +35,7 @@ public class CharacterScreenController implements ScreenController{
         this.actualCharacter = actualCharacter;
         this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(this);
         this.charModelController = new CharModelController(this);
+        this.tabPaneController = new TabPaneController(this);
     }
 
     @Override
@@ -45,6 +46,9 @@ public class CharacterScreenController implements ScreenController{
         //load charModel HBox
         charModelHBox.getChildren().add(charModelController.render());
         charModelController.init();
+        //load TabPane HBox
+        tabPaneHBox.getChildren().add(tabPaneController.render());
+        tabPaneController.init();
     }
 
 

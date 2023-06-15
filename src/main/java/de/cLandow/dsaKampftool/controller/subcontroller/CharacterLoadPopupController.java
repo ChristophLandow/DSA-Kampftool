@@ -1,7 +1,7 @@
 package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
-import de.cLandow.dsaKampftool.controller.ScreenController;
+import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.ReadFileService;
@@ -17,11 +17,10 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CharacterLoadPopupController implements ScreenController, Initializable {
+public class CharacterLoadPopupController implements RenderController, Initializable {
 
 
     private final SetupScreenController setupScreenController;

@@ -37,6 +37,6 @@
          </font>
       </Text>
       <HBox fx:id="charModelHBox" layoutX="38.0" layoutY="124.0" prefHeight="653.0" prefWidth="340.0" />
-      <HBox fx:id="TabPaneHBox" layoutX="396.0" layoutY="124.0" prefHeight="490.0" prefWidth="540.0" />
+      <HBox fx:id="tabPaneHBox" layoutX="396.0" layoutY="124.0" prefHeight="490.0" prefWidth="540.0" />
    </children>
 </AnchorPane>

@@ -2,7 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
-import de.cLandow.dsaKampftool.controller.ScreenController;
+import de.cLandow.dsaKampftool.controller.RenderController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +11,7 @@ import javafx.scene.control.SpinnerValueFactory;
 
 import java.io.IOException;
 
-public class HealthAndEnduranceBoxController implements ScreenController {
+public class HealthAndEnduranceBoxController implements RenderController {
 
     @FXML Spinner<Integer> healthPointsCounter;
     @FXML Spinner<Integer> endurancePointsCounter;
