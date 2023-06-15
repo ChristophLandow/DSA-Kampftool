@@ -2,7 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
-import de.cLandow.dsaKampftool.controller.ScreenController;
+import de.cLandow.dsaKampftool.controller.RenderController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +12,7 @@ import javafx.scene.control.ToggleGroup;
 
 import java.io.IOException;
 
-public class CharModelController implements ScreenController {
+public class CharModelController implements RenderController {
 
     @FXML ToggleButton rightLeg_toggleButton_1;
     @FXML ToggleButton rightLeg_toggleButton_2;

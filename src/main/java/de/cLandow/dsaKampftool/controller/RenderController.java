@@ -2,7 +2,7 @@ package de.cLandow.dsaKampftool.controller;
 
 import javafx.scene.Parent;
 
-public interface ScreenController {
+public interface RenderController {
     void init();
 
     void stop();

@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class SetupScreenController implements ScreenController{
+public class SetupScreenController implements RenderController {
     @FXML VBox screenBox;
     @FXML Label nameLabel;
     @FXML Label baseAtLabel;

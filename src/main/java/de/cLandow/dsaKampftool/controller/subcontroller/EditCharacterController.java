@@ -1,7 +1,7 @@
 package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
-import de.cLandow.dsaKampftool.controller.ScreenController;
+import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 
 import java.io.IOException;
 
-public class EditCharacterController implements ScreenController {
+public class EditCharacterController implements RenderController {
 
     private final SetupScreenController setupScreenController;
 

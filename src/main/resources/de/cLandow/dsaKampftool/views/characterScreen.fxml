@@ -2,8 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
@@ -11,20 +9,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.CharacterScreenController">
    <children>
-      <TabPane layoutX="421.0" layoutY="118.0" prefHeight="487.0" prefWidth="532.0" style="-fx-border-color: BLACK;" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Nahkampf">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="747.0" prefWidth="532.0" />
-            </content>
-          </Tab>
-          <Tab text="Fernkampf">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
       <Text layoutX="424.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Patzer">
          <font>
             <Font name="System Bold" size="16.0" />
@@ -37,8 +21,8 @@
          </font>
       </Text>
       <ChoiceBox layoutX="421.0" layoutY="737.0" prefWidth="150.0" />
-      <Button fx:id="addSpecialAbilityButton" layoutX="421.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddSpecialAbilityPopup" prefHeight="51.0" prefWidth="179.0" text="Sonderfertigkeit hinzufügen" />
-      <Button fx:id="addGearButton" layoutX="622.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddGearPopup" prefHeight="51.0" prefWidth="179.0" text="Ausrüstung hinzufügen" />
+      <Button layoutX="421.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddSpecialAbilityPopup" prefHeight="51.0" prefWidth="179.0" text="Sonderfertigkeit hinzufügen" />
+      <Button layoutX="622.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddGearPopup" prefHeight="51.0" prefWidth="179.0" text="Ausrüstung hinzufügen" />
       <HBox fx:id="healthAndEnduranceBox" layoutX="13.0" layoutY="14.0" prefHeight="110.0" prefWidth="390.0" />
       <ChoiceBox layoutX="591.0" layoutY="667.0" prefWidth="150.0" />
       <Text layoutX="591.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Umgebung">
@@ -53,5 +37,6 @@
          </font>
       </Text>
       <HBox fx:id="charModelHBox" layoutX="38.0" layoutY="124.0" prefHeight="653.0" prefWidth="340.0" />
+      <HBox fx:id="tabPaneHBox" layoutX="396.0" layoutY="124.0" prefHeight="490.0" prefWidth="540.0" style="-fx-border-color: BLACK;" />
    </children>
 </AnchorPane>
