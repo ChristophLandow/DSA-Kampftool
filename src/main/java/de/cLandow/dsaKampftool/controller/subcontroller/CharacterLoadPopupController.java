@@ -5,7 +5,7 @@ import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.ReadFileService;
-import de.cLandow.dsaKampftool.services.WriteFileService;
+import de.cLandow.dsaKampftool.services.WriteCharacterFileService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -42,13 +42,13 @@ public class CharacterLoadPopupController implements RenderController, Initializ
 
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
-    private final WriteFileService writeFileService;
+    private final WriteCharacterFileService writeFileService;
 
 
     public CharacterLoadPopupController(SetupScreenController setupScreenController){
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
-        this.writeFileService = new WriteFileService();
+        this.writeFileService = new WriteCharacterFileService();
     }
 
     @Override

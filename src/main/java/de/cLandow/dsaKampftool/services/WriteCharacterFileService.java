@@ -12,10 +12,10 @@ import java.time.LocalDate;
 
 import static de.cLandow.dsaKampftool.Constants.FILEPATH;
 
-public class WriteFileService {
+public class WriteCharacterFileService {
 
     // Write wirth StAX Cursor API
-    public WriteFileService(){
+    public WriteCharacterFileService(){
     }
 
     public Character saveNewCharacterAsFXM(String name, int attack, int parade, int shooting, int initiative, int lifePoints, int endurancePoints) {
