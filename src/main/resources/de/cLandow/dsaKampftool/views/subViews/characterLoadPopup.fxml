@@ -11,19 +11,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="anchor_id" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="anchor_id" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController">
    <children>
       <Label alignment="CENTER" layoutX="229.0" layoutY="28.0" prefHeight="82.0" prefWidth="343.0" text="Kein Streiter ausgewählt!">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
       </Label>
-      <Button layoutX="202.0" layoutY="522.0" mnemonicParsing="false" onAction="#createNewCharacter" prefHeight="46.0" prefWidth="123.0" text="Erstellen">
+      <Button layoutX="191.0" layoutY="714.0" mnemonicParsing="false" onAction="#createNewCharacter" prefHeight="46.0" prefWidth="123.0" text="Erstellen">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
-      <Button layoutX="495.0" layoutY="158.0" mnemonicParsing="false" onAction="#loadCharacter" text="Laden">
+      <Button layoutX="497.0" layoutY="152.0" mnemonicParsing="false" onAction="#loadCharacter" text="Laden">
          <font>
             <Font size="22.0" />
          </font>
@@ -33,52 +33,68 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="newCharacterNameField" layoutX="59.0" layoutY="283.0" prefHeight="35.0" prefWidth="296.0" promptText="Name">
+      <TextField fx:id="newCharacterNameField" layoutX="58.0" layoutY="451.0" prefHeight="35.0" prefWidth="296.0" promptText="Name">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Text fx:id="noNameWarning" fill="RED" layoutX="60.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht einen Namen...." wrappingWidth="265.13671875" />
-      <ComboBox fx:id="characterBox" layoutX="104.0" layoutY="158.0" prefHeight="45.0" prefWidth="296.0" />
-      <Button layoutX="497.0" layoutY="522.0" mnemonicParsing="false" onAction="#close" prefHeight="46.0" prefWidth="151.0" text="Abbrechen">
+      <Text fx:id="noNameWarning" fill="RED" layoutX="60.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht einen Namen...." wrappingWidth="265.13671875" />
+      <ComboBox fx:id="characterBox" layoutX="104.0" layoutY="152.0" prefHeight="45.0" prefWidth="296.0" />
+      <Button layoutX="497.0" layoutY="714.0" mnemonicParsing="false" onAction="#close" prefHeight="46.0" prefWidth="151.0" text="Abbrechen">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="newCharAtField" layoutX="60.0" layoutY="365.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-At">
+      <TextField fx:id="newCharAtField" layoutX="60.0" layoutY="547.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-At">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Line endX="593.0" layoutX="159.0" layoutY="244.0" startX="-100.0" />
-      <TextField fx:id="newCharFkField" layoutX="174.0" layoutY="365.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Fk">
+      <Line endX="593.0" layoutX="153.0" layoutY="422.0" startX="-100.0" />
+      <TextField fx:id="newCharFkField" layoutX="163.0" layoutY="547.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Fk">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="newCharPaField" layoutX="60.0" layoutY="422.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Pa">
+      <TextField fx:id="newCharPaField" layoutX="60.0" layoutY="606.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Pa">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="newCharIniField" layoutX="174.0" layoutY="422.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Ini">
+      <TextField fx:id="newCharIniField" layoutX="163.0" layoutY="606.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Ini">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Circle fx:id="characterImageCircle" fill="WHITE" layoutX="664.0" layoutY="365.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
-      <Text fx:id="noStatsWarning" fill="RED" layoutX="104.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht At, Pa, Fk, Ini, Ausdauer und Lebenspunkt-Basiswerte...." wrappingWidth="265.13671875" />
-      <Spinner fx:id="newCharacterProtraitSpinner" layoutX="480.0" layoutY="329.0" prefHeight="25.0" prefWidth="81.0" />
-      <Button layoutX="480.0" layoutY="360.0" mnemonicParsing="false" onAction="#uploadOwnPicture" prefHeight="25.0" prefWidth="81.0" text="Hochladen" />
-      <TextField fx:id="newCharEnduranceField" layoutX="290.0" layoutY="422.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-AP">
+      <Circle fx:id="characterImageCircle" fill="WHITE" layoutX="669.0" layoutY="582.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="noStatsWarning" fill="RED" layoutX="113.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht At, Pa, Fk, Ini, Ausdauer und Lebenspunkt-Basiswerte...." wrappingWidth="265.13671875" />
+      <Spinner fx:id="newCharacterProtraitSpinner" layoutX="480.0" layoutY="552.0" prefHeight="25.0" prefWidth="81.0" />
+      <Button layoutX="480.0" layoutY="594.0" mnemonicParsing="false" onAction="#uploadOwnPicture" prefHeight="25.0" prefWidth="81.0" text="Hochladen" />
+      <TextField fx:id="newCharEnduranceField" layoutX="270.0" layoutY="606.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-AP">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="newCharLifepointsField" layoutX="290.0" layoutY="365.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-LP">
+      <TextField fx:id="newCharLifepointsField" layoutX="270.0" layoutY="547.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-LP">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
+      <Line endX="593.0" layoutX="154.0" layoutY="223.0" startX="-100.0" />
+      <Text layoutX="58.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_id" text="Wähle ein Verzeichnis in dem die für das Tool relevanten Daten und die angelegten Charaktere gespeichert werden. Wird kein Speicherort gewählt, wird ein Verzecihnis im Home-Ordner angelegt." wrappingWidth="706.25244140625">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <Button layoutX="168.0" layoutY="345.0" mnemonicParsing="false" onAction="#chooseDirectory" prefHeight="46.0" prefWidth="123.0" text="Wählen">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Label fx:id="directoryLabel" layoutX="311.0" layoutY="356.0" prefHeight="25.0" prefWidth="410.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -12,9 +12,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.DirectoryChooser;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -22,8 +25,9 @@ import java.util.ResourceBundle;
 
 public class CharacterLoadPopupController implements RenderController, Initializable {
 
-
     private final SetupScreenController setupScreenController;
+
+    @FXML Label directoryLabel;
     @FXML ComboBox<String> characterBox;
     @FXML TextField newCharacterNameField;
     @FXML TextField newCharAtField;
@@ -121,5 +125,10 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     }
 
     public void uploadOwnPicture(ActionEvent actionEvent) {
+    }
+
+    public void chooseDirectory(ActionEvent actionEvent) {
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        File selectedDirectory = directoryChooser.showDialog(setupScreenController.getTool().getPrimaryStage());
     }
 }

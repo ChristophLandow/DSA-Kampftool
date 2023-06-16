@@ -7,7 +7,7 @@ public class DirectoryPathService {
     public DirectoryPathService(){
     }
 
-    public void setPath(String path){
+    public void setPath(){
 
     }
 
