@@ -104,4 +104,14 @@ public class CharacterScreenController implements RenderController {
         addGearPopupController.init();
         popupStage.show();
     }
+
+    public void openAddCharacteristicsPopup(ActionEvent actionEvent) {
+        closePopup();
+        popupStage = new Stage();
+        popupStage.initModality(Modality.WINDOW_MODAL);
+        AddCharacteristicsPopupController addCharacteristicsPopupController= new AddCharacteristicsPopupController(this);
+        popupStage.setScene(new Scene(addCharacteristicsPopupController.render()));
+        addCharacteristicsPopupController.init();
+        popupStage.show();
+    }
 }
