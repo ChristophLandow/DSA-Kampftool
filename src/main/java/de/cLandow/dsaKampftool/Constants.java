@@ -6,12 +6,4 @@ public class Constants {
 
     public static final String FILEPATH = System.getProperty("user.home") + "//DSAKampftool//";
 
-    //CloseCombatScreen
-
-    public static final String KAMPFREFLEXE = "Kampfreflexe";
-    public static final String KAMPFGESPUEHR = "Kampfgespuehr";
-    public static final String BEENGT = "Beengt";
-
-
-
 }
