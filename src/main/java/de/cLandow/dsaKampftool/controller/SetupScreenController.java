@@ -49,6 +49,7 @@ public class SetupScreenController implements RenderController {
         }
         menuController = new MenuController(this, popupStage);
         menuBox.getChildren().add(menuController.render());
+        menuController.init();
     }
 
     @Override
