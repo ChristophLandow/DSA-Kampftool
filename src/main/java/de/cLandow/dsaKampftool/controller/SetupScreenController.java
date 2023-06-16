@@ -123,5 +123,9 @@ public class SetupScreenController implements RenderController {
         baseLepLabel.setText(Integer.toString(actualCharacter.getLp()));
     }
 
+    public Tool getTool(){
+        return this.tool;
+    }
+
 
 }

@@ -10,9 +10,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
+import javafx.stage.DirectoryChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 public class MenuController implements RenderController {
@@ -69,6 +71,9 @@ public class MenuController implements RenderController {
     }
 
     public void editDirectory(ActionEvent actionEvent) {
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        File selectedDirectory = directoryChooser.showDialog(setupScreenController.getTool().getPrimaryStage());
+        //prefService.saveDirectory(selectedDirectory.getPath());
     }
 
     public SetupScreenController getSetupScreenController() {
