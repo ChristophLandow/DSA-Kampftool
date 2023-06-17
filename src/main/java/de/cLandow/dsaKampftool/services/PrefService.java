@@ -22,4 +22,12 @@ public class PrefService {
     public String getDirectory(){
         return preferences.get(DIRECTORY, NOSAVEFILE);
     }
+
+    public void saveCharacterName(String name){
+        preferences.put(CHARACTER, name);
+    }
+
+    public String getCharacterName(){
+        return preferences.get(CHARACTER, NOCHARACTER);
+    }
 }

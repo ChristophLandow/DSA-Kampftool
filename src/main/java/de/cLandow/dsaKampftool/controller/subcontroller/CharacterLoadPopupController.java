@@ -4,6 +4,7 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
+import de.cLandow.dsaKampftool.services.PrefService;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import de.cLandow.dsaKampftool.services.WriteCharacterFileService;
 import javafx.event.ActionEvent;
@@ -13,7 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.DirectoryChooser;
 
@@ -27,6 +30,8 @@ public class CharacterLoadPopupController implements RenderController, Initializ
 
     private final SetupScreenController setupScreenController;
 
+    @FXML Spinner<String> newCharacterProtraitSpinner;
+    @FXML Circle characterImageCircle;
     @FXML Label directoryLabel;
     @FXML ComboBox<String> characterBox;
     @FXML TextField newCharacterNameField;
@@ -98,6 +103,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 int lifePoints = Integer.parseInt(newCharLifepointsField.getCharacters().toString());
                 int endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
                 setupScreenController.setActualCharacter(writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints));
+                saveCharacterName(newCharacterNameField.getText());
                 setupScreenController.loadStats();
                 stop();
             } catch (NumberFormatException e) {
@@ -108,6 +114,11 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 newCharIniField.clear();
             }
         }
+    }
+
+    public void saveCharacterName(String name){
+        PrefService prefService = new PrefService();
+        prefService.saveCharacterName(name);
     }
 
     public void loadCharacter() {
@@ -128,7 +139,10 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     }
 
     public void chooseDirectory(ActionEvent actionEvent) {
+        PrefService prefService = new PrefService();
         DirectoryChooser directoryChooser = new DirectoryChooser();
         File selectedDirectory = directoryChooser.showDialog(setupScreenController.getTool().getPrimaryStage());
+        prefService.saveDirectory(selectedDirectory.getAbsolutePath());
+        directoryLabel.setText(selectedDirectory.getAbsolutePath());
     }
 }
