@@ -73,24 +73,13 @@ public class SetupScreenController implements RenderController {
     }
 
     public void callCharacterLoadPopup() {
-        PrefService prefService = new PrefService();
-        if(prefService.getDirectory().equals(NOSAVEFILE)){
-            popupStage = new Stage();
-            popupStage.initModality(Modality.WINDOW_MODAL);
-            characterLoadPopupController = new CharacterLoadPopupController(this);
-            popupStage.setScene(new Scene(characterLoadPopupController.render()));
-            popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
-            characterLoadPopupController.init();
-            popupStage.show();
-        } else {
-            popupStage = new Stage();
-            popupStage.initModality(Modality.WINDOW_MODAL);
-            characterLoadPopupController = new CharacterLoadPopupController(this);
-            popupStage.setScene(new Scene(characterLoadPopupController.render()));
-            popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
-            characterLoadPopupController.init();
-            popupStage.show();
-        }
+        popupStage = new Stage();
+        popupStage.initModality(Modality.WINDOW_MODAL);
+        characterLoadPopupController = new CharacterLoadPopupController(this);
+        popupStage.setScene(new Scene(characterLoadPopupController.render()));
+        popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
+        characterLoadPopupController.init();
+        popupStage.show();
     }
 
     public void closeCharacterLoadPopup(){
