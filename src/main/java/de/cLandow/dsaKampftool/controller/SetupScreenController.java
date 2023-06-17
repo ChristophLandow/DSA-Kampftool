@@ -5,6 +5,7 @@ import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupContro
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -49,6 +50,7 @@ public class SetupScreenController implements RenderController {
         }
         menuController = new MenuController(this, popupStage);
         menuBox.getChildren().add(menuController.render());
+        menuController.init();
     }
 
     @Override
@@ -120,6 +122,10 @@ public class SetupScreenController implements RenderController {
         baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
         baseAupLabel.setText(Integer.toString(actualCharacter.getAup()));
         baseLepLabel.setText(Integer.toString(actualCharacter.getLp()));
+    }
+
+    public Tool getTool(){
+        return this.tool;
     }
 
 

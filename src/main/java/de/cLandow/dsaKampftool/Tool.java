@@ -33,7 +33,8 @@ public class Tool extends Application {
         primaryStage.centerOnScreen();
     }
 
-
-    
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
 }
 

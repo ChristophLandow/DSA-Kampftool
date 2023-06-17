@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.services;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import java.util.prefs.Preferences;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 @Singleton
 public class PrefService {
@@ -14,11 +15,19 @@ public class PrefService {
         this.preferences = Preferences.userRoot().node(this.getClass().getName());
     }
 
-    public void saveBox(String box, Boolean selected){
-        preferences.putBoolean(box, selected);
+    public void saveDirectory(String directory){
+        preferences.put(DIRECTORY, directory);
     }
 
-    public boolean getBox(String box){
-        return preferences.getBoolean(box, false);
+    public String getDirectory(){
+        return preferences.get(DIRECTORY, NOSAVEFILE);
+    }
+
+    public void saveCharacterName(String name){
+        preferences.put(CHARACTER, name);
+    }
+
+    public String getCharacterName(){
+        return preferences.get(CHARACTER, NOCHARACTER);
     }
 }
