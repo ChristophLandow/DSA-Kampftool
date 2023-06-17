@@ -144,5 +144,6 @@ public class CharacterLoadPopupController implements RenderController, Initializ
         File selectedDirectory = directoryChooser.showDialog(setupScreenController.getTool().getPrimaryStage());
         prefService.saveDirectory(selectedDirectory.getAbsolutePath());
         directoryLabel.setText(selectedDirectory.getAbsolutePath());
+        setupScreenController.getPopupStage().toFront();
     }
 }
