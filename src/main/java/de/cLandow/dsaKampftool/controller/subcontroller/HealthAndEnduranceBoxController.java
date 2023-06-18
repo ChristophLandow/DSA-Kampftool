@@ -23,6 +23,10 @@ public class HealthAndEnduranceBoxController implements RenderController {
     private SpinnerValueFactory<Integer> healthSpinner;
     private SpinnerValueFactory<Integer> enduranceSpinner;
 
+    private Boolean underHalfHealthPoints = false;
+    private Boolean underOneThirdHelthPoints = false;
+    private Boolean neEndurancePoints = false;
+
 
 
 
@@ -40,9 +44,9 @@ public class HealthAndEnduranceBoxController implements RenderController {
 
         healthSpinner.valueProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue <= ( characterScreenController.getActualCharacter().getLp() / 2)){
-                System.out.println("1. Sufe Abzüge");
+                underHalfHealthPoints = true;
             } else if (newValue <= ( characterScreenController.getActualCharacter().getLp() / 3)) {
-                System.out.println("2. Stufe Abzüge");
+                underOneThirdHelthPoints = true;
             }
         });
 
