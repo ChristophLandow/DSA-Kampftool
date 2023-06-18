@@ -20,35 +20,35 @@ public class HealthAndEnduranceBoxController implements RenderController {
 
 
     private final CharacterScreenController characterScreenController;
+    private SpinnerValueFactory<Integer> healthSpinner;
+    private SpinnerValueFactory<Integer> enduranceSpinner;
+
+
 
 
     public HealthAndEnduranceBoxController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
+        healthSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory((-characterScreenController.getActualCharacter().getLp()),1000,characterScreenController.getActualCharacter().getLp());
+        enduranceSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,1000,characterScreenController.getActualCharacter().getAup());
     }
+
     @Override
     public void init() {
-        SpinnerValueFactory<Integer> healthSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory((-characterScreenController.getActualCharacter().getLp()),1000,characterScreenController.getActualCharacter().getLp());
-        SpinnerValueFactory<Integer> enduranceSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,1000,characterScreenController.getActualCharacter().getAup());
+
         healthPointsCounter.setValueFactory(healthSpinner);
         endurancePointsCounter.setValueFactory(enduranceSpinner);
 
-        healthSpinner.valueProperty().addListener(new ChangeListener<Integer>() {
-            @Override
-            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
-                if(newValue <= ( characterScreenController.getActualCharacter().getLp() / 2)){
-                    System.out.println("1. Sufe Abzüge");
-                } else if (newValue <= ( characterScreenController.getActualCharacter().getLp() / 3)) {
-                    System.out.println("2. Stufe Abzüge");
-                }
+        healthSpinner.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue <= ( characterScreenController.getActualCharacter().getLp() / 2)){
+                System.out.println("1. Sufe Abzüge");
+            } else if (newValue <= ( characterScreenController.getActualCharacter().getLp() / 3)) {
+                System.out.println("2. Stufe Abzüge");
             }
         });
 
-        enduranceSpinner.valueProperty().addListener(new ChangeListener<Integer>() {
-            @Override
-            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
-                if(newValue == 0){
-                    System.out.println("Total aus der Puste");
-                }
+        enduranceSpinner.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if(newValue == 0){
+                System.out.println("Total aus der Puste");
             }
         });
 
