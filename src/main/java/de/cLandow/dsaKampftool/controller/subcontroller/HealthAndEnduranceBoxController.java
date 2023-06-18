@@ -25,7 +25,7 @@ public class HealthAndEnduranceBoxController implements RenderController {
 
     private Boolean underHalfHealthPoints = false;
     private Boolean underOneThirdHelthPoints = false;
-    private Boolean neEndurancePoints = false;
+    private Boolean zeroEndurancePoints = false;
 
 
 
@@ -52,7 +52,7 @@ public class HealthAndEnduranceBoxController implements RenderController {
 
         enduranceSpinner.valueProperty().addListener((observable, oldValue, newValue) -> {
             if(newValue == 0){
-                System.out.println("Total aus der Puste");
+                zeroEndurancePoints = true;
             }
         });
 
