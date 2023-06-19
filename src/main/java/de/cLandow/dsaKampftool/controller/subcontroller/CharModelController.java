@@ -45,14 +45,14 @@ public class CharModelController implements RenderController {
     @FXML Label armor_encumbrance_backside_label;
     @FXML Label armor_encumbrance_head_label;
 
-    private CharacterScreenController characterScreenController;
-    private ToggleGroup rightArmToggleGroup = new ToggleGroup();
-    private ToggleGroup leftArmToggleGroup= new ToggleGroup();
-    private ToggleGroup rightLegToggleGroup = new ToggleGroup();
-    private ToggleGroup leftLegToggleGroup = new ToggleGroup();
-    private ToggleGroup tummyToggleGroup = new ToggleGroup();
-    private ToggleGroup chestToggleGroup = new ToggleGroup();
-    private ToggleGroup headToggleGroup = new ToggleGroup();
+    private final CharacterScreenController characterScreenController;
+    private final ToggleGroup rightArmToggleGroup = new ToggleGroup();
+    private final ToggleGroup leftArmToggleGroup= new ToggleGroup();
+    private final ToggleGroup rightLegToggleGroup = new ToggleGroup();
+    private final ToggleGroup leftLegToggleGroup = new ToggleGroup();
+    private final ToggleGroup tummyToggleGroup = new ToggleGroup();
+    private final ToggleGroup chestToggleGroup = new ToggleGroup();
+    private final ToggleGroup headToggleGroup = new ToggleGroup();
 
 
 
