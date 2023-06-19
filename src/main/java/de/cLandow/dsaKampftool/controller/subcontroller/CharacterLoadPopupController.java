@@ -137,13 +137,4 @@ public class CharacterLoadPopupController implements RenderController, Initializ
 
     public void uploadOwnPicture(ActionEvent actionEvent) {
     }
-
-    public void chooseDirectory(ActionEvent actionEvent) {
-        PrefService prefService = new PrefService();
-        DirectoryChooser directoryChooser = new DirectoryChooser();
-        File selectedDirectory = directoryChooser.showDialog(setupScreenController.getTool().getPrimaryStage());
-        prefService.saveDirectory(selectedDirectory.getAbsolutePath());
-        directoryLabel.setText(selectedDirectory.getAbsolutePath());
-        setupScreenController.getPopupStage().toFront();
-    }
 }
