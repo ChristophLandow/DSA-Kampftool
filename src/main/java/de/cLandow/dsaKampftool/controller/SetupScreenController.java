@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.ChooseCharacterOrDirectoryPopupController;
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
@@ -34,6 +35,7 @@ public class SetupScreenController implements RenderController {
     private final PrefService prefService;
     private Stage popupStage;
     private CharacterLoadPopupController characterLoadPopupController;
+    private ChooseCharacterOrDirectoryPopupController chooseCharacterOrDirectoryPopupController;
     private Character actualCharacter;
     private CharacterScreenController characterScreenController;
     private MenuController menuController;
@@ -45,11 +47,11 @@ public class SetupScreenController implements RenderController {
     }
     @Override
     public void init() {
-        if(actualCharacter == null) {
-            callCharacterLoadPopup();
-        }
         menuController = new MenuController(this, popupStage);
         menuBox.getChildren().add(menuController.render());
+        if(actualCharacter == null) {
+            openChooseCharacterOrDirectoryPopup();
+        }
         menuController.init();
     }
 
@@ -72,7 +74,7 @@ public class SetupScreenController implements RenderController {
         return setupScreenParent;
     }
 
-    public void callCharacterLoadPopup() {
+    public void openCharacterLoadPopup() {
         popupStage = new Stage();
         popupStage.initModality(Modality.WINDOW_MODAL);
         characterLoadPopupController = new CharacterLoadPopupController(this);
@@ -82,10 +84,26 @@ public class SetupScreenController implements RenderController {
         popupStage.show();
     }
 
+    public void openChooseCharacterOrDirectoryPopup(){
+        popupStage = new Stage();
+        popupStage.initModality(Modality.WINDOW_MODAL);
+        chooseCharacterOrDirectoryPopupController = new ChooseCharacterOrDirectoryPopupController(this);
+        popupStage.setScene(new Scene(chooseCharacterOrDirectoryPopupController.render()));
+        popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
+        chooseCharacterOrDirectoryPopupController.init();
+        popupStage.show();
+    }
+
     public void closeCharacterLoadPopup(){
-        this.getPopupStage().close();
+        closePopupStage();
         loadStats();
         openCharacterScreen();
+    }
+
+    public void closePopupStage(){
+        if(popupStage != null){
+            popupStage.close();
+        }
     }
 
     public void setActualCharacter(Character character){
