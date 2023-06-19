@@ -4,6 +4,7 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.services.PrefService;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -57,6 +58,7 @@ public class ChooseCharacterOrDirectoryPopupController implements RenderControll
 
     public void exitTool(ActionEvent actionEvent) {
         stop();
+        Platform.exit();
     }
 
     public void openCreateOrChooseCharacterPopup(ActionEvent actionEvent) {
