@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController">
+   <children>
+      <Button layoutX="111.0" layoutY="42.0" mnemonicParsing="false" onAction="#chooseDirectory" prefHeight="46.0" prefWidth="182.0" text="Verzeichnis wählen">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="109.0" layoutY="150.0" mnemonicParsing="false" onAction="#openCreateOrChooseCharacterPopup" prefHeight="46.0" prefWidth="182.0" text="Charakter erstellen/laden">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="111.0" layoutY="210.0" mnemonicParsing="false" onAction="#exitTool" prefHeight="46.0" prefWidth="182.0" text="Exit">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="directoryLabel" layoutX="40.0" layoutY="104.0" prefHeight="25.0" prefWidth="320.0" text="Es wurde noch kein Verzeichnis ausgewählt...">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
