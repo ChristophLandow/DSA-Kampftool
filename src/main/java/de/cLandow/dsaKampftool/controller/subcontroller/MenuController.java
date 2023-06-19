@@ -55,7 +55,7 @@ public class MenuController implements RenderController {
     }
 
     public void createNewChar(ActionEvent actionEvent) {
-        setupScreenController.callCharacterLoadPopup();
+        setupScreenController.openCharacterLoadPopup();
     }
 
     public void editChar(ActionEvent actionEvent) {
