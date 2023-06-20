@@ -9,9 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 
 public class CharModelController implements RenderController {
 
@@ -65,6 +67,7 @@ public class CharModelController implements RenderController {
     @Override
     public void init() {
         addToggleGroups();
+        setUserDataOfToggleGroups();
         setUserDataOfToggles();
         setToggleButtonListeners();
     }
@@ -124,6 +127,16 @@ public class CharModelController implements RenderController {
         toggleGroupList.add(headToggleGroup);
     }
 
+    public void setUserDataOfToggleGroups(){
+        rightArmToggleGroup.setUserData(RIGHT_ARM);
+        leftArmToggleGroup.setUserData(LEFT_ARM);
+        headToggleGroup.setUserData(HEAD);
+        chestToggleGroup.setUserData(CHEST);
+        tummyToggleGroup.setUserData(TUMMY);
+        leftLegToggleGroup.setUserData(LEFT_LEG);
+        rightLegToggleGroup.setUserData(RIGHT_LEG);
+    }
+
     public void setUserDataOfToggles(){
         for(ToggleGroup toggleGroup : toggleGroupList){
             toggleGroup.getToggles().forEach(toggle -> ((ToggleButton) toggle).setUserData(1));
@@ -134,7 +147,7 @@ public class CharModelController implements RenderController {
         for(ToggleGroup toggleGroup : toggleGroupList){
             toggleGroup.getToggles().stream().map((toggle) -> (ToggleButton)toggle).forEach((button) -> {
                 button.setOnAction(e -> {
-                    System.out.println("Wunde +1");
+                    System.out.println(button.getToggleGroup().getUserData() + " Wound");
                 });
             });
         }
