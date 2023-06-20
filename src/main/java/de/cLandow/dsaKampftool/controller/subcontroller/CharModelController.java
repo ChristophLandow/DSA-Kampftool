@@ -147,7 +147,15 @@ public class CharModelController implements RenderController {
         for(ToggleGroup toggleGroup : toggleGroupList){
             toggleGroup.getToggles().stream().map((toggle) -> (ToggleButton)toggle).forEach((button) -> {
                 button.setOnAction(e -> {
-                    System.out.println(button.getToggleGroup().getUserData() + " Wound");
+                    if(button.isSelected()){
+                        button.getStyleClass().removeAll(RED_BUTTON, WHITE_BUTTON);
+                        button.getStyleClass().add(RED_BUTTON);
+                        System.out.println(button.getToggleGroup().getUserData() + " Wound");
+                    }
+                    else{
+                        button.getStyleClass().removeAll(RED_BUTTON, WHITE_BUTTON);
+                        button.getStyleClass().add(WHITE_BUTTON);
+                    }
                 });
             });
         }

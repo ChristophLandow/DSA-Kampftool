@@ -25,4 +25,8 @@ public class Constants {
 
     public static final String RIGHT_LEG = "Right Leg";
 
+    public static final String WHITE_BUTTON = "white-button";
+
+    public static final String RED_BUTTON = "red-button";
+
 }
