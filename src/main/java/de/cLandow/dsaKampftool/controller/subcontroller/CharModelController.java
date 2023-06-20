@@ -3,13 +3,10 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 
@@ -69,6 +66,7 @@ public class CharModelController implements RenderController {
     public void init() {
         addToggleGroups();
         setUserDataOfToggles();
+        setToggleButtonListeners();
     }
 
     @Override
@@ -132,6 +130,13 @@ public class CharModelController implements RenderController {
         }
     }
 
-
-
+    public void setToggleButtonListeners(){
+        for(ToggleGroup toggleGroup : toggleGroupList){
+            toggleGroup.getToggles().stream().map((toggle) -> (ToggleButton)toggle).forEach((button) -> {
+                button.setOnAction(e -> {
+                    System.out.println("Wunde +1");
+                });
+            });
+        }
+    }
 }
