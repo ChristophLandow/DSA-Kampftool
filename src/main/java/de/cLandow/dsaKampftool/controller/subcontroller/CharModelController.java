@@ -3,14 +3,18 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CharModelController implements RenderController {
 
@@ -54,6 +58,7 @@ public class CharModelController implements RenderController {
     private final ToggleGroup chestToggleGroup = new ToggleGroup();
     private final ToggleGroup headToggleGroup = new ToggleGroup();
 
+    private final ArrayList<ToggleGroup> toggleGroupList = new ArrayList<>();
 
 
     public CharModelController(CharacterScreenController characterScreenController){
@@ -63,6 +68,7 @@ public class CharModelController implements RenderController {
     @Override
     public void init() {
         addToggleGroups();
+
     }
 
     @Override
@@ -87,29 +93,36 @@ public class CharModelController implements RenderController {
         rightArmToggleGroup.getToggles().add(rightArm_toggleButton_1);
         rightArmToggleGroup.getToggles().add(rightArm_toggleButton_2);
         rightArmToggleGroup.getToggles().add(rightArm_toggleButton_3);
+        toggleGroupList.add(rightArmToggleGroup);
 
         leftArmToggleGroup.getToggles().add(leftArm_toggleButton_1);
         leftArmToggleGroup.getToggles().add(leftArm_toggleButton_2);
         leftArmToggleGroup.getToggles().add(leftArm_toggleButton_3);
+        toggleGroupList.add(leftArmToggleGroup);
 
         rightLegToggleGroup.getToggles().add(rightLeg_toggleButton_1);
         rightLegToggleGroup.getToggles().add(rightLeg_toggleButton_2);
         rightLegToggleGroup.getToggles().add(rightLeg_toggleButton_3);
+        toggleGroupList.add(rightLegToggleGroup);
 
         leftLegToggleGroup.getToggles().add(leftLeg_toggleButton_1);
         leftLegToggleGroup.getToggles().add(leftLeg_toggleButton_2);
         leftLegToggleGroup.getToggles().add(leftLeg_toggleButton_3);
+        toggleGroupList.add(leftLegToggleGroup);
 
         tummyToggleGroup.getToggles().add(tummy_toggleButton_1);
         tummyToggleGroup.getToggles().add(tummy_toggleButton_2);
         tummyToggleGroup.getToggles().add(tummy_toggleButton_3);
+        toggleGroupList.add(tummyToggleGroup);
 
         chestToggleGroup.getToggles().add(chest_toggleButton_1);
         chestToggleGroup.getToggles().add(chest_toggleButton_2);
         chestToggleGroup.getToggles().add(chest_toggleButton_3);
+        toggleGroupList.add(chestToggleGroup);
 
         headToggleGroup.getToggles().add(head_toggleButton_1);
         headToggleGroup.getToggles().add(head_toggleButton_2);
         headToggleGroup.getToggles().add(head_toggleButton_3);
+        toggleGroupList.add(headToggleGroup);
     }
 }
