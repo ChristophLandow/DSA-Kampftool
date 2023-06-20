@@ -68,7 +68,7 @@ public class CharModelController implements RenderController {
     @Override
     public void init() {
         addToggleGroups();
-
+        setUserDataOfToggles();
     }
 
     @Override
@@ -125,4 +125,13 @@ public class CharModelController implements RenderController {
         headToggleGroup.getToggles().add(head_toggleButton_3);
         toggleGroupList.add(headToggleGroup);
     }
+
+    public void setUserDataOfToggles(){
+        for(ToggleGroup toggleGroup : toggleGroupList){
+            toggleGroup.getToggles().forEach(toggle -> ((ToggleButton) toggle).setUserData(1));
+        }
+    }
+
+
+
 }
