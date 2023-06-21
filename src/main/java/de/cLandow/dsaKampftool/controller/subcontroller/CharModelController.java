@@ -155,6 +155,7 @@ public class CharModelController implements RenderController {
                     else{
                         button.getStyleClass().removeAll(RED_BUTTON, WHITE_BUTTON);
                         button.getStyleClass().add(WHITE_BUTTON);
+                        System.out.println(" Wound healed");
                     }
                 });
             });
