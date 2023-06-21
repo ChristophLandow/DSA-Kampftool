@@ -127,6 +127,7 @@ public class SetupScreenController implements RenderController {
         if (characterScreenController == null) {
             characterScreenController = new CharacterScreenController(actualCharacter);
             screenBox.getChildren().add(characterScreenController.render());
+            screenBox.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterScreenStyles.css");
             characterScreenController.init();
         } else {
             screenBox.getChildren().add(characterScreenController.getCharacterScreenParent());
