@@ -102,6 +102,7 @@ public class SetupScreenController implements RenderController {
     public void closeCharacterLoadPopup(){
         closePopupStage();
         openCharacterScreen();
+        loadHealthAndEndurance();
     }
 
     public void closePopupStage(){
@@ -145,7 +146,7 @@ public class SetupScreenController implements RenderController {
         baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
         baseAupLabel.setText(Integer.toString(actualCharacter.getAup()));
         baseLepLabel.setText(Integer.toString(actualCharacter.getLp()));
-        loadHealthAndEndurance();
+
     }
 
     private void loadHealthAndEndurance() {
