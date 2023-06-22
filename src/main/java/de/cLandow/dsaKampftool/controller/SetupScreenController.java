@@ -29,8 +29,6 @@ public class SetupScreenController implements RenderController {
     @FXML Label basePaLabel;
     @FXML Label baseFkLabel;
     @FXML Label baseIniLabel;
-    @FXML Label baseAupLabel;
-    @FXML Label baseLepLabel;
     @FXML HBox menuBox;
 
     private final Tool tool;
@@ -144,9 +142,6 @@ public class SetupScreenController implements RenderController {
         basePaLabel.setText(Integer.toString(actualCharacter.getPa()));
         baseFkLabel.setText(Integer.toString(actualCharacter.getFk()));
         baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
-        baseAupLabel.setText(Integer.toString(actualCharacter.getAup()));
-        baseLepLabel.setText(Integer.toString(actualCharacter.getLp()));
-
     }
 
     private void loadHealthAndEndurance() {
