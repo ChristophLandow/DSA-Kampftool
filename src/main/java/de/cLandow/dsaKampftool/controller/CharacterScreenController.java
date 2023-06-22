@@ -23,7 +23,7 @@ public class CharacterScreenController implements RenderController {
 
     private Parent characterScreenParent;
     private Character actualCharacter;
-    private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
+
     private final CharModelController charModelController;
 
     private final TabPaneController tabPaneController;
@@ -31,16 +31,12 @@ public class CharacterScreenController implements RenderController {
 
     public CharacterScreenController(Character actualCharacter) {
         this.actualCharacter = actualCharacter;
-        this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(this);
         this.charModelController = new CharModelController(this);
         this.tabPaneController = new TabPaneController(this);
     }
 
     @Override
     public void init() {
-        //load healthAndEndurance HBox
-        healthAndEnduranceBox.getChildren().add(healthAndEnduranceBoxController.render());
-        healthAndEnduranceBoxController.init();
         //load charModel HBox
         charModelHBox.getChildren().add(charModelController.render());
         charModelController.init();

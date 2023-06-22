@@ -8,9 +8,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="anchor_id" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.SetupScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="anchor_id" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.SetupScreenController">
    <children>
-      <VBox fx:id="screenBox" layoutX="230.0" layoutY="-3.0" prefHeight="800.0" prefWidth="970.0" />
+      <VBox fx:id="screenBox" layoutX="230.0" layoutY="-4.0" prefHeight="800.0" prefWidth="970.0" />
       <Circle fx:id="avatarCircle" fill="DODGERBLUE" layoutX="111.0" layoutY="126.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 5; -fx-stroke-type: inside;" />
       <Label fx:id="nameLabel" alignment="CENTER" layoutX="16.0" layoutY="213.0" prefHeight="30.0" prefWidth="191.0" text="Name">
          <font>
@@ -78,5 +78,6 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
+      <HBox fx:id="healthAndEnduranceBox" layoutX="40.0" layoutY="618.0" prefHeight="110.0" prefWidth="170.0" />
    </children>
 </AnchorPane>
