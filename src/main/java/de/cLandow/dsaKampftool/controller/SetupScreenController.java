@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
 import de.cLandow.dsaKampftool.controller.subcontroller.ChooseCharacterOrDirectoryPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
@@ -21,14 +22,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SetupScreenController implements RenderController {
+    @FXML HBox healthAndEnduranceBox;
     @FXML VBox screenBox;
     @FXML Label nameLabel;
     @FXML Label baseAtLabel;
     @FXML Label basePaLabel;
     @FXML Label baseFkLabel;
     @FXML Label baseIniLabel;
-    @FXML Label baseAupLabel;
-    @FXML Label baseLepLabel;
     @FXML HBox menuBox;
 
     private final Tool tool;
@@ -36,6 +36,8 @@ public class SetupScreenController implements RenderController {
     private Stage popupStage;
     private CharacterLoadPopupController characterLoadPopupController;
     private ChooseCharacterOrDirectoryPopupController chooseCharacterOrDirectoryPopupController;
+
+    private HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private Character actualCharacter;
     private CharacterScreenController characterScreenController;
     private MenuController menuController;
@@ -53,6 +55,7 @@ public class SetupScreenController implements RenderController {
             openChooseCharacterOrDirectoryPopup();
         }
         menuController.init();
+
     }
 
     @Override
@@ -96,8 +99,8 @@ public class SetupScreenController implements RenderController {
 
     public void closeCharacterLoadPopup(){
         closePopupStage();
-        loadStats();
         openCharacterScreen();
+        loadHealthAndEndurance();
     }
 
     public void closePopupStage(){
@@ -139,13 +142,19 @@ public class SetupScreenController implements RenderController {
         basePaLabel.setText(Integer.toString(actualCharacter.getPa()));
         baseFkLabel.setText(Integer.toString(actualCharacter.getFk()));
         baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
-        baseAupLabel.setText(Integer.toString(actualCharacter.getAup()));
-        baseLepLabel.setText(Integer.toString(actualCharacter.getLp()));
+    }
+
+    private void loadHealthAndEndurance() {
+        this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(getCharacterScreenController());
+        healthAndEnduranceBox.getChildren().add(healthAndEnduranceBoxController.render());
+        healthAndEnduranceBoxController.init();
     }
 
     public Tool getTool(){
         return this.tool;
     }
 
-
+    public CharacterScreenController getCharacterScreenController(){
+        return this.characterScreenController;
+    }
 }

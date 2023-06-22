@@ -23,7 +23,6 @@
       <ChoiceBox layoutX="421.0" layoutY="737.0" prefWidth="150.0" />
       <Button layoutX="410.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddSpecialAbilityPopup" prefHeight="50.0" prefWidth="150.0" text="Sonderfertigkeiten" />
       <Button layoutX="591.0" layoutY="50.0" mnemonicParsing="false" onAction="#openAddGearPopup" prefHeight="50.0" prefWidth="150.0" text="Ausrüstung" />
-      <HBox fx:id="healthAndEnduranceBox" layoutX="6.0" layoutY="14.0" prefHeight="110.0" prefWidth="390.0" />
       <ChoiceBox layoutX="591.0" layoutY="667.0" prefWidth="150.0" />
       <Text layoutX="591.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Umgebung">
          <font>

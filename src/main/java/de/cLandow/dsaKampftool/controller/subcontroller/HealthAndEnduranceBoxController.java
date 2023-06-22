@@ -8,6 +8,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 
@@ -17,6 +18,8 @@ public class HealthAndEnduranceBoxController implements RenderController {
 
     @FXML Spinner<Integer> healthPointsCounter;
     @FXML Spinner<Integer> endurancePointsCounter;
+    @FXML Label baseAupLabel;
+    @FXML Label baseLepLabel;
 
 
     private final CharacterScreenController characterScreenController;
@@ -32,7 +35,7 @@ public class HealthAndEnduranceBoxController implements RenderController {
 
     public HealthAndEnduranceBoxController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
-        healthSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory((-characterScreenController.getActualCharacter().getLp()),1000,characterScreenController.getActualCharacter().getLp());
+        healthSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory((characterScreenController.getActualCharacter().getLp()),1000,characterScreenController.getActualCharacter().getLp());
         enduranceSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,1000,characterScreenController.getActualCharacter().getAup());
     }
 
@@ -55,6 +58,9 @@ public class HealthAndEnduranceBoxController implements RenderController {
                 zeroEndurancePoints = true;
             }
         });
+
+        baseAupLabel.setText(Integer.toString(characterScreenController.getActualCharacter().getAup()));
+        baseLepLabel.setText(Integer.toString(characterScreenController.getActualCharacter().getLp()));
 
     }
 
