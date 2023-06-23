@@ -4,25 +4,24 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="addAbilityPopupAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.AddGearPopupController">
+<AnchorPane fx:id="addAbilityPopupAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.AddGearPopupController">
    <children>
-      <ListView fx:id="gearListView" layoutX="14.0" layoutY="59.0" prefHeight="325.0" prefWidth="259.0" />
-      <Button fx:id="closePopup_Button" layoutX="610.0" layoutY="118.0" mnemonicParsing="false" onAction="#closeAddGearPopup" prefHeight="52.0" prefWidth="173.0" text="Abbrechen">
+      <ListView fx:id="gearListView" layoutX="14.0" layoutY="59.0" prefHeight="325.0" prefWidth="187.0" />
+      <Button fx:id="closePopup_Button" layoutX="673.0" layoutY="118.0" mnemonicParsing="false" onAction="#closeAddGearPopup" prefHeight="52.0" prefWidth="110.0" text="Abbrechen">
          <font>
-            <Font size="25.0" />
+            <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="addGear_Button" layoutX="610.0" layoutY="212.0" mnemonicParsing="false" onAction="#addGearToHero" prefHeight="52.0" prefWidth="173.0" text="Hinzufügen">
+      <Button fx:id="addGear_Button" layoutX="673.0" layoutY="212.0" mnemonicParsing="false" onAction="#addGearToHero" prefHeight="52.0" prefWidth="110.0" text="Hinzufügen">
          <font>
-            <Font size="25.0" />
+            <Font size="16.0" />
          </font>
       </Button>
-      <ListView fx:id="gearToAddListView" layoutX="332.0" layoutY="61.0" prefHeight="325.0" prefWidth="259.0" />
-      <Circle fx:id="addGearToList_Circle" fill="DODGERBLUE" layoutX="301.0" layoutY="130.0" onMouseClicked="#addGearToList" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="removeGearFromList_Circle" fill="DODGERBLUE" layoutX="301.0" layoutY="262.0" onMouseClicked="#removeGearFromList" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
-      <ChoiceBox fx:id="gearGroupChoiceBox" layoutX="14.0" layoutY="20.0" prefHeight="25.0" prefWidth="205.0" />
+      <ChoiceBox fx:id="gearGroupChoiceBox" layoutX="14.0" layoutY="20.0" prefHeight="25.0" prefWidth="187.0" />
+      <HBox prefHeight="100.0" prefWidth="200.0" />
+      <HBox fx:id="showSelectedGearHBox" layoutX="219.0" layoutY="20.0" prefHeight="360.0" prefWidth="440.0" />
    </children>
 </AnchorPane>

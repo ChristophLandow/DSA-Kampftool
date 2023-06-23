@@ -14,31 +14,35 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Circle;
+import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class AddGearPopupController implements RenderController {
 
+
+    @FXML HBox showSelectedGearHBox;
     @FXML ChoiceBox<String> gearGroupChoiceBox;
     @FXML ListView<String> gearListView;
-    @FXML ListView<String> gearToAddListView;
-    @FXML Circle addGearToList_Circle;
-    @FXML Circle removeGearFromList_Circle;
     @FXML Button addGear_Button;
     @FXML Button closePopup_Button;
     private final CharacterScreenController characterScreenController;
+    private final SelectedGearBoxController selectedGearBoxController;
     private ArrayList<Armor> armorList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> closeCombatWeaponList = new ArrayList<>();
     private ArrayList<Weapon_rangedCombat> rangedCombatWeaponList = new ArrayList<>();
 
     public AddGearPopupController(CharacterScreenController characterScreenController) {
         this.characterScreenController = characterScreenController;
+        this.selectedGearBoxController = new SelectedGearBoxController();
     }
     @Override
     public void init() {
         loadGearLists();
+        //load selectedGear HBox
+        showSelectedGearHBox.getChildren().add(selectedGearBoxController.render());
+        selectedGearBoxController.init();
     }
 
     @Override
@@ -78,5 +82,9 @@ public class AddGearPopupController implements RenderController {
 
     private void loadArmorList() {
         gearListView.getItems().add(new Armor("Amazonenüstung",3,5,3,5,2,2,3,3,3.7,2.7,8).toString());
+    }
+
+    public void loadSelectedGear(){
+
     }
 }
