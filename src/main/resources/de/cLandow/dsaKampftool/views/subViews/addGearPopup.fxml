@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -23,65 +22,55 @@
          </font>
       </Button>
       <ChoiceBox fx:id="gearGroupChoiceBox" layoutX="14.0" layoutY="20.0" prefHeight="25.0" prefWidth="187.0" />
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="239.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="mainWeaponImageView" fitHeight="50.0" fitWidth="50.0" layoutX="239.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/sword.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="413.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="231.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/shield.png" />
          </image>
       </ImageView>
-      <Label layoutX="297.0" layoutY="38.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
-      <Label layoutX="463.0" layoutY="37.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="239.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="sideWeaponImageView" fitHeight="50.0" fitWidth="50.0" layoutX="239.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/sword.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="413.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="helmetImageView" fitHeight="50.0" fitWidth="50.0" layoutX="454.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/sword.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="239.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="torsoArmorImageView" fitHeight="50.0" fitWidth="50.0" layoutX="447.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/sword.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="413.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tummyImageView" fitHeight="50.0" fitWidth="50.0" layoutX="447.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/sword.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="239.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="rightArmImageView" fitHeight="50.0" fitWidth="50.0" layoutX="350.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/sword.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="413.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="leftArmImageView" fitHeight="50.0" fitWidth="50.0" layoutX="536.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/sword.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="239.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tightLegImageView" fitHeight="50.0" fitWidth="50.0" layoutX="365.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/sword.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="413.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="leftLegImageView" fitHeight="50.0" fitWidth="50.0" layoutX="511.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/sword.png" />
          </image>
       </ImageView>
-      <Label layoutX="463.0" layoutY="256.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
-      <Label layoutX="473.0" layoutY="112.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
-      <Label layoutX="463.0" layoutY="179.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
-      <Label layoutX="463.0" layoutY="342.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
-      <Label layoutX="289.0" layoutY="342.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
-      <Label layoutX="297.0" layoutY="256.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
-      <Label layoutX="289.0" layoutY="179.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
-      <Label layoutX="289.0" layoutY="112.0" prefHeight="17.0" prefWidth="110.0" text="nicht ausgewählt" />
    </children>
 </AnchorPane>
