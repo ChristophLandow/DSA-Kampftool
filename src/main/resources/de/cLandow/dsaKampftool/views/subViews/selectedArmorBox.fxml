@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="helmetImageView" fitHeight="50.0" fitWidth="50.0" layoutX="266.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/sword.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="torsoArmorImageView" fitHeight="50.0" fitWidth="50.0" layoutX="266.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/sword.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="tummyImageView" fitHeight="50.0" fitWidth="50.0" layoutX="266.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/sword.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leftLegImageView" fitHeight="50.0" fitWidth="50.0" layoutX="336.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/sword.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="tightLegImageView" fitHeight="50.0" fitWidth="50.0" layoutX="180.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/sword.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leftArmImageView" fitHeight="50.0" fitWidth="50.0" layoutX="348.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/sword.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rightArmImageView" fitHeight="50.0" fitWidth="50.0" layoutX="180.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/sword.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/shield.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sideWeaponImageView" fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/sword.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mainWeaponImageView" fitHeight="50.0" fitWidth="50.0" layoutX="28.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/sword.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

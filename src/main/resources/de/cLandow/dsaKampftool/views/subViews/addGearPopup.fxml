@@ -22,6 +22,6 @@
       </Button>
       <ChoiceBox fx:id="gearGroupChoiceBox" layoutX="14.0" layoutY="20.0" prefHeight="25.0" prefWidth="187.0" />
       <HBox prefHeight="100.0" prefWidth="200.0" />
-      <HBox layoutX="219.0" layoutY="20.0" prefHeight="360.0" prefWidth="440.0" />
+      <HBox fx:id="showSelectedGearHBox" layoutX="219.0" layoutY="20.0" prefHeight="360.0" prefWidth="440.0" />
    </children>
 </AnchorPane>
