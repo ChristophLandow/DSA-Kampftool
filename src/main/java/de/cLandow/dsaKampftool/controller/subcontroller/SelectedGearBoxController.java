@@ -11,11 +11,12 @@ import java.io.IOException;
 
 public class SelectedGearBoxController implements RenderController {
 
+
     @FXML ImageView helmetImageView;
     @FXML ImageView torsoArmorImageView;
     @FXML ImageView tummyImageView;
     @FXML ImageView leftLegImageView;
-    @FXML ImageView tightLegImageView;
+    @FXML ImageView rightLegImageView;
     @FXML ImageView leftArmImageView;
     @FXML ImageView rightArmImageView;
 
@@ -25,7 +26,13 @@ public class SelectedGearBoxController implements RenderController {
 
     @Override
     public void init() {
-
+        addHoverEffekt(helmetImageView);
+        addHoverEffekt(torsoArmorImageView);
+        addHoverEffekt(tummyImageView);
+        addHoverEffekt(leftLegImageView);
+        addHoverEffekt(rightLegImageView);
+        addHoverEffekt(leftArmImageView);
+        addHoverEffekt(rightArmImageView);
     }
 
     @Override
@@ -44,5 +51,9 @@ public class SelectedGearBoxController implements RenderController {
             e.printStackTrace();
         }
         return parent;
+    }
+
+    private void addHoverEffekt(ImageView imageView) {
+
     }
 }
