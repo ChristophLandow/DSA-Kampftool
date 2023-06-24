@@ -5,6 +5,8 @@ import de.cLandow.dsaKampftool.controller.RenderController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 
 import java.io.IOException;
@@ -54,6 +56,7 @@ public class SelectedGearBoxController implements RenderController {
     }
 
     private void addHoverEffekt(ImageView imageView) {
-
+        Tooltip newTooltip = new Tooltip("test");
+        Tooltip.install(imageView,newTooltip);
     }
 }
