@@ -24,6 +24,7 @@ public class SelectedGearBoxController implements RenderController {
     @FXML BorderPane leftLegBorderPane;
     @FXML BorderPane rightLegBorderPane;
     @FXML BorderPane rightArmBorderPane;
+
     @FXML ImageView rightLegImageView;
     @FXML ImageView shieldImageView;
     @FXML ImageView sideWeaponImageView;
@@ -41,14 +42,16 @@ public class SelectedGearBoxController implements RenderController {
 
     @Override
     public void init() {
-        addHoverEffekt(helmetImageView);
-        addHoverEffekt(torsoArmorImageView);
-        addHoverEffekt(tummyImageView);
-        addHoverEffekt(leftLegImageView);
-        addHoverEffekt(rightLegImageView);
-        addHoverEffekt(leftArmImageView);
-        addHoverEffekt(rightArmImageView);
-        addHoverEffekt(shieldImageView);
+        addHoverEffekt(headBorderPane);
+        addHoverEffekt(torsoBorderPAne);
+        addHoverEffekt(tummyBorderPane);
+        addHoverEffekt(leftLegBorderPane);
+        addHoverEffekt(rightLegBorderPane);
+        addHoverEffekt(leftArmBorderPane);
+        addHoverEffekt(rightArmBorderPane);
+        addHoverEffekt(shieldBorderPane);
+        addHoverEffekt(mainWeaponBorderPane);
+        addHoverEffekt(sideWeaponBorderPane);
     }
 
     @Override
@@ -68,13 +71,15 @@ public class SelectedGearBoxController implements RenderController {
         return parent;
     }
 
-    private void addHoverEffekt(ImageView view) {
-        addBorderPaneEffect(view);
-        addToolTipp(view);
+    private void addHoverEffekt(BorderPane pane) {
+        addBorderPaneEffect((ImageView) pane.getCenter());
+        addToolTipp((ImageView) pane.getCenter());
     }
 
     private void addBorderPaneEffect(ImageView view) {
         view.setOnMouseEntered((event) -> {
+
+
 
         });
     }
