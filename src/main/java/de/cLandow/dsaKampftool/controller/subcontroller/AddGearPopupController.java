@@ -47,7 +47,6 @@ public class AddGearPopupController implements RenderController {
 
     @Override
     public void stop() {
-
     }
 
     @Override

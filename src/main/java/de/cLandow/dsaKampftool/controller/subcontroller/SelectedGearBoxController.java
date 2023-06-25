@@ -5,7 +5,6 @@ import de.cLandow.dsaKampftool.controller.RenderController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 
@@ -23,7 +22,6 @@ public class SelectedGearBoxController implements RenderController {
     @FXML ImageView rightArmImageView;
 
     public SelectedGearBoxController(){
-
     }
 
     @Override
@@ -39,7 +37,6 @@ public class SelectedGearBoxController implements RenderController {
 
     @Override
     public void stop() {
-
     }
 
     @Override

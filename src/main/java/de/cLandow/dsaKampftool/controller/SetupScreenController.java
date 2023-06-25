@@ -7,7 +7,6 @@ import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxCon
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
-import static de.cLandow.dsaKampftool.Constants.*;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
