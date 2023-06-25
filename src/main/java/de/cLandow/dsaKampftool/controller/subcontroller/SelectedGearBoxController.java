@@ -7,12 +7,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 
 public class SelectedGearBoxController implements RenderController {
 
 
+    @FXML BorderPane shieldBorderPane;
+    @FXML BorderPane mainWeaponBorderPane;
+    @FXML BorderPane sideWeaponBorderPane;
+    @FXML BorderPane headBorderPane;
+    @FXML BorderPane torsoBorderPAne;
+    @FXML BorderPane leftArmBorderPane;
+    @FXML BorderPane tummyBorderPane;
+    @FXML BorderPane leftLegBorderPane;
+    @FXML BorderPane rightLegBorderPane;
+    @FXML BorderPane rightArmBorderPane;
     @FXML ImageView rightLegImageView;
     @FXML ImageView shieldImageView;
     @FXML ImageView sideWeaponImageView;
@@ -37,6 +48,7 @@ public class SelectedGearBoxController implements RenderController {
         addHoverEffekt(rightLegImageView);
         addHoverEffekt(leftArmImageView);
         addHoverEffekt(rightArmImageView);
+        addHoverEffekt(shieldImageView);
     }
 
     @Override
@@ -57,7 +69,17 @@ public class SelectedGearBoxController implements RenderController {
     }
 
     private void addHoverEffekt(ImageView view) {
-        view.setPickOnBounds(false);
+        addBorderPaneEffect(view);
+        addToolTipp(view);
+    }
+
+    private void addBorderPaneEffect(ImageView view) {
+        view.setOnMouseEntered((event) -> {
+
+        });
+    }
+
+    private void addToolTipp(ImageView view) {
         Tooltip newTooltip = new Tooltip("test");
         Tooltip.install(view,newTooltip);
     }
