@@ -18,9 +18,6 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import javafx.stage.DirectoryChooser;
-
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;

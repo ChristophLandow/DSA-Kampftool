@@ -1,7 +1,5 @@
 package de.cLandow.dsaKampftool.services;
 
-import de.cLandow.dsaKampftool.model.Character;
-
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
