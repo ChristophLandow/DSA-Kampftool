@@ -13,13 +13,17 @@ import java.io.IOException;
 public class SelectedGearBoxController implements RenderController {
 
 
+    @FXML ImageView rightLegImageView;
+    @FXML ImageView shieldImageView;
+    @FXML ImageView sideWeaponImageView;
+    @FXML ImageView mainWeaponImageView;
     @FXML ImageView helmetImageView;
     @FXML ImageView torsoArmorImageView;
     @FXML ImageView tummyImageView;
     @FXML ImageView leftLegImageView;
-    @FXML ImageView rightLegImageView;
     @FXML ImageView leftArmImageView;
     @FXML ImageView rightArmImageView;
+
 
     public SelectedGearBoxController(){
     }
@@ -52,8 +56,10 @@ public class SelectedGearBoxController implements RenderController {
         return parent;
     }
 
-    private void addHoverEffekt(ImageView imageView) {
+    private void addHoverEffekt(ImageView view) {
+        view.setPickOnBounds(false);
         Tooltip newTooltip = new Tooltip("test");
-        Tooltip.install(imageView,newTooltip);
+        Tooltip.install(view,newTooltip);
     }
+
 }
