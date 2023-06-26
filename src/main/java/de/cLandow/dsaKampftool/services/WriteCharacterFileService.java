@@ -10,7 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 
-import static de.cLandow.dsaKampftool.Constants.FILEPATH;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class WriteCharacterFileService {
 
@@ -25,7 +25,7 @@ public class WriteCharacterFileService {
 
     public Character createFile(Character character){
         // send the output to a xml file
-        try(FileOutputStream out = new FileOutputStream(FILEPATH + character.getName() + ".xml")){
+        try(FileOutputStream out = new FileOutputStream(CHARACTER_FILEPATH + character.getName() + ".xml")){
             writeXml(out, character);
         } catch (IOException e) {
             e.printStackTrace();
@@ -34,7 +34,7 @@ public class WriteCharacterFileService {
     }
 
     public boolean createFolder(){
-        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool");
+        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//Charakter//");
         File folder = new File(path.toUri());
         if(!folder.exists()){
             return folder.mkdirs();

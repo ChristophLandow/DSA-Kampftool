@@ -11,7 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 
-import static de.cLandow.dsaKampftool.Constants.FILEPATH;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class WriteSetupFileService {
 
@@ -26,7 +26,7 @@ public class WriteSetupFileService {
 
     public void createFile(String path){
         // send the output to a xml file
-        try(FileOutputStream out = new FileOutputStream(FILEPATH + "SetupFile.xml")){
+        try(FileOutputStream out = new FileOutputStream(SETUP_FILEPATH + "SetupFile.xml")){
             writeXml(out, path);
         } catch (IOException e) {
             e.printStackTrace();

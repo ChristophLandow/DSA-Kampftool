@@ -44,13 +44,13 @@ public class CharacterLoadPopupController implements RenderController, Initializ
 
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
-    private final WriteCharacterFileService writeFileService;
+    private final WriteCharacterFileService writeCharacterFileService;
 
 
     public CharacterLoadPopupController(SetupScreenController setupScreenController){
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
-        this.writeFileService = new WriteCharacterFileService();
+        this.writeCharacterFileService = new WriteCharacterFileService();
     }
 
     @Override
@@ -67,6 +67,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        writeCharacterFileService.createFolder();
         characterNames = readFileService.loadCharakterNamesForChoiceBox();
         characterBox.getItems().addAll(characterNames);
     }
@@ -99,7 +100,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 int initiative = Integer.parseInt(newCharAtField.getCharacters().toString());
                 int lifePoints = Integer.parseInt(newCharLifepointsField.getCharacters().toString());
                 int endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
-                setupScreenController.setActualCharacter(writeFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints));
+                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints));
                 saveCharacterName(newCharacterNameField.getText());
                 setupScreenController.loadStats();
                 stop();
