@@ -8,6 +8,9 @@ import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
 
+import de.cLandow.dsaKampftool.services.WriteCharacterFileService;
+import de.cLandow.dsaKampftool.services.WriteGearFileService;
+import de.cLandow.dsaKampftool.services.WriteSetupFileService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -54,7 +57,15 @@ public class SetupScreenController implements RenderController {
             openChooseCharacterOrDirectoryPopup();
         }
         menuController.init();
-
+        //check/create Home-Directory in Home/Documents
+        WriteSetupFileService setupFileService = new WriteSetupFileService();
+        setupFileService.createFolder();
+        //check/create Character-Directory in Home-Directory
+        WriteCharacterFileService writeCharacterFileService = new WriteCharacterFileService();
+        writeCharacterFileService.createCharacterFolder();
+        //check/create Gear-Directory in Home-Director
+        WriteGearFileService writeGearFileService = new WriteGearFileService();
+        writeGearFileService.createGearFolder();
     }
 
     @Override

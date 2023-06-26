@@ -19,11 +19,6 @@ public class WriteSetupFileService {
 
     }
 
-    public void saveSetupFile(String path){
-        createFolder();
-        createFile(path);
-    }
-
     public void createFile(String path){
         // send the output to a xml file
         try(FileOutputStream out = new FileOutputStream(SETUP_FILEPATH + "SetupFile.xml")){

@@ -67,7 +67,6 @@ public class CharacterLoadPopupController implements RenderController, Initializ
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        writeCharacterFileService.createFolder();
         characterNames = readFileService.loadCharakterNamesForChoiceBox();
         characterBox.getItems().addAll(characterNames);
     }
