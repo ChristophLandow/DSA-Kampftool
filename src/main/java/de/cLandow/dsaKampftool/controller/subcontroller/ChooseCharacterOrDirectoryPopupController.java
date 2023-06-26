@@ -14,6 +14,7 @@ import javafx.stage.DirectoryChooser;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public class ChooseCharacterOrDirectoryPopupController implements RenderController {
 
