@@ -18,7 +18,7 @@ public class ReadFileService {
     }
 
     public Character loadCharacter(String name){
-        String path = FILEPATH + name + ".xml";
+        String path = CHARACTER_FILEPATH + name + ".xml";
         SAXParserFactory factory = SAXParserFactory.newInstance();
 
         try {
@@ -37,7 +37,7 @@ public class ReadFileService {
 
     public ArrayList<String> loadCharakterNamesForChoiceBox(){
         ArrayList<String> characterArray = new ArrayList<>();
-        File characterDirectory = new File(Paths.get(System.getProperty("user.home") + "//DSAKampftool").toUri());
+        File characterDirectory = new File(Paths.get(System.getProperty("user.home") + "//DSAKampftool//Charakter").toUri());
         File[] characterList = characterDirectory.listFiles();
         if (characterList != null) {
             for (File character : characterList) {

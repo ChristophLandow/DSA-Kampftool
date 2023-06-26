@@ -32,7 +32,7 @@ public class MenuController implements RenderController {
 
     @Override
     public void init() {
-        showPathMenuItem.setText(FILEPATH);
+        showPathMenuItem.setText(CHARACTER_FILEPATH);
     }
 
     @Override
