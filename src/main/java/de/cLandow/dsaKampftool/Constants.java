@@ -11,6 +11,7 @@ public class Constants {
 
     public static final String NOCHARACTER = "NoCharacterNameSaved";
     public static final String FILEPATH = System.getProperty("user.home") + "//DSAKampftool//";
+    public static final String SETUP_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup";
 
     public static final String RIGHT_ARM = "Right Arm";
     public static final String LEFT_ARM = "Left Arm";

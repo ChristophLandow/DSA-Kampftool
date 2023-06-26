@@ -11,8 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 
-import static de.cLandow.dsaKampftool.Constants.FILEPATH;
-import static de.cLandow.dsaKampftool.Constants.GEAR_FILEPATH;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class WriteGearFileService {
 
@@ -21,7 +20,7 @@ public class WriteGearFileService {
 
     public void createFile(){
         // send the output to a xml file
-        try(FileOutputStream out = new FileOutputStream(GEAR_FILEPATH + "Ausrüstung.xml")){
+        try(FileOutputStream out = new FileOutputStream(SETUP_FILEPATH + "Ausrüstung.xml")){
             writeXml(out);
         } catch (IOException e) {
             e.printStackTrace();
@@ -29,7 +28,7 @@ public class WriteGearFileService {
     }
 
     public boolean createGearFolder(){
-        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool" + "//Ausrüstung");
+        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//Ausrüstung");
         File folder = new File(path.toUri());
         if(!folder.exists()){
             return folder.mkdirs();
