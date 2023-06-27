@@ -19,7 +19,7 @@ public class WriteCharacterFileService {
     }
 
     public Character saveNewCharacterAsFXM(String name, int attack, int parade, int shooting, int initiative, int lifePoints, int endurancePoints) {
-        createFolder();
+        createCharacterFolder();
         return createFile(new Character(name,attack,parade,shooting,initiative, lifePoints, endurancePoints));
     }
 
@@ -33,7 +33,7 @@ public class WriteCharacterFileService {
         return character;
     }
 
-    public boolean createFolder(){
+    public boolean createCharacterFolder(){
         Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//Charakter//");
         File folder = new File(path.toUri());
         if(!folder.exists()){
