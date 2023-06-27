@@ -27,15 +27,6 @@ public class WriteGearFileService {
         }
     }
 
-    public boolean createGearFolder(){
-        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//Ausrüstung");
-        File folder = new File(path.toUri());
-        if(!folder.exists()){
-            return folder.mkdirs();
-        }
-        return false;
-    }
-
     private static void writeXml(OutputStream out)  {
 
         XMLOutputFactory output = XMLOutputFactory.newInstance();

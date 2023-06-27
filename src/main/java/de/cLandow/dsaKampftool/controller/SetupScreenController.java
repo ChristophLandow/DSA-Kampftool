@@ -59,13 +59,14 @@ public class SetupScreenController implements RenderController {
         menuController.init();
         //check/create Home-Directory in Home/Documents
         WriteSetupFileService setupFileService = new WriteSetupFileService();
-        setupFileService.createFolder();
+        setupFileService.createMainFolder();
+        setupFileService.createSetupFolder();
         //check/create Character-Directory in Home-Directory
         WriteCharacterFileService writeCharacterFileService = new WriteCharacterFileService();
         writeCharacterFileService.createCharacterFolder();
         //check/create Gear-Directory in Home-Director
         WriteGearFileService writeGearFileService = new WriteGearFileService();
-        writeGearFileService.createGearFolder();
+        writeGearFileService.createFile();
     }
 
     @Override

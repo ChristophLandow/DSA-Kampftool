@@ -28,8 +28,17 @@ public class WriteSetupFileService {
         }
     }
 
-    public boolean createFolder(){
+    public boolean createMainFolder(){
         Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool");
+        File folder = new File(path.toUri());
+        if(!folder.exists()){
+            return folder.mkdirs();
+        }
+        return false;
+    }
+
+    public boolean createSetupFolder(){
+        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//Setup");
         File folder = new File(path.toUri());
         if(!folder.exists()){
             return folder.mkdirs();
