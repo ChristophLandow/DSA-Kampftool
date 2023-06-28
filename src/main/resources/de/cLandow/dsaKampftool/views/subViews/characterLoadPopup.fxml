@@ -79,7 +79,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="newCharStrenghField" layoutX="339.0" layoutY="374.0" prefHeight="35.0" prefWidth="89.0" promptText="Körperkraft">
+      <TextField fx:id="newCharStrengthField" layoutX="339.0" layoutY="374.0" prefHeight="35.0" prefWidth="89.0" promptText="Körperkraft">
          <font>
             <Font size="14.0" />
          </font>
