@@ -50,6 +50,10 @@ public class Character {
         return lp;
     }
 
+    public int getKk() {
+        return kk;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -76,5 +80,9 @@ public class Character {
 
     public void setLp(int lp) {
         this.lp = lp;
+    }
+
+    public void setKk(int kk){
+        this.kk = kk;
     }
 }

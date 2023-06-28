@@ -86,6 +86,10 @@ public class WriteCharacterFileService {
             writer.writeAttribute("AUP", String.valueOf(character.getAup()));
             writer.writeEndElement();
 
+            writer.writeStartElement("Koerperkraft");
+            writer.writeAttribute("KK", String.valueOf(character.getKk()));
+            writer.writeEndElement();
+
             writer.writeEndElement();
             // </Attribute>
 

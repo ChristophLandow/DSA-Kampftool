@@ -27,7 +27,7 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="newCharacterNameField" layoutX="60.0" layoutY="283.0" prefHeight="35.0" prefWidth="296.0" promptText="Name">
+      <TextField fx:id="newCharacterNameField" layoutX="34.0" layoutY="283.0" prefHeight="35.0" prefWidth="296.0" promptText="Name">
          <font>
             <Font size="16.0" />
          </font>
@@ -39,22 +39,22 @@
             <Font size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="newCharAtField" layoutX="60.0" layoutY="374.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-At">
+      <TextField fx:id="newCharAtField" layoutX="34.0" layoutY="374.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-At">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="newCharFkField" layoutX="164.0" layoutY="374.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Fk">
+      <TextField fx:id="newCharFkField" layoutX="138.0" layoutY="374.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Fk">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="newCharPaField" layoutX="60.0" layoutY="433.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Pa">
+      <TextField fx:id="newCharPaField" layoutX="34.0" layoutY="433.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Pa">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="newCharIniField" layoutX="164.0" layoutY="433.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Ini">
+      <TextField fx:id="newCharIniField" layoutX="138.0" layoutY="433.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-Ini">
          <font>
             <Font size="16.0" />
          </font>
@@ -63,12 +63,12 @@
       <Text fx:id="noStatsWarning" fill="RED" layoutX="58.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht At, Pa, Fk, Ini, Ausdauer und Lebenspunkt-Basiswerte...." wrappingWidth="265.13671875" />
       <Spinner fx:id="newCharacterProtraitSpinner" layoutX="480.0" layoutY="320.0" prefHeight="25.0" prefWidth="81.0" />
       <Button layoutX="480.0" layoutY="362.0" mnemonicParsing="false" onAction="#uploadOwnPicture" prefHeight="25.0" prefWidth="81.0" text="Hochladen" />
-      <TextField fx:id="newCharEnduranceField" layoutX="270.0" layoutY="433.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-AP">
+      <TextField fx:id="newCharEnduranceField" layoutX="241.0" layoutY="433.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-AP">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="newCharLifepointsField" layoutX="270.0" layoutY="374.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-LP">
+      <TextField fx:id="newCharLifepointsField" layoutX="241.0" layoutY="374.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-LP">
          <font>
             <Font size="16.0" />
          </font>
@@ -79,5 +79,10 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
+      <TextField fx:id="newCharStrenghField" layoutX="339.0" layoutY="374.0" prefHeight="35.0" prefWidth="89.0" promptText="Körperkraft">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>
