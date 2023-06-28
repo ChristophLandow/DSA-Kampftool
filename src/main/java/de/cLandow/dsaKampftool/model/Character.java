@@ -9,9 +9,10 @@ public class Character {
     private int ini;
     private int lp;
     private int aup;
+    private int kk;
 
 
-    public Character(String name, int at, int pa, int fk, int ini, int lp, int aup){
+    public Character(String name, int at, int pa, int fk, int ini, int lp, int aup, int kk){
         this.name = name;
         this.at = at;
         this.pa = pa;
@@ -19,6 +20,7 @@ public class Character {
         this.ini = ini;
         this.lp = lp;
         this.aup = aup;
+        this.kk = kk;
     }
 
     public String getName() {

@@ -99,7 +99,8 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 int initiative = Integer.parseInt(newCharAtField.getCharacters().toString());
                 int lifePoints = Integer.parseInt(newCharLifepointsField.getCharacters().toString());
                 int endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
-                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints));
+                int streng = Integer.parseInt(newCharStrenghField.getCharacters().toString());
+                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints, strengh));
                 saveCharacterName(newCharacterNameField.getText());
                 setupScreenController.loadStats();
                 stop();
