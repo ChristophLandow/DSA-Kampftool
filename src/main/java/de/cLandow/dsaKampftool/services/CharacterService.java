@@ -8,8 +8,8 @@ public class CharacterService {
     public CharacterService(){
     }
 
-    public Character createCharacter(String name, Integer at, Integer pa, Integer fk, Integer ini, Integer lp, Integer aup){
-        return new Character(name, at, pa, fk, ini, lp, aup);
+    public Character createCharacter(String name, Integer at, Integer pa, Integer fk, Integer ini, Integer lp, Integer aup, Integer kk){
+        return new Character(name, at, pa, fk, ini, lp, aup, kk);
     }
 
     public Character modifyNameOfCharacter(Character character, String newName){

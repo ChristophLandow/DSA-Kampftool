@@ -15,6 +15,7 @@ public class FileReadHandler extends DefaultHandler {
     private int initiative;
     private int lifePoints;
     private int endurancePoints;
+    private int strength;
 
     StringBuilder nameBuilder = new StringBuilder();
 
@@ -24,7 +25,7 @@ public class FileReadHandler extends DefaultHandler {
 
     @Override
     public void endDocument(){
-        character = new Character(name, attacke, parade, fernkampf, initiative, lifePoints, endurancePoints);
+        character = new Character(name, attacke, parade, fernkampf, initiative, lifePoints, endurancePoints, strength);
     }
 
     @Override
@@ -46,6 +47,9 @@ public class FileReadHandler extends DefaultHandler {
         }
         if("Ausdauerpunkte".equals(qName)){
             endurancePoints = Integer.parseInt(attributes.getValue("AUP"));
+        }
+        if("Koerperkrafte".equals(qName)){
+            strength = Integer.parseInt(attributes.getValue("KK"));
         }
     }
 

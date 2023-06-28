@@ -26,6 +26,7 @@ import java.util.ResourceBundle;
 public class CharacterLoadPopupController implements RenderController, Initializable {
 
     private final SetupScreenController setupScreenController;
+    @FXML TextField newCharStrengthField;
 
     @FXML Spinner<String> newCharacterProtraitSpinner;
     @FXML Circle characterImageCircle;
@@ -99,7 +100,8 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 int initiative = Integer.parseInt(newCharAtField.getCharacters().toString());
                 int lifePoints = Integer.parseInt(newCharLifepointsField.getCharacters().toString());
                 int endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
-                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints));
+                int strength = Integer.parseInt(newCharStrengthField.getCharacters().toString());
+                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints, strength));
                 saveCharacterName(newCharacterNameField.getText());
                 setupScreenController.loadStats();
                 stop();
