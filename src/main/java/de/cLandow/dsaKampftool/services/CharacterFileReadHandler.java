@@ -5,7 +5,7 @@ import de.cLandow.dsaKampftool.model.Character;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class FileReadHandler extends DefaultHandler {
+public class CharacterFileReadHandler extends DefaultHandler {
 
     private Character character;
     private String name;
