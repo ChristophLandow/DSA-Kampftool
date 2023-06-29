@@ -39,10 +39,17 @@ public class AddGearPopupController implements RenderController {
     }
     @Override
     public void init() {
+        loadGearGroupChoiceBox();
         loadGearLists();
         //load selectedGear HBox
         showSelectedGearHBox.getChildren().add(selectedGearBoxController.render());
         selectedGearBoxController.init();
+
+    }
+
+    private void loadGearGroupChoiceBox() {
+        gearGroupChoiceBox.getItems().add("Nahkampfwaffen");
+        gearGroupChoiceBox.getItems().add("Fernkampfwaffen");
     }
 
     @Override
@@ -76,11 +83,11 @@ public class AddGearPopupController implements RenderController {
     }
 
     public void loadGearLists(){
-        loadArmorList();
+
     }
 
     private void loadArmorList() {
-        gearListView.getItems().add(new Armor("Amazonenüstung",3,5,3,5,2,2,3,3,3.7,2.7,8).toString());
+
     }
 
     public void loadSelectedGear(){

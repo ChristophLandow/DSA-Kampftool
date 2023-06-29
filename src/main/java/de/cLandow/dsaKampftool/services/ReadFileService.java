@@ -1,6 +1,7 @@
 package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.model.Character;
+import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -52,7 +53,7 @@ public class ReadFileService {
     }
 
 
-    public ArrayList loadGear(){
+    public ArrayList<Weapon_closeCombat> loadGear(){
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             SAXParser saxParser = factory.newSAXParser();
