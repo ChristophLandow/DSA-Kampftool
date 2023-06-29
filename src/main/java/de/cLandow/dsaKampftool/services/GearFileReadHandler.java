@@ -1,5 +1,6 @@
 package de.cLandow.dsaKampftool.services;
 
+import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -10,9 +11,9 @@ public class GearFileReadHandler extends DefaultHandler {
     private String name = "";
     private String mod = "";
     private String distance = "";
+    private String initiative = "";
 
-    private ArrayList<String> weaponList = new ArrayList<>();
-    StringBuilder nameBuilder = new StringBuilder();
+    private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
 
     @Override
     public void startDocument(){
@@ -20,7 +21,6 @@ public class GearFileReadHandler extends DefaultHandler {
 
     @Override
     public void endDocument(){
-
     }
 
     @Override
@@ -31,22 +31,27 @@ public class GearFileReadHandler extends DefaultHandler {
         if ("Waffe".equals(qName)) {
             distance = attributes.getValue("Distanz");
         }
+        if ("Waffe".equals(qName)) {
+            name = attributes.getValue("Name");
+        }
+        if ("Waffe".equals(qName)) {
+            initiative = attributes.getValue("Ini");
+        }
     }
 
     @Override
     public void endElement(String uri, String localName, String qName){
         if("Waffe".equals(qName)){
-            name = nameBuilder.toString();
-
+            weaponList.add(new Weapon_closeCombat(name,Integer.parseInt(initiative),mod,distance));
         }
     }
 
     @Override
     public void characters(char[] ch, int start, int length){
-        nameBuilder.append(ch, start, length);
+
     }
 
-    public ArrayList getGearList() {
+    public ArrayList<Weapon_closeCombat> getGearList() {
         return weaponList;
     }
 }
