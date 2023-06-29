@@ -36,7 +36,8 @@ public class WriteGearFileService {
 
             writer.writeStartElement("Zweihand-Hiebwaffen");
 
-            writer.writeStartElement("Barbarenstreitaxt");
+            writer.writeStartElement("Waffe");
+            writer.writeCharacters("Barabrenstreitaxt");
             writer.writeAttribute("Mod", "15/1");
             writer.writeAttribute("Distanz", "N");
             writer.writeEndElement();
@@ -45,7 +46,8 @@ public class WriteGearFileService {
 
             writer.writeStartElement("Dolche");
 
-            writer.writeStartElement("Langdolch");
+            writer.writeStartElement("Waffe");
+            writer.writeCharacters("Langdolch");
             writer.writeAttribute("Mod", "12/3");
             writer.writeAttribute("Distanz", "HN");
             writer.writeEndElement();
