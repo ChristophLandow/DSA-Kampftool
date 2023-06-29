@@ -89,9 +89,13 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
    - [X] Charakter kann mit Grundwerten angelegt werden
    - [X] Charakter kann als .xml gespeichert werden
    - [X] Charakter kann aus .xml geladen werden
-   - [ ] Charakter verfügt über Lebenspunkte und Ausdauer (inklusive Schwellenwerte)
+   - [X] Charakter verfügt über Lebenspunkte und Ausdauer 
+     - [ ] inklusive Schwellenwerte
    - [ ] Charakter kann mit Sonderfertigkeiten versehen werden
-   - [ ] Charakter kann mit Ausrüstung versehen werden
+   - [ ] Ausrüstung
+     - [x] Ausrüstung wird aus externer Liste geladen 
+     - [ ] Waffen können ausgewählt werden
+       - [ ] Waffen sind in Gruppen unterteilt 
    - [ ] Kampf ausführbar
  - [ ] Basisprogramm ausführbar unter Windows 10/11
  - [ ] Ansprechende UI 
