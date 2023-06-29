@@ -6,6 +6,7 @@ import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import de.cLandow.dsaKampftool.model.Weapon_rangedCombat;
+import de.cLandow.dsaKampftool.services.ReadFileService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
+import java.nio.channels.ReadableByteChannel;
 import java.util.ArrayList;
 
 public class AddGearPopupController implements RenderController {
@@ -83,7 +85,11 @@ public class AddGearPopupController implements RenderController {
     }
 
     public void loadGearLists(){
-
+        ReadFileService readFileService = new ReadFileService();
+        ArrayList<Weapon_closeCombat> weapons = readFileService.loadGear();
+        for(Weapon_closeCombat ckw : weapons){
+            gearListView.getItems().add(ckw.name());
+        }
     }
 
     private void loadArmorList() {
