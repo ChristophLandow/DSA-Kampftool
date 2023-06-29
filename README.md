@@ -21,7 +21,7 @@
     </li>
     <li>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#Voraussetzungen">Voraussetzungen</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -36,8 +36,8 @@
 
 ## Was soll das hier sein ?
 <br>
-<br>
-Das Kampftool soll dem Spieler die Möglichkeit geben einen Charakter anzulegen, dessen Ausrüstung und Werte einzutragen und sich auf alle für den Kampf wichtigen Werte berechnen zu lassen. 
+Das Kampftool soll dem Spieler die Möglichkeit geben einen Charakter anzulegen, dessen Ausrüstung und Werte einzutragen
+und sich alle für den Kampf wichtigen Werte berechnen zu lassen. 
 
 <p style="text-align: right;">(<a href="#top">back to top</a>)</p>
 
@@ -56,8 +56,8 @@ Das Kampftool soll dem Spieler die Möglichkeit geben einen Charakter anzulegen,
 
 ## Aller Anfang....
 
-Um das Tool benutzen zu können, muss Java installiert/aktualisiert sein. Das Programm muss .xml Dateien in einem Verzeichnis speichern können, der Speicherort ist jedoch 
-frei wählbar und kann im Nachhinein geändert werden. 
+Um das Tool benutzen zu können, muss Java installiert/aktualisiert sein Das Kampftool legt im Home-Verzeichnis einen
+Ordner an und speichert doch alle angelegten Charaktere und die Listen für Ausrüstung, Fertigkeiten usw.
 
 <div id="prerequisites"></div>
   https://www.oracle.com/java/technologies/downloads/#java17
@@ -89,9 +89,13 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
    - [X] Charakter kann mit Grundwerten angelegt werden
    - [X] Charakter kann als .xml gespeichert werden
    - [X] Charakter kann aus .xml geladen werden
-   - [ ] Charakter verfügt über Lebenspunkte und Ausdauer (inklusive Schwellenwerte)
+   - [X] Charakter verfügt über Lebenspunkte und Ausdauer 
+     - [ ] inklusive Schwellenwerte
    - [ ] Charakter kann mit Sonderfertigkeiten versehen werden
-   - [ ] Charakter kann mit Ausrüstung versehen werden
+   - [ ] Ausrüstung
+     - [x] Ausrüstung wird aus externer Liste geladen 
+     - [ ] Waffen können ausgewählt werden
+       - [ ] Waffen sind in Gruppen unterteilt 
    - [ ] Kampf ausführbar
  - [ ] Basisprogramm ausführbar unter Windows 10/11
  - [ ] Ansprechende UI 
