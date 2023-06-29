@@ -50,4 +50,21 @@ public class ReadFileService {
         }
         return characterArray;
     }
+
+
+    public ArrayList loadGear(){
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        try {
+            SAXParser saxParser = factory.newSAXParser();
+
+            GearFileReadHandler handler = new GearFileReadHandler();
+
+            saxParser.parse(GEAR_FILEPATH, handler);
+            return handler.getGearList();
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
