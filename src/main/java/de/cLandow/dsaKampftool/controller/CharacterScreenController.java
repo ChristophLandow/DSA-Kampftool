@@ -96,6 +96,7 @@ public class CharacterScreenController implements RenderController {
         popupStage.initModality(Modality.WINDOW_MODAL);
         AddGearPopupController addGearPopupController = new AddGearPopupController(this);
         popupStage.setScene(new Scene(addGearPopupController.render()));
+        popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/addGearPopup.css");
         addGearPopupController.init();
         popupStage.show();
     }
@@ -106,6 +107,7 @@ public class CharacterScreenController implements RenderController {
         popupStage.initModality(Modality.WINDOW_MODAL);
         AddCharacteristicsPopupController addCharacteristicsPopupController= new AddCharacteristicsPopupController(this);
         popupStage.setScene(new Scene(addCharacteristicsPopupController.render()));
+
         addCharacteristicsPopupController.init();
         popupStage.show();
     }
