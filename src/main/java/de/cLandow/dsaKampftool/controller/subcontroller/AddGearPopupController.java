@@ -8,6 +8,7 @@ import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import de.cLandow.dsaKampftool.model.Weapon_rangedCombat;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -42,11 +43,21 @@ public class AddGearPopupController implements RenderController {
     @Override
     public void init() {
         loadGearGroupChoiceBox();
-        loadGearLists();
         //load selectedGear HBox
         showSelectedGearHBox.getChildren().add(selectedGearBoxController.render());
         selectedGearBoxController.init();
+        loadGearLists();
+        loadListeners();
 
+    }
+
+    private void loadListeners() {
+        gearListView.setOnMouseClicked((event -> {
+            if (gearListView.getSelectionModel().isEmpty()) {
+                event.consume();
+            }
+            //gearListView.getSelectionModel().getSelectedItem();
+        }));
     }
 
     private void loadGearGroupChoiceBox() {
@@ -86,9 +97,9 @@ public class AddGearPopupController implements RenderController {
 
     public void loadGearLists(){
         ReadFileService readFileService = new ReadFileService();
-        ArrayList<Weapon_closeCombat> weapons = readFileService.loadGear();
-        for(Weapon_closeCombat ckw : weapons){
-            gearListView.getItems().add(ckw.name());
+        closeCombatWeaponList = readFileService.loadGear();
+        for(Weapon_closeCombat ccw : closeCombatWeaponList){
+            gearListView.getItems().add(ccw.name());
         }
     }
 
@@ -98,5 +109,14 @@ public class AddGearPopupController implements RenderController {
 
     public void loadSelectedGear(){
 
+    }
+
+    public Weapon_closeCombat fromNameToWeapon(String name){
+        for (Weapon_closeCombat ccw : closeCombatWeaponList){
+            if(name.equals(ccw.name())){
+                return ccw;
+            }
+        }
+        return null;
     }
 }
