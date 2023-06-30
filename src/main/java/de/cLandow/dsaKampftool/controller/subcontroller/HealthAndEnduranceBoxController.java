@@ -33,7 +33,7 @@ public class HealthAndEnduranceBoxController implements RenderController {
 
     public HealthAndEnduranceBoxController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
-        healthSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory((characterScreenController.getActualCharacter().getLp()),1000,characterScreenController.getActualCharacter().getLp());
+        healthSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory((-characterScreenController.getActualCharacter().getLp()),1000,characterScreenController.getActualCharacter().getLp());
         enduranceSpinner = new SpinnerValueFactory.IntegerSpinnerValueFactory(0,1000,characterScreenController.getActualCharacter().getAup());
     }
 
