@@ -8,6 +8,7 @@ import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import de.cLandow.dsaKampftool.model.Weapon_rangedCombat;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -42,11 +43,17 @@ public class AddGearPopupController implements RenderController {
     @Override
     public void init() {
         loadGearGroupChoiceBox();
-        loadGearLists();
         //load selectedGear HBox
         showSelectedGearHBox.getChildren().add(selectedGearBoxController.render());
         selectedGearBoxController.init();
+        loadGearLists();
+        loadListeners();
 
+    }
+
+    private void loadListeners() {
+        gearListView.setOnMouseClicked(event ->
+                System.out.println(gearListView.getSelectionModel().getSelectedItem()));
     }
 
     private void loadGearGroupChoiceBox() {
