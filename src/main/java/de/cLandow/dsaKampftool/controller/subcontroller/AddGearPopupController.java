@@ -52,8 +52,12 @@ public class AddGearPopupController implements RenderController {
     }
 
     private void loadListeners() {
-        gearListView.setOnMouseClicked(event ->
-                System.out.println(gearListView.getSelectionModel().getSelectedItem()));
+        gearListView.setOnMouseClicked((event -> {
+            if (gearListView.getSelectionModel().isEmpty()) {
+                event.consume();
+            }
+            //gearListView.getSelectionModel().getSelectedItem();
+        }));
     }
 
     private void loadGearGroupChoiceBox() {
