@@ -93,9 +93,9 @@ public class AddGearPopupController implements RenderController {
 
     public void loadGearLists(){
         ReadFileService readFileService = new ReadFileService();
-        ArrayList<Weapon_closeCombat> weapons = readFileService.loadGear();
-        for(Weapon_closeCombat ckw : weapons){
-            gearListView.getItems().add(ckw.name());
+        closeCombatWeaponList = readFileService.loadGear();
+        for(Weapon_closeCombat ccw : closeCombatWeaponList){
+            gearListView.getItems().add(ccw.name());
         }
     }
 
@@ -105,5 +105,14 @@ public class AddGearPopupController implements RenderController {
 
     public void loadSelectedGear(){
 
+    }
+
+    public Weapon_closeCombat fromNameToWeapon(String name){
+        for (Weapon_closeCombat ccw : closeCombatWeaponList){
+            if(name.equals(ccw.name())){
+                return ccw;
+            }
+        }
+        return null;
     }
 }
