@@ -54,6 +54,18 @@ public class WriteGearFileService {
             writer.writeEndElement();
 
             writer.writeEndElement();
+
+            writer.writeStartElement("Fechtwaffen");
+
+            writer.writeStartElement("Waffe");
+            writer.writeAttribute("Name", "Degen");
+            writer.writeAttribute("Mod", "0/-1");
+            writer.writeAttribute("Distanz", "N");
+            writer.writeAttribute("Ini", "2");
+            writer.writeEndElement();
+
+            writer.writeEndElement();
+
             writer.writeEndDocument();
 
             writer.flush();
