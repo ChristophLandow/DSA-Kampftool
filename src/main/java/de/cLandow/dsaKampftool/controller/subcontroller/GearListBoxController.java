@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -35,6 +36,8 @@ public class GearListBoxController implements RenderController {
         loadGearGroupChoiceBox();
         loadGearLists();
         loadListeners();
+        /*Make listview to select multiple values*/
+        gearListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
     @Override
