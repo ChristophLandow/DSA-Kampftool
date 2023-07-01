@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="addAbilityPopupAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.AddGearPopupController">
    <children>
-      <ListView fx:id="gearListView" layoutX="14.0" layoutY="59.0" prefHeight="325.0" prefWidth="187.0" />
       <Button fx:id="closePopup_Button" layoutX="673.0" layoutY="118.0" mnemonicParsing="false" onAction="#closeAddGearPopup" prefHeight="52.0" prefWidth="110.0" text="Abbrechen">
          <font>
             <Font size="16.0" />
@@ -20,7 +18,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <ChoiceBox fx:id="gearGroupChoiceBox" layoutX="14.0" layoutY="20.0" prefHeight="25.0" prefWidth="187.0" />
       <HBox fx:id="showSelectedGearHBox" layoutX="219.0" layoutY="20.0" prefHeight="360.0" prefWidth="440.0" />
+      <VBox fx:id="gearListVBox" layoutX="8.0" layoutY="5.0" prefHeight="390.0" prefWidth="190.0" />
    </children>
 </AnchorPane>

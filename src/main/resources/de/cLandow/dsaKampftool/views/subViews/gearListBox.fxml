@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="gearBoxAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="190.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController">
+   <children>
+      <ListView fx:id="gearListView" layoutY="51.0" prefHeight="325.0" prefWidth="190.0" />
+      <ChoiceBox fx:id="gearGroupChoiceBox" layoutY="14.0" prefHeight="25.0" prefWidth="190.0" />
+   </children>
+</AnchorPane>
