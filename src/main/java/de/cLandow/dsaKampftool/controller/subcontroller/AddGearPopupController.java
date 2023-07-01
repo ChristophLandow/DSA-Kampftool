@@ -59,8 +59,9 @@ public class AddGearPopupController implements RenderController {
     }
 
     private void loadGearGroupChoiceBox() {
-        gearGroupChoiceBox.getItems().add("Nahkampfwaffen");
-        gearGroupChoiceBox.getItems().add("Fernkampfwaffen");
+        gearGroupChoiceBox.getItems().add("Zweihand-Hiebwaffen");
+        gearGroupChoiceBox.getItems().add("Dolche");
+        gearGroupChoiceBox.getItems().add("Fechtwaffen");
     }
 
     @Override
