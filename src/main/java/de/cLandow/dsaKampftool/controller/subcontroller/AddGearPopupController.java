@@ -16,6 +16,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,45 +24,28 @@ import java.util.ArrayList;
 public class AddGearPopupController implements RenderController {
 
 
+    @FXML VBox gearListVBox;
     @FXML HBox showSelectedGearHBox;
-    @FXML ChoiceBox<String> gearGroupChoiceBox;
-    @FXML ListView<String> gearListView;
     @FXML Button addGear_Button;
     @FXML Button closePopup_Button;
     private final CharacterScreenController characterScreenController;
     private final SelectedGearBoxController selectedGearBoxController;
-    private ArrayList<Armor> armorList = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> closeCombatWeaponList = new ArrayList<>();
-    private ArrayList<Weapon_rangedCombat> rangedCombatWeaponList = new ArrayList<>();
+
+    private final GearListBoxController gearListBoxController;
 
     public AddGearPopupController(CharacterScreenController characterScreenController) {
         this.characterScreenController = characterScreenController;
         this.selectedGearBoxController = new SelectedGearBoxController();
+        this.gearListBoxController = new GearListBoxController();
     }
     @Override
     public void init() {
-        loadGearGroupChoiceBox();
         //load selectedGear HBox
         showSelectedGearHBox.getChildren().add(selectedGearBoxController.render());
         selectedGearBoxController.init();
-        loadGearLists();
-        loadListeners();
-
-    }
-
-    private void loadListeners() {
-        gearListView.setOnMouseClicked((event -> {
-            if (gearListView.getSelectionModel().isEmpty()) {
-                event.consume();
-            }
-            //gearListView.getSelectionModel().getSelectedItem();
-        }));
-    }
-
-    private void loadGearGroupChoiceBox() {
-        gearGroupChoiceBox.getItems().add("Zweihand-Hiebwaffen");
-        gearGroupChoiceBox.getItems().add("Dolche");
-        gearGroupChoiceBox.getItems().add("Fechtwaffen");
+        //load gearList VBox
+        gearListVBox.getChildren().add(gearListBoxController.render());
+        gearListBoxController.init();
     }
 
     @Override
@@ -94,13 +78,7 @@ public class AddGearPopupController implements RenderController {
     public void removeGearFromList(MouseEvent mouseEvent) {
     }
 
-    public void loadGearLists(){
-        ReadFileService readFileService = new ReadFileService();
-        closeCombatWeaponList = readFileService.loadGear();
-        for(Weapon_closeCombat ccw : closeCombatWeaponList){
-            gearListView.getItems().add(ccw.name());
-        }
-    }
+
 
     private void loadArmorList() {
 
@@ -108,14 +86,5 @@ public class AddGearPopupController implements RenderController {
 
     public void loadSelectedGear(){
 
-    }
-
-    public Weapon_closeCombat fromNameToWeapon(String name){
-        for (Weapon_closeCombat ccw : closeCombatWeaponList){
-            if(name.equals(ccw.name())){
-                return ccw;
-            }
-        }
-        return null;
     }
 }
