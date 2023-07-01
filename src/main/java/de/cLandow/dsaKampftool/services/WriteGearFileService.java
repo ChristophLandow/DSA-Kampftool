@@ -6,7 +6,6 @@ import javax.xml.stream.XMLStreamWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.time.LocalDate;
 
 import static de.cLandow.dsaKampftool.Constants.*;
 

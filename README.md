@@ -91,13 +91,25 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
    - [X] Charakter kann aus .xml geladen werden
    - [X] Charakter verfügt über Lebenspunkte und Ausdauer 
      - [ ] inklusive Schwellenwerte
-   - [ ] Charakter kann mit Sonderfertigkeiten versehen werden
-   - [ ] Ausrüstung
+   - [ ] Charakter verfügt über Vor-/Nachteile
+     - [ ] Vor-/Nachteile werden aus externer Liste geladen
+     - [ ] Vor-/Nachteile können einem Charakter hinzugefügt werden
+     - [ ] Vor-/Nachteile können aus einem Charakter entfernt werden
+     - [ ] Vor-/Nachteile sind editierbar
+   - [ ] Charakter verfügt über Sonderfertigkeiten
+     - [ ] Sonderfertigkeiten werden aus externer Liste geladen
+     - [ ] Sonderfertigkeiten können einem Charakter hinzugefügt werden
+     - [ ] Sonderfertigkeiten können aus einem Charakter entfernt werden
+     - [ ] Sonderfertigkeiten sind editierbar
+   - [ ] Charakter verfügt über Ausrüstung
      - [x] Ausrüstung wird aus externer Liste geladen 
-     - [ ] Waffen können ausgewählt werden
-       - [ ] Waffen sind in Gruppen unterteilt 
+       - [ ] Ausrüstung ist in Gruppen unterteilt
+       - [ ] Ausrüstung ist editierbar
+     - [ ] Ausrüstung kann in Inventar hinzugefügt werden
+     - [ ] Ausrüstung kann aus Inventar entfernt werden
    - [ ] Kampf ausführbar
  - [ ] Basisprogramm ausführbar unter Windows 10/11
+--------------------------------------------------------------------------------------
  - [ ] Ansprechende UI 
  - [ ] Websocket basierte Kommunikation zwischen Programmen
  - [ ] Programm ausführbar unter Apple und Linux
