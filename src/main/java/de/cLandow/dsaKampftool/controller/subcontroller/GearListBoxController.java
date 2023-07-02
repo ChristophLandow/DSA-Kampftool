@@ -25,6 +25,9 @@ public class GearListBoxController implements RenderController {
 
     private ArrayList<Armor> armorList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> closeCombatWeaponList = new ArrayList<>();
+    private ArrayList<Weapon_closeCombat> twoHandedImpactWeapons = new ArrayList<>();
+    private ArrayList<Weapon_closeCombat> fencingWeapons = new ArrayList<>();
+    private ArrayList<Weapon_closeCombat> daggers = new ArrayList<>();
     private ArrayList<Weapon_rangedCombat> rangedCombatWeaponList = new ArrayList<>();
 
     public GearListBoxController(){
