@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,6 +25,9 @@ public class GearListBoxController implements RenderController {
 
     private ArrayList<Armor> armorList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> closeCombatWeaponList = new ArrayList<>();
+    private ArrayList<Weapon_closeCombat> twoHandedImpactWeapons = new ArrayList<>();
+    private ArrayList<Weapon_closeCombat> fencingWeapons = new ArrayList<>();
+    private ArrayList<Weapon_closeCombat> daggers = new ArrayList<>();
     private ArrayList<Weapon_rangedCombat> rangedCombatWeaponList = new ArrayList<>();
 
     public GearListBoxController(){
@@ -35,6 +39,8 @@ public class GearListBoxController implements RenderController {
         loadGearGroupChoiceBox();
         loadGearLists();
         loadListeners();
+        /*Make listview to select multiple values*/
+        gearListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
     @Override
@@ -56,11 +62,14 @@ public class GearListBoxController implements RenderController {
     }
 
     public void loadGearLists(){
-        ReadFileService readFileService = new ReadFileService();
+        ReadFileService readFileService = new ReadFileService(this);
         closeCombatWeaponList = readFileService.loadGear();
         for(Weapon_closeCombat ccw : closeCombatWeaponList){
             gearListView.getItems().add(ccw.name());
         }
+        System.out.println(daggers);
+        System.out.println(fencingWeapons);
+        System.out.println(twoHandedImpactWeapons);
     }
 
     private void loadListeners() {
@@ -85,5 +94,17 @@ public class GearListBoxController implements RenderController {
             }
         }
         return null;
+    }
+
+    public void setDaggers(ArrayList<Weapon_closeCombat> daggers) {
+        this.daggers = daggers;
+    }
+
+    public void setFencingWeapons(ArrayList<Weapon_closeCombat> fencingWeapons) {
+        this.fencingWeapons = fencingWeapons;
+    }
+
+    public void setTwoHandedImpactWeapons(ArrayList<Weapon_closeCombat> twoHandedImpactWeapons) {
+        this.twoHandedImpactWeapons = twoHandedImpactWeapons;
     }
 }

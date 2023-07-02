@@ -1,5 +1,6 @@
 package de.cLandow.dsaKampftool.services;
 
+import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import org.xml.sax.SAXException;
@@ -15,7 +16,14 @@ import static de.cLandow.dsaKampftool.Constants.*;
 
 public class ReadFileService {
 
+    private GearListBoxController gearListBoxController = new GearListBoxController();
+
+
     public ReadFileService(){
+    }
+
+    public ReadFileService(GearListBoxController gearListBoxController) {
+        this.gearListBoxController = gearListBoxController;
     }
 
     public Character loadCharacter(String name){
@@ -56,12 +64,10 @@ public class ReadFileService {
     public ArrayList<Weapon_closeCombat> loadGear(){
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
+            GearFileReadHandler gearHandler = new GearFileReadHandler(gearListBoxController);
             SAXParser saxParser = factory.newSAXParser();
-
-            GearFileReadHandler handler = new GearFileReadHandler();
-
-            saxParser.parse(GEAR_FILEPATH, handler);
-            return handler.getGearList();
+            saxParser.parse(GEAR_FILEPATH, gearHandler);
+            return gearHandler.getGearList();
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
