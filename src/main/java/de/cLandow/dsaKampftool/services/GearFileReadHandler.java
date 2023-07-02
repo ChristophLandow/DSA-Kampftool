@@ -16,7 +16,7 @@ public class GearFileReadHandler extends DefaultHandler {
     private String initiative = "";
 
     private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
-    private final ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
+    private ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
 
     private final GearListBoxController gearListBoxController;
 
@@ -59,15 +59,15 @@ public class GearFileReadHandler extends DefaultHandler {
             switch (qName) {
                 case TWO_HANDED_IMPACT_WEAPON -> {
                     gearListBoxController.setTwoHandedImpactWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst.clear();
+                    temporaryWeaponLIst = new ArrayList<>();
                 }
                 case DAGGERS -> {
                     gearListBoxController.setDaggers(temporaryWeaponLIst);
-                    temporaryWeaponLIst.clear();
+                    temporaryWeaponLIst = new ArrayList<>();
                 }
                 case FENCING_WEAPONS -> {
                     gearListBoxController.setFencingWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst.clear();
+                    temporaryWeaponLIst = new ArrayList<>();
                 }
                 default -> System.out.println("Waffe fremder Klasse");
             }
