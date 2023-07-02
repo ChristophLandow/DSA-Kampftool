@@ -15,8 +15,10 @@ public class GearFileReadHandler extends DefaultHandler {
     private String distance = "";
     private String initiative = "";
 
+    private Boolean subListLoaded = false;
+
     private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
-    private final ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
+    private ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
 
     private final GearListBoxController gearListBoxController;
 
@@ -51,6 +53,7 @@ public class GearFileReadHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName){
         if(WEAPON.equals(qName)){
+            subListLoaded = false;
             Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),mod,distance);
             weaponList.add(weapon);
             temporaryWeaponLIst.add(weapon);
@@ -58,18 +61,25 @@ public class GearFileReadHandler extends DefaultHandler {
         if(!WEAPON.equals(qName)){
             switch (qName) {
                 case TWO_HANDED_IMPACT_WEAPON -> {
+                    subListLoaded = true;
                     gearListBoxController.setTwoHandedImpactWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst.clear();
+                    temporaryWeaponLIst = new ArrayList<>();
                 }
                 case DAGGERS -> {
+                    subListLoaded = true;
                     gearListBoxController.setDaggers(temporaryWeaponLIst);
-                    temporaryWeaponLIst.clear();
+                    temporaryWeaponLIst = new ArrayList<>();
                 }
                 case FENCING_WEAPONS -> {
+                    subListLoaded = true;
                     gearListBoxController.setFencingWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst.clear();
+                    temporaryWeaponLIst = new ArrayList<>();
                 }
-                default -> System.out.println("Waffe fremder Klasse");
+                default -> {
+                    if(subListLoaded.equals(false)){
+                        System.out.println("Waffe fremder Klasse");
+                    }
+                }
             }
         }
     }
