@@ -15,6 +15,8 @@ import static de.cLandow.dsaKampftool.Constants.*;
 
 public class ReadFileService {
 
+    private GearFileReadHandler gearHandler = new GearFileReadHandler();
+
     public ReadFileService(){
     }
 
@@ -57,15 +59,24 @@ public class ReadFileService {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             SAXParser saxParser = factory.newSAXParser();
-
-            GearFileReadHandler handler = new GearFileReadHandler();
-
-            saxParser.parse(GEAR_FILEPATH, handler);
-            return handler.getGearList();
+            saxParser.parse(GEAR_FILEPATH, gearHandler);
+            return gearHandler.getGearList();
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public ArrayList<Weapon_closeCombat> getFencingWeapons(){
+        return gearHandler.getFencingWeapons();
+    }
+
+    public ArrayList<Weapon_closeCombat> getDaggers() {
+        return gearHandler.getDaggers();
+    }
+
+    public ArrayList<Weapon_closeCombat> getTwoHandedImpactWeapons() {
+        return gearHandler.getTwoHandedImpactWeapons();
     }
 }

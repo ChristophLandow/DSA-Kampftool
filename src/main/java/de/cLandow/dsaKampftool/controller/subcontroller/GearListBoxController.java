@@ -67,6 +67,13 @@ public class GearListBoxController implements RenderController {
         for(Weapon_closeCombat ccw : closeCombatWeaponList){
             gearListView.getItems().add(ccw.name());
         }
+        twoHandedImpactWeapons = readFileService.getTwoHandedImpactWeapons();
+        daggers = readFileService.getDaggers();
+        fencingWeapons = readFileService.getFencingWeapons();
+        System.out.println(daggers);
+        System.out.println(fencingWeapons);
+        System.out.println(twoHandedImpactWeapons);
+
     }
 
     private void loadListeners() {

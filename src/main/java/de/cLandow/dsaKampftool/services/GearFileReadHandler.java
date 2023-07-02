@@ -16,7 +16,7 @@ public class GearFileReadHandler extends DefaultHandler {
 
     private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
     private final ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> twoHandedStrikingWeapons = new ArrayList<>();
+    private ArrayList<Weapon_closeCombat> twoHandedImpactWeapons = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> fencingWeapons = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> daggers = new ArrayList<>();
 
@@ -54,7 +54,7 @@ public class GearFileReadHandler extends DefaultHandler {
         if(!WEAPON.equals(qName)){
             switch (qName) {
                 case TWO_HANDED_IMPACT_WEAPON -> {
-                    twoHandedStrikingWeapons = temporaryWeaponLIst;
+                    twoHandedImpactWeapons = temporaryWeaponLIst;
                     temporaryWeaponLIst.clear();
                 }
                 case DAGGERS -> {
@@ -87,7 +87,7 @@ public class GearFileReadHandler extends DefaultHandler {
         return daggers;
     }
 
-    public ArrayList<Weapon_closeCombat> getTwoHandedStrikingWeapons() {
-        return twoHandedStrikingWeapons;
+    public ArrayList<Weapon_closeCombat> getTwoHandedImpactWeapons() {
+        return twoHandedImpactWeapons;
     }
 }
