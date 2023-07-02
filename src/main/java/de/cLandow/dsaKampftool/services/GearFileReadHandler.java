@@ -1,5 +1,6 @@
 package de.cLandow.dsaKampftool.services;
 
+import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
@@ -16,9 +17,12 @@ public class GearFileReadHandler extends DefaultHandler {
 
     private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
     private final ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> twoHandedImpactWeapons = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> fencingWeapons = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> daggers = new ArrayList<>();
+
+    private final GearListBoxController gearListBoxController;
+
+    public GearFileReadHandler(GearListBoxController gearListBoxController) {
+        this.gearListBoxController = gearListBoxController;
+    }
 
     @Override
     public void startDocument(){
@@ -54,15 +58,15 @@ public class GearFileReadHandler extends DefaultHandler {
         if(!WEAPON.equals(qName)){
             switch (qName) {
                 case TWO_HANDED_IMPACT_WEAPON -> {
-                    twoHandedImpactWeapons = temporaryWeaponLIst;
+                    gearListBoxController.setTwoHandedImpactWeapons(temporaryWeaponLIst);
                     temporaryWeaponLIst.clear();
                 }
                 case DAGGERS -> {
-                    daggers = temporaryWeaponLIst;
+                    gearListBoxController.setDaggers(temporaryWeaponLIst);
                     temporaryWeaponLIst.clear();
                 }
                 case FENCING_WEAPONS -> {
-                    fencingWeapons = temporaryWeaponLIst;
+                    gearListBoxController.setFencingWeapons(temporaryWeaponLIst);
                     temporaryWeaponLIst.clear();
                 }
                 default -> System.out.println("Waffe fremder Klasse");
@@ -77,17 +81,5 @@ public class GearFileReadHandler extends DefaultHandler {
 
     public ArrayList<Weapon_closeCombat> getGearList() {
         return weaponList;
-    }
-
-    public ArrayList<Weapon_closeCombat> getFencingWeapons(){
-        return fencingWeapons;
-    }
-
-    public ArrayList<Weapon_closeCombat> getDaggers() {
-        return daggers;
-    }
-
-    public ArrayList<Weapon_closeCombat> getTwoHandedImpactWeapons() {
-        return twoHandedImpactWeapons;
     }
 }

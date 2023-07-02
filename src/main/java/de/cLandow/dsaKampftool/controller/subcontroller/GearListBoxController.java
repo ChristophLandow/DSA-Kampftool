@@ -62,18 +62,14 @@ public class GearListBoxController implements RenderController {
     }
 
     public void loadGearLists(){
-        ReadFileService readFileService = new ReadFileService();
+        ReadFileService readFileService = new ReadFileService(this);
         closeCombatWeaponList = readFileService.loadGear();
         for(Weapon_closeCombat ccw : closeCombatWeaponList){
             gearListView.getItems().add(ccw.name());
         }
-        twoHandedImpactWeapons = readFileService.getTwoHandedImpactWeapons();
-        daggers = readFileService.getDaggers();
-        fencingWeapons = readFileService.getFencingWeapons();
         System.out.println(daggers);
         System.out.println(fencingWeapons);
         System.out.println(twoHandedImpactWeapons);
-
     }
 
     private void loadListeners() {
@@ -98,5 +94,17 @@ public class GearListBoxController implements RenderController {
             }
         }
         return null;
+    }
+
+    public void setDaggers(ArrayList<Weapon_closeCombat> daggers) {
+        this.daggers = daggers;
+    }
+
+    public void setFencingWeapons(ArrayList<Weapon_closeCombat> fencingWeapons) {
+        this.fencingWeapons = fencingWeapons;
+    }
+
+    public void setTwoHandedImpactWeapons(ArrayList<Weapon_closeCombat> twoHandedImpactWeapons) {
+        this.twoHandedImpactWeapons = twoHandedImpactWeapons;
     }
 }

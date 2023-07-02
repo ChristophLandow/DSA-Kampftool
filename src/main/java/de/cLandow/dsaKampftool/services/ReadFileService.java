@@ -1,5 +1,6 @@
 package de.cLandow.dsaKampftool.services;
 
+import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import org.xml.sax.SAXException;
@@ -15,9 +16,14 @@ import static de.cLandow.dsaKampftool.Constants.*;
 
 public class ReadFileService {
 
-    private GearFileReadHandler gearHandler = new GearFileReadHandler();
+    private GearListBoxController gearListBoxController = new GearListBoxController();
+
 
     public ReadFileService(){
+    }
+
+    public ReadFileService(GearListBoxController gearListBoxController) {
+        this.gearListBoxController = gearListBoxController;
     }
 
     public Character loadCharacter(String name){
@@ -58,6 +64,7 @@ public class ReadFileService {
     public ArrayList<Weapon_closeCombat> loadGear(){
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
+            GearFileReadHandler gearHandler = new GearFileReadHandler(gearListBoxController);
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(GEAR_FILEPATH, gearHandler);
             return gearHandler.getGearList();
@@ -66,17 +73,5 @@ public class ReadFileService {
             e.printStackTrace();
         }
         return null;
-    }
-
-    public ArrayList<Weapon_closeCombat> getFencingWeapons(){
-        return gearHandler.getFencingWeapons();
-    }
-
-    public ArrayList<Weapon_closeCombat> getDaggers() {
-        return gearHandler.getDaggers();
-    }
-
-    public ArrayList<Weapon_closeCombat> getTwoHandedImpactWeapons() {
-        return gearHandler.getTwoHandedImpactWeapons();
     }
 }
