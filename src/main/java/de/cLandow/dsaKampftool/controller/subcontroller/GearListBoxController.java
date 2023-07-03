@@ -26,6 +26,8 @@ public class GearListBoxController implements RenderController {
     private ArrayList<Armor> armorList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> closeCombatWeaponList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> twoHandedImpactWeapons = new ArrayList<>();
+
+    private ArrayList<Weapon_closeCombat> bastardswords = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> fencingWeapons = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> daggers = new ArrayList<>();
     private ArrayList<Weapon_rangedCombat> rangedCombatWeaponList = new ArrayList<>();
@@ -70,6 +72,7 @@ public class GearListBoxController implements RenderController {
         System.out.println(daggers);
         System.out.println(fencingWeapons);
         System.out.println(twoHandedImpactWeapons);
+        System.out.println(bastardswords);
     }
 
     private void loadListeners() {
@@ -106,5 +109,9 @@ public class GearListBoxController implements RenderController {
 
     public void setTwoHandedImpactWeapons(ArrayList<Weapon_closeCombat> twoHandedImpactWeapons) {
         this.twoHandedImpactWeapons = twoHandedImpactWeapons;
+    }
+
+    public void setBastardswords(ArrayList<Weapon_closeCombat> bastardswords) {
+        this.bastardswords = bastardswords;
     }
 }

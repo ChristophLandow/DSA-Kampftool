@@ -11,10 +11,12 @@ import java.util.ArrayList;
 public class GearFileReadHandler extends DefaultHandler {
 
     private String name = "";
-    private String mod = "";
+    private String statMod = "";
     private String distance = "";
     private String initiative = "";
 
+    private String damage = "";
+    private String damageMod = "";
     private Boolean subListLoaded = false;
 
     private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
@@ -37,16 +39,22 @@ public class GearFileReadHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         if (WEAPON.equals(qName)) {
-            mod = attributes.getValue("Mod");
+            statMod = attributes.getValue(STATMOD);
         }
         if (WEAPON.equals(qName)) {
-            distance = attributes.getValue("Distanz");
+            distance = attributes.getValue(DISTANCE);
         }
         if (WEAPON.equals(qName)) {
-            name = attributes.getValue("Name");
+            name = attributes.getValue(NAME);
         }
         if (WEAPON.equals(qName)) {
-            initiative = attributes.getValue("Ini");
+            initiative = attributes.getValue(INITIATIVEMOD);
+        }
+        if (WEAPON.equals(qName)) {
+            damage = attributes.getValue(DAMAGE);
+        }
+        if (WEAPON.equals(qName)) {
+            damageMod = attributes.getValue(DAMAGEMOD);
         }
     }
 
@@ -54,12 +62,17 @@ public class GearFileReadHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName){
         if(WEAPON.equals(qName)){
             subListLoaded = false;
-            Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),mod,distance);
+            Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),damage,damageMod,statMod,distance);
             weaponList.add(weapon);
             temporaryWeaponLIst.add(weapon);
         }
         if(!WEAPON.equals(qName)){
             switch (qName) {
+                case BASTARDSWORDS -> {
+                    subListLoaded = true;
+                    gearListBoxController.setBastardswords(temporaryWeaponLIst);
+                    temporaryWeaponLIst = new ArrayList<>();
+                }
                 case TWO_HANDED_IMPACT_WEAPON -> {
                     subListLoaded = true;
                     gearListBoxController.setTwoHandedImpactWeapons(temporaryWeaponLIst);
