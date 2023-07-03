@@ -86,6 +86,16 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
 ## Roadmap
 
  - [ ] Basisprogramm vollständig
+   - [X] SetupScreen
+     - [X] Container CharacterScreen
+     - [X] Attribute/Lebenspunkte angezeigt
+   - [ ] CharacterScreen
+     - [X] Container für Charaktermodell 
+     - [X] Container für Ergebnisse
+     - [ ] Auswahlbuttons für Modifikationen 
+     - [X] Button Ausrüstungsmenü 
+     - [X] Button Vor-/Nachteile Menü 
+     - [X] Button Sonderfertigkeiten 
    - [X] Charakter kann mit Grundwerten angelegt werden
    - [X] Charakter kann als .xml gespeichert werden
    - [X] Charakter kann aus .xml geladen werden
