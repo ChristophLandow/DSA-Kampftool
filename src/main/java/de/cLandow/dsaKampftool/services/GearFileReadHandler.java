@@ -68,6 +68,11 @@ public class GearFileReadHandler extends DefaultHandler {
         }
         if(!WEAPON.equals(qName)){
             switch (qName) {
+                case BASTARDSWORDS -> {
+                    subListLoaded = true;
+                    gearListBoxController.setBastardswords(temporaryWeaponLIst);
+                    temporaryWeaponLIst = new ArrayList<>();
+                }
                 case TWO_HANDED_IMPACT_WEAPON -> {
                     subListLoaded = true;
                     gearListBoxController.setTwoHandedImpactWeapons(temporaryWeaponLIst);
