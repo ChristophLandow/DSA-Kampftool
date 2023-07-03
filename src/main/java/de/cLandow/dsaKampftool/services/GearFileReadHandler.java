@@ -39,22 +39,22 @@ public class GearFileReadHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         if (WEAPON.equals(qName)) {
-            statMod = attributes.getValue("Mod");
+            statMod = attributes.getValue(STATMOD);
         }
         if (WEAPON.equals(qName)) {
-            distance = attributes.getValue("Distanz");
+            distance = attributes.getValue(DISTANCE);
         }
         if (WEAPON.equals(qName)) {
-            name = attributes.getValue("Name");
+            name = attributes.getValue(NAME);
         }
         if (WEAPON.equals(qName)) {
-            initiative = attributes.getValue("Ini");
+            initiative = attributes.getValue(INITIATIVEMOD);
         }
         if (WEAPON.equals(qName)) {
-            damage = attributes.getValue("Damage");
+            damage = attributes.getValue(DAMAGE);
         }
         if (WEAPON.equals(qName)) {
-            damageMod = attributes.getValue("Damage");
+            damageMod = attributes.getValue(DAMAGEMOD);
         }
     }
 
