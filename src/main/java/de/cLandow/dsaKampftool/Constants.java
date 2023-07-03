@@ -31,6 +31,12 @@ public class Constants {
     public static final String RED_BUTTON = "red-button";
 
     //Weapon Classes for Gear List
+    public static final String DAMAGE = "Schaden";
+    public static final String DISTANCE = "Distanzklasse";
+    public static final String STATMOD = "StatModifikator";
+    public static final String INITIATIVEMOD = "InitiativeModifikator";
+    public static final String DAMAGEMOD = "SchadensModifikator";
+    public static final String NAME = "Name";
     public static final String WEAPON = "Waffe";
     public static final String TWO_HANDED_IMPACT_WEAPON = "Zweihand-Hiebwaffen";
     public static final String DAGGERS = "Dolche";
