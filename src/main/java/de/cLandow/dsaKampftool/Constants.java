@@ -38,6 +38,8 @@ public class Constants {
     public static final String DAMAGEMOD = "SchadensModifikator";
     public static final String NAME = "Name";
     public static final String WEAPON = "Waffe";
+
+    public static final String BASTARDSWORDS = "Anderthalbhaender";
     public static final String TWO_HANDED_IMPACT_WEAPON = "Zweihand-Hiebwaffen";
     public static final String DAGGERS = "Dolche";
     public static final String FENCING_WEAPONS = "Fechtwaffen";
