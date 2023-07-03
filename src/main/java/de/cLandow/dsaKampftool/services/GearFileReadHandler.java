@@ -11,10 +11,12 @@ import java.util.ArrayList;
 public class GearFileReadHandler extends DefaultHandler {
 
     private String name = "";
-    private String mod = "";
+    private String statMod = "";
     private String distance = "";
     private String initiative = "";
 
+    private String damage = "";
+    private String damageMod = "";
     private Boolean subListLoaded = false;
 
     private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
@@ -37,7 +39,7 @@ public class GearFileReadHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         if (WEAPON.equals(qName)) {
-            mod = attributes.getValue("Mod");
+            statMod = attributes.getValue("Mod");
         }
         if (WEAPON.equals(qName)) {
             distance = attributes.getValue("Distanz");
@@ -48,13 +50,19 @@ public class GearFileReadHandler extends DefaultHandler {
         if (WEAPON.equals(qName)) {
             initiative = attributes.getValue("Ini");
         }
+        if (WEAPON.equals(qName)) {
+            damage = attributes.getValue("Damage");
+        }
+        if (WEAPON.equals(qName)) {
+            damageMod = attributes.getValue("Damage");
+        }
     }
 
     @Override
     public void endElement(String uri, String localName, String qName){
         if(WEAPON.equals(qName)){
             subListLoaded = false;
-            Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),mod,distance);
+            Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),damage,damageMod,statMod,distance);
             weaponList.add(weapon);
             temporaryWeaponLIst.add(weapon);
         }

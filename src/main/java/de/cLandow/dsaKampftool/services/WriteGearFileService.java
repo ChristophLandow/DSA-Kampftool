@@ -33,13 +33,28 @@ public class WriteGearFileService {
             // <Charakter>
             writer.writeStartElement("Waffen");
 
+            writer.writeStartElement("Anderthalbhaender");
+
+            writer.writeStartElement("Waffe");
+            writer.writeAttribute("Name", "Anderthalbhaender");
+            writer.writeAttribute("Schaden", "1W6+5");
+            writer.writeAttribute("SchadensMod", "11/4");
+            writer.writeAttribute("Distanzklasse", "NS");
+            writer.writeAttribute("IniBonus", "+1");
+            writer.writeAttribute("StatBonus", "0/0");
+            writer.writeEndElement();
+
+            writer.writeEndElement();
+
             writer.writeStartElement("Zweihand-Hiebwaffen");
 
             writer.writeStartElement("Waffe");
             writer.writeAttribute("Name", "Barbarenstreitaxt");
-            writer.writeAttribute("Mod", "15/1");
-            writer.writeAttribute("Distanz", "N");
-            writer.writeAttribute("Ini", "-2");
+            writer.writeAttribute("Schaden", "3W6+2");
+            writer.writeAttribute("SchadensMod", "15/1");
+            writer.writeAttribute("Distanzklasse", "N");
+            writer.writeAttribute("IniBonus", "-2");
+            writer.writeAttribute("StatBonus", "-1/-4");
             writer.writeEndElement();
 
             writer.writeEndElement();
