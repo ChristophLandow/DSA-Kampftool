@@ -72,6 +72,7 @@ public class GearListBoxController implements RenderController {
         System.out.println(daggers);
         System.out.println(fencingWeapons);
         System.out.println(twoHandedImpactWeapons);
+        System.out.println(bastardswords);
     }
 
     private void loadListeners() {
