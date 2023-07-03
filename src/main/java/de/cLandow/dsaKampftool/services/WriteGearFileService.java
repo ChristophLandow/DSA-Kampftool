@@ -63,9 +63,11 @@ public class WriteGearFileService {
 
             writer.writeStartElement("Waffe");
             writer.writeAttribute("Name", "Langdolch");
-            writer.writeAttribute("Mod", "12/3");
-            writer.writeAttribute("Distanz", "HN");
-            writer.writeAttribute("Ini", "1");
+            writer.writeAttribute("Schaden", "1W6+2");
+            writer.writeAttribute("SchadensMod", "12/4");
+            writer.writeAttribute("Distanzklasse", "H");
+            writer.writeAttribute("IniBonus", "0");
+            writer.writeAttribute("StatBonus", "0/0");
             writer.writeEndElement();
 
             writer.writeEndElement();
@@ -74,9 +76,11 @@ public class WriteGearFileService {
 
             writer.writeStartElement("Waffe");
             writer.writeAttribute("Name", "Degen");
-            writer.writeAttribute("Mod", "0/-1");
-            writer.writeAttribute("Distanz", "N");
-            writer.writeAttribute("Ini", "2");
+            writer.writeAttribute("Schaden", "1W6+3");
+            writer.writeAttribute("SchadensMod", "12/5");
+            writer.writeAttribute("Distanzklasse", "N");
+            writer.writeAttribute("IniBonus", "2");
+            writer.writeAttribute("StatBonus", "0/-1");
             writer.writeEndElement();
 
             writer.writeEndElement();
