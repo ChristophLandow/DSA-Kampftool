@@ -33,54 +33,54 @@ public class WriteGearFileService {
             // <Charakter>
             writer.writeStartElement("Waffen");
 
-            writer.writeStartElement("Anderthalbhaender");
+            writer.writeStartElement(BASTARDSWORDS);
 
-            writer.writeStartElement("Waffe");
-            writer.writeAttribute("Name", "Anderthalbhaender");
-            writer.writeAttribute("Schaden", "1W6+5");
-            writer.writeAttribute("SchadensMod", "11/4");
-            writer.writeAttribute("Distanzklasse", "NS");
-            writer.writeAttribute("IniBonus", "+1");
-            writer.writeAttribute("StatBonus", "0/0");
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Anderthalbhaender");
+            writer.writeAttribute(DAMAGE, "1W6+5");
+            writer.writeAttribute(DAMAGEMOD, "11/4");
+            writer.writeAttribute(DISTANCE, "NS");
+            writer.writeAttribute(INITIATIVEMOD, "1");
+            writer.writeAttribute(STATMOD, "0/0");
             writer.writeEndElement();
 
             writer.writeEndElement();
 
-            writer.writeStartElement("Zweihand-Hiebwaffen");
+            writer.writeStartElement(TWO_HANDED_IMPACT_WEAPON);
 
-            writer.writeStartElement("Waffe");
-            writer.writeAttribute("Name", "Barbarenstreitaxt");
-            writer.writeAttribute("Schaden", "3W6+2");
-            writer.writeAttribute("SchadensMod", "15/1");
-            writer.writeAttribute("Distanzklasse", "N");
-            writer.writeAttribute("IniBonus", "-2");
-            writer.writeAttribute("StatBonus", "-1/-4");
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Barbarenstreitaxt");
+            writer.writeAttribute(DAMAGE, "3W6+2");
+            writer.writeAttribute(DAMAGEMOD, "15/1");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "-2");
+            writer.writeAttribute(STATMOD, "-1/-4");
             writer.writeEndElement();
 
             writer.writeEndElement();
 
-            writer.writeStartElement("Dolche");
+            writer.writeStartElement(DAGGERS);
 
-            writer.writeStartElement("Waffe");
-            writer.writeAttribute("Name", "Langdolch");
-            writer.writeAttribute("Schaden", "1W6+2");
-            writer.writeAttribute("SchadensMod", "12/4");
-            writer.writeAttribute("Distanzklasse", "H");
-            writer.writeAttribute("IniBonus", "0");
-            writer.writeAttribute("StatBonus", "0/0");
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Langdolch");
+            writer.writeAttribute(DAMAGE, "1W6+2");
+            writer.writeAttribute(DAMAGEMOD, "12/4");
+            writer.writeAttribute(DISTANCE, "H");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/0");
             writer.writeEndElement();
 
             writer.writeEndElement();
 
-            writer.writeStartElement("Fechtwaffen");
+            writer.writeStartElement(FENCING_WEAPONS);
 
-            writer.writeStartElement("Waffe");
-            writer.writeAttribute("Name", "Degen");
-            writer.writeAttribute("Schaden", "1W6+3");
-            writer.writeAttribute("SchadensMod", "12/5");
-            writer.writeAttribute("Distanzklasse", "N");
-            writer.writeAttribute("IniBonus", "2");
-            writer.writeAttribute("StatBonus", "0/-1");
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Degen");
+            writer.writeAttribute(DAMAGE, "1W6+3");
+            writer.writeAttribute(DAMAGEMOD, "12/5");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "2");
+            writer.writeAttribute(STATMOD, "0/-1");
             writer.writeEndElement();
 
             writer.writeEndElement();
