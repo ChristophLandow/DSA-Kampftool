@@ -83,6 +83,7 @@ public class GearListBoxController implements RenderController {
     }
 
     private void loadGearGroupChoiceBox() {
+        gearGroupChoiceBox.getItems().add(SHOWALL);
         gearGroupChoiceBox.getItems().add(BASTARDSWORDS);
         gearGroupChoiceBox.getItems().add(TWO_HANDED_IMPACT_WEAPON);
         gearGroupChoiceBox.getItems().add(DAGGERS);
