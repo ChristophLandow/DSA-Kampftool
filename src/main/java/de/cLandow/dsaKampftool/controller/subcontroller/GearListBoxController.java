@@ -6,8 +6,6 @@ import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import static de.cLandow.dsaKampftool.Constants.*;
 import de.cLandow.dsaKampftool.services.ReadFileService;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -44,6 +42,7 @@ public class GearListBoxController implements RenderController {
         loadListeners();
         /*Make listview to select multiple values*/
         gearListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        loadGearChoiceBoxListener();
     }
 
     @Override
@@ -67,9 +66,7 @@ public class GearListBoxController implements RenderController {
     public void loadGearLists(){
         ReadFileService readFileService = new ReadFileService(this);
         closeCombatWeaponList = readFileService.loadGear();
-        for(Weapon_closeCombat ccw : closeCombatWeaponList){
-            gearListView.getItems().add(ccw.name());
-        }
+        fillListWithAllCloseCombatWeapons();
         System.out.println(daggers);
         System.out.println(fencingWeapons);
         System.out.println(twoHandedImpactWeapons);
@@ -90,6 +87,28 @@ public class GearListBoxController implements RenderController {
         gearGroupChoiceBox.getItems().add(TWO_HANDED_IMPACT_WEAPON);
         gearGroupChoiceBox.getItems().add(DAGGERS);
         gearGroupChoiceBox.getItems().add(FENCING_WEAPONS);
+    }
+
+    public void loadGearChoiceBoxListener(){
+        gearGroupChoiceBox.setOnAction(event -> {
+            gearListView.getItems().clear();
+            switch(gearGroupChoiceBox.getValue()) {
+                case DAGGERS:
+                    fillListWithAllDaggers();
+                    break;
+                case FENCING_WEAPONS:
+                    fillListWithAllFencingWeapons();
+                    break;
+                case TWO_HANDED_IMPACT_WEAPON:
+                    fillListWithAllTwoHandedImpactWeapons();
+                    break;
+                case BASTARDSWORDS:
+                    fillListWithAllBastardswords();
+                    break;
+                default:
+                    fillListWithAllCloseCombatWeapons();
+            }
+        });
     }
 
     public Weapon_closeCombat fromNameToWeapon(String name){
@@ -116,4 +135,35 @@ public class GearListBoxController implements RenderController {
     public void setBastardswords(ArrayList<Weapon_closeCombat> bastardswords) {
         this.bastardswords = bastardswords;
     }
+
+    public void fillListWithAllCloseCombatWeapons(){
+        for(Weapon_closeCombat ccw : closeCombatWeaponList){
+            gearListView.getItems().add(ccw.name());
+        }
+    }
+
+    public void fillListWithAllDaggers(){
+        for(Weapon_closeCombat ccw : daggers){
+            gearListView.getItems().add(ccw.name());
+        }
+    }
+
+    public void fillListWithAllFencingWeapons(){
+        for(Weapon_closeCombat ccw : fencingWeapons){
+            gearListView.getItems().add(ccw.name());
+        }
+    }
+
+    public void fillListWithAllTwoHandedImpactWeapons(){
+        for(Weapon_closeCombat ccw : twoHandedImpactWeapons){
+            gearListView.getItems().add(ccw.name());
+        }
+    }
+
+    public void fillListWithAllBastardswords(){
+        for(Weapon_closeCombat ccw : bastardswords){
+            gearListView.getItems().add(ccw.name());
+        }
+    }
+
 }
