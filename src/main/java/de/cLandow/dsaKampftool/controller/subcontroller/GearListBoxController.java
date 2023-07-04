@@ -4,8 +4,10 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
-import de.cLandow.dsaKampftool.model.Weapon_rangedCombat;
+import static de.cLandow.dsaKampftool.Constants.*;
 import de.cLandow.dsaKampftool.services.ReadFileService;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,7 +32,6 @@ public class GearListBoxController implements RenderController {
     private ArrayList<Weapon_closeCombat> bastardswords = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> fencingWeapons = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> daggers = new ArrayList<>();
-    private ArrayList<Weapon_rangedCombat> rangedCombatWeaponList = new ArrayList<>();
 
     public GearListBoxController(){
 
@@ -85,9 +86,10 @@ public class GearListBoxController implements RenderController {
     }
 
     private void loadGearGroupChoiceBox() {
-        gearGroupChoiceBox.getItems().add("Zweihand-Hiebwaffen");
-        gearGroupChoiceBox.getItems().add("Dolche");
-        gearGroupChoiceBox.getItems().add("Fechtwaffen");
+        gearGroupChoiceBox.getItems().add(BASTARDSWORDS);
+        gearGroupChoiceBox.getItems().add(TWO_HANDED_IMPACT_WEAPON);
+        gearGroupChoiceBox.getItems().add(DAGGERS);
+        gearGroupChoiceBox.getItems().add(FENCING_WEAPONS);
     }
 
     public Weapon_closeCombat fromNameToWeapon(String name){

@@ -30,7 +30,9 @@ public class Constants {
 
     public static final String RED_BUTTON = "red-button";
 
-    //Weapon Classes for Gear List
+    // Gear List
+
+    public static final String SHOWALL = "Alle";
     public static final String DAMAGE = "Schaden";
     public static final String DISTANCE = "Distanzklasse";
     public static final String STATMOD = "StatModifikator";
