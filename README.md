@@ -113,11 +113,14 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
      - [ ] Sonderfertigkeiten sind editierbar
    - [ ] Charakter verfügt über Ausrüstung
      - [x] Ausrüstung wird aus externer Liste geladen 
-       - [ ] Ausrüstung ist in Gruppen unterteilt
+       - [X] Ausrüstung ist in Gruppen unterteilt
        - [ ] Ausrüstung ist editierbar
      - [ ] Ausrüstung kann in Inventar hinzugefügt werden
      - [ ] Ausrüstung kann aus Inventar entfernt werden
-   - [ ] Kampf ausführbar
+   - [ ] Modifikatoren werden geladen
+     - [ ] Vorteil/Nachteil-Modifikatoren 
+     - [ ] Sonderfertigkeit Modifikatoren
+     - [ ] Ausrüstung Modifikatoren
  - [ ] Basisprogramm ausführbar unter Windows 10/11
 --------------------------------------------------------------------------------------
  - [ ] Ansprechende UI 
