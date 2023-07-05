@@ -62,6 +62,15 @@ public class WriteGearFileService {
             writer.writeAttribute(STATMOD, "0/0");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Rondrakamm");
+            writer.writeAttribute(DAMAGE, "2W6+2");
+            writer.writeAttribute(DAMAGEMOD, "12/3");
+            writer.writeAttribute(DISTANCE, "NS");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/0");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(TWO_HANDED_IMPACT_WEAPON);
