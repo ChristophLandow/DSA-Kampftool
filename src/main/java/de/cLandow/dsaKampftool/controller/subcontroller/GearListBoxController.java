@@ -31,6 +31,8 @@ public class GearListBoxController implements RenderController {
     private ArrayList<Weapon_closeCombat> fencingWeapons = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> daggers = new ArrayList<>();
 
+    private ArrayList<Weapon_closeCombat> impactWeapons = new ArrayList<>();
+
     public GearListBoxController(){
 
     }
@@ -67,10 +69,6 @@ public class GearListBoxController implements RenderController {
         ReadFileService readFileService = new ReadFileService(this);
         closeCombatWeaponList = readFileService.loadGear();
         fillListWithAllCloseCombatWeapons();
-        System.out.println(daggers);
-        System.out.println(fencingWeapons);
-        System.out.println(twoHandedImpactWeapons);
-        System.out.println(bastardswords);
     }
 
     private void loadListeners() {
@@ -88,6 +86,7 @@ public class GearListBoxController implements RenderController {
         gearGroupChoiceBox.getItems().add(TWO_HANDED_IMPACT_WEAPON);
         gearGroupChoiceBox.getItems().add(DAGGERS);
         gearGroupChoiceBox.getItems().add(FENCING_WEAPONS);
+        gearGroupChoiceBox.getItems().add(IMPACT_WEAPONS);
     }
 
     public void loadGearChoiceBoxListener(){
@@ -105,6 +104,9 @@ public class GearListBoxController implements RenderController {
                     break;
                 case BASTARDSWORDS:
                     fillListWithAllBastardswords();
+                    break;
+                case IMPACT_WEAPONS:
+                    fillListWithImpactWeapons();
                     break;
                 default:
                     fillListWithAllCloseCombatWeapons();
@@ -137,8 +139,18 @@ public class GearListBoxController implements RenderController {
         this.bastardswords = bastardswords;
     }
 
+    public void setImpactWeapons(ArrayList<Weapon_closeCombat> impactWeapons) {
+        this.impactWeapons = impactWeapons;
+    }
+
     public void fillListWithAllCloseCombatWeapons(){
         for(Weapon_closeCombat ccw : closeCombatWeaponList){
+            gearListView.getItems().add(ccw.name());
+        }
+    }
+
+    public void fillListWithImpactWeapons(){
+        for(Weapon_closeCombat ccw : impactWeapons){
             gearListView.getItems().add(ccw.name());
         }
     }

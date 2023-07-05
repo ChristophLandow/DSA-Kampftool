@@ -45,6 +45,6 @@ public class Constants {
     public static final String TWO_HANDED_IMPACT_WEAPON = "Zweihand-Hiebwaffen";
     public static final String DAGGERS = "Dolche";
     public static final String FENCING_WEAPONS = "Fechtwaffen";
-
+    public static final String IMPACT_WEAPONS = "Hiebwaffen";
 
 }
