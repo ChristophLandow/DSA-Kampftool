@@ -6,12 +6,14 @@ import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import static de.cLandow.dsaKampftool.Constants.*;
 import de.cLandow.dsaKampftool.services.ReadFileService;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -72,12 +74,22 @@ public class GearListBoxController implements RenderController {
     }
 
     private void loadListeners() {
-        gearListView.setOnMouseClicked((event -> {
-            if (gearListView.getSelectionModel().isEmpty()) {
-                event.consume();
+        loadDoubleClickListElementListener();
+    }
+
+    private void loadDoubleClickListElementListener() {
+        gearListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent click) {
+
+                if (click.getClickCount() == 2) {
+                    String currentItemSelected = gearListView.getSelectionModel()
+                            .getSelectedItem();
+
+                }
             }
-            //gearListView.getSelectionModel().getSelectedItem();
-        }));
+        });
     }
 
     private void loadGearGroupChoiceBox() {
