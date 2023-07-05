@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
@@ -79,13 +80,9 @@ public class GearListBoxController implements RenderController {
 
     private void loadDoubleClickListElementListener() {
         gearListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
             @Override
-            public void handle(MouseEvent click) {
-
-                if (click.getClickCount() == 2) {
-                    String currentItemSelected = gearListView.getSelectionModel()
-                            .getSelectedItem();
+            public void handle(MouseEvent event) {
+                if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2){
 
                 }
             }
