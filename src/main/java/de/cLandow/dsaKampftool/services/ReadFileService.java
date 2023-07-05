@@ -16,14 +16,14 @@ import static de.cLandow.dsaKampftool.Constants.*;
 
 public class ReadFileService {
 
-    private GearListBoxController gearListBoxController = new GearListBoxController();
-
-
-    public ReadFileService(){
-    }
+    private GearListBoxController gearListBoxController;
 
     public ReadFileService(GearListBoxController gearListBoxController) {
         this.gearListBoxController = gearListBoxController;
+    }
+
+    public ReadFileService(){
+
     }
 
     public Character loadCharacter(String name){

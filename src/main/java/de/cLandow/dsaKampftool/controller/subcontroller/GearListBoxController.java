@@ -26,6 +26,8 @@ public class GearListBoxController implements RenderController {
     @FXML
     ListView<String> gearListView;
 
+    private AddGearPopupController addGearPopupController;
+
     private ArrayList<Armor> armorList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> closeCombatWeaponList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> twoHandedImpactWeapons = new ArrayList<>();
@@ -36,7 +38,11 @@ public class GearListBoxController implements RenderController {
 
     private ArrayList<Weapon_closeCombat> impactWeapons = new ArrayList<>();
 
-    public GearListBoxController(){
+    public GearListBoxController(AddGearPopupController addGearPopupController){
+        this.addGearPopupController = addGearPopupController;
+    }
+
+    public GearListBoxController() {
 
     }
 
