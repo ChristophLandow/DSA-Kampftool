@@ -88,6 +88,11 @@ public class GearFileReadHandler extends DefaultHandler {
                     gearListBoxController.setFencingWeapons(temporaryWeaponLIst);
                     temporaryWeaponLIst = new ArrayList<>();
                 }
+                case IMPACT_WEAPONS -> {
+                    subListLoaded = true;
+                    gearListBoxController.setFencingWeapons(temporaryWeaponLIst);
+                    temporaryWeaponLIst = new ArrayList<>();
+                }
                 default -> {
                     if(subListLoaded.equals(false)){
                         System.out.println("Waffe fremder Klasse");

@@ -31,6 +31,8 @@ public class GearListBoxController implements RenderController {
     private ArrayList<Weapon_closeCombat> fencingWeapons = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> daggers = new ArrayList<>();
 
+    private ArrayList<Weapon_closeCombat> impactWeapons = new ArrayList<>();
+
     public GearListBoxController(){
 
     }
@@ -133,8 +135,18 @@ public class GearListBoxController implements RenderController {
         this.bastardswords = bastardswords;
     }
 
+    public void setImpactWeapons(ArrayList<Weapon_closeCombat> impactWeapons) {
+        this.impactWeapons = impactWeapons;
+    }
+
     public void fillListWithAllCloseCombatWeapons(){
         for(Weapon_closeCombat ccw : closeCombatWeaponList){
+            gearListView.getItems().add(ccw.name());
+        }
+    }
+
+    public void fillListWithImpactWeapons(){
+        for(Weapon_closeCombat ccw : impactWeapons){
             gearListView.getItems().add(ccw.name());
         }
     }
