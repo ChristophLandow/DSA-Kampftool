@@ -36,8 +36,11 @@ public class SelectedGearBoxController implements RenderController {
     @FXML ImageView leftArmImageView;
     @FXML ImageView rightArmImageView;
 
+    private final AddGearPopupController addGearPopupController;
 
-    public SelectedGearBoxController(){
+
+    public SelectedGearBoxController(AddGearPopupController addGearPopupController){
+        this.addGearPopupController = addGearPopupController;
     }
 
     @Override

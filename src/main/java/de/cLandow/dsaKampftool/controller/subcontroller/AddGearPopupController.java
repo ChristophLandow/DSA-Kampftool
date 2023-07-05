@@ -27,7 +27,7 @@ public class AddGearPopupController implements RenderController {
 
     public AddGearPopupController(CharacterScreenController characterScreenController) {
         this.characterScreenController = characterScreenController;
-        this.selectedGearBoxController = new SelectedGearBoxController();
+        this.selectedGearBoxController = new SelectedGearBoxController(this);
         this.gearListBoxController = new GearListBoxController(this);
     }
     @Override
