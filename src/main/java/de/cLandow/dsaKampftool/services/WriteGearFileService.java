@@ -64,10 +64,19 @@ public class WriteGearFileService {
 
             writer.writeStartElement(WEAPON);
             writer.writeAttribute(NAME, "Rondrakamm");
-            writer.writeAttribute(DAMAGE, "2W6+2");
+            writer.writeAttribute(DAMAGE, "1W6+6");
             writer.writeAttribute(DAMAGEMOD, "12/3");
             writer.writeAttribute(DISTANCE, "NS");
             writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/0");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Tuzakmesser");
+            writer.writeAttribute(DAMAGE, "1W6+6");
+            writer.writeAttribute(DAMAGEMOD, "12/4");
+            writer.writeAttribute(DISTANCE, "NS");
+            writer.writeAttribute(INITIATIVEMOD, "1");
             writer.writeAttribute(STATMOD, "0/0");
             writer.writeEndElement();
 
