@@ -86,6 +86,7 @@ public class GearListBoxController implements RenderController {
         gearGroupChoiceBox.getItems().add(TWO_HANDED_IMPACT_WEAPON);
         gearGroupChoiceBox.getItems().add(DAGGERS);
         gearGroupChoiceBox.getItems().add(FENCING_WEAPONS);
+        gearGroupChoiceBox.getItems().add(IMPACT_WEAPONS);
     }
 
     public void loadGearChoiceBoxListener(){
@@ -103,6 +104,9 @@ public class GearListBoxController implements RenderController {
                     break;
                 case BASTARDSWORDS:
                     fillListWithAllBastardswords();
+                    break;
+                case IMPACT_WEAPONS:
+                    fillListWithImpactWeapons();
                     break;
                 default:
                     fillListWithAllCloseCombatWeapons();

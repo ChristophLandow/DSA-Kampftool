@@ -90,7 +90,7 @@ public class GearFileReadHandler extends DefaultHandler {
                 }
                 case IMPACT_WEAPONS -> {
                     subListLoaded = true;
-                    gearListBoxController.setFencingWeapons(temporaryWeaponLIst);
+                    gearListBoxController.setImpactWeapons(temporaryWeaponLIst);
                     temporaryWeaponLIst = new ArrayList<>();
                 }
                 default -> {
