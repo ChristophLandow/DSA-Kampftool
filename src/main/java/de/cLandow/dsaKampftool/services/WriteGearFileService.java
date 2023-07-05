@@ -44,6 +44,15 @@ public class WriteGearFileService {
             writer.writeAttribute(STATMOD, "0/0");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Bastardschwert");
+            writer.writeAttribute(DAMAGE, "1W6+5");
+            writer.writeAttribute(DAMAGEMOD, "11/3");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(TWO_HANDED_IMPACT_WEAPON);
