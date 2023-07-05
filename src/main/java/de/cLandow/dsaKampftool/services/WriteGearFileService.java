@@ -53,6 +53,15 @@ public class WriteGearFileService {
             writer.writeAttribute(STATMOD, "0/-1");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Nachtwind");
+            writer.writeAttribute(DAMAGE, "1W6+4");
+            writer.writeAttribute(DAMAGEMOD, "11/5");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "2");
+            writer.writeAttribute(STATMOD, "0/0");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(TWO_HANDED_IMPACT_WEAPON);
