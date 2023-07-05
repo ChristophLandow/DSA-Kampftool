@@ -121,6 +121,19 @@ public class WriteGearFileService {
 
             writer.writeEndElement();
 
+            writer.writeStartElement(IMPACT_WEAPONS);
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Baccanaq/Bacca");
+            writer.writeAttribute(DAMAGE, "1W6+4");
+            writer.writeAttribute(DAMAGEMOD, "12/4");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "-1");
+            writer.writeAttribute(STATMOD, "0/-2");
+            writer.writeEndElement();
+
+            writer.writeEndElement();
+
             writer.writeEndDocument();
 
             writer.flush();
