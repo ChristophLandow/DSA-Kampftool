@@ -75,14 +75,12 @@ public class SelectedGearBoxController implements RenderController {
     }
 
     private void addHoverEffekt(BorderPane pane) {
-        addBorderPaneEffect((ImageView) pane.getCenter());
+        //addBorderPaneEffect((ImageView) pane.getCenter());
         addToolTipp((ImageView) pane.getCenter());
     }
 
     private void addBorderPaneEffect(ImageView view) {
         view.setOnMouseEntered((event) -> {
-
-
 
         });
     }

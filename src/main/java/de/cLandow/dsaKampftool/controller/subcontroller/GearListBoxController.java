@@ -42,10 +42,6 @@ public class GearListBoxController implements RenderController {
         this.addGearPopupController = addGearPopupController;
     }
 
-    public GearListBoxController() {
-
-    }
-
     @Override
     public void init() {
         loadGearGroupChoiceBox();
@@ -89,6 +85,9 @@ public class GearListBoxController implements RenderController {
             @Override
             public void handle(MouseEvent event) {
                 if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2){
+                    String currentItem =  gearListView.getSelectionModel()
+                            .getSelectedItem();
+                    //TODO Doppelklick soll Gegenstand an Box übergeben und dort ausrüsten. Das Icon soll sich ändern.
 
                 }
             }
