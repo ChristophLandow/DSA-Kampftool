@@ -2,6 +2,8 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Shield;
+import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,8 +38,16 @@ public class SelectedGearBoxController implements RenderController {
     @FXML ImageView leftArmImageView;
     @FXML ImageView rightArmImageView;
 
+    private Weapon_closeCombat mainWeapon;
+    private Weapon_closeCombat sideWeapon;
+    private Shield shield;
 
-    public SelectedGearBoxController(){
+
+    private final AddGearPopupController addGearPopupController;
+
+
+    public SelectedGearBoxController(AddGearPopupController addGearPopupController){
+        this.addGearPopupController = addGearPopupController;
     }
 
     @Override
@@ -72,14 +82,12 @@ public class SelectedGearBoxController implements RenderController {
     }
 
     private void addHoverEffekt(BorderPane pane) {
-        addBorderPaneEffect((ImageView) pane.getCenter());
+        //addBorderPaneEffect((ImageView) pane.getCenter());
         addToolTipp((ImageView) pane.getCenter());
     }
 
     private void addBorderPaneEffect(ImageView view) {
         view.setOnMouseEntered((event) -> {
-
-
 
         });
     }

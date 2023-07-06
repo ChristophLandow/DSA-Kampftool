@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -28,8 +27,8 @@ public class AddGearPopupController implements RenderController {
 
     public AddGearPopupController(CharacterScreenController characterScreenController) {
         this.characterScreenController = characterScreenController;
-        this.selectedGearBoxController = new SelectedGearBoxController();
-        this.gearListBoxController = new GearListBoxController();
+        this.selectedGearBoxController = new SelectedGearBoxController(this);
+        this.gearListBoxController = new GearListBoxController(this);
     }
     @Override
     public void init() {
@@ -63,21 +62,5 @@ public class AddGearPopupController implements RenderController {
     }
 
     public void addGearToHero(ActionEvent actionEvent) {
-    }
-
-    public void addGearToList(MouseEvent mouseEvent) {
-    }
-
-    public void removeGearFromList(MouseEvent mouseEvent) {
-    }
-
-
-
-    private void loadArmorList() {
-
-    }
-
-    public void loadSelectedGear(){
-
     }
 }

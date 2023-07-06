@@ -6,12 +6,15 @@ import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import static de.cLandow.dsaKampftool.Constants.*;
 import de.cLandow.dsaKampftool.services.ReadFileService;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,6 +26,8 @@ public class GearListBoxController implements RenderController {
     @FXML
     ListView<String> gearListView;
 
+    private AddGearPopupController addGearPopupController;
+
     private ArrayList<Armor> armorList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> closeCombatWeaponList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> twoHandedImpactWeapons = new ArrayList<>();
@@ -33,8 +38,8 @@ public class GearListBoxController implements RenderController {
 
     private ArrayList<Weapon_closeCombat> impactWeapons = new ArrayList<>();
 
-    public GearListBoxController(){
-
+    public GearListBoxController(AddGearPopupController addGearPopupController){
+        this.addGearPopupController = addGearPopupController;
     }
 
     @Override
@@ -72,12 +77,21 @@ public class GearListBoxController implements RenderController {
     }
 
     private void loadListeners() {
-        gearListView.setOnMouseClicked((event -> {
-            if (gearListView.getSelectionModel().isEmpty()) {
-                event.consume();
+        loadDoubleClickListElementListener();
+    }
+
+    private void loadDoubleClickListElementListener() {
+        gearListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2){
+                    String currentItem =  gearListView.getSelectionModel()
+                            .getSelectedItem();
+                    //TODO Doppelklick soll Gegenstand an Box übergeben und dort ausrüsten. Das Icon soll sich ändern.
+
+                }
             }
-            //gearListView.getSelectionModel().getSelectedItem();
-        }));
+        });
     }
 
     private void loadGearGroupChoiceBox() {
