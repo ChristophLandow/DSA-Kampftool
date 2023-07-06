@@ -2,6 +2,8 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Shield;
+import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -35,6 +37,11 @@ public class SelectedGearBoxController implements RenderController {
     @FXML ImageView leftLegImageView;
     @FXML ImageView leftArmImageView;
     @FXML ImageView rightArmImageView;
+
+    private Weapon_closeCombat mainWeapon;
+    private Weapon_closeCombat sideWeapon;
+    private Shield shield;
+
 
     private final AddGearPopupController addGearPopupController;
 

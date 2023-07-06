@@ -12,9 +12,8 @@ public record Armor(
         int bein_l,
         int bein_r,
         double gRS,
-        double gBE,
+        double gBE
 
-        int gewicht
 ){
     public String toString(){
         return name;
