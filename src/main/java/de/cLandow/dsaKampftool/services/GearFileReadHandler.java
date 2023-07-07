@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
@@ -22,7 +23,7 @@ public class GearFileReadHandler extends DefaultHandler {
 
     private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
-    private ObservableList<Weapon_closeCombat> observableList;
+    private ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
 
     private final GearListBoxController gearListBoxController;
 
