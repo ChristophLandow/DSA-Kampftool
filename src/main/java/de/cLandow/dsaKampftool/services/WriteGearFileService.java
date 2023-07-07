@@ -132,6 +132,15 @@ public class WriteGearFileService {
             writer.writeAttribute(STATMOD, "0/-2");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Beil");
+            writer.writeAttribute(DAMAGE, "1W6+3");
+            writer.writeAttribute(DAMAGEMOD, "11/4");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "-1");
+            writer.writeAttribute(STATMOD, "-1/-2");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeEndDocument();
