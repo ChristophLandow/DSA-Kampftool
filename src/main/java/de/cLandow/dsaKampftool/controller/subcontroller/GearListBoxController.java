@@ -6,6 +6,7 @@ import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import static de.cLandow.dsaKampftool.Constants.*;
 import de.cLandow.dsaKampftool.services.ReadFileService;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +30,8 @@ public class GearListBoxController implements RenderController {
     private AddGearPopupController addGearPopupController;
 
     private ArrayList<Armor> armorList = new ArrayList<>();
+
+    private ObservableList<Weapon_closeCombat> weaponObservableList;
     private ArrayList<Weapon_closeCombat> closeCombatWeaponList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> twoHandedImpactWeapons = new ArrayList<>();
 
@@ -72,7 +75,7 @@ public class GearListBoxController implements RenderController {
 
     public void loadGearLists(){
         ReadFileService readFileService = new ReadFileService(this);
-        closeCombatWeaponList = readFileService.loadGear();
+        weaponObservableList = readFileService.loadGear();
         fillListWithAllCloseCombatWeapons();
     }
 

@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
+import javafx.collections.ObservableList;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 import static de.cLandow.dsaKampftool.Constants.*;
@@ -21,6 +22,7 @@ public class GearFileReadHandler extends DefaultHandler {
 
     private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
     private ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
+    private ObservableList<Weapon_closeCombat> observableList;
 
     private final GearListBoxController gearListBoxController;
 
@@ -64,6 +66,7 @@ public class GearFileReadHandler extends DefaultHandler {
             subListLoaded = false;
             Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),damage,damageMod,statMod,distance);
             weaponList.add(weapon);
+            observableList.add(weapon);
             temporaryWeaponLIst.add(weapon);
         }
         if(!WEAPON.equals(qName)){
@@ -109,5 +112,9 @@ public class GearFileReadHandler extends DefaultHandler {
 
     public ArrayList<Weapon_closeCombat> getGearList() {
         return weaponList;
+    }
+
+    public ObservableList<Weapon_closeCombat> getObservableGearList(){
+        return observableList;
     }
 }

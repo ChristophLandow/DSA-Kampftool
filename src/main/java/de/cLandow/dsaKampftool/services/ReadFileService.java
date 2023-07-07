@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.services;
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
+import javafx.collections.ObservableList;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -61,13 +62,13 @@ public class ReadFileService {
     }
 
 
-    public ArrayList<Weapon_closeCombat> loadGear(){
+    public ObservableList<Weapon_closeCombat> loadGear(){
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             GearFileReadHandler gearHandler = new GearFileReadHandler(gearListBoxController);
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(GEAR_FILEPATH, gearHandler);
-            return gearHandler.getGearList();
+            return gearHandler.getObservableGearList();
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
