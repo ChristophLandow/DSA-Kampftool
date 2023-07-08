@@ -111,10 +111,6 @@ public class GearFileReadHandler extends DefaultHandler {
 
     }
 
-    public ArrayList<Weapon_closeCombat> getGearList() {
-        return weaponList;
-    }
-
     public ObservableList<Weapon_closeCombat> getObservableGearList(){
         return observableList;
     }

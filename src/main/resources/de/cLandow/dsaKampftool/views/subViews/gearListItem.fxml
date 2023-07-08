@@ -4,8 +4,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane fx:id="gearListItemAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="190.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.GearListItemController">
+<AnchorPane fx:id="gearListItemAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="190.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.GearListItemController">
    <children>
-      <Label fx:id="ItemNameLabel" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="176.0" text="Gear" />
+      <Label fx:id="itemNameLabel" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="176.0" text="Gear" />
    </children>
 </AnchorPane>

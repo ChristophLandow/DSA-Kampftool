@@ -163,6 +163,7 @@ public class GearListBoxController implements RenderController {
 
     public void fillListWithAllCloseCombatWeapons(){
         gearListView.setItems(weaponObservableList);
+        gearListView.setCellFactory(studentListView -> new GearListItemController());
     }
 
     public void fillListWithImpactWeapons(){
