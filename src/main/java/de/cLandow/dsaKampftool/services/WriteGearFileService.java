@@ -119,6 +119,15 @@ public class WriteGearFileService {
             writer.writeAttribute(STATMOD, "0/-1");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Florett");
+            writer.writeAttribute(DAMAGE, "1W6+3");
+            writer.writeAttribute(DAMAGEMOD, "13/5");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "3");
+            writer.writeAttribute(STATMOD, "+1/-1");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(IMPACT_WEAPONS);

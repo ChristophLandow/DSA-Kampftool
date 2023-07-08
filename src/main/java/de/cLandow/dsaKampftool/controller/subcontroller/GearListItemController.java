@@ -2,7 +2,6 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -19,8 +18,10 @@ public class GearListItemController  extends ListCell<Weapon_closeCombat> {
     @FXML AnchorPane gearListItemAnchor;
 
     private FXMLLoader listCellLoader;
+    private GearListBoxController gearListBoxController;
 
-    public GearListItemController() {
+    public GearListItemController(GearListBoxController gearListBoxController) {
+        this.gearListBoxController = gearListBoxController;
     }
 
     @Override
@@ -28,10 +29,8 @@ public class GearListItemController  extends ListCell<Weapon_closeCombat> {
         super.updateItem(weaponCloseCombat, empty);
 
         if(empty || weaponCloseCombat == null) {
-
             setText(null);
             setGraphic(null);
-
         } else {
             render();
             itemNameLabel.setText(weaponCloseCombat.name());

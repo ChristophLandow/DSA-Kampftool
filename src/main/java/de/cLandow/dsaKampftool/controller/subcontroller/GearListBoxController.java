@@ -8,15 +8,12 @@ import static de.cLandow.dsaKampftool.Constants.*;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,7 +47,7 @@ public class GearListBoxController implements RenderController {
     public void init() {
         loadGearGroupChoiceBox();
         loadGearLists();
-        gearListView.setCellFactory(studentListView -> new GearListItemController());
+        gearListView.setCellFactory(studentListView -> new GearListItemController(this));
         /*Make listview to select multiple values*/
         gearListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         loadGearChoiceBoxListener();
