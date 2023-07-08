@@ -50,7 +50,7 @@ public class GearListBoxController implements RenderController {
     public void init() {
         loadGearGroupChoiceBox();
         loadGearLists();
-        loadListeners();
+        gearListView.setCellFactory(studentListView -> new GearListItemController());
         /*Make listview to select multiple values*/
         gearListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         loadGearChoiceBoxListener();
@@ -78,24 +78,6 @@ public class GearListBoxController implements RenderController {
         ReadFileService readFileService = new ReadFileService(this);
         weaponObservableList = readFileService.loadGear();
         fillListWithAllCloseCombatWeapons();
-    }
-
-    private void loadListeners() {
-        loadDoubleClickListElementListener();
-    }
-
-    private void loadDoubleClickListElementListener() {
-        gearListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2){
-                    String currentItem =  gearListView.getSelectionModel()
-                            .getSelectedItem().name();
-                    //TODO Doppelklick soll Gegenstand an Box übergeben und dort ausrüsten. Das Icon soll sich ändern.
-
-                }
-            }
-        });
     }
 
     private void loadGearGroupChoiceBox() {
@@ -163,7 +145,6 @@ public class GearListBoxController implements RenderController {
 
     public void fillListWithAllCloseCombatWeapons(){
         gearListView.setItems(weaponObservableList);
-        gearListView.setCellFactory(studentListView -> new GearListItemController());
     }
 
     public void fillListWithImpactWeapons(){
