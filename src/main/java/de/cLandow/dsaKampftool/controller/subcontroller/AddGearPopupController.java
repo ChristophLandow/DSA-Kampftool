@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,6 +60,10 @@ public class AddGearPopupController implements RenderController {
 
     public void closeAddGearPopup(ActionEvent actionEvent) {
         characterScreenController.closePopup();
+    }
+
+    public void addWeaponFromListToEquipment(Weapon_closeCombat weaponCloseCombat){
+        gearListBoxController.setDoubleClickedWeaponToEquipment(weaponCloseCombat);
     }
 
     public void addGearToHero(ActionEvent actionEvent) {

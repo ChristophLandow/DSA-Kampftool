@@ -20,6 +20,8 @@ public class GearListItemController  extends ListCell<Weapon_closeCombat> {
     private FXMLLoader listCellLoader;
     private GearListBoxController gearListBoxController;
 
+    private Weapon_closeCombat weapon;
+
     public GearListItemController(GearListBoxController gearListBoxController) {
         this.gearListBoxController = gearListBoxController;
     }
@@ -33,6 +35,7 @@ public class GearListItemController  extends ListCell<Weapon_closeCombat> {
             setGraphic(null);
         } else {
             render();
+            setWeapon(weaponCloseCombat);
             itemNameLabel.setText(weaponCloseCombat.name());
             setText(null);
             setGraphic(gearListItemAnchor);
@@ -54,9 +57,12 @@ public class GearListItemController  extends ListCell<Weapon_closeCombat> {
     public void doubleClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
             if (mouseEvent.getClickCount() == 2) {
-                System.out.println(itemNameLabel.getText());
+                gearListBoxController.setDoubleClickedWeaponToEquipment(weapon);
             }
         }
     }
 
+    public void setWeapon(Weapon_closeCombat weapon) {
+        this.weapon = weapon;
+    }
 }
