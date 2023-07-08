@@ -21,7 +21,6 @@ public class GearFileReadHandler extends DefaultHandler {
     private String damageMod = "";
     private Boolean subListLoaded = false;
 
-    private final ObservableList<Weapon_closeCombat> weaponList = FXCollections.observableArrayList();;
     private ObservableList<Weapon_closeCombat> temporaryWeaponLIst = FXCollections.observableArrayList();;
     private ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
 
@@ -66,7 +65,6 @@ public class GearFileReadHandler extends DefaultHandler {
         if(WEAPON.equals(qName)){
             subListLoaded = false;
             Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),damage,damageMod,statMod,distance);
-            weaponList.add(weapon);
             observableList.add(weapon);
             temporaryWeaponLIst.add(weapon);
         }
