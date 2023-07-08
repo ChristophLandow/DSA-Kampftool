@@ -52,8 +52,10 @@ public class ChooseCharacterOrDirectoryPopupController implements RenderControll
         PrefService prefService = new PrefService();
         DirectoryChooser directoryChooser = new DirectoryChooser();
         File selectedDirectory = directoryChooser.showDialog(setupScreenController.getTool().getPrimaryStage());
-        prefService.saveDirectory(selectedDirectory.getAbsolutePath());
-        directoryLabel.setText(selectedDirectory.getAbsolutePath());
+        if(selectedDirectory != null){
+            prefService.saveDirectory(selectedDirectory.getAbsolutePath());
+            directoryLabel.setText(selectedDirectory.getAbsolutePath());
+        }
         setupScreenController.getPopupStage().toFront();
     }
 

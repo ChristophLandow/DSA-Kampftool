@@ -34,12 +34,10 @@ public class GearListItemController  extends ListCell<Weapon_closeCombat> {
 
         } else {
             render();
-        }
-        if(weaponCloseCombat != null){
             itemNameLabel.setText(weaponCloseCombat.name());
+            setText(null);
+            setGraphic(gearListItemAnchor);
         }
-        setText(null);
-        setGraphic(gearListItemAnchor);
     }
 
     private void render() {
