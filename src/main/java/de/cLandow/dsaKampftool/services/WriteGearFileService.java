@@ -93,6 +93,15 @@ public class WriteGearFileService {
             writer.writeAttribute(STATMOD, "-1/-4");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Echsische Axt");
+            writer.writeAttribute(DAMAGE, "1W6+5");
+            writer.writeAttribute(DAMAGEMOD, "12/4");
+            writer.writeAttribute(DISTANCE, "NS");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(DAGGERS);
