@@ -62,8 +62,8 @@ public class AddGearPopupController implements RenderController {
         characterScreenController.closePopup();
     }
 
-    public void addWeaponFromListToEquipment(Weapon_closeCombat weaponCloseCombat){
-        gearListBoxController.setDoubleClickedWeaponToEquipment(weaponCloseCombat);
+    public void addWeaponFromListToEquipment(Weapon_closeCombat weapon){
+        //TODO In SelectedGearBoxController subcontroller für jedes Stück Ausrüstung anlegen
     }
 
     public void addGearToHero(ActionEvent actionEvent) {
