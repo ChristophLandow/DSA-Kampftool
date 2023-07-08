@@ -26,21 +26,21 @@ public class GearListBoxController implements RenderController {
     @FXML
     ChoiceBox<String> gearGroupChoiceBox;
     @FXML
-    ListView<String> gearListView;
+    ListView<Weapon_closeCombat> gearListView;
 
     private AddGearPopupController addGearPopupController;
 
     private ArrayList<Armor> armorList = new ArrayList<>();
 
-    private ObservableList<Weapon_closeCombat> weaponObservableList= FXCollections.observableArrayList();;
-    private ArrayList<Weapon_closeCombat> closeCombatWeaponList = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> twoHandedImpactWeapons = new ArrayList<>();
+    private ObservableList<Weapon_closeCombat> weaponObservableList= FXCollections.observableArrayList();
+    private ObservableList<Weapon_closeCombat> closeCombatWeaponList = FXCollections.observableArrayList();
+    private ObservableList<Weapon_closeCombat> twoHandedImpactWeapons = FXCollections.observableArrayList();
 
-    private ArrayList<Weapon_closeCombat> bastardswords = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> fencingWeapons = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> daggers = new ArrayList<>();
+    private ObservableList<Weapon_closeCombat> bastardswords = FXCollections.observableArrayList();
+    private ObservableList<Weapon_closeCombat> fencingWeapons = FXCollections.observableArrayList();
+    private ObservableList<Weapon_closeCombat> daggers = FXCollections.observableArrayList();
 
-    private ArrayList<Weapon_closeCombat> impactWeapons = new ArrayList<>();
+    private ObservableList<Weapon_closeCombat> impactWeapons = FXCollections.observableArrayList();
 
     public GearListBoxController(AddGearPopupController addGearPopupController){
         this.addGearPopupController = addGearPopupController;
@@ -90,7 +90,7 @@ public class GearListBoxController implements RenderController {
             public void handle(MouseEvent event) {
                 if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2){
                     String currentItem =  gearListView.getSelectionModel()
-                            .getSelectedItem();
+                            .getSelectedItem().name();
                     //TODO Doppelklick soll Gegenstand an Box übergeben und dort ausrüsten. Das Icon soll sich ändern.
 
                 }
@@ -141,60 +141,48 @@ public class GearListBoxController implements RenderController {
         return null;
     }
 
-    public void setDaggers(ArrayList<Weapon_closeCombat> daggers) {
+    public void setDaggers(ObservableList<Weapon_closeCombat> daggers) {
         this.daggers = daggers;
     }
 
-    public void setFencingWeapons(ArrayList<Weapon_closeCombat> fencingWeapons) {
+    public void setFencingWeapons(ObservableList<Weapon_closeCombat> fencingWeapons) {
         this.fencingWeapons = fencingWeapons;
     }
 
-    public void setTwoHandedImpactWeapons(ArrayList<Weapon_closeCombat> twoHandedImpactWeapons) {
+    public void setTwoHandedImpactWeapons(ObservableList<Weapon_closeCombat> twoHandedImpactWeapons) {
         this.twoHandedImpactWeapons = twoHandedImpactWeapons;
     }
 
-    public void setBastardswords(ArrayList<Weapon_closeCombat> bastardswords) {
+    public void setBastardswords(ObservableList<Weapon_closeCombat> bastardswords) {
         this.bastardswords = bastardswords;
     }
 
-    public void setImpactWeapons(ArrayList<Weapon_closeCombat> impactWeapons) {
+    public void setImpactWeapons(ObservableList<Weapon_closeCombat> impactWeapons) {
         this.impactWeapons = impactWeapons;
     }
 
     public void fillListWithAllCloseCombatWeapons(){
-        for(Weapon_closeCombat ccw : closeCombatWeaponList){
-            gearListView.getItems().add(ccw.name());
-        }
+        gearListView.setItems(weaponObservableList);
     }
 
     public void fillListWithImpactWeapons(){
-        for(Weapon_closeCombat ccw : impactWeapons){
-            gearListView.getItems().add(ccw.name());
-        }
+        gearListView.setItems(impactWeapons);
     }
 
     public void fillListWithAllDaggers(){
-        for(Weapon_closeCombat ccw : daggers){
-            gearListView.getItems().add(ccw.name());
-        }
+        gearListView.setItems(daggers);
     }
 
     public void fillListWithAllFencingWeapons(){
-        for(Weapon_closeCombat ccw : fencingWeapons){
-            gearListView.getItems().add(ccw.name());
-        }
+        gearListView.setItems(fencingWeapons);
     }
 
     public void fillListWithAllTwoHandedImpactWeapons(){
-        for(Weapon_closeCombat ccw : twoHandedImpactWeapons){
-            gearListView.getItems().add(ccw.name());
-        }
+        gearListView.setItems(twoHandedImpactWeapons);
     }
 
     public void fillListWithAllBastardswords(){
-        for(Weapon_closeCombat ccw : bastardswords){
-            gearListView.getItems().add(ccw.name());
-        }
+        gearListView.setItems(bastardswords);
     }
 
 }

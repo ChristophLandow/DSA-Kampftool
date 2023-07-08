@@ -21,8 +21,8 @@ public class GearFileReadHandler extends DefaultHandler {
     private String damageMod = "";
     private Boolean subListLoaded = false;
 
-    private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
+    private final ObservableList<Weapon_closeCombat> weaponList = FXCollections.observableArrayList();;
+    private ObservableList<Weapon_closeCombat> temporaryWeaponLIst = FXCollections.observableArrayList();;
     private ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
 
     private final GearListBoxController gearListBoxController;
@@ -75,27 +75,27 @@ public class GearFileReadHandler extends DefaultHandler {
                 case BASTARDSWORDS -> {
                     subListLoaded = true;
                     gearListBoxController.setBastardswords(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 case TWO_HANDED_IMPACT_WEAPON -> {
                     subListLoaded = true;
                     gearListBoxController.setTwoHandedImpactWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 case DAGGERS -> {
                     subListLoaded = true;
                     gearListBoxController.setDaggers(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 case FENCING_WEAPONS -> {
                     subListLoaded = true;
                     gearListBoxController.setFencingWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 case IMPACT_WEAPONS -> {
                     subListLoaded = true;
                     gearListBoxController.setImpactWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 default -> {
                     if(subListLoaded.equals(false)){
