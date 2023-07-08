@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
@@ -20,9 +21,9 @@ public class GearFileReadHandler extends DefaultHandler {
     private String damageMod = "";
     private Boolean subListLoaded = false;
 
-    private final ArrayList<Weapon_closeCombat> weaponList = new ArrayList<>();
-    private ArrayList<Weapon_closeCombat> temporaryWeaponLIst = new ArrayList<>();
-    private ObservableList<Weapon_closeCombat> observableList;
+    private final ObservableList<Weapon_closeCombat> weaponList = FXCollections.observableArrayList();;
+    private ObservableList<Weapon_closeCombat> temporaryWeaponLIst = FXCollections.observableArrayList();;
+    private ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
 
     private final GearListBoxController gearListBoxController;
 
@@ -74,27 +75,27 @@ public class GearFileReadHandler extends DefaultHandler {
                 case BASTARDSWORDS -> {
                     subListLoaded = true;
                     gearListBoxController.setBastardswords(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 case TWO_HANDED_IMPACT_WEAPON -> {
                     subListLoaded = true;
                     gearListBoxController.setTwoHandedImpactWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 case DAGGERS -> {
                     subListLoaded = true;
                     gearListBoxController.setDaggers(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 case FENCING_WEAPONS -> {
                     subListLoaded = true;
                     gearListBoxController.setFencingWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 case IMPACT_WEAPONS -> {
                     subListLoaded = true;
                     gearListBoxController.setImpactWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst = new ArrayList<>();
+                    temporaryWeaponLIst = FXCollections.observableArrayList();
                 }
                 default -> {
                     if(subListLoaded.equals(false)){
@@ -108,10 +109,6 @@ public class GearFileReadHandler extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int length){
 
-    }
-
-    public ArrayList<Weapon_closeCombat> getGearList() {
-        return weaponList;
     }
 
     public ObservableList<Weapon_closeCombat> getObservableGearList(){
