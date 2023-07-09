@@ -93,6 +93,15 @@ public class WriteGearFileService {
             writer.writeAttribute(STATMOD, "-1/-4");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Echsische Axt");
+            writer.writeAttribute(DAMAGE, "1W6+5");
+            writer.writeAttribute(DAMAGEMOD, "12/4");
+            writer.writeAttribute(DISTANCE, "NS");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(DAGGERS);
@@ -117,6 +126,15 @@ public class WriteGearFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "2");
             writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Florett");
+            writer.writeAttribute(DAMAGE, "1W6+3");
+            writer.writeAttribute(DAMAGEMOD, "13/5");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "3");
+            writer.writeAttribute(STATMOD, "+1/-1");
             writer.writeEndElement();
 
             writer.writeEndElement();

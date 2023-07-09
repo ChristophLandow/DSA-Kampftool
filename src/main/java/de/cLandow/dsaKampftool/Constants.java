@@ -32,6 +32,8 @@ public class Constants {
 
     // Gear List
 
+    public static final String MAINWEAPON = "Main Weapon";
+    public static final String SIDEWEAPON = "Side Weapon";
     public static final String SHOWALL = "Alle";
     public static final String DAMAGE = "Schaden";
     public static final String DISTANCE = "Distanzklasse";
@@ -46,5 +48,9 @@ public class Constants {
     public static final String DAGGERS = "Dolche";
     public static final String FENCING_WEAPONS = "Fechtwaffen";
     public static final String IMPACT_WEAPONS = "Hiebwaffen";
+
+    //Images
+
+    public static final String MAINWEAPON_IMAGE = "src/main/resources/de/cLandow/dsaKampftool/images/sword_equiped.png";
 
 }
