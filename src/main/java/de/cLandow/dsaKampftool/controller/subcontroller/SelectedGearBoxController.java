@@ -4,13 +4,19 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Shield;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
+import static de.cLandow.dsaKampftool.Constants.*;
+
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class SelectedGearBoxController implements RenderController {
@@ -38,12 +44,11 @@ public class SelectedGearBoxController implements RenderController {
     @FXML ImageView leftArmImageView;
     @FXML ImageView rightArmImageView;
 
+    private final AddGearPopupController addGearPopupController;
+
     private Weapon_closeCombat mainWeapon;
     private Weapon_closeCombat sideWeapon;
     private Shield shield;
-
-
-    private final AddGearPopupController addGearPopupController;
 
 
     public SelectedGearBoxController(AddGearPopupController addGearPopupController){
@@ -96,5 +101,33 @@ public class SelectedGearBoxController implements RenderController {
         Tooltip newTooltip = new Tooltip("test");
         Tooltip.install(view,newTooltip);
     }
+
+    public void setMainWeapon(Weapon_closeCombat mainWeapon) {
+        this.mainWeapon = mainWeapon;
+        changeIconToSetMode(MAINWEAPON);
+    }
+
+    private void changeIconToSetMode(String item) {
+        switch(item){
+            case MAINWEAPON -> {
+                mainWeaponImageView.setImage(loadImage(MAINWEAPON_IMAGE));
+            }
+        }
+    }
+
+    private Image loadImage(String path){
+        FileInputStream input = null;
+        try {
+            input = new FileInputStream(path);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        return new Image(input);
+    }
+
+    public Weapon_closeCombat getMainWeapon(){
+        return this.mainWeapon;
+    }
+
 
 }

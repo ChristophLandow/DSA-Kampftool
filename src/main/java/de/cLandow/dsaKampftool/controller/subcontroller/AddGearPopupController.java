@@ -23,7 +23,6 @@ public class AddGearPopupController implements RenderController {
     @FXML Button closePopup_Button;
     private final CharacterScreenController characterScreenController;
     private final SelectedGearBoxController selectedGearBoxController;
-
     private final GearListBoxController gearListBoxController;
 
     public AddGearPopupController(CharacterScreenController characterScreenController) {
@@ -63,7 +62,7 @@ public class AddGearPopupController implements RenderController {
     }
 
     public void addWeaponFromListToEquipment(Weapon_closeCombat weapon){
-        //TODO In SelectedGearBoxController subcontroller für jedes Stück Ausrüstung anlegen
+        selectedGearBoxController.setMainWeapon(weapon);
     }
 
     public void addGearToHero(ActionEvent actionEvent) {
