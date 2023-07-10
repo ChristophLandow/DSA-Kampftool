@@ -6,28 +6,17 @@ import de.cLandow.dsaKampftool.model.Shield;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import static de.cLandow.dsaKampftool.Constants.*;
 
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Tooltip;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class SelectedGearBoxController implements RenderController {
 
-
-    public HBox mainWeaponHBox;
-
-
-
-    private final AddGearPopupController addGearPopupController;
+    @FXML HBox mainWeaponHBox;
     @FXML HBox sideWeaponHBox;
     @FXML HBox shieldHBox;
     @FXML HBox helmetHBox;
@@ -37,7 +26,7 @@ public class SelectedGearBoxController implements RenderController {
     @FXML HBox tummyHBox;
     @FXML HBox rightLegHBox;
     @FXML HBox leftLegHBox;
-
+    private final AddGearPopupController addGearPopupController;
     private final EquipmentController mainWeaponBoxController;
     private final EquipmentController sideWeaponBoxController;
     private final EquipmentController shildBoxController;
@@ -49,6 +38,8 @@ public class SelectedGearBoxController implements RenderController {
     private final EquipmentController leftLegBoxController;
     private final EquipmentController rightLegBoxController;
 
+    private ArrayList<EquipmentController> equipmentControllers = new ArrayList<>();
+
 
     private Weapon_closeCombat mainWeapon;
     private Weapon_closeCombat sideWeapon;
@@ -58,20 +49,42 @@ public class SelectedGearBoxController implements RenderController {
     public SelectedGearBoxController(AddGearPopupController addGearPopupController){
         this.addGearPopupController = addGearPopupController;
         this.mainWeaponBoxController = new EquipmentController(MAINWEAPON);
+        equipmentControllers.add(mainWeaponBoxController);
         this.sideWeaponBoxController = new EquipmentController(SIDEWEAPON);
+        equipmentControllers.add(sideWeaponBoxController);
         this.shildBoxController = new EquipmentController(SHIELD);
+        equipmentControllers.add(shildBoxController);
         this.headBoxController = new EquipmentController(HEAD);
+        equipmentControllers.add(headBoxController);
         this.torsoBoxController = new EquipmentController(TORSO);
+        equipmentControllers.add(torsoBoxController);
         this.tummyBoxController = new EquipmentController(TUMMY);
+        equipmentControllers.add(tummyBoxController);
         this.leftArmBoxController = new EquipmentController(LEFT_ARM);
+        equipmentControllers.add(leftArmBoxController);
         this.rightArmBoxController = new EquipmentController(RIGHT_ARM);
+        equipmentControllers.add(rightArmBoxController);
         this.leftLegBoxController = new EquipmentController(LEFT_LEG);
+        equipmentControllers.add(leftLegBoxController);
         this.rightLegBoxController = new EquipmentController(RIGHT_LEG);
+        equipmentControllers.add(rightLegBoxController);
     }
 
     @Override
     public void init() {
-
+        mainWeaponHBox.getChildren().add(mainWeaponBoxController.render());
+        sideWeaponHBox.getChildren().add(sideWeaponBoxController.render());
+        shieldHBox.getChildren().add(shildBoxController.render());
+        helmetHBox.getChildren().add(headBoxController.render());
+        torsoHBox.getChildren().add(torsoBoxController.render());
+        tummyHBox.getChildren().add(tummyBoxController.render());
+        leftArmHBox.getChildren().add(leftArmBoxController.render());
+        rightArmHBox.getChildren().add(rightArmBoxController.render());
+        leftLegHBox.getChildren().add(leftLegBoxController.render());
+        rightLegHBox.getChildren().add(rightLegBoxController.render());
+        for (EquipmentController controller : equipmentControllers){
+            controller.init();
+        }
     }
 
     @Override
