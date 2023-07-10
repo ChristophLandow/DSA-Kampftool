@@ -16,7 +16,7 @@ public class Constants {
     public static final String RIGHT_ARM = "Right Arm";
     public static final String LEFT_ARM = "Left Arm";
 
-    public static final String CHEST = "Chest";
+    public static final String TORSO = "Chest";
 
     public static final String TUMMY = "Tummy";
 
@@ -34,6 +34,7 @@ public class Constants {
 
     public static final String MAINWEAPON = "Main Weapon";
     public static final String SIDEWEAPON = "Side Weapon";
+    public static final String SHIELD = "Shield";
     public static final String SHOWALL = "Alle";
     public static final String DAMAGE = "Schaden";
     public static final String DISTANCE = "Distanzklasse";

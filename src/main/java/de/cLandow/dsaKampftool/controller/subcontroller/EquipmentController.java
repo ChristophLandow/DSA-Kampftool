@@ -19,7 +19,7 @@ public class EquipmentController implements RenderController {
     @FXML BorderPane equipmentContainer;
     @FXML ImageView equipmentImageView;
 
-    public EquipmentController(){
+    public EquipmentController(String mainweapon){
 
     }
     @Override

@@ -38,6 +38,18 @@ public class SelectedGearBoxController implements RenderController {
     @FXML HBox rightLegHBox;
     @FXML HBox leftLegHBox;
 
+    private final EquipmentController mainWeaponBoxController;
+    private final EquipmentController sideWeaponBoxController;
+    private final EquipmentController shildBoxController;
+    private final EquipmentController headBoxController;
+    private final EquipmentController torsoBoxController;
+    private final EquipmentController tummyBoxController;
+    private final EquipmentController leftArmBoxController;
+    private final EquipmentController rightArmBoxController;
+    private final EquipmentController leftLegBoxController;
+    private final EquipmentController rightLegBoxController;
+
+
     private Weapon_closeCombat mainWeapon;
     private Weapon_closeCombat sideWeapon;
     private Shield shield;
@@ -45,6 +57,16 @@ public class SelectedGearBoxController implements RenderController {
 
     public SelectedGearBoxController(AddGearPopupController addGearPopupController){
         this.addGearPopupController = addGearPopupController;
+        this.mainWeaponBoxController = new EquipmentController(MAINWEAPON);
+        this.sideWeaponBoxController = new EquipmentController(SIDEWEAPON);
+        this.shildBoxController = new EquipmentController(SHIELD);
+        this.headBoxController = new EquipmentController(HEAD);
+        this.torsoBoxController = new EquipmentController(TORSO);
+        this.tummyBoxController = new EquipmentController(TUMMY);
+        this.leftArmBoxController = new EquipmentController(LEFT_ARM);
+        this.rightArmBoxController = new EquipmentController(RIGHT_ARM);
+        this.leftLegBoxController = new EquipmentController(LEFT_LEG);
+        this.rightLegBoxController = new EquipmentController(RIGHT_LEG);
     }
 
     @Override
