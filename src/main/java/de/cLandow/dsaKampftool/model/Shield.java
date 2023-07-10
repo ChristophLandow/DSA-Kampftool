@@ -1,6 +1,6 @@
 package de.cLandow.dsaKampftool.model;
 
-public class Shield {
+public class Shield extends Gear{
 
     private String statModificator;
     private int initiativeBonus;
