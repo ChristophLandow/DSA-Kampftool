@@ -129,9 +129,6 @@ public class SetupScreenController implements RenderController {
         nameLabel.setText(actualCharacter.getName());
     }
 
-    public Character getActualCharacter(){
-        return this.actualCharacter;
-    }
 
     public Stage getPopupStage(){
         return this.popupStage;

@@ -109,9 +109,5 @@ public class SelectedGearBoxController implements RenderController {
         mainWeaponBoxController.changeIconToSetMode();
     }
 
-    public Weapon_closeCombat getMainWeapon(){
-        return this.mainWeapon;
-    }
-
 
 }

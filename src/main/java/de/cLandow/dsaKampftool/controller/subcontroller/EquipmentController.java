@@ -22,7 +22,8 @@ public class EquipmentController implements RenderController {
     @FXML BorderPane equipmentContainer;
     @FXML ImageView equipmentImageView;
 
-    private String zone;
+    private final String zone;
+
 
     public EquipmentController(String zone){
         this.zone = zone;
