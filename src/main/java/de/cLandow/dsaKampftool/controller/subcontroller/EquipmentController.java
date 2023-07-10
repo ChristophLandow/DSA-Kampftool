@@ -29,7 +29,7 @@ public class EquipmentController implements RenderController {
     }
     @Override
     public void init() {
-       // addHoverEffekt();
+       addToolTipp();
 
     }
 
@@ -61,13 +61,13 @@ public class EquipmentController implements RenderController {
 
         });
     }
-    private void addToolTipp(ImageView view) {
+    private void addToolTipp() {
         Tooltip newTooltip = new Tooltip("test");
-        Tooltip.install(view,newTooltip);
+        Tooltip.install(equipmentImageView,newTooltip);
     }
 
-    private void changeIconToSetMode(String item) {
-        switch(item){
+    public void changeIconToSetMode() {
+        switch(zone){
             case MAINWEAPON -> {
                 equipmentImageView.setImage(loadImage(MAINWEAPON_IMAGE));
             }
