@@ -131,7 +131,7 @@ public class CharModelController implements RenderController {
         rightArmToggleGroup.setUserData(RIGHT_ARM);
         leftArmToggleGroup.setUserData(LEFT_ARM);
         headToggleGroup.setUserData(HEAD);
-        chestToggleGroup.setUserData(CHEST);
+        chestToggleGroup.setUserData(TORSO);
         tummyToggleGroup.setUserData(TUMMY);
         leftLegToggleGroup.setUserData(LEFT_LEG);
         rightLegToggleGroup.setUserData(RIGHT_LEG);
