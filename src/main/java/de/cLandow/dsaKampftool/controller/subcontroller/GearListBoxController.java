@@ -2,7 +2,6 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
-import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import static de.cLandow.dsaKampftool.Constants.*;
 import de.cLandow.dsaKampftool.services.ReadFileService;
@@ -14,9 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
-
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class GearListBoxController implements RenderController {
 
@@ -26,8 +23,6 @@ public class GearListBoxController implements RenderController {
     ListView<Weapon_closeCombat> gearListView;
 
     private AddGearPopupController addGearPopupController;
-
-    private ArrayList<Armor> armorList = new ArrayList<>();
 
     private ObservableList<Weapon_closeCombat> weaponObservableList= FXCollections.observableArrayList();
     private ObservableList<Weapon_closeCombat> closeCombatWeaponList = FXCollections.observableArrayList();

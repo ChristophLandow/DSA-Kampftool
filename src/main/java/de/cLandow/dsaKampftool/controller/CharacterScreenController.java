@@ -18,7 +18,6 @@ public class CharacterScreenController implements RenderController {
 
     @FXML HBox tabPaneHBox;
     @FXML HBox charModelHBox;
-    @FXML HBox healthAndEnduranceBox;
 
     private Parent characterScreenParent;
     private Character actualCharacter;

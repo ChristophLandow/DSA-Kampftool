@@ -10,8 +10,10 @@ import java.io.IOException;
 
 public class TabPaneController implements RenderController {
 
-    public TabPaneController(CharacterScreenController characterScreenController){
+    private final CharacterScreenController characterScreenController;
 
+    public TabPaneController(CharacterScreenController characterScreenController){
+        this.characterScreenController = characterScreenController;
     }
 
     @Override
