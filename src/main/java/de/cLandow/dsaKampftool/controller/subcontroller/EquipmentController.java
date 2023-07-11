@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Gear;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,7 +24,7 @@ public class EquipmentController implements RenderController {
     @FXML ImageView equipmentImageView;
 
     private final String zone;
-
+    private Gear gear;
 
     public EquipmentController(String zone){
         this.zone = zone;
@@ -85,5 +86,11 @@ public class EquipmentController implements RenderController {
         return new Image(input);
     }
 
+    public Gear getGear() {
+        return gear;
+    }
 
+    public void setGear(Gear gear) {
+        this.gear = gear;
+    }
 }
