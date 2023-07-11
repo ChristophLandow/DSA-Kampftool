@@ -108,7 +108,7 @@ public class GearListBoxController implements RenderController {
 
     public Weapon_closeCombat fromNameToWeapon(String name){
         for (Weapon_closeCombat ccw : closeCombatWeaponList){
-            if(name.equals(ccw.name())){
+            if(name.equals(ccw.getName())){
                 return ccw;
             }
         }
