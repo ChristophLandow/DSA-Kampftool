@@ -10,7 +10,7 @@ public class Weapon_closeCombat extends Gear{
     private String distanceClass;
 
     public Weapon_closeCombat(String name, int initiative, String damage, String damageMod, String statMod, String distance){
-        this.name = name;
+        super(name);
         this.ini = initiative;
         this.damage = damage;
         this.damageModificator = damageMod;
@@ -18,9 +18,6 @@ public class Weapon_closeCombat extends Gear{
         this.distanceClass = distance;
     }
 
-    public String getName() {
-        return name;
-    }
 
     public int getIni() {
         return ini;
@@ -42,9 +39,6 @@ public class Weapon_closeCombat extends Gear{
         return distanceClass;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setIni(int ini) {
         this.ini = ini;
