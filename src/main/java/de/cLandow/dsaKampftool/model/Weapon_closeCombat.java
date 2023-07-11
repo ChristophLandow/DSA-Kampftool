@@ -1,6 +1,6 @@
 package de.cLandow.dsaKampftool.model;
 
-public class Weapon_closeCombat {
+public class Weapon_closeCombat extends Gear{
 
     private String name;
     private int ini;
