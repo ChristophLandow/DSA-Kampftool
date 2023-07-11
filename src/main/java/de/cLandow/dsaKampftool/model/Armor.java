@@ -1,21 +1,34 @@
 package de.cLandow.dsaKampftool.model;
 
-public class Armor {
+public class Armor extends Gear{
 
     private String name;
-    private int headArmor;
-    private int chestArmor;
-    private int backsideArmor;
+    private Integer headArmor;
+    private Integer chestArmor;
+    private Integer backsideArmor;
 
-    private int tummyArmor;
-    private int leftArmArmor;
-    private int rightArmArmor;
-    private int lefLegArmor;
-    private int rightLegArmor;
-    private double summArmorclass;
-    private double summHandicap;
+    private Integer tummyArmor;
+    private Integer leftArmArmor;
+    private Integer rightArmArmor;
+    private Integer lefLegArmor;
+    private Integer rightLegArmor;
+    private Double summArmorclass;
+    private Double summHandicap;
 
-    public Armor(){
+    public Armor(String name, Integer headArmor, Integer chestArmor, Integer backsideArmor, Integer tummyArmor,
+                 Integer leftArmArmor, Integer rightArmArmor, Integer lefLegArmor, Integer rightLegArmor,
+                 Double summArmorclass, Double summHandicap){
+        super(name);
+        this.headArmor = headArmor;
+        this.chestArmor = chestArmor;
+        this.backsideArmor = backsideArmor;
+        this.tummyArmor = tummyArmor;
+        this.leftArmArmor = leftArmArmor;
+        this.rightArmArmor = rightArmArmor;
+        this.lefLegArmor = lefLegArmor;
+        this.rightLegArmor = rightLegArmor;
+        this.summArmorclass = summArmorclass;
+        this.summHandicap = summHandicap;
     }
 
     public String getName() {

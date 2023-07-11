@@ -9,15 +9,12 @@ public class Weapon_rangedCombat extends Gear{
     private ArrayList<Integer> distances;
     private Integer neededStrength;
     public Weapon_rangedCombat(String name, String damage, ArrayList<Integer> distances, Integer neededStrength){
-        this.name = name;
+        super(name);
         this.damage = damage;
         this.distances = distances;
         this.neededStrength = neededStrength;
     }
 
-    public String getName() {
-        return name;
-    }
 
     public String getDamage() {
         return damage;
@@ -31,9 +28,6 @@ public class Weapon_rangedCombat extends Gear{
         return neededStrength;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setDamage(String damage) {
         this.damage = damage;
