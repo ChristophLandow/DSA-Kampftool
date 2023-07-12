@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.model.Gear;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
+import static de.cLandow.dsaKampftool.Constants.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -12,6 +13,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+
+
 
 public class GearListItemController  extends ListCell<Gear> {
 
@@ -58,8 +61,16 @@ public class GearListItemController  extends ListCell<Gear> {
     public void doubleClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
             if (mouseEvent.getClickCount() == 2) {
-                System.out.println(equipedGear.getClass());
-                gearListBoxController.setDoubleClickedGearToEquipment((Weapon_closeCombat) equipedGear);
+                String gearClass = String.valueOf(equipedGear.getClass());
+                System.out.println(gearClass);
+                switch (gearClass) {
+                    case CLOSECOMBATCLASS -> {
+                        gearListBoxController.setDoubleClickedGearToEquipment((Weapon_closeCombat) equipedGear);
+                    }
+                    default -> {
+                        System.out.println("Unidentified Gear Class");
+                    }
+                }
             }
         }
     }

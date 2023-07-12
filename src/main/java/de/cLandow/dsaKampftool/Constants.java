@@ -50,6 +50,10 @@ public class Constants {
     public static final String FENCING_WEAPONS = "Fechtwaffen";
     public static final String IMPACT_WEAPONS = "Hiebwaffen";
 
+    //Gear Class
+    public static final String CLOSECOMBATCLASS = "class de.cLandow.dsaKampftool.model.Weapon_closeCombat";
+
+
     //Images
 
     public static final String MAINWEAPON_IMAGE = "src/main/resources/de/cLandow/dsaKampftool/images/sword_equiped.png";
