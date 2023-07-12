@@ -31,10 +31,6 @@ public class Armor extends Gear{
         this.summHandicap = summHandicap;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public int getHeadArmor() {
         return headArmor;
     }
@@ -73,10 +69,6 @@ public class Armor extends Gear{
 
     public double getSummHandicap() {
         return summHandicap;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void setHeadArmor(int headArmor) {

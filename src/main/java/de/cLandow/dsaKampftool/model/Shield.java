@@ -12,21 +12,12 @@ public class Shield extends Gear{
         this.initiativeBonus = initiativeBonus;
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
     public int getInitiativeBonus() {
         return initiativeBonus;
     }
 
     public String getStatModificator() {
         return statModificator;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void setInitiativeBonus(int initiativeBonus) {

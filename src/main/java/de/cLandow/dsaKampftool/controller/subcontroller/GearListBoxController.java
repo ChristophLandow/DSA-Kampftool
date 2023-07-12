@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Gear;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import static de.cLandow.dsaKampftool.Constants.*;
 import de.cLandow.dsaKampftool.services.ReadFileService;
@@ -14,13 +15,14 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GearListBoxController implements RenderController {
 
     @FXML
     ChoiceBox<String> gearGroupChoiceBox;
     @FXML
-    ListView<Weapon_closeCombat> gearListView;
+    ListView<Gear> gearListView;
 
     private AddGearPopupController addGearPopupController;
 
@@ -42,7 +44,7 @@ public class GearListBoxController implements RenderController {
     public void init() {
         loadGearGroupChoiceBox();
         loadGearLists();
-        gearListView.setCellFactory(studentListView -> new GearListItemController(this));
+        gearListView.setCellFactory(gearListView -> new GearListItemController(this));
         /*Make listview to select multiple values*/
         gearListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         loadGearChoiceBoxListener();
@@ -115,8 +117,8 @@ public class GearListBoxController implements RenderController {
         return null;
     }
 
-    public void setDoubleClickedWeaponToEquipment(Weapon_closeCombat weapon){
-        addGearPopupController.addWeaponFromListToEquipment(weapon);
+    public void setDoubleClickedGearToEquipment(Gear gear){
+        addGearPopupController.addGearFromListToEquipment(gear);
     }
 
     public void setDaggers(ObservableList<Weapon_closeCombat> daggers) {
@@ -140,27 +142,33 @@ public class GearListBoxController implements RenderController {
     }
 
     public void fillListWithAllCloseCombatWeapons(){
-        gearListView.setItems(weaponObservableList);
+        gearListView.setItems(castGearListToWeaponList(weaponObservableList));
     }
 
     public void fillListWithImpactWeapons(){
-        gearListView.setItems(impactWeapons);
+        gearListView.setItems(castGearListToWeaponList(impactWeapons));
     }
 
     public void fillListWithAllDaggers(){
-        gearListView.setItems(daggers);
+        gearListView.setItems(castGearListToWeaponList(daggers));
     }
 
     public void fillListWithAllFencingWeapons(){
-        gearListView.setItems(fencingWeapons);
+        gearListView.setItems(castGearListToWeaponList(fencingWeapons));
     }
 
     public void fillListWithAllTwoHandedImpactWeapons(){
-        gearListView.setItems(twoHandedImpactWeapons);
+        gearListView.setItems(castGearListToWeaponList(twoHandedImpactWeapons));
     }
 
     public void fillListWithAllBastardswords(){
-        gearListView.setItems(bastardswords);
+        gearListView.setItems(castGearListToWeaponList(bastardswords));
+    }
+
+    private ObservableList<Gear> castGearListToWeaponList(ObservableList<Weapon_closeCombat> weaponList){
+        ObservableList<Gear> gearList = FXCollections.observableArrayList();
+        gearList.addAll(weaponList);
+        return gearList;
     }
 
 }
