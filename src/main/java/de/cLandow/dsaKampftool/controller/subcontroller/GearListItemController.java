@@ -1,6 +1,7 @@
 package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
+import de.cLandow.dsaKampftool.model.Gear;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +13,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class GearListItemController  extends ListCell<Weapon_closeCombat> {
+public class GearListItemController  extends ListCell<Gear> {
 
     @FXML Label itemNameLabel;
     @FXML AnchorPane gearListItemAnchor;
@@ -20,23 +21,23 @@ public class GearListItemController  extends ListCell<Weapon_closeCombat> {
     private FXMLLoader listCellLoader;
     private GearListBoxController gearListBoxController;
 
-    private Weapon_closeCombat weapon;
+    private Gear equipedGear ;
 
     public GearListItemController(GearListBoxController gearListBoxController) {
         this.gearListBoxController = gearListBoxController;
     }
 
     @Override
-    protected void updateItem(Weapon_closeCombat weaponCloseCombat, boolean empty) {
-        super.updateItem(weaponCloseCombat, empty);
+    protected void updateItem(Gear gear, boolean empty) {
+        super.updateItem(gear, empty);
 
-        if(empty || weaponCloseCombat == null) {
+        if(empty || gear == null) {
             setText(null);
             setGraphic(null);
         } else {
             render();
-            setWeapon(weaponCloseCombat);
-            itemNameLabel.setText(weaponCloseCombat.getName());
+            setGear(gear);
+            itemNameLabel.setText(gear.getName());
             setText(null);
             setGraphic(gearListItemAnchor);
         }
@@ -57,12 +58,13 @@ public class GearListItemController  extends ListCell<Weapon_closeCombat> {
     public void doubleClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
             if (mouseEvent.getClickCount() == 2) {
-                gearListBoxController.setDoubleClickedWeaponToEquipment(weapon);
+                System.out.println(equipedGear.getClass());
+                gearListBoxController.setDoubleClickedGearToEquipment((Weapon_closeCombat) equipedGear);
             }
         }
     }
 
-    public void setWeapon(Weapon_closeCombat weapon) {
-        this.weapon = weapon;
+    public void setGear(Gear gear) {
+        this.equipedGear = gear;
     }
 }
