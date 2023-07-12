@@ -117,8 +117,8 @@ public class GearListBoxController implements RenderController {
         return null;
     }
 
-    public void setDoubleClickedGearToEquipment(Weapon_closeCombat weapon){
-        addGearPopupController.addWeaponFromListToEquipment(weapon);
+    public void setDoubleClickedGearToEquipment(Gear gear){
+        addGearPopupController.addGearFromListToEquipment(gear);
     }
 
     public void setDaggers(ObservableList<Weapon_closeCombat> daggers) {

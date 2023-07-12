@@ -61,16 +61,7 @@ public class GearListItemController  extends ListCell<Gear> {
     public void doubleClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
             if (mouseEvent.getClickCount() == 2) {
-                String gearClass = String.valueOf(equipedGear.getClass());
-                System.out.println(gearClass);
-                switch (gearClass) {
-                    case CLOSECOMBATCLASS -> {
-                        gearListBoxController.setDoubleClickedGearToEquipment((Weapon_closeCombat) equipedGear);
-                    }
-                    default -> {
-                        System.out.println("Unidentified Gear Class");
-                    }
-                }
+                gearListBoxController.setDoubleClickedGearToEquipment(equipedGear);
             }
         }
     }
