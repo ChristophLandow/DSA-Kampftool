@@ -15,8 +15,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static de.cLandow.dsaKampftool.Constants.MAINWEAPON;
-import static de.cLandow.dsaKampftool.Constants.MAINWEAPON_IMAGE;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class EquipmentController implements RenderController {
 
@@ -64,7 +63,12 @@ public class EquipmentController implements RenderController {
         });
     }
     private void addToolTipp() {
-        Tooltip newTooltip = new Tooltip("test");
+        Tooltip newTooltip;
+        if((this.gear != null) && (gear.getName() != null)){
+            newTooltip = new Tooltip(gear.getName());
+        } else {
+            newTooltip = new Tooltip("Leer");
+        }
         Tooltip.install(equipmentImageView,newTooltip);
     }
 
@@ -92,5 +96,7 @@ public class EquipmentController implements RenderController {
 
     public void setGear(Gear gear) {
         this.gear = gear;
+        addToolTipp();
+
     }
 }
