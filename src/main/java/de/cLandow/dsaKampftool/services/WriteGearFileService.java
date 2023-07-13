@@ -111,6 +111,15 @@ public class WriteGearFileService {
             writer.writeAttribute(STATMOD, "0/-2");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Gruufhai");
+            writer.writeAttribute(DAMAGE, "1W6+6");
+            writer.writeAttribute(DAMAGEMOD, "14/2");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "-2");
+            writer.writeAttribute(STATMOD, "-1/-3");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(DAGGERS);
