@@ -106,6 +106,7 @@ public class SelectedGearBoxController implements RenderController {
 
     public void setMainWeapon(Weapon_closeCombat mainWeapon) {
         this.mainWeapon = mainWeapon;
+        mainWeaponBoxController.setGear(mainWeapon);
         mainWeaponBoxController.changeIconToSetMode();
     }
 

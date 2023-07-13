@@ -102,6 +102,24 @@ public class WriteGearFileService {
             writer.writeAttribute(STATMOD, "0/-1");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Felsspalter");
+            writer.writeAttribute(DAMAGE, "2W6+2");
+            writer.writeAttribute(DAMAGEMOD, "14/2");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "-1");
+            writer.writeAttribute(STATMOD, "0/-2");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Gruufhai");
+            writer.writeAttribute(DAMAGE, "1W6+6");
+            writer.writeAttribute(DAMAGEMOD, "14/2");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "-2");
+            writer.writeAttribute(STATMOD, "-1/-3");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(DAGGERS);
@@ -113,6 +131,15 @@ public class WriteGearFileService {
             writer.writeAttribute(DISTANCE, "H");
             writer.writeAttribute(INITIATIVEMOD, "0");
             writer.writeAttribute(STATMOD, "0/0");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Basiliskenzunge");
+            writer.writeAttribute(DAMAGE, "1W6+2");
+            writer.writeAttribute(DAMAGEMOD, "12/4");
+            writer.writeAttribute(DISTANCE, "H");
+            writer.writeAttribute(INITIATIVEMOD, "-1");
+            writer.writeAttribute(STATMOD, "0/-1");
             writer.writeEndElement();
 
             writer.writeEndElement();
