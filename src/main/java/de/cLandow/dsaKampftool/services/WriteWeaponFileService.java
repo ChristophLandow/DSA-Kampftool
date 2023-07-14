@@ -9,9 +9,9 @@ import java.io.OutputStream;
 
 import static de.cLandow.dsaKampftool.Constants.*;
 
-public class WriteGearFileService {
+public class WriteWeaponFileService {
 
-    public WriteGearFileService(){
+    public WriteWeaponFileService(){
     }
 
     public void createFile(){
