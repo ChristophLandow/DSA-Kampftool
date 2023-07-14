@@ -67,7 +67,7 @@ public class ReadFileService {
         try {
             GearFileReadHandler gearHandler = new GearFileReadHandler(gearListBoxController);
             SAXParser saxParser = factory.newSAXParser();
-            saxParser.parse(GEAR_FILEPATH, gearHandler);
+            saxParser.parse(WEAPON_FILEPATH, gearHandler);
             return gearHandler.getObservableGearList();
 
         } catch (ParserConfigurationException | SAXException | IOException e) {

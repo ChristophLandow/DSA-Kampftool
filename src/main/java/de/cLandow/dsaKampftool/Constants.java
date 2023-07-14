@@ -12,7 +12,7 @@ public class Constants {
     public static final String NOCHARACTER = "NoCharacterNameSaved";
     public static final String CHARACTER_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Charakter//";
     public static final String SETUP_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//";
-    public static final String GEAR_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Gear.xml";
+    public static final String WEAPON_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Weapons.xml";
     public static final String RIGHT_ARM = "Right Arm";
     public static final String LEFT_ARM = "Left Arm";
 

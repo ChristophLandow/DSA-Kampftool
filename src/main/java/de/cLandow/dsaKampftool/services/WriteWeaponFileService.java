@@ -16,7 +16,7 @@ public class WriteWeaponFileService {
 
     public void createFile(){
         // send the output to a xml file
-        try(FileOutputStream out = new FileOutputStream(SETUP_FILEPATH + "Gear.xml")){
+        try(FileOutputStream out = new FileOutputStream(SETUP_FILEPATH + "Weapons.xml")){
             writeXml(out);
         } catch (IOException e) {
             e.printStackTrace();
