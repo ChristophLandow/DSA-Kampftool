@@ -36,12 +36,15 @@ public class WriteArmorFileService {
             writer.writeStartElement(CLOTHES);
 
             writer.writeStartElement(ARMOR);
+            writer.writeAttribute(NAME, "Anaurak");
             writer.writeAttribute(HEAD_ARMOR, "1");
             writer.writeAttribute(CHEST_ARMOR, "1");
-            writer.writeAttribute(DAMAGEMOD, "1");
-            writer.writeAttribute(DISTANCE, "1");
-            writer.writeAttribute(INITIATIVEMOD, "1");
-            writer.writeAttribute(STATMOD, "1");
+            writer.writeAttribute(BACKSIDE_ARMOR, "1");
+            writer.writeAttribute(TUMMY_ARMOR, "1");
+            writer.writeAttribute(LEFTARM_ARMOR, "1");
+            writer.writeAttribute(RIGHTARM_ARMOR, "1");
+            writer.writeAttribute(LEFTLEG_ARMOR, "1");
+            writer.writeAttribute(RIGHTLEG_ARMOR, "1");
             writer.writeEndElement();
 
             writer.writeEndElement();
