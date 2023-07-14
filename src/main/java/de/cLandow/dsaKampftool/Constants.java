@@ -12,7 +12,7 @@ public class Constants {
     public static final String NOCHARACTER = "NoCharacterNameSaved";
     public static final String CHARACTER_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Charakter//";
     public static final String SETUP_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//";
-    public static final String GEAR_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Gear.xml";
+    public static final String WEAPON_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Weapons.xml";
     public static final String RIGHT_ARM = "Right Arm";
     public static final String LEFT_ARM = "Left Arm";
 
@@ -31,10 +31,18 @@ public class Constants {
     public static final String RED_BUTTON = "red-button";
 
     // Gear List
+    public static final String HEAD_ARMOR = "Kopf";
+    public static final String CHEST_ARMOR = "Brust";
+    public static final String BACKSIDE_ARMOR = "Rücken";
+    public static final String TUMMY_ARMOR = "Bauch";
+    public static final String RIGHTARM_ARMOR = "Rechter Arm";
+    public static final String LEFTARM_ARMOR = "Linker Arm";
+    public static final String RIGHTLEG_ARMOR = "Rechtes Bein";
+    public static final String LEFTLEG_ARMOR = "Linkes Bein";
 
-    public static final String MAINWEAPON = "Main Weapon";
-    public static final String SIDEWEAPON = "Side Weapon";
-    public static final String SHIELD = "Shield";
+    public static final String MAINWEAPON = "Hauptwaffe";
+    public static final String SIDEWEAPON = "Nebenwaffe";
+    public static final String SHIELD = "Schild";
     public static final String SHOWALL = "Alle";
     public static final String DAMAGE = "Schaden";
     public static final String DISTANCE = "Distanzklasse";
@@ -43,6 +51,11 @@ public class Constants {
     public static final String DAMAGEMOD = "SchadensModifikator";
     public static final String NAME = "Name";
     public static final String WEAPON = "Waffe";
+
+    public static final String ARMOR = "Rüstung";
+
+    public static final String CLOTHES = "Kleidung";
+
 
     public static final String BASTARDSWORDS = "Anderthalbhaender";
     public static final String TWO_HANDED_IMPACT_WEAPON = "Zweihand-Hiebwaffen";

@@ -62,12 +62,12 @@ public class ReadFileService {
     }
 
 
-    public ObservableList<Weapon_closeCombat> loadGear(){
+    public ObservableList<Weapon_closeCombat> loadWeapons(){
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             GearFileReadHandler gearHandler = new GearFileReadHandler(gearListBoxController);
             SAXParser saxParser = factory.newSAXParser();
-            saxParser.parse(GEAR_FILEPATH, gearHandler);
+            saxParser.parse(WEAPON_FILEPATH, gearHandler);
             return gearHandler.getObservableGearList();
 
         } catch (ParserConfigurationException | SAXException | IOException e) {

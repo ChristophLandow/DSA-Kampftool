@@ -9,7 +9,7 @@ import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.PrefService;
 
 import de.cLandow.dsaKampftool.services.WriteCharacterFileService;
-import de.cLandow.dsaKampftool.services.WriteGearFileService;
+import de.cLandow.dsaKampftool.services.WriteWeaponFileService;
 import de.cLandow.dsaKampftool.services.WriteSetupFileService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,8 +65,8 @@ public class SetupScreenController implements RenderController {
         //check/create Character-Directory in Home-Directory
         WriteCharacterFileService writeCharacterFileService = new WriteCharacterFileService();
         writeCharacterFileService.createCharacterFolder();
-        //create Gear.xml
-        WriteGearFileService writeGearFileService = new WriteGearFileService();
+        //create Weapon.xml
+        WriteWeaponFileService writeGearFileService = new WriteWeaponFileService();
         writeGearFileService.createFile();
     }
 
