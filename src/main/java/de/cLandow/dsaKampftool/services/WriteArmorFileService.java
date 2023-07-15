@@ -45,6 +45,8 @@ public class WriteArmorFileService {
             writer.writeAttribute(RIGHTARM_ARMOR, "1");
             writer.writeAttribute(LEFTLEG_ARMOR, "1");
             writer.writeAttribute(RIGHTLEG_ARMOR, "1");
+            writer.writeAttribute(RIGHTLEG_ARMOR, "1");
+            writer.writeAttribute(RIGHTLEG_ARMOR, "1");
             writer.writeEndElement();
 
             writer.writeEndElement();

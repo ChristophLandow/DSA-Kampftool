@@ -39,6 +39,8 @@ public class Constants {
     public static final String LEFTARM_ARMOR = "Linker Arm";
     public static final String RIGHTLEG_ARMOR = "Rechtes Bein";
     public static final String LEFTLEG_ARMOR = "Linkes Bein";
+    public static final String SUMM_ARMOR = "gesamt-Rüstungsschutz";
+    public static final String SUMM_ENCUMBRANCE = "gesamt-Behinderung";
 
     public static final String MAINWEAPON = "Hauptwaffe";
     public static final String SIDEWEAPON = "Nebenwaffe";
