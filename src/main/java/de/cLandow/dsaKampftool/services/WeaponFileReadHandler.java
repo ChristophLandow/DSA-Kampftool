@@ -20,7 +20,7 @@ public class WeaponFileReadHandler extends DefaultHandler {
     private Boolean subListLoaded = false;
 
     private ObservableList<Weapon_closeCombat> temporaryWeaponLIst = FXCollections.observableArrayList();;
-    private ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
+    private final ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
 
     private final GearListBoxController gearListBoxController;
 
