@@ -82,7 +82,7 @@ public class WriteArmorFileService {
             writer.writeEndElement();
 
             writer.writeStartElement(ARMOR);
-            writer.writeAttribute(NAME, "Mattenrücken");
+            writer.writeAttribute(NAME, "Mattenruecken");
             writer.writeAttribute(HEAD_ARMOR, "1");
             writer.writeAttribute(CHEST_ARMOR, "1");
             writer.writeAttribute(BACKSIDE_ARMOR, "3");

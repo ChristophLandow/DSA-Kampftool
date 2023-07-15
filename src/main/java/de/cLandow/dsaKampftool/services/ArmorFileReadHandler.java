@@ -97,6 +97,6 @@ public class ArmorFileReadHandler extends DefaultHandler {
 
 
     public ObservableList<Armor> getObservableArmorList() {
-        return null;
+        return observableList;
     }
 }
