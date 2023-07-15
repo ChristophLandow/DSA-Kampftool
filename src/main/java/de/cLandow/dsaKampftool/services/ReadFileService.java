@@ -1,6 +1,7 @@
 package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
+import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import javafx.collections.ObservableList;
@@ -65,10 +66,24 @@ public class ReadFileService {
     public ObservableList<Weapon_closeCombat> loadWeapons(){
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
-            GearFileReadHandler gearHandler = new GearFileReadHandler(gearListBoxController);
+            WeaponFileReadHandler weaponFileHandler = new WeaponFileReadHandler(gearListBoxController);
             SAXParser saxParser = factory.newSAXParser();
-            saxParser.parse(WEAPON_FILEPATH, gearHandler);
-            return gearHandler.getObservableGearList();
+            saxParser.parse(WEAPON_FILEPATH, weaponFileHandler);
+            return weaponFileHandler.getObservableWeaponList();
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ObservableList<Armor> loadArmor(){
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        try {
+            ArmorFileReadHandler armorFileHandler = new ArmorFileReadHandler(gearListBoxController);
+            SAXParser saxParser = factory.newSAXParser();
+            saxParser.parse(ARMOR_FILEPATH, armorFileHandler);
+            return armorFileHandler.getObservableArmorList();
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();

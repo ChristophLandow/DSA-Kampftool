@@ -8,9 +8,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 import static de.cLandow.dsaKampftool.Constants.*;
 
-import java.util.ArrayList;
-
-public class GearFileReadHandler extends DefaultHandler {
+public class WeaponFileReadHandler extends DefaultHandler {
 
     private String name = "";
     private String statMod = "";
@@ -22,11 +20,11 @@ public class GearFileReadHandler extends DefaultHandler {
     private Boolean subListLoaded = false;
 
     private ObservableList<Weapon_closeCombat> temporaryWeaponLIst = FXCollections.observableArrayList();;
-    private ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
+    private final ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
 
     private final GearListBoxController gearListBoxController;
 
-    public GearFileReadHandler(GearListBoxController gearListBoxController) {
+    public WeaponFileReadHandler(GearListBoxController gearListBoxController) {
         this.gearListBoxController = gearListBoxController;
     }
 
@@ -109,7 +107,7 @@ public class GearFileReadHandler extends DefaultHandler {
 
     }
 
-    public ObservableList<Weapon_closeCombat> getObservableGearList(){
+    public ObservableList<Weapon_closeCombat> getObservableWeaponList(){
         return observableList;
     }
 }

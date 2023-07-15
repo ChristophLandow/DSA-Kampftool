@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Gear;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import static de.cLandow.dsaKampftool.Constants.*;
@@ -27,7 +28,7 @@ public class GearListBoxController implements RenderController {
     private AddGearPopupController addGearPopupController;
 
     private ObservableList<Weapon_closeCombat> weaponObservableList= FXCollections.observableArrayList();
-    private ObservableList<Weapon_closeCombat> closeCombatWeaponList = FXCollections.observableArrayList();
+    private ObservableList<Armor> armorObservableList = FXCollections.observableArrayList();
     private ObservableList<Weapon_closeCombat> twoHandedImpactWeapons = FXCollections.observableArrayList();
 
     private ObservableList<Weapon_closeCombat> bastardswords = FXCollections.observableArrayList();
@@ -35,6 +36,8 @@ public class GearListBoxController implements RenderController {
     private ObservableList<Weapon_closeCombat> daggers = FXCollections.observableArrayList();
 
     private ObservableList<Weapon_closeCombat> impactWeapons = FXCollections.observableArrayList();
+    private ObservableList<Armor> clothesArmor = FXCollections.observableArrayList();;
+    private ObservableList<Armor> clothArmor = FXCollections.observableArrayList();;;
 
     public GearListBoxController(AddGearPopupController addGearPopupController){
         this.addGearPopupController = addGearPopupController;
@@ -70,7 +73,9 @@ public class GearListBoxController implements RenderController {
 
     public void loadGearLists(){
         ReadFileService readFileService = new ReadFileService(this);
+        //load Weapons
         weaponObservableList = readFileService.loadWeapons();
+        //armorObservableList = readFileService.loadGear();
         fillListWithAllCloseCombatWeapons();
     }
 
@@ -83,10 +88,10 @@ public class GearListBoxController implements RenderController {
         gearGroupChoiceBox.getItems().add(IMPACT_WEAPONS);
     }
 
-    public void loadGearChoiceBoxListener(){
+    public void loadGearChoiceBoxListener() {
         gearGroupChoiceBox.setOnAction(event -> {
             gearListView.getItems().clear();
-            switch(gearGroupChoiceBox.getValue()) {
+            switch (gearGroupChoiceBox.getValue()) {
                 case DAGGERS:
                     fillListWithAllDaggers();
                     break;
@@ -108,15 +113,7 @@ public class GearListBoxController implements RenderController {
         });
     }
 
-    public Weapon_closeCombat fromNameToWeapon(String name){
-        for (Weapon_closeCombat ccw : closeCombatWeaponList){
-            if(name.equals(ccw.getName())){
-                return ccw;
-            }
-        }
-        return null;
-    }
-
+    //Weapon List Setter
     public void setDoubleClickedGearToEquipment(Gear gear){
         addGearPopupController.addGearFromListToEquipment(gear);
     }
@@ -139,6 +136,16 @@ public class GearListBoxController implements RenderController {
 
     public void setImpactWeapons(ObservableList<Weapon_closeCombat> impactWeapons) {
         this.impactWeapons = impactWeapons;
+    }
+
+    //Armor List Setter
+
+    public void setClothes(ObservableList<Armor> temporaryArmorLIst) {
+        this.clothesArmor = temporaryArmorLIst;
+    }
+
+    public void setClothArmor(ObservableList<Armor> temporaryArmorLIst) {
+        this.clothArmor = temporaryArmorLIst;
     }
 
     public void fillListWithAllCloseCombatWeapons(){
@@ -170,5 +177,4 @@ public class GearListBoxController implements RenderController {
         gearList.addAll(weaponList);
         return gearList;
     }
-
 }

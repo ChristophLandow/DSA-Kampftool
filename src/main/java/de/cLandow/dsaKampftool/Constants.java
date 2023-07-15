@@ -13,6 +13,7 @@ public class Constants {
     public static final String CHARACTER_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Charakter//";
     public static final String SETUP_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//";
     public static final String WEAPON_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Weapons.xml";
+    public static final String ARMOR_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Armor.xml";
     public static final String RIGHT_ARM = "Right Arm";
     public static final String LEFT_ARM = "Left Arm";
 
@@ -39,6 +40,8 @@ public class Constants {
     public static final String LEFTARM_ARMOR = "Linker Arm";
     public static final String RIGHTLEG_ARMOR = "Rechtes Bein";
     public static final String LEFTLEG_ARMOR = "Linkes Bein";
+    public static final String SUMM_ARMOR = "gesamt-Rüstungsschutz";
+    public static final String SUMM_ENCUMBRANCE = "gesamt-Behinderung";
 
     public static final String MAINWEAPON = "Hauptwaffe";
     public static final String SIDEWEAPON = "Nebenwaffe";
@@ -55,6 +58,8 @@ public class Constants {
     public static final String ARMOR = "Rüstung";
 
     public static final String CLOTHES = "Kleidung";
+
+    public static final String CLOTARMOR = "Tuchrüstung";
 
 
     public static final String BASTARDSWORDS = "Anderthalbhaender";
