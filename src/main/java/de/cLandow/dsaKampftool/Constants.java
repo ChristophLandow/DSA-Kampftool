@@ -34,13 +34,13 @@ public class Constants {
     // Gear List
     public static final String HEAD_ARMOR = "Kopf";
     public static final String CHEST_ARMOR = "Brust";
-    public static final String BACKSIDE_ARMOR = "Rücken";
+    public static final String BACKSIDE_ARMOR = "Ruecken";
     public static final String TUMMY_ARMOR = "Bauch";
-    public static final String RIGHTARM_ARMOR = "Rechter Arm";
-    public static final String LEFTARM_ARMOR = "Linker Arm";
-    public static final String RIGHTLEG_ARMOR = "Rechtes Bein";
-    public static final String LEFTLEG_ARMOR = "Linkes Bein";
-    public static final String SUMM_ARMOR = "gesamt-Rüstungsschutz";
+    public static final String RIGHTARM_ARMOR = "RechterArm";
+    public static final String LEFTARM_ARMOR = "LinkerArm";
+    public static final String RIGHTLEG_ARMOR = "RechtesBein";
+    public static final String LEFTLEG_ARMOR = "LinkesBein";
+    public static final String SUMM_ARMOR = "gesamt-Ruestungsschutz";
     public static final String SUMM_ENCUMBRANCE = "gesamt-Behinderung";
 
     public static final String MAINWEAPON = "Hauptwaffe";
@@ -55,11 +55,11 @@ public class Constants {
     public static final String NAME = "Name";
     public static final String WEAPON = "Waffe";
 
-    public static final String ARMOR = "Rüstung";
+    public static final String ARMOR = "Ruestung";
 
     public static final String CLOTHES = "Kleidung";
 
-    public static final String CLOTARMOR = "Tuchrüstung";
+    public static final String CLOTARMOR = "Tuchruestung";
 
 
     public static final String BASTARDSWORDS = "Anderthalbhaender";

@@ -6,11 +6,8 @@ import de.cLandow.dsaKampftool.controller.subcontroller.ChooseCharacterOrDirecto
 import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
-import de.cLandow.dsaKampftool.services.PrefService;
+import de.cLandow.dsaKampftool.services.*;
 
-import de.cLandow.dsaKampftool.services.WriteCharacterFileService;
-import de.cLandow.dsaKampftool.services.WriteWeaponFileService;
-import de.cLandow.dsaKampftool.services.WriteSetupFileService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -68,6 +65,9 @@ public class SetupScreenController implements RenderController {
         //create Weapon.xml
         WriteWeaponFileService writeGearFileService = new WriteWeaponFileService();
         writeGearFileService.createFile();
+        //create Armor.xml
+        WriteArmorFileService writeArmorFileService = new WriteArmorFileService();
+        writeArmorFileService.createFile();
     }
 
     @Override

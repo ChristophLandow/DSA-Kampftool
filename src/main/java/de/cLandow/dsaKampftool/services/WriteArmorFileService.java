@@ -31,7 +31,7 @@ public class WriteArmorFileService {
             XMLStreamWriter writer = output.createXMLStreamWriter(out, "UTF-8");
             writer.writeStartDocument("UTF-8", "1.0");
             // <Charakter>
-            writer.writeStartElement("Rüstungen");
+            writer.writeStartElement("Ruestungen");
 
             writer.writeStartElement(CLOTHES);
 
@@ -93,8 +93,6 @@ public class WriteArmorFileService {
             writer.writeAttribute(RIGHTLEG_ARMOR, "0");
             writer.writeAttribute(SUMM_ARMOR, "0.9");
             writer.writeAttribute(SUMM_ENCUMBRANCE, "0.9");
-            writer.writeEndElement();
-
             writer.writeEndElement();
 
             writer.writeEndElement();
