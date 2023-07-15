@@ -13,6 +13,7 @@ import static de.cLandow.dsaKampftool.Constants.*;
 public class ArmorFileReadHandler extends DefaultHandler {
 
     private Boolean subListLoaded = false;
+    private String name;
     private Integer headArmor;
     private Integer chestArmor;
     private Integer backsideArmor;
@@ -25,8 +26,8 @@ public class ArmorFileReadHandler extends DefaultHandler {
     private Double summEncumbrance;
 
 
-    private ObservableList<Weapon_closeCombat> temporaryArmorLIst = FXCollections.observableArrayList();;
-    private final ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
+    private ObservableList<Armor> temporaryArmorLIst = FXCollections.observableArrayList();;
+    private final ObservableList<Armor> observableList = FXCollections.observableArrayList();;
     private final GearListBoxController gearListBoxController;
 
 
@@ -45,7 +46,8 @@ public class ArmorFileReadHandler extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         if (ARMOR.equals(qName)) {
-            headArmor = Integer.parseInt(attributes.getValue(NAME));
+            name = attributes.getValue(NAME);
+            headArmor = Integer.parseInt(attributes.getValue(HEAD_ARMOR));
             chestArmor = Integer.parseInt(attributes.getValue(CHEST_ARMOR));
             backsideArmor = Integer.parseInt(attributes.getValue(BACKSIDE_ARMOR));
             tummyArmor = Integer.parseInt(attributes.getValue(TUMMY_ARMOR));
@@ -60,38 +62,23 @@ public class ArmorFileReadHandler extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName){
-        if(WEAPON.equals(qName)){
+        if(ARMOR.equals(qName)){
             subListLoaded = false;
-            Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),damage,damageMod,statMod,distance);
-            observableList.add(weapon);
-            temporaryWeaponLIst.add(weapon);
+            Armor armor = new Armor(name, headArmor, chestArmor, backsideArmor, tummyArmor, leftArmArmor, rightArmArmor, lefLegArmor, rightLegArmor, summArmorclass, summEncumbrance);
+            observableList.add(armor);
+            temporaryArmorLIst.add(armor);
         }
-        if(!WEAPON.equals(qName)){
+        if(!ARMOR.equals(qName)){
             switch (qName) {
-                case BASTARDSWORDS -> {
+                case CLOTHES -> {
                     subListLoaded = true;
-                    gearListBoxController.setBastardswords(temporaryWeaponLIst);
-                    temporaryWeaponLIst = FXCollections.observableArrayList();
+                    gearListBoxController.setClothes(temporaryArmorLIst);
+                    temporaryArmorLIst = FXCollections.observableArrayList();
                 }
-                case TWO_HANDED_IMPACT_WEAPON -> {
+                case CHEST_ARMOR -> {
                     subListLoaded = true;
-                    gearListBoxController.setTwoHandedImpactWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst = FXCollections.observableArrayList();
-                }
-                case DAGGERS -> {
-                    subListLoaded = true;
-                    gearListBoxController.setDaggers(temporaryWeaponLIst);
-                    temporaryWeaponLIst = FXCollections.observableArrayList();
-                }
-                case FENCING_WEAPONS -> {
-                    subListLoaded = true;
-                    gearListBoxController.setFencingWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst = FXCollections.observableArrayList();
-                }
-                case IMPACT_WEAPONS -> {
-                    subListLoaded = true;
-                    gearListBoxController.setImpactWeapons(temporaryWeaponLIst);
-                    temporaryWeaponLIst = FXCollections.observableArrayList();
+                    gearListBoxController.setClothArmor(temporaryArmorLIst);
+                    temporaryArmorLIst = FXCollections.observableArrayList();
                 }
                 default -> {
                     if(subListLoaded.equals(false)){

@@ -36,6 +36,8 @@ public class GearListBoxController implements RenderController {
     private ObservableList<Weapon_closeCombat> daggers = FXCollections.observableArrayList();
 
     private ObservableList<Weapon_closeCombat> impactWeapons = FXCollections.observableArrayList();
+    private ObservableList<Armor> clothesArmor = FXCollections.observableArrayList();;
+    private ObservableList<Armor> clothArmor = FXCollections.observableArrayList();;;
 
     public GearListBoxController(AddGearPopupController addGearPopupController){
         this.addGearPopupController = addGearPopupController;
@@ -111,6 +113,7 @@ public class GearListBoxController implements RenderController {
         });
     }
 
+    //Weapon List Setter
     public void setDoubleClickedGearToEquipment(Gear gear){
         addGearPopupController.addGearFromListToEquipment(gear);
     }
@@ -133,6 +136,16 @@ public class GearListBoxController implements RenderController {
 
     public void setImpactWeapons(ObservableList<Weapon_closeCombat> impactWeapons) {
         this.impactWeapons = impactWeapons;
+    }
+
+    //Armor List Setter
+
+    public void setClothes(ObservableList<Armor> temporaryArmorLIst) {
+        this.clothesArmor = temporaryArmorLIst;
+    }
+
+    public void setClothArmor(ObservableList<Armor> temporaryArmorLIst) {
+        this.clothArmor = temporaryArmorLIst;
     }
 
     public void fillListWithAllCloseCombatWeapons(){
@@ -164,5 +177,4 @@ public class GearListBoxController implements RenderController {
         gearList.addAll(weaponList);
         return gearList;
     }
-
 }
