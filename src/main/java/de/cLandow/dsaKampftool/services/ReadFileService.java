@@ -62,7 +62,7 @@ public class ReadFileService {
     }
 
 
-    public ObservableList<Weapon_closeCombat> loadWeapons(){
+    public ObservableList<Weapon_closeCombat> loadGear(String path){
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             GearFileReadHandler gearHandler = new GearFileReadHandler(gearListBoxController);

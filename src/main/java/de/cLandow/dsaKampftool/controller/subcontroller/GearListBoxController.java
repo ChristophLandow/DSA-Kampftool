@@ -70,7 +70,8 @@ public class GearListBoxController implements RenderController {
 
     public void loadGearLists(){
         ReadFileService readFileService = new ReadFileService(this);
-        weaponObservableList = readFileService.loadWeapons();
+        //load Weapons
+        weaponObservableList = readFileService.loadGear(WEAPON_FILEPATH);
         fillListWithAllCloseCombatWeapons();
     }
 
