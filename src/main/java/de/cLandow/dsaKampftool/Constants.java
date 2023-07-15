@@ -58,6 +58,8 @@ public class Constants {
 
     public static final String CLOTHES = "Kleidung";
 
+    public static final String CLOTARMOR = "Tuchrüstung";
+
 
     public static final String BASTARDSWORDS = "Anderthalbhaender";
     public static final String TWO_HANDED_IMPACT_WEAPON = "Zweihand-Hiebwaffen";

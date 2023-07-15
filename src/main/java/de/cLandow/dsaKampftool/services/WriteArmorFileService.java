@@ -65,6 +65,38 @@ public class WriteArmorFileService {
 
             writer.writeEndElement();
 
+            writer.writeStartElement(CLOTARMOR);
+
+            writer.writeStartElement(ARMOR);
+            writer.writeAttribute(NAME, "Gambeson");
+            writer.writeAttribute(HEAD_ARMOR, "0");
+            writer.writeAttribute(CHEST_ARMOR, "2");
+            writer.writeAttribute(BACKSIDE_ARMOR, "2");
+            writer.writeAttribute(TUMMY_ARMOR, "2");
+            writer.writeAttribute(LEFTARM_ARMOR, "1");
+            writer.writeAttribute(RIGHTARM_ARMOR, "1");
+            writer.writeAttribute(LEFTLEG_ARMOR, "1");
+            writer.writeAttribute(RIGHTLEG_ARMOR, "1");
+            writer.writeAttribute(SUMM_ARMOR, "1.5");
+            writer.writeAttribute(SUMM_ENCUMBRANCE, "1.5");
+            writer.writeEndElement();
+
+            writer.writeStartElement(ARMOR);
+            writer.writeAttribute(NAME, "Mattenrücken");
+            writer.writeAttribute(HEAD_ARMOR, "1");
+            writer.writeAttribute(CHEST_ARMOR, "1");
+            writer.writeAttribute(BACKSIDE_ARMOR, "3");
+            writer.writeAttribute(TUMMY_ARMOR, "0");
+            writer.writeAttribute(LEFTARM_ARMOR, "0");
+            writer.writeAttribute(RIGHTARM_ARMOR, "0");
+            writer.writeAttribute(LEFTLEG_ARMOR, "0");
+            writer.writeAttribute(RIGHTLEG_ARMOR, "0");
+            writer.writeAttribute(SUMM_ARMOR, "0.9");
+            writer.writeAttribute(SUMM_ENCUMBRANCE, "0.9");
+            writer.writeEndElement();
+
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeEndDocument();
