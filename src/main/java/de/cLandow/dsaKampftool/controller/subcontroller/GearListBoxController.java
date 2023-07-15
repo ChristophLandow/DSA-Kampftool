@@ -75,8 +75,8 @@ public class GearListBoxController implements RenderController {
         ReadFileService readFileService = new ReadFileService(this);
         //load Weapons
         weaponObservableList = readFileService.loadWeapons();
-        //armorObservableList = readFileService.loadGear();
-        fillListWithAllCloseCombatWeapons();
+        armorObservableList = readFileService.loadArmor();
+        fillListWithAllGear();
     }
 
     private void loadGearGroupChoiceBox() {
@@ -108,7 +108,7 @@ public class GearListBoxController implements RenderController {
                     fillListWithImpactWeapons();
                     break;
                 default:
-                    fillListWithAllCloseCombatWeapons();
+                    fillListWithAllGear();
             }
         });
     }
@@ -148,31 +148,36 @@ public class GearListBoxController implements RenderController {
         this.clothArmor = temporaryArmorLIst;
     }
 
-    public void fillListWithAllCloseCombatWeapons(){
-        gearListView.setItems(castGearListToWeaponList(weaponObservableList));
+    //list filler
+
+    public void fillListWithAllGear(){
+        ObservableList<Gear> allGearList = FXCollections.observableArrayList();
+        allGearList.addAll(weaponObservableList);
+        allGearList.addAll(armorObservableList);
+        gearListView.setItems(allGearList);
     }
 
     public void fillListWithImpactWeapons(){
-        gearListView.setItems(castGearListToWeaponList(impactWeapons));
+        gearListView.setItems(castWeaponListToGearList(impactWeapons));
     }
 
     public void fillListWithAllDaggers(){
-        gearListView.setItems(castGearListToWeaponList(daggers));
+        gearListView.setItems(castWeaponListToGearList(daggers));
     }
 
     public void fillListWithAllFencingWeapons(){
-        gearListView.setItems(castGearListToWeaponList(fencingWeapons));
+        gearListView.setItems(castWeaponListToGearList(fencingWeapons));
     }
 
     public void fillListWithAllTwoHandedImpactWeapons(){
-        gearListView.setItems(castGearListToWeaponList(twoHandedImpactWeapons));
+        gearListView.setItems(castWeaponListToGearList(twoHandedImpactWeapons));
     }
 
     public void fillListWithAllBastardswords(){
-        gearListView.setItems(castGearListToWeaponList(bastardswords));
+        gearListView.setItems(castWeaponListToGearList(bastardswords));
     }
 
-    private ObservableList<Gear> castGearListToWeaponList(ObservableList<Weapon_closeCombat> weaponList){
+    private ObservableList<Gear> castWeaponListToGearList(ObservableList<Weapon_closeCombat> weaponList){
         ObservableList<Gear> gearList = FXCollections.observableArrayList();
         gearList.addAll(weaponList);
         return gearList;
