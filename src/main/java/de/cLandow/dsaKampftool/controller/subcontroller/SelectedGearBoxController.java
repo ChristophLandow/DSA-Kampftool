@@ -62,9 +62,9 @@ public class SelectedGearBoxController implements RenderController {
         equipmentControllers.add(headBoxController);
         this.chestBoxController = new EquipmentController(TORSO, BREASTPLATE_IMAGE_PATH);
         equipmentControllers.add(chestBoxController);
-        this.backsideBoxController = new EquipmentController(BACKSIDE, BREASTPLATE_IMAGE_PATH);
+        this.backsideBoxController = new EquipmentController(BACKSIDE, BACKSIDEPLATE_IMAGE_PATH);
         equipmentControllers.add(chestBoxController);
-        this.tummyBoxController = new EquipmentController(TUMMY, PLATE_IMAGE_PATH);
+        this.tummyBoxController = new EquipmentController(TUMMY, TUMMYPLATE_IMAGE_PATH);
         equipmentControllers.add(tummyBoxController);
         this.leftArmBoxController = new EquipmentController(LEFT_ARM, LEFTGLOVE_IMAGE_PATH);
         equipmentControllers.add(leftArmBoxController);
@@ -122,27 +122,35 @@ public class SelectedGearBoxController implements RenderController {
             switch (zone) {
                 case HEAD_ARMOR -> {
                     headBoxController.changeIconToSetMode();
+                    headBoxController.setGear(armor);
                 }
                 case CHEST_ARMOR -> {
-
+                    chestBoxController.changeIconToSetMode();
+                    chestBoxController.setGear(armor);
                 }
                 case BACKSIDE_ARMOR -> {
-                    //selectedGearBoxController.setArmor((Armor) gear);
+                    backsideBoxController.changeIconToSetMode();
+                    backsideBoxController.setGear(armor);
                 }
                 case TUMMY_ARMOR -> {
-                    //selectedGearBoxController.setMainWeapon((Weapon_closeCombat) gear);
+                    tummyBoxController.changeIconToSetMode();
+                    tummyBoxController.setGear(armor);
                 }
                 case LEFTARM_ARMOR -> {
-                    //selectedGearBoxController.setArmor((Armor) gear);
+                    leftArmBoxController.changeIconToSetMode();
+                    leftArmBoxController.setGear(armor);
                 }
                 case RIGHTARM_ARMOR -> {
-                    //selectedGearBoxController.setMainWeapon((Weapon_closeCombat) gear);
+                    rightArmBoxController.changeIconToSetMode();
+                    rightArmBoxController.setGear(armor);
                 }
                 case LEFTLEG_ARMOR -> {
-                    //selectedGearBoxController.setArmor((Armor) gear);
+                    leftLegBoxController.changeIconToSetMode();
+                    leftLegBoxController.setGear(armor);
                 }
                 case RIGHTLEG_ARMOR -> {
-                    //selectedGearBoxController.setArmor((Armor) gear);
+                    rightLegBoxController.changeIconToSetMode();
+                    rightLegBoxController.setGear(armor);
                 }
                 default -> {
                     System.out.println("Unidentified Gear Class");

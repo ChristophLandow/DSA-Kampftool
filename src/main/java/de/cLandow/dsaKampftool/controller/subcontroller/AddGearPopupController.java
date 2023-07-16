@@ -16,8 +16,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-import static de.cLandow.dsaKampftool.Constants.ARMOR;
-import static de.cLandow.dsaKampftool.Constants.CLOSECOMBATCLASS;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class AddGearPopupController implements RenderController {
 
@@ -73,7 +72,7 @@ public class AddGearPopupController implements RenderController {
                 case CLOSECOMBATCLASS -> {
                     selectedGearBoxController.setMainWeapon((Weapon_closeCombat) gear);
                 }
-                case ARMOR -> {
+                case ARMORCLASS -> {
                     selectedGearBoxController.setArmor((Armor) gear);
                 }
                 default -> {

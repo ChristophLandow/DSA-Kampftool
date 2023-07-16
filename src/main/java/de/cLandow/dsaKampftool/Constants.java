@@ -80,6 +80,7 @@ public class Constants {
 
     //Gear Class
     public static final String CLOSECOMBATCLASS = "class de.cLandow.dsaKampftool.model.Weapon_closeCombat";
+    public static final String ARMORCLASS = "class de.cLandow.dsaKampftool.model.Armor";
 
 
     //Images
@@ -88,9 +89,11 @@ public class Constants {
     public static final String SIDEWEAPON_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sideWeapon_set.png";
     public static final String SHIELD_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/shield_set.png";
     public static final String BREASTPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/breastPlate_set.png";
+
+    public static final String BACKSIDEPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/backsidePlate_set.png";
     public static final String HELMET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/helmetIcon_set.png";
 
-    public static final String PLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/breastPlate_set.png";
+    public static final String TUMMYPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/tummyPlate_set.png";
     public static final String LEFTBOOT_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/leftBoot_set.png";
     public static final String RIGHTBOOT_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/rightBoot_set.png";
     public static final String LEFTGLOVE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/leftGloveIcon_set.png";
