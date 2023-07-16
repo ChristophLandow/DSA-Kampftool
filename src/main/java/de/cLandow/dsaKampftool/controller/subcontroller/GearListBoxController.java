@@ -20,10 +20,9 @@ import java.io.IOException;
 
 public class GearListBoxController implements RenderController {
 
-    @FXML
-    ChoiceBox<String> gearGroupChoiceBox;
-    @FXML
-    ListView<Gear> gearListView;
+    @FXML ChoiceBox<String> gearGroupChoiceBox;
+    @FXML ChoiceBox<String> gearSubGroupChoiceBox;
+    @FXML ListView<Gear> gearListView;
 
     private AddGearPopupController addGearPopupController;
 
@@ -80,15 +79,23 @@ public class GearListBoxController implements RenderController {
     }
 
     private void loadGearGroupChoiceBox() {
-        gearGroupChoiceBox.getItems().add(SHOWALL);
-        gearGroupChoiceBox.getItems().add(BASTARDSWORDS);
-        gearGroupChoiceBox.getItems().add(TWO_HANDED_IMPACT_WEAPON);
-        gearGroupChoiceBox.getItems().add(DAGGERS);
-        gearGroupChoiceBox.getItems().add(FENCING_WEAPONS);
-        gearGroupChoiceBox.getItems().add(IMPACT_WEAPONS);
+        gearGroupChoiceBox.getItems().add(WEAPON);
+        gearGroupChoiceBox.getItems().add(ARMOR);
+    }
+
+    private void loadSubGroupBox_WeaponGroups() {
+        gearSubGroupChoiceBox.getItems().add(SHOWALL);
+        gearSubGroupChoiceBox.getItems().add(BASTARDSWORDS);
+        gearSubGroupChoiceBox.getItems().add(TWO_HANDED_IMPACT_WEAPON);
+        gearSubGroupChoiceBox.getItems().add(DAGGERS);
+        gearSubGroupChoiceBox.getItems().add(FENCING_WEAPONS);
+        gearSubGroupChoiceBox.getItems().add(IMPACT_WEAPONS);
     }
 
     public void loadGearChoiceBoxListener() {
+    }
+
+    public void loadGearSubGroupBoxListeners() {
         gearGroupChoiceBox.setOnAction(event -> {
             gearListView.getItems().clear();
             switch (gearGroupChoiceBox.getValue()) {
@@ -109,7 +116,7 @@ public class GearListBoxController implements RenderController {
                     break;
                 default:
                     fillListWithAllGear();
-            }
+                }
         });
     }
 
