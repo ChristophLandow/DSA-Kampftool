@@ -3,6 +3,8 @@ package de.cLandow.dsaKampftool.model;
 public class Armor extends Gear{
 
     private String name;
+
+    private String zone;
     private Integer headArmor;
     private Integer chestArmor;
     private Integer backsideArmor;
@@ -15,10 +17,11 @@ public class Armor extends Gear{
     private Double summArmorclass;
     private Double summHandicap;
 
-    public Armor(String name, Integer headArmor, Integer chestArmor, Integer backsideArmor, Integer tummyArmor,
+    public Armor(String name, String zone, Integer headArmor, Integer chestArmor, Integer backsideArmor, Integer tummyArmor,
                  Integer leftArmArmor, Integer rightArmArmor, Integer lefLegArmor, Integer rightLegArmor,
                  Double summArmorclass, Double summHandicap){
         super(name);
+        this.zone = zone;
         this.headArmor = headArmor;
         this.chestArmor = chestArmor;
         this.backsideArmor = backsideArmor;
@@ -31,6 +34,9 @@ public class Armor extends Gear{
         this.summHandicap = summHandicap;
     }
 
+    public String getZone() {
+        return zone;
+    }
     public int getHeadArmor() {
         return headArmor;
     }
@@ -69,6 +75,10 @@ public class Armor extends Gear{
 
     public double getSummHandicap() {
         return summHandicap;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
     }
 
     public void setHeadArmor(int headArmor) {
