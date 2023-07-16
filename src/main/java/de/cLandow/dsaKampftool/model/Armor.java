@@ -1,8 +1,12 @@
 package de.cLandow.dsaKampftool.model;
 
+import java.util.ArrayList;
+
 public class Armor extends Gear{
 
     private String name;
+
+    private ArrayList<String> zones;
     private Integer headArmor;
     private Integer chestArmor;
     private Integer backsideArmor;
@@ -15,10 +19,11 @@ public class Armor extends Gear{
     private Double summArmorclass;
     private Double summHandicap;
 
-    public Armor(String name, Integer headArmor, Integer chestArmor, Integer backsideArmor, Integer tummyArmor,
+    public Armor(String name, ArrayList<String> zones, Integer headArmor, Integer chestArmor, Integer backsideArmor, Integer tummyArmor,
                  Integer leftArmArmor, Integer rightArmArmor, Integer lefLegArmor, Integer rightLegArmor,
                  Double summArmorclass, Double summHandicap){
         super(name);
+        this.zones = zones;
         this.headArmor = headArmor;
         this.chestArmor = chestArmor;
         this.backsideArmor = backsideArmor;
@@ -31,6 +36,9 @@ public class Armor extends Gear{
         this.summHandicap = summHandicap;
     }
 
+    public ArrayList<String> getZone() {
+        return zones;
+    }
     public int getHeadArmor() {
         return headArmor;
     }
@@ -69,6 +77,10 @@ public class Armor extends Gear{
 
     public double getSummHandicap() {
         return summHandicap;
+    }
+
+    public void setZone(ArrayList<String> zones) {
+        this.zones = zones;
     }
 
     public void setHeadArmor(int headArmor) {

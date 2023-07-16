@@ -2,11 +2,13 @@ package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Armor;
-import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 import static de.cLandow.dsaKampftool.Constants.*;
 
@@ -14,6 +16,8 @@ public class ArmorFileReadHandler extends DefaultHandler {
 
     private Boolean subListLoaded = false;
     private String name;
+
+    private String zone;
     private Integer headArmor;
     private Integer chestArmor;
     private Integer backsideArmor;
@@ -47,6 +51,7 @@ public class ArmorFileReadHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         if (ARMOR.equals(qName)) {
             name = attributes.getValue(NAME);
+            zone = attributes.getValue(ZONE);
             headArmor = Integer.parseInt(attributes.getValue(HEAD_ARMOR));
             chestArmor = Integer.parseInt(attributes.getValue(CHEST_ARMOR));
             backsideArmor = Integer.parseInt(attributes.getValue(BACKSIDE_ARMOR));
@@ -64,7 +69,8 @@ public class ArmorFileReadHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName){
         if(ARMOR.equals(qName)){
             subListLoaded = false;
-            Armor armor = new Armor(name, headArmor, chestArmor, backsideArmor, tummyArmor, leftArmArmor, rightArmArmor, lefLegArmor, rightLegArmor, summArmorclass, summEncumbrance);
+            ArrayList<String> armorZones = createZoneList(zone);
+            Armor armor = new Armor(name, armorZones, headArmor, chestArmor, backsideArmor, tummyArmor, leftArmArmor, rightArmArmor, lefLegArmor, rightLegArmor, summArmorclass, summEncumbrance);
             observableList.add(armor);
             temporaryArmorLIst.add(armor);
         }
@@ -82,7 +88,7 @@ public class ArmorFileReadHandler extends DefaultHandler {
                 }
                 default -> {
                     if(subListLoaded.equals(false)){
-                        System.out.println("Waffe fremder Klasse");
+                        System.out.println("Ruestung fremder Klasse");
                     }
                 }
             }
@@ -94,7 +100,12 @@ public class ArmorFileReadHandler extends DefaultHandler {
 
     }
 
-
+    private ArrayList<String> createZoneList(String zone) {
+        String[] zonesToCast = zone.split("_");
+        ArrayList<String> result = new ArrayList<>();
+        Collections.addAll(result, zonesToCast);
+        return result;
+    }
 
     public ObservableList<Armor> getObservableArmorList() {
         return observableList;

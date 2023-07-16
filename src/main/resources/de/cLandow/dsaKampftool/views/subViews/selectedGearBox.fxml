@@ -9,11 +9,12 @@
       <HBox fx:id="sideWeaponHBox" layoutX="28.0" layoutY="98.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
       <HBox fx:id="shieldHBox" layoutX="28.0" layoutY="180.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
       <HBox fx:id="helmetHBox" layoutX="254.0" layoutY="27.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
-      <HBox fx:id="torsoHBox" layoutX="254.0" layoutY="114.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
-      <HBox fx:id="rightArmHBox" layoutX="173.0" layoutY="132.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
-      <HBox fx:id="leftArmHBox" layoutX="335.0" layoutY="132.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
-      <HBox fx:id="tummyHBox" layoutX="254.0" layoutY="195.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
-      <HBox fx:id="rightLegHBox" layoutX="193.0" layoutY="267.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
-      <HBox fx:id="leftLegHBox" layoutX="326.0" layoutY="267.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
+      <HBox fx:id="chestHBox" layoutX="220.0" layoutY="115.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
+      <HBox fx:id="rightArmHBox" layoutX="144.0" layoutY="135.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
+      <HBox fx:id="leftArmHBox" layoutX="364.0" layoutY="142.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
+      <HBox fx:id="tummyHBox" layoutX="254.0" layoutY="197.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
+      <HBox fx:id="rightLegHBox" layoutX="180.0" layoutY="275.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
+      <HBox fx:id="leftLegHBox" layoutX="330.0" layoutY="275.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
+      <HBox fx:id="backsideHBox" layoutX="282.0" layoutY="115.0" prefHeight="55.0" prefWidth="55.0" style="-fx-border-color: BLACK;" />
    </children>
 </AnchorPane>

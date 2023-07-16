@@ -37,6 +37,7 @@ public class WriteArmorFileService {
 
             writer.writeStartElement(ARMOR);
             writer.writeAttribute(NAME, "Anaurak");
+            writer.writeAttribute(ZONE,FULLARMOR_WITH_HELMET);
             writer.writeAttribute(HEAD_ARMOR, "1");
             writer.writeAttribute(CHEST_ARMOR, "1");
             writer.writeAttribute(BACKSIDE_ARMOR, "1");
@@ -51,6 +52,7 @@ public class WriteArmorFileService {
 
             writer.writeStartElement(ARMOR);
             writer.writeAttribute(NAME, "Dicke Kleidung");
+            writer.writeAttribute(ZONE, FULLARMOR);
             writer.writeAttribute(HEAD_ARMOR, "0");
             writer.writeAttribute(CHEST_ARMOR, "1");
             writer.writeAttribute(BACKSIDE_ARMOR, "1");
@@ -69,6 +71,7 @@ public class WriteArmorFileService {
 
             writer.writeStartElement(ARMOR);
             writer.writeAttribute(NAME, "Gambeson");
+            writer.writeAttribute(ZONE, FULLARMOR);
             writer.writeAttribute(HEAD_ARMOR, "0");
             writer.writeAttribute(CHEST_ARMOR, "2");
             writer.writeAttribute(BACKSIDE_ARMOR, "2");
@@ -83,6 +86,7 @@ public class WriteArmorFileService {
 
             writer.writeStartElement(ARMOR);
             writer.writeAttribute(NAME, "Mattenruecken");
+            writer.writeAttribute(ZONE, TORSOARMOR_WITH_HELMET);
             writer.writeAttribute(HEAD_ARMOR, "1");
             writer.writeAttribute(CHEST_ARMOR, "1");
             writer.writeAttribute(BACKSIDE_ARMOR, "3");

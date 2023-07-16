@@ -108,52 +108,55 @@ public class GearListBoxController implements RenderController {
             gearSubGroupChoiceBox.getItems().clear();
             gearSubGroupChoiceBox.setValue("  ");
             gearListView.getItems().clear();
-            switch (gearGroupChoiceBox.getValue()) {
-                case WEAPON:
-                    gearSubGroupChoiceBox.setDisable(false);
-                    loadSubGroupBox_WeaponGroups();
-                    break;
-                case ARMOR:
-                    gearSubGroupChoiceBox.setDisable(false);
-                    loadSubGroupBox_Armor();
-                    break;
-                default:
-
+            if(gearGroupChoiceBox.getValue() != null){
+                switch (gearGroupChoiceBox.getValue()) {
+                    case WEAPON:
+                        gearSubGroupChoiceBox.setDisable(false);
+                        loadSubGroupBox_WeaponGroups();
+                        break;
+                    case ARMOR:
+                        gearSubGroupChoiceBox.setDisable(false);
+                        loadSubGroupBox_Armor();
+                        break;
+                    default:
                 }
-            });
+            }
+        });
     }
 
 
     public void loadGearSubGroupBoxListeners() {
         gearSubGroupChoiceBox.setOnAction(event -> {
             gearListView.getItems().clear();
-            switch (gearSubGroupChoiceBox.getValue()) {
-                //Weapon Cases
-                case DAGGERS:
-                    fillSubList_Daggers();
-                    break;
-                case FENCING_WEAPONS:
-                    fillSubList_FencingWeapons();
-                    break;
-                case TWO_HANDED_IMPACT_WEAPON:
-                    fillSubList_TwoHandedImpactWeapons();
-                    break;
-                case BASTARDSWORDS:
-                    fillSubList_Bastardswords();
-                    break;
-                case IMPACT_WEAPONS:
-                    filSubList_ImpactWeapons();
-                    break;
-                //ArmorCases
-                case CLOTHES:
-                    filSubList_Clothes();
-                    break;
-                case CLOTARMOR:
-                    filSubList_ClotheArmor();
-                    break;
-                default:
-                    fillSubList_AllGear();
+            if(gearSubGroupChoiceBox.getValue() != null){
+                switch (gearSubGroupChoiceBox.getValue()) {
+                    //Weapon Cases
+                    case DAGGERS:
+                        fillSubList_Daggers();
+                        break;
+                    case FENCING_WEAPONS:
+                        fillSubList_FencingWeapons();
+                        break;
+                    case TWO_HANDED_IMPACT_WEAPON:
+                        fillSubList_TwoHandedImpactWeapons();
+                        break;
+                    case BASTARDSWORDS:
+                        fillSubList_Bastardswords();
+                        break;
+                    case IMPACT_WEAPONS:
+                        filSubList_ImpactWeapons();
+                        break;
+                    //ArmorCases
+                    case CLOTHES:
+                        filSubList_Clothes();
+                        break;
+                    case CLOTARMOR:
+                        filSubList_ClotheArmor();
+                        break;
+                    default:
+                        fillSubList_AllGear();
                 }
+            }
         });
     }
 

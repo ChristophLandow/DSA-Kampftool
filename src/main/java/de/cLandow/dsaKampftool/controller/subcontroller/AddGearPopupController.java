@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Gear;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import javafx.event.ActionEvent;
@@ -15,7 +16,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-import static de.cLandow.dsaKampftool.Constants.CLOSECOMBATCLASS;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class AddGearPopupController implements RenderController {
 
@@ -66,12 +67,17 @@ public class AddGearPopupController implements RenderController {
 
     public void addGearFromListToEquipment(Gear gear){
         String gearClass = String.valueOf(gear.getClass());
-        switch (gearClass) {
-            case CLOSECOMBATCLASS -> {
-                selectedGearBoxController.setMainWeapon((Weapon_closeCombat) gear);
-            }
-            default -> {
-                System.out.println("Unidentified Gear Class");
+        if(gearClass != null){
+            switch (gearClass) {
+                case CLOSECOMBATCLASS -> {
+                    selectedGearBoxController.setMainWeapon((Weapon_closeCombat) gear);
+                }
+                case ARMORCLASS -> {
+                    selectedGearBoxController.setArmor((Armor) gear);
+                }
+                default -> {
+                    System.out.println("Unidentified Gear Class");
+                }
             }
         }
 

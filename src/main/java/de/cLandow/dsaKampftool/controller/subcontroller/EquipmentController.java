@@ -22,12 +22,15 @@ public class EquipmentController implements RenderController {
     @FXML BorderPane equipmentContainer;
     @FXML ImageView equipmentImageView;
 
+    private final String imagePath;
     private final String zone;
     private Gear gear;
 
-    public EquipmentController(String zone){
+    public EquipmentController(String zone, String imagePath){
         this.zone = zone;
+        this.imagePath = imagePath;
     }
+
     @Override
     public void init() {
        addToolTipp();
@@ -73,11 +76,7 @@ public class EquipmentController implements RenderController {
     }
 
     public void changeIconToSetMode() {
-        switch(zone){
-            case MAINWEAPON -> {
-                equipmentImageView.setImage(loadImage(MAINWEAPON_IMAGE));
-            }
-        }
+        equipmentImageView.setImage(loadImage(imagePath));
     }
 
     private Image loadImage(String path){
@@ -98,5 +97,9 @@ public class EquipmentController implements RenderController {
         this.gear = gear;
         addToolTipp();
 
+    }
+
+    public void setEmptyImage(){
+        equipmentImageView.setImage(null);
     }
 }

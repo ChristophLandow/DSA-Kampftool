@@ -20,6 +20,7 @@ public class Constants {
     public static final String TORSO = "Chest";
 
     public static final String TUMMY = "Tummy";
+    public static final String BACKSIDE = "Backside";
 
     public static final String HEAD = "Head";
 
@@ -32,6 +33,7 @@ public class Constants {
     public static final String RED_BUTTON = "red-button";
 
     // Gear List
+    public static final String ZONE = "Zone";
     public static final String HEAD_ARMOR = "Kopf";
     public static final String CHEST_ARMOR = "Brust";
     public static final String BACKSIDE_ARMOR = "Ruecken";
@@ -40,6 +42,14 @@ public class Constants {
     public static final String LEFTARM_ARMOR = "LinkerArm";
     public static final String RIGHTLEG_ARMOR = "RechtesBein";
     public static final String LEFTLEG_ARMOR = "LinkesBein";
+
+    public static final String FULLARMOR = CHEST_ARMOR + "_" + BACKSIDE_ARMOR + "_" + TUMMY_ARMOR + "_" + LEFTARM_ARMOR
+            + "_" + RIGHTARM_ARMOR + "_" + LEFTLEG_ARMOR + "_" + RIGHTLEG_ARMOR;
+
+    public static final String FULLARMOR_WITH_HELMET = HEAD_ARMOR + "_" + CHEST_ARMOR + "_" + BACKSIDE_ARMOR + "_" + TUMMY_ARMOR + "_" + LEFTARM_ARMOR
+            + "_" + RIGHTARM_ARMOR + "_" + LEFTLEG_ARMOR + "_" + RIGHTLEG_ARMOR;
+
+    public static final String TORSOARMOR_WITH_HELMET = HEAD_ARMOR + "_" + CHEST_ARMOR + "_" + BACKSIDE_ARMOR;
     public static final String SUMM_ARMOR = "gesamt-Ruestungsschutz";
     public static final String SUMM_ENCUMBRANCE = "gesamt-Behinderung";
 
@@ -70,10 +80,24 @@ public class Constants {
 
     //Gear Class
     public static final String CLOSECOMBATCLASS = "class de.cLandow.dsaKampftool.model.Weapon_closeCombat";
+    public static final String ARMORCLASS = "class de.cLandow.dsaKampftool.model.Armor";
 
 
     //Images
 
-    public static final String MAINWEAPON_IMAGE = "src/main/resources/de/cLandow/dsaKampftool/images/sword_equiped.png";
+    public static final String MAINWEAPON_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sword_equiped.png";
+    public static final String SIDEWEAPON_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sideWeapon_set.png";
+    public static final String SHIELD_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/shield_set.png";
+    public static final String BREASTPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/breastPlate_set.png";
+
+    public static final String BACKSIDEPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/backsidePlate_set.png";
+    public static final String HELMET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/helmetIcon_set.png";
+
+    public static final String TUMMYPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/tummyPlate_set.png";
+    public static final String LEFTBOOT_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/leftBoot_set.png";
+    public static final String RIGHTBOOT_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/rightBoot_set.png";
+    public static final String LEFTGLOVE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/leftGloveIcon_set.png";
+    public static final String RIGHTGLOVE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/rightGloveIcon_set.png";
+
 
 }
