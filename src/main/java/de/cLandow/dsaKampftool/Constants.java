@@ -20,6 +20,7 @@ public class Constants {
     public static final String TORSO = "Chest";
 
     public static final String TUMMY = "Tummy";
+    public static final String BACKSIDE = "Backside";
 
     public static final String HEAD = "Head";
 

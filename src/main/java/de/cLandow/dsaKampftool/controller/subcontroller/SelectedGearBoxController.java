@@ -22,7 +22,8 @@ public class SelectedGearBoxController implements RenderController {
     @FXML HBox sideWeaponHBox;
     @FXML HBox shieldHBox;
     @FXML HBox helmetHBox;
-    @FXML HBox torsoHBox;
+    @FXML HBox chestHBox;
+    @FXML HBox backsideHBox;
     @FXML HBox rightArmHBox;
     @FXML HBox leftArmHBox;
     @FXML HBox tummyHBox;
@@ -33,7 +34,8 @@ public class SelectedGearBoxController implements RenderController {
     private final EquipmentController sideWeaponBoxController;
     private final EquipmentController shildBoxController;
     private final EquipmentController headBoxController;
-    private final EquipmentController torsoBoxController;
+    private final EquipmentController chestBoxController;
+    private final EquipmentController backsideBoxController;
     private final EquipmentController tummyBoxController;
     private final EquipmentController leftArmBoxController;
     private final EquipmentController rightArmBoxController;
@@ -50,25 +52,27 @@ public class SelectedGearBoxController implements RenderController {
 
     public SelectedGearBoxController(AddGearPopupController addGearPopupController){
         this.addGearPopupController = addGearPopupController;
-        this.mainWeaponBoxController = new EquipmentController(MAINWEAPON);
+        this.mainWeaponBoxController = new EquipmentController(MAINWEAPON, MAINWEAPON_IMAGE_PATH);
         equipmentControllers.add(mainWeaponBoxController);
-        this.sideWeaponBoxController = new EquipmentController(SIDEWEAPON);
+        this.sideWeaponBoxController = new EquipmentController(SIDEWEAPON, SIDEWEAPON_IMAGE_PATH);
         equipmentControllers.add(sideWeaponBoxController);
-        this.shildBoxController = new EquipmentController(SHIELD);
+        this.shildBoxController = new EquipmentController(SHIELD, SHIELD_IMAGE_PATH);
         equipmentControllers.add(shildBoxController);
-        this.headBoxController = new EquipmentController(HEAD);
+        this.headBoxController = new EquipmentController(HEAD, HELMET_IMAGE_PATH);
         equipmentControllers.add(headBoxController);
-        this.torsoBoxController = new EquipmentController(TORSO);
-        equipmentControllers.add(torsoBoxController);
-        this.tummyBoxController = new EquipmentController(TUMMY);
+        this.chestBoxController = new EquipmentController(TORSO, BREASTPLATE_IMAGE_PATH);
+        equipmentControllers.add(chestBoxController);
+        this.backsideBoxController = new EquipmentController(BACKSIDE, BREASTPLATE_IMAGE_PATH);
+        equipmentControllers.add(chestBoxController);
+        this.tummyBoxController = new EquipmentController(TUMMY, PLATE_IMAGE_PATH);
         equipmentControllers.add(tummyBoxController);
-        this.leftArmBoxController = new EquipmentController(LEFT_ARM);
+        this.leftArmBoxController = new EquipmentController(LEFT_ARM, LEFTGLOVE_IMAGE_PATH);
         equipmentControllers.add(leftArmBoxController);
-        this.rightArmBoxController = new EquipmentController(RIGHT_ARM);
+        this.rightArmBoxController = new EquipmentController(RIGHT_ARM, RIGHTGLOVE_IMAGE_PATH);
         equipmentControllers.add(rightArmBoxController);
-        this.leftLegBoxController = new EquipmentController(LEFT_LEG);
+        this.leftLegBoxController = new EquipmentController(LEFT_LEG, LEFTBOOT_IMAGE_PATH);
         equipmentControllers.add(leftLegBoxController);
-        this.rightLegBoxController = new EquipmentController(RIGHT_LEG);
+        this.rightLegBoxController = new EquipmentController(RIGHT_LEG, RIGHTBOOT_IMAGE_PATH);
         equipmentControllers.add(rightLegBoxController);
     }
 
@@ -78,7 +82,7 @@ public class SelectedGearBoxController implements RenderController {
         sideWeaponHBox.getChildren().add(sideWeaponBoxController.render());
         shieldHBox.getChildren().add(shildBoxController.render());
         helmetHBox.getChildren().add(headBoxController.render());
-        torsoHBox.getChildren().add(torsoBoxController.render());
+        chestHBox.getChildren().add(chestBoxController.render());
         tummyHBox.getChildren().add(tummyBoxController.render());
         leftArmHBox.getChildren().add(leftArmBoxController.render());
         rightArmHBox.getChildren().add(rightArmBoxController.render());
@@ -115,7 +119,35 @@ public class SelectedGearBoxController implements RenderController {
 
     public void setArmor(Armor armor) {
         for(String zone : armor.getZone()){
+            switch (zone) {
+                case HEAD_ARMOR -> {
+                    headBoxController.changeIconToSetMode();
+                }
+                case CHEST_ARMOR -> {
 
+                }
+                case BACKSIDE_ARMOR -> {
+                    //selectedGearBoxController.setArmor((Armor) gear);
+                }
+                case TUMMY_ARMOR -> {
+                    //selectedGearBoxController.setMainWeapon((Weapon_closeCombat) gear);
+                }
+                case LEFTARM_ARMOR -> {
+                    //selectedGearBoxController.setArmor((Armor) gear);
+                }
+                case RIGHTARM_ARMOR -> {
+                    //selectedGearBoxController.setMainWeapon((Weapon_closeCombat) gear);
+                }
+                case LEFTLEG_ARMOR -> {
+                    //selectedGearBoxController.setArmor((Armor) gear);
+                }
+                case RIGHTLEG_ARMOR -> {
+                    //selectedGearBoxController.setArmor((Armor) gear);
+                }
+                default -> {
+                    System.out.println("Unidentified Gear Class");
+                }
+            }
         }
     }
 }
