@@ -11,6 +11,7 @@ import static de.cLandow.dsaKampftool.Constants.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
@@ -162,13 +163,9 @@ public class SelectedGearBoxController implements RenderController {
     }
 
     private void clearAllArmorBoxes() {
-        headBoxController.setEmptyImage();
-        chestBoxController.setEmptyImage();
-        backsideBoxController.setEmptyImage();
-        tummyBoxController.setEmptyImage();
-        leftArmBoxController.setEmptyImage();
-        rightArmBoxController.setEmptyImage();
-        leftLegBoxController.setEmptyImage();
-        rightLegBoxController.setEmptyImage();
+        for(EquipmentController controller : equipmentControllers){
+            controller.setEmptyImage();
+            controller.removeTooltip();
+        }
     }
 }
