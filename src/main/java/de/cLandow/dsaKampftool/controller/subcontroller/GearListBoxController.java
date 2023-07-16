@@ -81,6 +81,8 @@ public class GearListBoxController implements RenderController {
         fillSubList_AllGear();
     }
 
+    // ChoiceBox filler
+
     private void loadGearGroupChoiceBox() {
         gearGroupChoiceBox.getItems().add(WEAPON);
         gearGroupChoiceBox.getItems().add(ARMOR);
@@ -95,15 +97,25 @@ public class GearListBoxController implements RenderController {
         gearSubGroupChoiceBox.getItems().add(IMPACT_WEAPONS);
     }
 
+    private void loadSubGroupBox_Armor() {
+        gearSubGroupChoiceBox.getItems().add(CLOTHES);
+        gearSubGroupChoiceBox.getItems().add(CLOTARMOR);
+    }
+
+    //choiceBoxListener
+
     public void loadGearChoiceBoxListener() {
         gearGroupChoiceBox.setOnAction(event -> {
             gearListView.getItems().clear();
+            gearSubGroupChoiceBox.getItems().clear();
             switch (gearGroupChoiceBox.getValue()) {
                 case WEAPON:
-
+                    gearSubGroupChoiceBox.setDisable(false);
+                    loadSubGroupBox_WeaponGroups();
                     break;
                 case ARMOR:
-
+                    gearSubGroupChoiceBox.setDisable(false);
+                    loadSubGroupBox_Armor();
                     break;
                 default:
 
@@ -171,9 +183,6 @@ public class GearListBoxController implements RenderController {
     public void setClothArmor(ObservableList<Armor> temporaryArmorLIst) {
         this.clothArmor = temporaryArmorLIst;
     }
-    // subGroupChoiceBox filler
-
-
 
     //list filler
 
