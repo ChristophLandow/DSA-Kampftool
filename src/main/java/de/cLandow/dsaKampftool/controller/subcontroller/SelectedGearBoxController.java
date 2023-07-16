@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Gear;
 import de.cLandow.dsaKampftool.model.Shield;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
@@ -112,7 +113,7 @@ public class SelectedGearBoxController implements RenderController {
     }
 
 
-    public void setArmor(Gear gear) {
+    public void setArmor(Armor armor) {
 
     }
 }
