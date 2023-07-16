@@ -15,6 +15,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
+import static de.cLandow.dsaKampftool.Constants.ARMOR;
 import static de.cLandow.dsaKampftool.Constants.CLOSECOMBATCLASS;
 
 public class AddGearPopupController implements RenderController {
@@ -69,6 +70,9 @@ public class AddGearPopupController implements RenderController {
         switch (gearClass) {
             case CLOSECOMBATCLASS -> {
                 selectedGearBoxController.setMainWeapon((Weapon_closeCombat) gear);
+            }
+            case ARMOR -> {
+                selectedGearBoxController.setArmor(gear);
             }
             default -> {
                 System.out.println("Unidentified Gear Class");
