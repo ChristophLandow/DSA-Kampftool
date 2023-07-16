@@ -41,6 +41,14 @@ public class Constants {
     public static final String LEFTARM_ARMOR = "LinkerArm";
     public static final String RIGHTLEG_ARMOR = "RechtesBein";
     public static final String LEFTLEG_ARMOR = "LinkesBein";
+
+    public static final String FULLARMOR = CHEST_ARMOR + "_" + BACKSIDE_ARMOR + "_" + TUMMY_ARMOR + "_" + LEFTARM_ARMOR
+            + "_" + RIGHTARM_ARMOR + "_" + LEFTLEG_ARMOR + "_" + RIGHTLEG_ARMOR;
+
+    public static final String FULLARMOR_WITH_HELMET = HEAD_ARMOR + "_" + CHEST_ARMOR + "_" + BACKSIDE_ARMOR + "_" + TUMMY_ARMOR + "_" + LEFTARM_ARMOR
+            + "_" + RIGHTARM_ARMOR + "_" + LEFTLEG_ARMOR + "_" + RIGHTLEG_ARMOR;
+
+    public static final String TORSOARMOR_WITH_HELMET = HEAD_ARMOR + "_" + CHEST_ARMOR + "_" + BACKSIDE_ARMOR;
     public static final String SUMM_ARMOR = "gesamt-Ruestungsschutz";
     public static final String SUMM_ENCUMBRANCE = "gesamt-Behinderung";
 
