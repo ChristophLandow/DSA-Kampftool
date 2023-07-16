@@ -78,7 +78,6 @@ public class GearListBoxController implements RenderController {
         //load Weapons
         weaponObservableList = readFileService.loadWeapons();
         armorObservableList = readFileService.loadArmor();
-        fillSubList_AllGear();
     }
 
     // ChoiceBox filler
@@ -106,8 +105,9 @@ public class GearListBoxController implements RenderController {
 
     public void loadGearChoiceBoxListener() {
         gearGroupChoiceBox.setOnAction(event -> {
-            gearListView.getItems().clear();
             gearSubGroupChoiceBox.getItems().clear();
+            gearSubGroupChoiceBox.setValue("  ");
+            gearListView.getItems().clear();
             switch (gearGroupChoiceBox.getValue()) {
                 case WEAPON:
                     gearSubGroupChoiceBox.setDisable(false);
@@ -128,6 +128,7 @@ public class GearListBoxController implements RenderController {
         gearSubGroupChoiceBox.setOnAction(event -> {
             gearListView.getItems().clear();
             switch (gearSubGroupChoiceBox.getValue()) {
+                //Weapon Cases
                 case DAGGERS:
                     fillSubList_Daggers();
                     break;
@@ -142,6 +143,13 @@ public class GearListBoxController implements RenderController {
                     break;
                 case IMPACT_WEAPONS:
                     filSubList_ImpactWeapons();
+                    break;
+                //ArmorCases
+                case CLOTHES:
+                    filSubList_Clothes();
+                    break;
+                case CLOTARMOR:
+                    filSubList_ClotheArmor();
                     break;
                 default:
                     fillSubList_AllGear();
@@ -213,9 +221,27 @@ public class GearListBoxController implements RenderController {
         gearListView.setItems(castWeaponListToGearList(bastardswords));
     }
 
+    private void filSubList_ClotheArmor() {
+        gearListView.setItems(castArmorListToGearList(clothArmor));
+    }
+
+    private void filSubList_Clothes() {
+        gearListView.setItems(castArmorListToGearList(clothesArmor));
+    }
+
     private ObservableList<Gear> castWeaponListToGearList(ObservableList<Weapon_closeCombat> weaponList){
         ObservableList<Gear> gearList = FXCollections.observableArrayList();
         gearList.addAll(weaponList);
         return gearList;
     }
+
+    private ObservableList<Gear> castArmorListToGearList(ObservableList<Armor> armorList){
+        ObservableList<Gear> gearList = FXCollections.observableArrayList();
+        gearList.addAll(armorList);
+        return gearList;
+    }
+
+
+
+
 }
