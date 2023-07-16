@@ -75,7 +75,7 @@ public class ArmorFileReadHandler extends DefaultHandler {
                     gearListBoxController.setClothes(temporaryArmorLIst);
                     temporaryArmorLIst = FXCollections.observableArrayList();
                 }
-                case CHEST_ARMOR -> {
+                case CLOTARMOR -> {
                     subListLoaded = true;
                     gearListBoxController.setClothArmor(temporaryArmorLIst);
                     temporaryArmorLIst = FXCollections.observableArrayList();
