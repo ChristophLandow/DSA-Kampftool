@@ -8,6 +8,9 @@ import javafx.collections.ObservableList;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import static de.cLandow.dsaKampftool.Constants.*;
 
 public class ArmorFileReadHandler extends DefaultHandler {
@@ -67,7 +70,8 @@ public class ArmorFileReadHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName){
         if(ARMOR.equals(qName)){
             subListLoaded = false;
-            Armor armor = new Armor(name, zone, headArmor, chestArmor, backsideArmor, tummyArmor, leftArmArmor, rightArmArmor, lefLegArmor, rightLegArmor, summArmorclass, summEncumbrance);
+            ArrayList<String> armorZones = createZoneList(zone);
+            Armor armor = new Armor(name, armorZones, headArmor, chestArmor, backsideArmor, tummyArmor, leftArmArmor, rightArmArmor, lefLegArmor, rightLegArmor, summArmorclass, summEncumbrance);
             observableList.add(armor);
             temporaryArmorLIst.add(armor);
         }
@@ -97,7 +101,12 @@ public class ArmorFileReadHandler extends DefaultHandler {
 
     }
 
-
+    private ArrayList<String> createZoneList(String zone) {
+        String[] zonesToCast = zone.split("_");
+        ArrayList<String> result = new ArrayList<>();
+        Collections.addAll(result, zonesToCast);
+        return result;
+    }
 
     public ObservableList<Armor> getObservableArmorList() {
         return observableList;
