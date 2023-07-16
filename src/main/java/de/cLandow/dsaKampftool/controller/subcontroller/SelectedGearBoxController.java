@@ -114,6 +114,8 @@ public class SelectedGearBoxController implements RenderController {
 
 
     public void setArmor(Armor armor) {
+        for(String zone : armor.getZone()){
 
+        }
     }
 }

@@ -2,7 +2,6 @@ package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Armor;
-import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.xml.sax.Attributes;
