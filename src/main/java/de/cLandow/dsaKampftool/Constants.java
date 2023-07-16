@@ -32,6 +32,7 @@ public class Constants {
     public static final String RED_BUTTON = "red-button";
 
     // Gear List
+    public static final String ZONE = "Zone";
     public static final String HEAD_ARMOR = "Kopf";
     public static final String CHEST_ARMOR = "Brust";
     public static final String BACKSIDE_ARMOR = "Ruecken";
