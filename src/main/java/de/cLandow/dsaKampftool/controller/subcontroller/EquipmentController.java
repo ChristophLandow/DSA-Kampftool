@@ -28,6 +28,7 @@ public class EquipmentController implements RenderController {
     public EquipmentController(String zone){
         this.zone = zone;
     }
+
     @Override
     public void init() {
        addToolTipp();
@@ -73,11 +74,7 @@ public class EquipmentController implements RenderController {
     }
 
     public void changeIconToSetMode() {
-        switch(zone){
-            case MAINWEAPON -> {
-                equipmentImageView.setImage(loadImage(MAINWEAPON_IMAGE));
-            }
-        }
+        equipmentImageView.setImage(loadImage(MAINWEAPON_IMAGE));
     }
 
     private Image loadImage(String path){
