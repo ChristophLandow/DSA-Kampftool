@@ -49,7 +49,10 @@ public class GearListBoxController implements RenderController {
         gearListView.setCellFactory(gearListView -> new GearListItemController(this));
         /*Make listview to select multiple values*/
         gearListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        gearSubGroupChoiceBox.setDisable(true);
         loadGearChoiceBoxListener();
+        loadGearSubGroupBoxListeners();
+
     }
 
     @Override
@@ -75,7 +78,7 @@ public class GearListBoxController implements RenderController {
         //load Weapons
         weaponObservableList = readFileService.loadWeapons();
         armorObservableList = readFileService.loadArmor();
-        fillListWithAllGear();
+        fillSubList_AllGear();
     }
 
     private void loadGearGroupChoiceBox() {
@@ -93,29 +96,43 @@ public class GearListBoxController implements RenderController {
     }
 
     public void loadGearChoiceBoxListener() {
-    }
-
-    public void loadGearSubGroupBoxListeners() {
         gearGroupChoiceBox.setOnAction(event -> {
             gearListView.getItems().clear();
             switch (gearGroupChoiceBox.getValue()) {
-                case DAGGERS:
-                    fillListWithAllDaggers();
+                case WEAPON:
+
                     break;
-                case FENCING_WEAPONS:
-                    fillListWithAllFencingWeapons();
-                    break;
-                case TWO_HANDED_IMPACT_WEAPON:
-                    fillListWithAllTwoHandedImpactWeapons();
-                    break;
-                case BASTARDSWORDS:
-                    fillListWithAllBastardswords();
-                    break;
-                case IMPACT_WEAPONS:
-                    fillListWithImpactWeapons();
+                case ARMOR:
+
                     break;
                 default:
-                    fillListWithAllGear();
+
+                }
+            });
+    }
+
+
+    public void loadGearSubGroupBoxListeners() {
+        gearSubGroupChoiceBox.setOnAction(event -> {
+            gearListView.getItems().clear();
+            switch (gearSubGroupChoiceBox.getValue()) {
+                case DAGGERS:
+                    fillSubList_Daggers();
+                    break;
+                case FENCING_WEAPONS:
+                    fillSubList_FencingWeapons();
+                    break;
+                case TWO_HANDED_IMPACT_WEAPON:
+                    fillSubList_TwoHandedImpactWeapons();
+                    break;
+                case BASTARDSWORDS:
+                    fillSubList_Bastardswords();
+                    break;
+                case IMPACT_WEAPONS:
+                    filSubList_ImpactWeapons();
+                    break;
+                default:
+                    fillSubList_AllGear();
                 }
         });
     }
@@ -154,33 +171,36 @@ public class GearListBoxController implements RenderController {
     public void setClothArmor(ObservableList<Armor> temporaryArmorLIst) {
         this.clothArmor = temporaryArmorLIst;
     }
+    // subGroupChoiceBox filler
+
+
 
     //list filler
 
-    public void fillListWithAllGear(){
+    public void fillSubList_AllGear(){
         ObservableList<Gear> allGearList = FXCollections.observableArrayList();
         allGearList.addAll(weaponObservableList);
         allGearList.addAll(armorObservableList);
         gearListView.setItems(allGearList);
     }
 
-    public void fillListWithImpactWeapons(){
+    public void filSubList_ImpactWeapons(){
         gearListView.setItems(castWeaponListToGearList(impactWeapons));
     }
 
-    public void fillListWithAllDaggers(){
+    public void fillSubList_Daggers(){
         gearListView.setItems(castWeaponListToGearList(daggers));
     }
 
-    public void fillListWithAllFencingWeapons(){
+    public void fillSubList_FencingWeapons(){
         gearListView.setItems(castWeaponListToGearList(fencingWeapons));
     }
 
-    public void fillListWithAllTwoHandedImpactWeapons(){
+    public void fillSubList_TwoHandedImpactWeapons(){
         gearListView.setItems(castWeaponListToGearList(twoHandedImpactWeapons));
     }
 
-    public void fillListWithAllBastardswords(){
+    public void fillSubList_Bastardswords(){
         gearListView.setItems(castWeaponListToGearList(bastardswords));
     }
 
