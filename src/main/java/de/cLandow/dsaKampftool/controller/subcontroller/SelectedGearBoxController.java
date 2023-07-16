@@ -119,6 +119,7 @@ public class SelectedGearBoxController implements RenderController {
 
 
     public void setArmor(Armor armor) {
+        clearAllArmorBoxes();
         for(String zone : armor.getZone()){
             switch (zone) {
                 case HEAD_ARMOR -> {
@@ -158,5 +159,16 @@ public class SelectedGearBoxController implements RenderController {
                 }
             }
         }
+    }
+
+    private void clearAllArmorBoxes() {
+        headBoxController.setEmptyImage();
+        chestBoxController.setEmptyImage();
+        backsideBoxController.setEmptyImage();
+        tummyBoxController.setEmptyImage();
+        leftArmBoxController.setEmptyImage();
+        rightArmBoxController.setEmptyImage();
+        leftLegBoxController.setEmptyImage();
+        rightLegBoxController.setEmptyImage();
     }
 }

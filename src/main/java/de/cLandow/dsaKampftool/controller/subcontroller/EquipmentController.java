@@ -98,4 +98,8 @@ public class EquipmentController implements RenderController {
         addToolTipp();
 
     }
+
+    public void setEmptyImage(){
+        equipmentImageView.setImage(null);
+    }
 }
