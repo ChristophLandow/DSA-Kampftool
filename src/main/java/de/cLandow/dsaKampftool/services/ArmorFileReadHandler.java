@@ -88,7 +88,7 @@ public class ArmorFileReadHandler extends DefaultHandler {
                 }
                 default -> {
                     if(subListLoaded.equals(false)){
-                        System.out.println("Waffe fremder Klasse");
+                        System.out.println("Ruestung fremder Klasse");
                     }
                 }
             }

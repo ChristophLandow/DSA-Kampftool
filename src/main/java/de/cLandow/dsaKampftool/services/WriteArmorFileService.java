@@ -37,7 +37,7 @@ public class WriteArmorFileService {
 
             writer.writeStartElement(ARMOR);
             writer.writeAttribute(NAME, "Anaurak");
-            writer.writeAttribute(ZONE, HEAD);
+            writer.writeAttribute(ZONE,FULLARMOR_WITH_HELMET);
             writer.writeAttribute(HEAD_ARMOR, "1");
             writer.writeAttribute(CHEST_ARMOR, "1");
             writer.writeAttribute(BACKSIDE_ARMOR, "1");

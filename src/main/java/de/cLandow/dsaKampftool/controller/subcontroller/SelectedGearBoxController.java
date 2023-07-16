@@ -83,6 +83,7 @@ public class SelectedGearBoxController implements RenderController {
         shieldHBox.getChildren().add(shildBoxController.render());
         helmetHBox.getChildren().add(headBoxController.render());
         chestHBox.getChildren().add(chestBoxController.render());
+        backsideHBox.getChildren().add(backsideBoxController.render());
         tummyHBox.getChildren().add(tummyBoxController.render());
         leftArmHBox.getChildren().add(leftArmBoxController.render());
         rightArmHBox.getChildren().add(rightArmBoxController.render());
