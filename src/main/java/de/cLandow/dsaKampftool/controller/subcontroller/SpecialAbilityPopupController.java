@@ -40,7 +40,8 @@ public class SpecialAbilityPopupController implements RenderController {
     }
 
     private void fillAbilityList() {
-        observableAbilityList.forEach((abiliy) -> abilityListView.getItems().add(abiliy.name()));
+        System.out.println(observableAbilityList);
+        observableAbilityList.forEach((ability) -> abilityListView.getItems().add(ability.name()));
     }
 
     @Override

@@ -47,7 +47,7 @@ public class AbilityFileReadHandler extends DefaultHandler{
 
     @Override
     public void endElement(String uri, String localName, String qName){
-        if(ARMOR.equals(qName)) {
+        if(ABILITY.equals(qName)) {
             Ability ability = new Ability(name, attack_mod, parade_mod, initiative_mod, encumbrance_mod);
             observableList.add(ability);
         }
