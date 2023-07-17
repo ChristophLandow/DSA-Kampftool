@@ -9,13 +9,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class SpecialAbilityPopupController implements RenderController {
 
+    @FXML ListView<String> selectionListView;
+    @FXML Button closeButton;
+    @FXML Button addButton;
+    @FXML TextArea informationTextPane;
     @FXML ListView<String> abilityListView = new ListView<>();
 
     private final CharacterScreenController characterScreenController;
