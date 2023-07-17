@@ -86,6 +86,11 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
 ## Roadmap
 
  - [ ] Basisprogramm vollständig
+   - [ ] Menü
+     - [ ] Charakter kann gewechselt werden
+     - [ ] Ausrüstungsliste kann gewechselt werden
+     - [ ] Liste der Sonderfertigkeiten kann gewechselt werden
+     - [ ] Liste der Vor-/Nachteile kann gewechselt werden
    - [X] SetupScreen
      - [X] Container CharacterScreen
      - [X] Attribute/Lebenspunkte angezeigt
@@ -107,7 +112,7 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
      - [ ] Vor-/Nachteile können aus einem Charakter entfernt werden
      - [ ] Vor-/Nachteile sind editierbar
    - [ ] Charakter verfügt über Sonderfertigkeiten
-     - [ ] Sonderfertigkeiten werden aus externer Liste geladen
+     - [X] Sonderfertigkeiten werden aus externer Liste geladen
      - [ ] Sonderfertigkeiten können einem Charakter hinzugefügt werden
      - [ ] Sonderfertigkeiten können aus einem Charakter entfernt werden
      - [ ] Sonderfertigkeiten sind editierbar
