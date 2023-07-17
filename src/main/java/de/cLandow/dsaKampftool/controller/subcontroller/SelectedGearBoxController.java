@@ -11,7 +11,6 @@ import static de.cLandow.dsaKampftool.Constants.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
@@ -43,7 +42,7 @@ public class SelectedGearBoxController implements RenderController {
     private final EquipmentController leftLegBoxController;
     private final EquipmentController rightLegBoxController;
 
-    private ArrayList<EquipmentController> equipmentControllers = new ArrayList<>();
+    private final ArrayList<EquipmentController> equipmentControllers = new ArrayList<>();
 
 
     private Weapon_closeCombat mainWeapon;
