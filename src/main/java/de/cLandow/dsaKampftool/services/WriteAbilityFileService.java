@@ -32,7 +32,7 @@ public class WriteAbilityFileService {
             XMLStreamWriter writer = output.createXMLStreamWriter(out, "UTF-8");
             writer.writeStartDocument("UTF-8", "1.0");
             // <Charakter>
-            writer.writeStartElement("Liste aller Sonderfertigkeiten");
+            writer.writeStartElement("Liste_aller_Sonderfertigkeiten");
 
             writer.writeStartElement(ABILITIES);
 
@@ -40,7 +40,7 @@ public class WriteAbilityFileService {
             writer.writeAttribute(NAME, "Kampfreflexe");
             writer.writeAttribute(ATTACK_MOD, "0");
             writer.writeAttribute(PARADE_MOD, "0");
-            writer.writeAttribute(INIT_MOD, "4");
+            writer.writeAttribute(INITIATIVEMOD, "4");
             writer.writeAttribute(ENCUMBRANCE_MOD, "0");
             writer.writeEndElement();
 

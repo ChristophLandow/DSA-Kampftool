@@ -30,12 +30,11 @@ public class SpecialAbilityPopupController implements RenderController {
 
     public  SpecialAbilityPopupController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
-        abilityListView.setEditable(false);
-        informationTextPane.setEditable(false);
     }
 
     @Override
     public void init() {
+        informationTextPane.setEditable(false);
         loadSpecialAbilityList();
         fillAbilityList();
     }
