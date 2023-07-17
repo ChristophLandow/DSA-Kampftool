@@ -3,13 +3,13 @@ package de.cLandow.dsaKampftool.model;
 import javafx.collections.ObservableArray;
 
 public record Ability(
-        String abilityName,
+        String name,
 
-        int attackModificator,
-        int paradeModificator,
+        Integer attackModificator,
+        Integer paradeModificator,
 
-        int initiativeModificator,
+        Integer initiativeModificator,
 
-        String modifiedArmorPiece
+        Double encumbranceModificator
 ) {
 }

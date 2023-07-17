@@ -25,6 +25,7 @@ public class EquipmentController implements RenderController {
     private final String imagePath;
     private final String zone;
     private Gear gear;
+    private Tooltip newTooltip;
 
     public EquipmentController(String zone, String imagePath){
         this.zone = zone;
@@ -66,7 +67,6 @@ public class EquipmentController implements RenderController {
         });
     }
     private void addToolTipp() {
-        Tooltip newTooltip;
         if((this.gear != null) && (gear.getName() != null)){
             newTooltip = new Tooltip(gear.getName());
         } else {
@@ -96,10 +96,13 @@ public class EquipmentController implements RenderController {
     public void setGear(Gear gear) {
         this.gear = gear;
         addToolTipp();
-
     }
 
     public void setEmptyImage(){
         equipmentImageView.setImage(null);
+    }
+
+    public void removeTooltip(){
+        Tooltip.uninstall(equipmentImageView,newTooltip);
     }
 }

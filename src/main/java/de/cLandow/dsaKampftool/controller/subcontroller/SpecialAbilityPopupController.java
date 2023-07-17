@@ -4,32 +4,44 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Ability;
+import de.cLandow.dsaKampftool.services.ReadFileService;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class SpecialAbilityPopupController implements RenderController {
 
+    @FXML ListView<String> selectionListView;
+    @FXML Button closeButton;
+    @FXML Button addButton;
+    @FXML TextArea informationTextPane;
     @FXML ListView<String> abilityListView = new ListView<>();
 
     private final CharacterScreenController characterScreenController;
 
-    private final ArrayList<Ability> specialAbilityList = new ArrayList<>();
+    private ObservableList<Ability> observableAbilityList;
 
     public  SpecialAbilityPopupController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
-        abilityListView.setEditable(false);
     }
 
     @Override
     public void init() {
+        informationTextPane.setEditable(false);
         loadSpecialAbilityList();
+        fillAbilityList();
+    }
+
+    private void fillAbilityList() {
+        System.out.println(observableAbilityList);
+        observableAbilityList.forEach((ability) -> abilityListView.getItems().add(ability.name()));
     }
 
     @Override
@@ -59,8 +71,7 @@ public class SpecialAbilityPopupController implements RenderController {
     }
 
     private void loadSpecialAbilityList() {
-        specialAbilityList.add(new Ability("Kampfreflexe",0,0,4,
-                ""));
-        abilityListView.getItems().add("Kampfreflexe");
+        ReadFileService readFileService = new ReadFileService(this);
+        observableAbilityList = readFileService.loadAbilities();
     }
 }

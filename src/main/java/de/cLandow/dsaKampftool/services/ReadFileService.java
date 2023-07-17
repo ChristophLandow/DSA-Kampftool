@@ -1,6 +1,8 @@
 package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
+import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
+import de.cLandow.dsaKampftool.model.Ability;
 import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
@@ -18,10 +20,14 @@ import static de.cLandow.dsaKampftool.Constants.*;
 
 public class ReadFileService {
 
+    private SpecialAbilityPopupController specialAbilityPopupController;
     private GearListBoxController gearListBoxController;
 
     public ReadFileService(GearListBoxController gearListBoxController) {
         this.gearListBoxController = gearListBoxController;
+    }
+    public ReadFileService(SpecialAbilityPopupController specialAbilityPopupController) {
+        this.specialAbilityPopupController = specialAbilityPopupController;
     }
 
     public ReadFileService(){
@@ -84,6 +90,20 @@ public class ReadFileService {
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(ARMOR_FILEPATH, armorFileHandler);
             return armorFileHandler.getObservableArmorList();
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ObservableList<Ability> loadAbilities(){
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        try {
+            AbilityFileReadHandler abilityFileReadHandler = new AbilityFileReadHandler();
+            SAXParser saxParser = factory.newSAXParser();
+            saxParser.parse(ABILITY_FILEPATH, abilityFileReadHandler);
+            return abilityFileReadHandler.getObservableAbilityList();
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();

@@ -68,6 +68,9 @@ public class SetupScreenController implements RenderController {
         //create Armor.xml
         WriteArmorFileService writeArmorFileService = new WriteArmorFileService();
         writeArmorFileService.createFile();
+        //create Ability.xml
+        WriteAbilityFileService writeAbilityFileService = new WriteAbilityFileService();
+        writeAbilityFileService.createFile();
     }
 
     @Override

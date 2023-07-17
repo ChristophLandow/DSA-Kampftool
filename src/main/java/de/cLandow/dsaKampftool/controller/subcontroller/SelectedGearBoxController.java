@@ -42,7 +42,7 @@ public class SelectedGearBoxController implements RenderController {
     private final EquipmentController leftLegBoxController;
     private final EquipmentController rightLegBoxController;
 
-    private ArrayList<EquipmentController> equipmentControllers = new ArrayList<>();
+    private final ArrayList<EquipmentController> equipmentControllers = new ArrayList<>();
 
 
     private Weapon_closeCombat mainWeapon;
@@ -162,13 +162,9 @@ public class SelectedGearBoxController implements RenderController {
     }
 
     private void clearAllArmorBoxes() {
-        headBoxController.setEmptyImage();
-        chestBoxController.setEmptyImage();
-        backsideBoxController.setEmptyImage();
-        tummyBoxController.setEmptyImage();
-        leftArmBoxController.setEmptyImage();
-        rightArmBoxController.setEmptyImage();
-        leftLegBoxController.setEmptyImage();
-        rightLegBoxController.setEmptyImage();
+        for(EquipmentController controller : equipmentControllers){
+            controller.setEmptyImage();
+            controller.removeTooltip();
+        }
     }
 }
