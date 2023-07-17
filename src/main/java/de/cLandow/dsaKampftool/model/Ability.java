@@ -5,11 +5,11 @@ import javafx.collections.ObservableArray;
 public record Ability(
         String abilityName,
 
-        int attackModificator,
-        int paradeModificator,
+        Integer attackModificator,
+        Integer paradeModificator,
 
-        int initiativeModificator,
+        Integer initiativeModificator,
 
-        String modifiedArmorPiece
+        Double encumbranceModificator
 ) {
 }

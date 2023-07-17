@@ -65,8 +65,6 @@ public class SpecialAbilityPopupController implements RenderController {
     }
 
     private void loadSpecialAbilityList() {
-        specialAbilityList.add(new Ability("Kampfreflexe",0,0,4,
-                ""));
-        abilityListView.getItems().add("Kampfreflexe");
+
     }
 }
