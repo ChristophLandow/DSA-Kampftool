@@ -17,7 +17,7 @@ public class WriteAbilityFileService {
 
     public void createFile(){
         // send the output to a xml file
-        try(FileOutputStream out = new FileOutputStream(SETUP_FILEPATH + "Armor.xml")){
+        try(FileOutputStream out = new FileOutputStream(SETUP_FILEPATH + "Abilities.xml")){
             writeXml(out);
         } catch (IOException e) {
             e.printStackTrace();
@@ -32,23 +32,16 @@ public class WriteAbilityFileService {
             XMLStreamWriter writer = output.createXMLStreamWriter(out, "UTF-8");
             writer.writeStartDocument("UTF-8", "1.0");
             // <Charakter>
-            writer.writeStartElement("Sonderfertigkeiten");
+            writer.writeStartElement("Liste aller Sonderfertigkeiten");
 
-            writer.writeStartElement(CLOTHES);
+            writer.writeStartElement(ABILITIES);
 
-            writer.writeStartElement(ARMOR);
-            writer.writeAttribute(NAME, "Anaurak");
-            writer.writeAttribute(ZONE,FULLARMOR_WITH_HELMET);
-            writer.writeAttribute(HEAD_ARMOR, "1");
-            writer.writeAttribute(CHEST_ARMOR, "1");
-            writer.writeAttribute(BACKSIDE_ARMOR, "1");
-            writer.writeAttribute(TUMMY_ARMOR, "1");
-            writer.writeAttribute(LEFTARM_ARMOR, "1");
-            writer.writeAttribute(RIGHTARM_ARMOR, "1");
-            writer.writeAttribute(LEFTLEG_ARMOR, "1");
-            writer.writeAttribute(RIGHTLEG_ARMOR, "1");
-            writer.writeAttribute(SUMM_ARMOR, "1");
-            writer.writeAttribute(SUMM_ENCUMBRANCE, "1");
+            writer.writeStartElement(ABILITY);
+            writer.writeAttribute(NAME, "Kampfreflexe");
+            writer.writeAttribute(ATTACK_MOD, "0");
+            writer.writeAttribute(PARADE_MOD, "0");
+            writer.writeAttribute(INIT_MOD, "4");
+            writer.writeAttribute(ENCUMBRANCE_MOD, "0");
             writer.writeEndElement();
 
             writer.writeEndElement();

@@ -14,6 +14,7 @@ public class Constants {
     public static final String SETUP_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//";
     public static final String WEAPON_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Weapons.xml";
     public static final String ARMOR_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Armor.xml";
+    public static final String ABILITY_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Abilities.xml";
     public static final String RIGHT_ARM = "Right Arm";
     public static final String LEFT_ARM = "Left Arm";
 
@@ -82,6 +83,13 @@ public class Constants {
     public static final String CLOSECOMBATCLASS = "class de.cLandow.dsaKampftool.model.Weapon_closeCombat";
     public static final String ARMORCLASS = "class de.cLandow.dsaKampftool.model.Armor";
 
+    //Abilities
+    public static final String ABILITIES = "Sonderfertigkeiten";
+    public static final String ABILITY = "Sonderfertigkeit";
+    public static final String ATTACK_MOD = "Attacke-Modifikator";
+    public static final String PARADE_MOD = "Parade-Modifikator";
+    public static final String INIT_MOD = "Initiative-Modifikator";
+    public static final String ENCUMBRANCE_MOD = "Behinderung-Modifikator";
 
     //Images
 
