@@ -1,16 +1,13 @@
 package de.cLandow.dsaKampftool.services;
 
+import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
 import de.cLandow.dsaKampftool.model.Ability;
-import de.cLandow.dsaKampftool.model.Armor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.util.ArrayList;
-
 import static de.cLandow.dsaKampftool.Constants.*;
-import static de.cLandow.dsaKampftool.Constants.CLOTARMOR;
 
 public class AbilityFileReadHandler extends DefaultHandler{
 
@@ -59,5 +56,9 @@ public class AbilityFileReadHandler extends DefaultHandler{
     @Override
     public void characters(char[] ch, int start, int length){
 
+    }
+
+    public ObservableList<Ability> getObservableAbilityList(){
+        return observableList;
     }
 }

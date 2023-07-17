@@ -4,6 +4,7 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Ability;
+import de.cLandow.dsaKampftool.services.ReadFileService;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +15,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class SpecialAbilityPopupController implements RenderController {
 
@@ -26,16 +26,22 @@ public class SpecialAbilityPopupController implements RenderController {
 
     private final CharacterScreenController characterScreenController;
 
-    private final ArrayList<Ability> specialAbilityList = new ArrayList<>();
+    private ObservableList<Ability> observableAbilityList;
 
     public  SpecialAbilityPopupController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
         abilityListView.setEditable(false);
+        informationTextPane.setEditable(false);
     }
 
     @Override
     public void init() {
         loadSpecialAbilityList();
+        fillAbilityList();
+    }
+
+    private void fillAbilityList() {
+        observableAbilityList.forEach((abiliy) -> abilityListView.getItems().add(abiliy.name()));
     }
 
     @Override
@@ -65,6 +71,7 @@ public class SpecialAbilityPopupController implements RenderController {
     }
 
     private void loadSpecialAbilityList() {
-
+        ReadFileService readFileService = new ReadFileService(this);
+        observableAbilityList = readFileService.loadAbilities();
     }
 }
