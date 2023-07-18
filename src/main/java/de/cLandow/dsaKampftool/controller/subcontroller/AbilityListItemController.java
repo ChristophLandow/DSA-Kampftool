@@ -34,7 +34,7 @@ public class AbilityListItemController extends ListCell<Ability> {
         } else {
             render();
             setAbility(ability);
-            abilityNameLabel.setText(ability.name());
+            abilityNameLabel.setText(ability.getName());
             setText(null);
             setGraphic(abilityListItemAnchor);
         }
