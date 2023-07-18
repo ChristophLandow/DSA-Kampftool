@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="abilityListItemAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#doubleClicked" prefHeight="30.0" prefWidth="190.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.AbilityListItemController">
+   <children>
+      <Label fx:id="abilityNameLabel" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="176.0" text="Ability" />
+   </children>
+</AnchorPane>

@@ -2,8 +2,6 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.model.Gear;
-import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
-import static de.cLandow.dsaKampftool.Constants.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -20,6 +18,7 @@ public class GearListItemController  extends ListCell<Gear> {
 
     @FXML Label itemNameLabel;
     @FXML AnchorPane gearListItemAnchor;
+
 
     private FXMLLoader listCellLoader;
     private GearListBoxController gearListBoxController;

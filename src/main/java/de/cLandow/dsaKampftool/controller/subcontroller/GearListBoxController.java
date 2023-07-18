@@ -47,8 +47,6 @@ public class GearListBoxController implements RenderController {
         loadGearGroupChoiceBox();
         loadGearLists();
         gearListView.setCellFactory(gearListView -> new GearListItemController(this));
-        /*Make listview to select multiple values*/
-        gearListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         gearSubGroupChoiceBox.setDisable(true);
         loadGearChoiceBoxListener();
         loadGearSubGroupBoxListeners();

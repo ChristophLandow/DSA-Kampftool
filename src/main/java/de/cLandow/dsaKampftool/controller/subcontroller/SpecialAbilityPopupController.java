@@ -10,19 +10,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 
 public class SpecialAbilityPopupController implements RenderController {
 
-    @FXML ListView<String> selectionListView;
+    @FXML ChoiceBox<String> abilityChoiceBox;
+    @FXML TextField searchAbilityTextField;
+    @FXML ListView<Ability> selectionListView;
     @FXML Button closeButton;
     @FXML Button addButton;
-    @FXML TextArea informationTextPane;
-    @FXML ListView<String> abilityListView = new ListView<>();
+    @FXML ListView<Ability> abilityListView;
 
     private final CharacterScreenController characterScreenController;
 
@@ -34,14 +33,14 @@ public class SpecialAbilityPopupController implements RenderController {
 
     @Override
     public void init() {
-        informationTextPane.setEditable(false);
         loadSpecialAbilityList();
-        fillAbilityList();
+        abilityListView.setCellFactory(gearListView -> new AbilityListItemController(this));
+        selectionListView.setCellFactory(gearListView -> new AbilityListItemController(this));
+        loadAbilityListView();
     }
 
-    private void fillAbilityList() {
-        System.out.println(observableAbilityList);
-        observableAbilityList.forEach((ability) -> abilityListView.getItems().add(ability.name()));
+    private void loadAbilityListView() {
+        abilityListView.setItems(observableAbilityList);
     }
 
     @Override
@@ -67,7 +66,6 @@ public class SpecialAbilityPopupController implements RenderController {
     }
 
     public void addSpecialAbilityToHero(ActionEvent actionEvent) {
-        ObservableList<String> auswahl = abilityListView.getSelectionModel().getSelectedItems();
     }
 
     private void loadSpecialAbilityList() {
