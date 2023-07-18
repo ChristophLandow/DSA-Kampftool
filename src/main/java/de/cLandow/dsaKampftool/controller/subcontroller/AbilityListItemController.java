@@ -2,7 +2,6 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.model.Ability;
-import de.cLandow.dsaKampftool.model.Gear;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -18,9 +17,10 @@ public class AbilityListItemController extends ListCell<Ability> {
     @FXML AnchorPane abilityListItemAnchor;
 
     private FXMLLoader listCellLoader;
+    private final SpecialAbilityPopupController specialAbilityPopupController;
 
-    public AbilityListItemController(){
-        
+    public AbilityListItemController(SpecialAbilityPopupController specialAbilityPopupController){
+        this.specialAbilityPopupController = specialAbilityPopupController;
     }
 
     @Override

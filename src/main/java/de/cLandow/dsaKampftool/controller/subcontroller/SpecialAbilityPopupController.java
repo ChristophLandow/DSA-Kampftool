@@ -21,8 +21,7 @@ public class SpecialAbilityPopupController implements RenderController {
     @FXML ListView<String> selectionListView;
     @FXML Button closeButton;
     @FXML Button addButton;
-    @FXML TextArea informationTextPane;
-    @FXML ListView<String> abilityListView = new ListView<>();
+    @FXML ListView<Ability> abilityListView;
 
     private final CharacterScreenController characterScreenController;
 
@@ -34,14 +33,8 @@ public class SpecialAbilityPopupController implements RenderController {
 
     @Override
     public void init() {
-        informationTextPane.setEditable(false);
         loadSpecialAbilityList();
-        fillAbilityList();
-    }
-
-    private void fillAbilityList() {
-        System.out.println(observableAbilityList);
-        observableAbilityList.forEach((ability) -> abilityListView.getItems().add(ability.name()));
+        abilityListView.setCellFactory(gearListView -> new AbilityListItemController(this));
     }
 
     @Override
@@ -67,7 +60,6 @@ public class SpecialAbilityPopupController implements RenderController {
     }
 
     public void addSpecialAbilityToHero(ActionEvent actionEvent) {
-        ObservableList<String> auswahl = abilityListView.getSelectionModel().getSelectedItems();
     }
 
     private void loadSpecialAbilityList() {
