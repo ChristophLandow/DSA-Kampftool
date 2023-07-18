@@ -18,6 +18,7 @@ public class AbilityListItemController extends ListCell<Ability> {
 
     private FXMLLoader listCellLoader;
     private final SpecialAbilityPopupController specialAbilityPopupController;
+    private Ability ability;
 
     public AbilityListItemController(SpecialAbilityPopupController specialAbilityPopupController){
         this.specialAbilityPopupController = specialAbilityPopupController;
@@ -32,9 +33,15 @@ public class AbilityListItemController extends ListCell<Ability> {
             setGraphic(null);
         } else {
             render();
+            setAbility(ability);
+            abilityNameLabel.setText(ability.name());
             setText(null);
             setGraphic(abilityListItemAnchor);
         }
+    }
+
+    private void setAbility(Ability ability) {
+        this.ability = ability;
     }
 
     private void render() {
