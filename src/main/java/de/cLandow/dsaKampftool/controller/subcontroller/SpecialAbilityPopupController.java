@@ -18,7 +18,7 @@ public class SpecialAbilityPopupController implements RenderController {
 
     @FXML ChoiceBox<String> abilityChoiceBox;
     @FXML TextField searchAbilityTextField;
-    @FXML ListView<String> selectionListView;
+    @FXML ListView<Ability> selectionListView;
     @FXML Button closeButton;
     @FXML Button addButton;
     @FXML ListView<Ability> abilityListView;
@@ -35,6 +35,12 @@ public class SpecialAbilityPopupController implements RenderController {
     public void init() {
         loadSpecialAbilityList();
         abilityListView.setCellFactory(gearListView -> new AbilityListItemController(this));
+        selectionListView.setCellFactory(gearListView -> new AbilityListItemController(this));
+        loadAbilityListView();
+    }
+
+    private void loadAbilityListView() {
+        abilityListView.setItems(observableAbilityList);
     }
 
     @Override
