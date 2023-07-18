@@ -10,14 +10,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 
 public class SpecialAbilityPopupController implements RenderController {
 
+    @FXML ChoiceBox<String> abilityChoiceBox;
+    @FXML TextField searchAbilityTextField;
     @FXML ListView<String> selectionListView;
     @FXML Button closeButton;
     @FXML Button addButton;
