@@ -72,4 +72,8 @@ public class SpecialAbilityPopupController implements RenderController {
         ReadFileService readFileService = new ReadFileService(this);
         observableAbilityList = readFileService.loadAbilities();
     }
+
+    public void addAbilityToList(Ability ability) {
+        selectionListView.getItems().add(ability);
+    }
 }
