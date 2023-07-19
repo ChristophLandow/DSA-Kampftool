@@ -52,7 +52,13 @@ public class WriteAbilityFileService {
             writer.writeAttribute(ENCUMBRANCE_MOD, "0");
             writer.writeEndElement();
 
-
+            writer.writeStartElement(ABILITY);
+            writer.writeAttribute(NAME, "Ausfall");
+            writer.writeAttribute(ATTACK_MOD, "0");
+            writer.writeAttribute(PARADE_MOD, "0");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(ENCUMBRANCE_MOD, "0");
+            writer.writeEndElement();
 
             writer.writeEndElement();
 
