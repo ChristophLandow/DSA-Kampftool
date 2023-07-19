@@ -34,8 +34,8 @@ public class SpecialAbilityPopupController implements RenderController {
     @Override
     public void init() {
         loadSpecialAbilityList();
-        abilityListView.setCellFactory(gearListView -> new AbilityListItemController(this));
-        selectionListView.setCellFactory(gearListView -> new AbilityListItemController(this));
+        abilityListView.setCellFactory(abilitiesListView -> new AbilityListItemController(this));
+        selectionListView.setCellFactory(selcetedAbilitiesListView -> new AbilityListItemController(this));
         loadAbilityListView();
     }
 
@@ -71,5 +71,9 @@ public class SpecialAbilityPopupController implements RenderController {
     private void loadSpecialAbilityList() {
         ReadFileService readFileService = new ReadFileService(this);
         observableAbilityList = readFileService.loadAbilities();
+    }
+
+    public void addAbilityToList(Ability ability) {
+        selectionListView.getItems().add(ability);
     }
 }
