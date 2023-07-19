@@ -34,8 +34,8 @@ public class SpecialAbilityPopupController implements RenderController {
     @Override
     public void init() {
         loadSpecialAbilityList();
-        abilityListView.setCellFactory(gearListView -> new AbilityListItemController(this));
-        selectionListView.setCellFactory(gearListView -> new AbilityListItemController(this));
+        abilityListView.setCellFactory(abilitiesListView -> new AbilityListItemController(this));
+        selectionListView.setCellFactory(selcetedAbilitiesListView -> new AbilityListItemController(this));
         loadAbilityListView();
     }
 

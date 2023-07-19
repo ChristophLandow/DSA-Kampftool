@@ -38,6 +38,7 @@ public class AbilityListItemController extends ListCell<Ability> {
             abilityNameLabel.setText(ability.getName());
             setText(null);
             setGraphic(abilityListItemAnchor);
+            System.out.println();
         }
     }
 
@@ -60,7 +61,9 @@ public class AbilityListItemController extends ListCell<Ability> {
     public void doubleClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
             if (mouseEvent.getClickCount() == 2) {
+
                 specialAbilityPopupController.addAbilityToList(ability);
+
             }
         }
     }
