@@ -19,7 +19,6 @@ public class AddAbilityPopupController implements RenderController {
 
     @FXML VBox abilityListVBox;
     @FXML VBox selectedAbilitiesVBox;
-    @FXML ListView<Ability> selectionListView;
     @FXML Button closeButton;
     @FXML Button addButton;
 
@@ -70,9 +69,7 @@ public class AddAbilityPopupController implements RenderController {
     public void addSpecialAbilityToHero(ActionEvent actionEvent) {
     }
 
-
-
     public void addAbilityToSelectedList(Ability ability) {
-        selectionListView.getItems().add(ability);
+        selectedAbilitiesBoxController.addAbilityToSelectedList(ability);
     }
 }

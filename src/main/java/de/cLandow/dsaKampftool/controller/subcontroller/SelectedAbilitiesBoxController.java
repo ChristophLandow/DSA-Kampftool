@@ -40,4 +40,8 @@ public class SelectedAbilitiesBoxController implements RenderController {
         }
         return parent;
     }
+
+    public void addAbilityToSelectedList(Ability ability) {
+        selectionListView.getItems().add(ability);
+    }
 }
