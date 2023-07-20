@@ -11,41 +11,42 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-public class SpecialAbilityPopupController implements RenderController {
+public class AddAbilityPopupController implements RenderController {
 
-    @FXML ChoiceBox<String> abilityChoiceBox;
-    @FXML TextField searchAbilityTextField;
-    @FXML ListView<Ability> selectionListView;
+    @FXML VBox abilityListVBox;
+    @FXML VBox selectedAbilitiesVBox;
     @FXML Button closeButton;
     @FXML Button addButton;
-    @FXML ListView<Ability> abilityListView;
 
+    private final AbilityListBoxController abilityBoxController;
+    private final SelectedAbilitiesBoxController selectedAbilitiesBoxController;
     private final CharacterScreenController characterScreenController;
 
-    private ObservableList<Ability> observableAbilityList;
-
-    public  SpecialAbilityPopupController(CharacterScreenController characterScreenController){
+    public AddAbilityPopupController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
+        this.abilityBoxController = new AbilityListBoxController(this);
+        this.selectedAbilitiesBoxController = new SelectedAbilitiesBoxController(this);
+
     }
 
     @Override
     public void init() {
-        loadSpecialAbilityList();
-        abilityListView.setCellFactory(abilitiesListView -> new AbilityListItemController(this));
-        selectionListView.setCellFactory(selcetedAbilitiesListView -> new AbilityListItemController(this));
-        loadAbilityListView();
+        //load AbilityList VBox
+        abilityListVBox.getChildren().add(abilityBoxController.render());
+        abilityBoxController.init();
+        //load selected abilities List VBox
+        selectedAbilitiesVBox.getChildren().add(selectedAbilitiesBoxController.render());
+        selectedAbilitiesBoxController.init();
     }
 
-    private void loadAbilityListView() {
-        abilityListView.setItems(observableAbilityList);
-    }
+
 
     @Override
     public void stop() {
-
     }
 
     @Override
@@ -68,12 +69,7 @@ public class SpecialAbilityPopupController implements RenderController {
     public void addSpecialAbilityToHero(ActionEvent actionEvent) {
     }
 
-    private void loadSpecialAbilityList() {
-        ReadFileService readFileService = new ReadFileService(this);
-        observableAbilityList = readFileService.loadAbilities();
-    }
-
-    public void addAbilityToList(Ability ability) {
-        selectionListView.getItems().add(ability);
+    public void addAbilityToSelectedList(Ability ability) {
+        selectedAbilitiesBoxController.addAbilityToSelectedList(ability);
     }
 }

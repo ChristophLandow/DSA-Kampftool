@@ -6,23 +6,33 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 
 public class AbilityListItemController extends ListCell<Ability> {
 
+
+    @FXML Circle addAbilityCircle;
+    @FXML Circle deleteAbilityCircle;
     @FXML Label abilityNameLabel;
     @FXML AnchorPane abilityListItemAnchor;
 
+    private final AbilityListBoxController abilityListBoxController;
+    private  final SelectedAbilitiesBoxController selectedAbilitiesBoxController;
     private FXMLLoader listCellLoader;
-    private final SpecialAbilityPopupController specialAbilityPopupController;
     private Ability ability;
 
-    public AbilityListItemController(SpecialAbilityPopupController specialAbilityPopupController){
-        this.specialAbilityPopupController = specialAbilityPopupController;
+    public AbilityListItemController(AbilityListBoxController abilityListBoxController){
+        this.abilityListBoxController = abilityListBoxController;
+        this.selectedAbilitiesBoxController = null;
+    }
+
+    public AbilityListItemController(SelectedAbilitiesBoxController selectedAbilitiesBoxController) {
+        this.selectedAbilitiesBoxController = selectedAbilitiesBoxController;
+        this.abilityListBoxController = null;
     }
 
     @Override
@@ -36,9 +46,15 @@ public class AbilityListItemController extends ListCell<Ability> {
             render();
             setAbility(ability);
             abilityNameLabel.setText(ability.getName());
+            if(selectedAbilitiesBoxController == null){
+                deleteAbilityCircle.setDisable(true);
+                deleteAbilityCircle.setVisible(false);
+            } else {
+                addAbilityCircle.setDisable(true);
+                addAbilityCircle.setVisible(false);
+            }
             setText(null);
             setGraphic(abilityListItemAnchor);
-            System.out.println();
         }
     }
 
@@ -58,13 +74,10 @@ public class AbilityListItemController extends ListCell<Ability> {
         }
     }
 
-    public void doubleClicked(MouseEvent mouseEvent) {
-        if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
-            if (mouseEvent.getClickCount() == 2) {
+    public void addAbility(MouseEvent mouseEvent) {
+        abilityListBoxController.sendAbilityToSelectedList(ability);
+    }
 
-                specialAbilityPopupController.addAbilityToList(ability);
-
-            }
-        }
+    public void deleteAbility(MouseEvent mouseEvent) {
     }
 }

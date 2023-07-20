@@ -1,6 +1,5 @@
 package de.cLandow.dsaKampftool.services;
 
-import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
 import de.cLandow.dsaKampftool.model.Ability;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
