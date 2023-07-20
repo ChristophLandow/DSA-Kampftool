@@ -67,4 +67,10 @@ public class AbilityListItemController extends ListCell<Ability> {
             }
         }
     }
+
+    public void addAbility(MouseEvent mouseEvent) {
+    }
+
+    public void deleteAbility(MouseEvent mouseEvent) {
+    }
 }
