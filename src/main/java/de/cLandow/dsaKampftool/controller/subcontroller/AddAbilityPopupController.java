@@ -16,7 +16,6 @@ import java.io.IOException;
 
 public class AddAbilityPopupController implements RenderController {
 
-    @FXML ChoiceBox<String> abilityChoiceBox;
     @FXML TextField searchAbilityTextField;
     @FXML ListView<Ability> selectionListView;
     @FXML Button closeButton;

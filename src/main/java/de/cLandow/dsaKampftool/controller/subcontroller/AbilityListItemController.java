@@ -58,17 +58,8 @@ public class AbilityListItemController extends ListCell<Ability> {
         }
     }
 
-    public void doubleClicked(MouseEvent mouseEvent) {
-        if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
-            if (mouseEvent.getClickCount() == 2) {
-
-                specialAbilityPopupController.addAbilityToList(ability);
-
-            }
-        }
-    }
-
     public void addAbility(MouseEvent mouseEvent) {
+        specialAbilityPopupController.addAbilityToList(ability);
     }
 
     public void deleteAbility(MouseEvent mouseEvent) {
