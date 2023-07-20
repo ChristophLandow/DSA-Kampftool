@@ -17,37 +17,37 @@ import java.io.IOException;
 
 public class AddAbilityPopupController implements RenderController {
 
-
-    private final AbilityListBoxController abilityBoxController;
     @FXML VBox abilityListVBox;
     @FXML VBox selectedAbilitiesVBox;
     @FXML ListView<Ability> selectionListView;
     @FXML Button closeButton;
     @FXML Button addButton;
 
-
+    private final AbilityListBoxController abilityBoxController;
+    private final SelectedAbilitiesBoxController selectedAbilitiesBoxController;
     private final CharacterScreenController characterScreenController;
 
     public AddAbilityPopupController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
         this.abilityBoxController = new AbilityListBoxController(this);
+        this.selectedAbilitiesBoxController = new SelectedAbilitiesBoxController(this);
 
     }
 
     @Override
     public void init() {
-        //load Ability List HBox
+        //load AbilityList VBox
         abilityListVBox.getChildren().add(abilityBoxController.render());
         abilityBoxController.init();
-        //selectionListView.setCellFactory(selcetedAbilitiesListView -> new AbilityListItemController(this));
-
+        //load selected abilities List VBox
+        selectedAbilitiesVBox.getChildren().add(selectedAbilitiesBoxController.render());
+        selectedAbilitiesBoxController.init();
     }
 
 
 
     @Override
     public void stop() {
-
     }
 
     @Override

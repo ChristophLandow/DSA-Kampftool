@@ -13,15 +13,21 @@ import java.io.IOException;
 
 public class AbilityListItemController extends ListCell<Ability> {
 
+
     @FXML Label abilityNameLabel;
     @FXML AnchorPane abilityListItemAnchor;
 
-    private final AbilityListBoxController abilityListBoxController;
+    private AbilityListBoxController abilityListBoxController;
+    private  SelectedAbilitiesBoxController selectedAbilitiesBoxController;
     private FXMLLoader listCellLoader;
     private Ability ability;
 
     public AbilityListItemController(AbilityListBoxController abilityListBoxController){
         this.abilityListBoxController = abilityListBoxController;
+    }
+
+    public AbilityListItemController(SelectedAbilitiesBoxController selectedAbilitiesBoxController) {
+        this.selectedAbilitiesBoxController = selectedAbilitiesBoxController;
     }
 
     @Override
