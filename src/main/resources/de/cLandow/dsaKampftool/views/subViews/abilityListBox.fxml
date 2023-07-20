@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="190.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView fx:id="abilityListView" layoutY="40.0" prefHeight="330.0" prefWidth="190.0" />
+      <TextField fx:id="searchAbilityTextField" layoutY="8.0" prefHeight="25.0" prefWidth="190.0" />
+   </children>
+</AnchorPane>
