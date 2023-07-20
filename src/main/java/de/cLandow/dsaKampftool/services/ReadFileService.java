@@ -1,5 +1,6 @@
 package de.cLandow.dsaKampftool.services;
 
+import de.cLandow.dsaKampftool.controller.subcontroller.AbilityListBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.AddAbilityPopupController;
 import de.cLandow.dsaKampftool.model.Ability;
@@ -26,7 +27,7 @@ public class ReadFileService {
     public ReadFileService(GearListBoxController gearListBoxController) {
         this.gearListBoxController = gearListBoxController;
     }
-    public ReadFileService(AddAbilityPopupController specialAbilityPopupController) {
+    public ReadFileService(AbilityListBoxController specialAbilityPopupController) {
         this.specialAbilityPopupController = specialAbilityPopupController;
     }
 

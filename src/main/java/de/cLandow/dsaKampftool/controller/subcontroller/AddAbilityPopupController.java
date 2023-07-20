@@ -16,31 +16,29 @@ import java.io.IOException;
 
 public class AddAbilityPopupController implements RenderController {
 
-    @FXML TextField searchAbilityTextField;
+
+    private final AbilityListBoxController abilityBoxController;
     @FXML ListView<Ability> selectionListView;
     @FXML Button closeButton;
     @FXML Button addButton;
-    @FXML ListView<Ability> abilityListView;
+
 
     private final CharacterScreenController characterScreenController;
 
-    private ObservableList<Ability> observableAbilityList;
-
     public AddAbilityPopupController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
+        this.abilityBoxController = new AbilityListBoxController(this);
+
     }
 
     @Override
     public void init() {
-        loadSpecialAbilityList();
-        abilityListView.setCellFactory(abilitiesListView -> new AbilityListItemController(this));
-        selectionListView.setCellFactory(selcetedAbilitiesListView -> new AbilityListItemController(this));
-        loadAbilityListView();
+
+        //selectionListView.setCellFactory(selcetedAbilitiesListView -> new AbilityListItemController(this));
+
     }
 
-    private void loadAbilityListView() {
-        abilityListView.setItems(observableAbilityList);
-    }
+
 
     @Override
     public void stop() {
@@ -67,10 +65,7 @@ public class AddAbilityPopupController implements RenderController {
     public void addSpecialAbilityToHero(ActionEvent actionEvent) {
     }
 
-    private void loadSpecialAbilityList() {
-        ReadFileService readFileService = new ReadFileService(this);
-        observableAbilityList = readFileService.loadAbilities();
-    }
+
 
     public void addAbilityToList(Ability ability) {
         selectionListView.getItems().add(ability);
