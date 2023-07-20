@@ -16,12 +16,12 @@ public class AbilityListItemController extends ListCell<Ability> {
     @FXML Label abilityNameLabel;
     @FXML AnchorPane abilityListItemAnchor;
 
+    private final AbilityListBoxController abilityListBoxController;
     private FXMLLoader listCellLoader;
-    private final AddAbilityPopupController specialAbilityPopupController;
     private Ability ability;
 
-    public AbilityListItemController(AbilityListBoxController specialAbilityPopupController){
-        this.specialAbilityPopupController = specialAbilityPopupController;
+    public AbilityListItemController(AbilityListBoxController abilityListBoxController){
+        this.abilityListBoxController = abilityListBoxController;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class AbilityListItemController extends ListCell<Ability> {
     }
 
     public void addAbility(MouseEvent mouseEvent) {
-        specialAbilityPopupController.addAbilityToList(ability);
+        abilityListBoxController.sendAbilityToSelectedList(ability);
     }
 
     public void deleteAbility(MouseEvent mouseEvent) {

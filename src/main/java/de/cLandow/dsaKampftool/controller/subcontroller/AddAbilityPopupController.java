@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
@@ -18,6 +19,8 @@ public class AddAbilityPopupController implements RenderController {
 
 
     private final AbilityListBoxController abilityBoxController;
+    @FXML VBox abilityListVBox;
+    @FXML VBox selectedAbilitiesVBox;
     @FXML ListView<Ability> selectionListView;
     @FXML Button closeButton;
     @FXML Button addButton;
@@ -33,7 +36,9 @@ public class AddAbilityPopupController implements RenderController {
 
     @Override
     public void init() {
-
+        //load Ability List HBox
+        abilityListVBox.getChildren().add(abilityBoxController.render());
+        abilityBoxController.init();
         //selectionListView.setCellFactory(selcetedAbilitiesListView -> new AbilityListItemController(this));
 
     }
@@ -67,7 +72,7 @@ public class AddAbilityPopupController implements RenderController {
 
 
 
-    public void addAbilityToList(Ability ability) {
+    public void addAbilityToSelectedList(Ability ability) {
         selectionListView.getItems().add(ability);
     }
 }
