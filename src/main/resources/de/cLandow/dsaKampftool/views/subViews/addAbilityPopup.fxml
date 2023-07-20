@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="addAbilityPopupAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController">
+<AnchorPane fx:id="addAbilityPopupAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="433.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.AddAbilityPopupController">
    <children>
       <ListView fx:id="abilityListView" layoutX="14.0" layoutY="88.0" prefHeight="296.0" prefWidth="190.0" />
       <Button fx:id="closeButton" layoutX="248.0" layoutY="317.0" mnemonicParsing="false" onAction="#closeAddSpecialAbilityPopup" prefHeight="25.0" prefWidth="140.0" text="Abbrechen">

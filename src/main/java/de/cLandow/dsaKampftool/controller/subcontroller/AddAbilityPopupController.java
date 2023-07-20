@@ -14,7 +14,7 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 
-public class SpecialAbilityPopupController implements RenderController {
+public class AddAbilityPopupController implements RenderController {
 
     @FXML ChoiceBox<String> abilityChoiceBox;
     @FXML TextField searchAbilityTextField;
@@ -27,7 +27,7 @@ public class SpecialAbilityPopupController implements RenderController {
 
     private ObservableList<Ability> observableAbilityList;
 
-    public  SpecialAbilityPopupController(CharacterScreenController characterScreenController){
+    public AddAbilityPopupController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
     }
 

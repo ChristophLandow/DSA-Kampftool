@@ -1,7 +1,7 @@
 package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
-import de.cLandow.dsaKampftool.controller.subcontroller.SpecialAbilityPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.AddAbilityPopupController;
 import de.cLandow.dsaKampftool.model.Ability;
 import de.cLandow.dsaKampftool.model.Armor;
 import de.cLandow.dsaKampftool.model.Character;
@@ -20,13 +20,13 @@ import static de.cLandow.dsaKampftool.Constants.*;
 
 public class ReadFileService {
 
-    private SpecialAbilityPopupController specialAbilityPopupController;
+    private AddAbilityPopupController specialAbilityPopupController;
     private GearListBoxController gearListBoxController;
 
     public ReadFileService(GearListBoxController gearListBoxController) {
         this.gearListBoxController = gearListBoxController;
     }
-    public ReadFileService(SpecialAbilityPopupController specialAbilityPopupController) {
+    public ReadFileService(AddAbilityPopupController specialAbilityPopupController) {
         this.specialAbilityPopupController = specialAbilityPopupController;
     }
 

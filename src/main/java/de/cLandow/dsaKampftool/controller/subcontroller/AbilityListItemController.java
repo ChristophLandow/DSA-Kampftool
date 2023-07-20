@@ -18,10 +18,10 @@ public class AbilityListItemController extends ListCell<Ability> {
     @FXML AnchorPane abilityListItemAnchor;
 
     private FXMLLoader listCellLoader;
-    private final SpecialAbilityPopupController specialAbilityPopupController;
+    private final AddAbilityPopupController specialAbilityPopupController;
     private Ability ability;
 
-    public AbilityListItemController(SpecialAbilityPopupController specialAbilityPopupController){
+    public AbilityListItemController(AddAbilityPopupController specialAbilityPopupController){
         this.specialAbilityPopupController = specialAbilityPopupController;
     }
 

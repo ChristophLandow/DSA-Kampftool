@@ -69,7 +69,7 @@ public class CharacterScreenController implements RenderController {
         closePopup();
         popupStage = new Stage();
         popupStage.initModality(Modality.WINDOW_MODAL);
-        SpecialAbilityPopupController specialAbilityPopupController = new SpecialAbilityPopupController(this);
+        AddAbilityPopupController specialAbilityPopupController = new AddAbilityPopupController(this);
         popupStage.setScene(new Scene(specialAbilityPopupController.render()));
         specialAbilityPopupController.init();
         popupStage.show();
