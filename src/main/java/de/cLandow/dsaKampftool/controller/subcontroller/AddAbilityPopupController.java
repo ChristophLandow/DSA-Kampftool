@@ -4,8 +4,6 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Ability;
-import de.cLandow.dsaKampftool.services.ReadFileService;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
