@@ -14,7 +14,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
 import java.io.IOException;
 
 
@@ -24,7 +23,7 @@ public class GearListBoxController implements RenderController {
     @FXML ChoiceBox<String> gearSubGroupChoiceBox;
     @FXML ListView<Gear> gearListView;
 
-    private AddGearPopupController addGearPopupController;
+    private final AddGearPopupController addGearPopupController;
 
     private ObservableList<Weapon_closeCombat> weaponObservableList= FXCollections.observableArrayList();
     private ObservableList<Armor> armorObservableList = FXCollections.observableArrayList();
