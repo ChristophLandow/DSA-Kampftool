@@ -129,30 +129,16 @@ public class GearListBoxController implements RenderController {
             if(gearSubGroupChoiceBox.getValue() != null){
                 switch (gearSubGroupChoiceBox.getValue()) {
                     //Weapon Cases
-                    case DAGGERS:
-                        fillSubList_Daggers();
-                        break;
-                    case FENCING_WEAPONS:
-                        fillSubList_FencingWeapons();
-                        break;
-                    case TWO_HANDED_IMPACT_WEAPON:
-                        fillSubList_TwoHandedImpactWeapons();
-                        break;
-                    case BASTARDSWORDS:
-                        fillSubList_Bastardswords();
-                        break;
-                    case IMPACT_WEAPONS:
-                        filSubList_ImpactWeapons();
-                        break;
+                    case DAGGERS -> fillSubList_Daggers();
+                    case FENCING_WEAPONS -> fillSubList_FencingWeapons();
+                    case TWO_HANDED_IMPACT_WEAPON -> fillSubList_TwoHandedImpactWeapons();
+                    case BASTARDSWORDS -> fillSubList_Bastardswords();
+                    case IMPACT_WEAPONS -> filSubList_ImpactWeapons();
+
                     //ArmorCases
-                    case CLOTHES:
-                        filSubList_Clothes();
-                        break;
-                    case CLOTARMOR:
-                        filSubList_ClotheArmor();
-                        break;
-                    default:
-                        fillSubList_AllGear();
+                    case CLOTHES -> filSubList_Clothes();
+                    case CLOTARMOR -> filSubList_ClotheArmor();
+                    default -> fillSubList_AllGear();
                 }
             }
         });
