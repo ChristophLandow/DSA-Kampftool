@@ -14,8 +14,10 @@ public class SelectedAbilitiesBoxController implements RenderController {
 
     @FXML ListView<Ability> selectionListView;
 
-    public SelectedAbilitiesBoxController(AddAbilityPopupController addAbilityPopupController){
+    private final AddAbilityPopupController addAbilityPopupController;
 
+    public SelectedAbilitiesBoxController(AddAbilityPopupController addAbilityPopupController){
+            this.addAbilityPopupController = addAbilityPopupController;
     }
 
     @Override
@@ -43,5 +45,9 @@ public class SelectedAbilitiesBoxController implements RenderController {
 
     public void addAbilityToSelectedList(Ability ability) {
         selectionListView.getItems().add(ability);
+    }
+
+    public void deleteAbilityfromSelectedList(Ability ability){
+        selectionListView.getItems().remove(ability);
     }
 }
