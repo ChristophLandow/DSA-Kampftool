@@ -68,6 +68,22 @@ public class WriteAbilityFileService {
             writer.writeAttribute(ENCUMBRANCE_MOD, "0");
             writer.writeEndElement();
 
+            writer.writeStartElement(ABILITY);
+            writer.writeAttribute(NAME, "Ausweichen II");
+            writer.writeAttribute(ATTACK_MOD, "0");
+            writer.writeAttribute(PARADE_MOD, "3");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(ENCUMBRANCE_MOD, "0");
+            writer.writeEndElement();
+
+            writer.writeStartElement(ABILITY);
+            writer.writeAttribute(NAME, "Ausweichen III");
+            writer.writeAttribute(ATTACK_MOD, "0");
+            writer.writeAttribute(PARADE_MOD, "3");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(ENCUMBRANCE_MOD, "0");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeEndDocument();
