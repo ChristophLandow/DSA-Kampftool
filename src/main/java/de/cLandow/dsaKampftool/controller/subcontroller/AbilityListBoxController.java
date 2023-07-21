@@ -5,6 +5,8 @@ import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Ability;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -30,6 +32,7 @@ public class AbilityListBoxController implements RenderController {
         loadAbilityList();
         abilityListView.setCellFactory(abilitiesListView -> new AbilityListItemController(this));
         loadAbilityListView();
+        loadSearchableList();
     }
 
     @Override
@@ -61,5 +64,24 @@ public class AbilityListBoxController implements RenderController {
 
     public void sendAbilityToSelectedList(Ability ability) {
         addAbilityPopupController.addAbilityToSelectedList(ability);
+    }
+
+    public void loadSearchableList(){
+        FilteredList<Ability> filteredData = new FilteredList<>(observableAbilityList, p -> true);
+        searchAbilityTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(ability -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                // Filter matches.
+                return String.valueOf(ability.getName()).toLowerCase().contains(lowerCaseFilter);// Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList.
+        SortedList<Ability> sortedData = new SortedList<>(filteredData);
+        abilityListView.setItems(sortedData);
     }
 }
