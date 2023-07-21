@@ -107,15 +107,16 @@ public class GearListBoxController implements RenderController {
             gearListView.getItems().clear();
             if(gearGroupChoiceBox.getValue() != null){
                 switch (gearGroupChoiceBox.getValue()) {
-                    case WEAPON:
+                    case WEAPON -> {
                         gearSubGroupChoiceBox.setDisable(false);
                         loadSubGroupBox_WeaponGroups();
-                        break;
-                    case ARMOR:
+                    }
+                    case ARMOR -> {
                         gearSubGroupChoiceBox.setDisable(false);
                         loadSubGroupBox_Armor();
-                        break;
-                    default:
+                    }
+                    default -> {
+                    }
                 }
             }
         });
