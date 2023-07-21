@@ -84,6 +84,14 @@ public class WriteAbilityFileService {
             writer.writeAttribute(ENCUMBRANCE_MOD, "0");
             writer.writeEndElement();
 
+            writer.writeStartElement(ABILITY);
+            writer.writeAttribute(NAME, "Befreiungsschlag");
+            writer.writeAttribute(ATTACK_MOD, "-4");
+            writer.writeAttribute(PARADE_MOD, "0");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(ENCUMBRANCE_MOD, "0");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeEndDocument();
