@@ -75,9 +75,18 @@ public class AbilityListItemController extends ListCell<Ability> {
     }
 
     public void addAbility(MouseEvent mouseEvent) {
-        abilityListBoxController.sendAbilityToSelectedList(ability);
+        if(abilityListBoxController != null && ability != null){
+            abilityListBoxController.sendAbilityToSelectedList(ability);
+        } else {
+            System.out.println("Ability wird nicht korrekt geladen");
+        }
     }
 
     public void deleteAbility(MouseEvent mouseEvent) {
+        if(selectedAbilitiesBoxController != null && ability != null){
+            selectedAbilitiesBoxController.deleteAbilityfromSelectedList(ability);
+        } else {
+            System.out.println("Ability wird nicht korrekt gelöscht");
+        }
     }
 }
