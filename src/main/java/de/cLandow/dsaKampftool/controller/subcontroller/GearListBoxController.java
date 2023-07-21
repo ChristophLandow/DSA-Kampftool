@@ -34,8 +34,8 @@ public class GearListBoxController implements RenderController {
     private ObservableList<Weapon_closeCombat> daggers = FXCollections.observableArrayList();
 
     private ObservableList<Weapon_closeCombat> impactWeapons = FXCollections.observableArrayList();
-    private ObservableList<Armor> clothesArmor = FXCollections.observableArrayList();;
-    private ObservableList<Armor> clothArmor = FXCollections.observableArrayList();;;
+    private ObservableList<Armor> clothesArmor = FXCollections.observableArrayList();
+    private ObservableList<Armor> clothArmor = FXCollections.observableArrayList();
 
     public GearListBoxController(AddGearPopupController addGearPopupController){
         this.addGearPopupController = addGearPopupController;
