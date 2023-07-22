@@ -120,18 +120,27 @@ public class WriteWeaponFileService {
             writer.writeAttribute(STATMOD, "-1/-3");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Holzfälleraxt");
+            writer.writeAttribute(DAMAGE, "2W6");
+            writer.writeAttribute(DAMAGEMOD, "12/2");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "-2");
+            writer.writeAttribute(STATMOD, "-1/-4");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Kriegshammer");
+            writer.writeAttribute(DAMAGE, "2W6+3");
+            writer.writeAttribute(DAMAGEMOD, "14/2");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "-2");
+            writer.writeAttribute(STATMOD, "-1/-3");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(DAGGERS);
-
-            writer.writeStartElement(WEAPON);
-            writer.writeAttribute(NAME, "Langdolch");
-            writer.writeAttribute(DAMAGE, "1W6+2");
-            writer.writeAttribute(DAMAGEMOD, "12/4");
-            writer.writeAttribute(DISTANCE, "H");
-            writer.writeAttribute(INITIATIVEMOD, "0");
-            writer.writeAttribute(STATMOD, "0/0");
-            writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
             writer.writeAttribute(NAME, "Basiliskenzunge");
@@ -140,6 +149,33 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "H");
             writer.writeAttribute(INITIATIVEMOD, "-1");
             writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Borndorn");
+            writer.writeAttribute(DAMAGE, "1W6+2");
+            writer.writeAttribute(DAMAGEMOD, "12/5");
+            writer.writeAttribute(DISTANCE, "H");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Dolch");
+            writer.writeAttribute(DAMAGE, "1W6+1");
+            writer.writeAttribute(DAMAGEMOD, "12/5");
+            writer.writeAttribute(DISTANCE, "H");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Drachenzahn");
+            writer.writeAttribute(DAMAGE, "1W6+2");
+            writer.writeAttribute(DAMAGEMOD, "11/4");
+            writer.writeAttribute(DISTANCE, "H");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/0");
             writer.writeEndElement();
 
             writer.writeEndElement();
