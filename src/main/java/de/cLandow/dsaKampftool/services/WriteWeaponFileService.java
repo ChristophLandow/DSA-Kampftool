@@ -169,6 +169,15 @@ public class WriteWeaponFileService {
             writer.writeAttribute(STATMOD, "0/-1");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Drachenzahn");
+            writer.writeAttribute(DAMAGE, "1W6+2");
+            writer.writeAttribute(DAMAGEMOD, "11/4");
+            writer.writeAttribute(DISTANCE, "H");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/0");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(FENCING_WEAPONS);
