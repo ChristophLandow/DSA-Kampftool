@@ -119,38 +119,45 @@ public class SelectedGearBoxController implements RenderController {
 
 
     public void setArmor(Armor armor) {
-        clearAllArmorBoxes();
         for(String zone : armor.getZone()){
             switch (zone) {
                 case HEAD_ARMOR -> {
+                    clearBox(headBoxController);
                     headBoxController.changeIconToSetMode();
                     headBoxController.setGear(armor);
                 }
                 case CHEST_ARMOR -> {
+                    clearBox(chestBoxController);
                     chestBoxController.changeIconToSetMode();
                     chestBoxController.setGear(armor);
                 }
                 case BACKSIDE_ARMOR -> {
+                    clearBox(backsideBoxController);
                     backsideBoxController.changeIconToSetMode();
                     backsideBoxController.setGear(armor);
                 }
                 case TUMMY_ARMOR -> {
+                    clearBox(tummyBoxController);
                     tummyBoxController.changeIconToSetMode();
                     tummyBoxController.setGear(armor);
                 }
                 case LEFTARM_ARMOR -> {
+                    clearBox(leftArmBoxController);
                     leftArmBoxController.changeIconToSetMode();
                     leftArmBoxController.setGear(armor);
                 }
                 case RIGHTARM_ARMOR -> {
+                    clearBox(rightArmBoxController);
                     rightArmBoxController.changeIconToSetMode();
                     rightArmBoxController.setGear(armor);
                 }
                 case LEFTLEG_ARMOR -> {
+                    clearBox(leftLegBoxController);
                     leftLegBoxController.changeIconToSetMode();
                     leftLegBoxController.setGear(armor);
                 }
                 case RIGHTLEG_ARMOR -> {
+                    clearBox(rightLegBoxController);
                     rightLegBoxController.changeIconToSetMode();
                     rightLegBoxController.setGear(armor);
                 }
@@ -161,10 +168,8 @@ public class SelectedGearBoxController implements RenderController {
         }
     }
 
-    private void clearAllArmorBoxes() {
-        for(EquipmentController controller : equipmentControllers){
-            controller.setEmptyImage();
-            controller.removeTooltip();
-        }
+    private void clearBox(EquipmentController controller){
+        controller.changeIconToSetMode();
+        controller.removeTooltip();
     }
 }
