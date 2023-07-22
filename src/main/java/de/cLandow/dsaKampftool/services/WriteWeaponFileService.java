@@ -143,20 +143,29 @@ public class WriteWeaponFileService {
             writer.writeStartElement(DAGGERS);
 
             writer.writeStartElement(WEAPON);
-            writer.writeAttribute(NAME, "Langdolch");
-            writer.writeAttribute(DAMAGE, "1W6+2");
-            writer.writeAttribute(DAMAGEMOD, "12/4");
-            writer.writeAttribute(DISTANCE, "H");
-            writer.writeAttribute(INITIATIVEMOD, "0");
-            writer.writeAttribute(STATMOD, "0/0");
-            writer.writeEndElement();
-
-            writer.writeStartElement(WEAPON);
             writer.writeAttribute(NAME, "Basiliskenzunge");
             writer.writeAttribute(DAMAGE, "1W6+2");
             writer.writeAttribute(DAMAGEMOD, "12/4");
             writer.writeAttribute(DISTANCE, "H");
             writer.writeAttribute(INITIATIVEMOD, "-1");
+            writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Borndorn");
+            writer.writeAttribute(DAMAGE, "1W6+2");
+            writer.writeAttribute(DAMAGEMOD, "12/5");
+            writer.writeAttribute(DISTANCE, "H");
+            writer.writeAttribute(INITIATIVEMOD, "0");
+            writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeEndElement();
+
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Dolch");
+            writer.writeAttribute(DAMAGE, "1W6+1");
+            writer.writeAttribute(DAMAGEMOD, "12/5");
+            writer.writeAttribute(DISTANCE, "H");
+            writer.writeAttribute(INITIATIVEMOD, "0");
             writer.writeAttribute(STATMOD, "0/-1");
             writer.writeEndElement();
 
