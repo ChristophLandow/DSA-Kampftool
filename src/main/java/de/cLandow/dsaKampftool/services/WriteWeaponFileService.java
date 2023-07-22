@@ -120,6 +120,15 @@ public class WriteWeaponFileService {
             writer.writeAttribute(STATMOD, "-1/-3");
             writer.writeEndElement();
 
+            writer.writeStartElement(WEAPON);
+            writer.writeAttribute(NAME, "Holzfälleraxt");
+            writer.writeAttribute(DAMAGE, "2W6");
+            writer.writeAttribute(DAMAGEMOD, "12/2");
+            writer.writeAttribute(DISTANCE, "N");
+            writer.writeAttribute(INITIATIVEMOD, "-2");
+            writer.writeAttribute(STATMOD, "-1/-4");
+            writer.writeEndElement();
+
             writer.writeEndElement();
 
             writer.writeStartElement(DAGGERS);
