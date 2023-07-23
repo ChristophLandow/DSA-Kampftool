@@ -98,5 +98,6 @@ public class EquipmentController implements RenderController {
     }
 
     public void deleteThisItem(MouseEvent mouseEvent) {
+        setEmptyImage();
     }
 }
