@@ -51,27 +51,27 @@ public class SelectedGearBoxController implements RenderController {
 
     public SelectedGearBoxController(AddGearPopupController addGearPopupController){
         this.addGearPopupController = addGearPopupController;
-        this.mainWeaponBoxController = new EquipmentController(MAINWEAPON, MAINWEAPON_IMAGE_PATH);
+        this.mainWeaponBoxController = new EquipmentController(MAINWEAPON_IMAGE_PATH, MAINWEAPON_SET_IMAGE_PATH);
         equipmentControllers.add(mainWeaponBoxController);
-        this.sideWeaponBoxController = new EquipmentController(SIDEWEAPON, SIDEWEAPON_IMAGE_PATH);
+        this.sideWeaponBoxController = new EquipmentController(SIDEWEAPON_IMAGE_PATH, SIDEWEAPON_SET_IMAGE_PATH);
         equipmentControllers.add(sideWeaponBoxController);
-        this.shildBoxController = new EquipmentController(SHIELD, SHIELD_IMAGE_PATH);
+        this.shildBoxController = new EquipmentController(SHIELD_IMAGE_PATH, SHIELD_SET_IMAGE_PATH);
         equipmentControllers.add(shildBoxController);
-        this.headBoxController = new EquipmentController(HEAD, HELMET_IMAGE_PATH);
+        this.headBoxController = new EquipmentController(HELMET_IMAGE_PATH, HELMET_SET_IMAGE_PATH);
         equipmentControllers.add(headBoxController);
-        this.chestBoxController = new EquipmentController(TORSO, BREASTPLATE_IMAGE_PATH);
+        this.chestBoxController = new EquipmentController(BREASTPLATE_IMAGE_PATH, BREASTPLATE_SET_IMAGE_PATH);
         equipmentControllers.add(chestBoxController);
-        this.backsideBoxController = new EquipmentController(BACKSIDE, BACKSIDEPLATE_IMAGE_PATH);
-        equipmentControllers.add(chestBoxController);
-        this.tummyBoxController = new EquipmentController(TUMMY, TUMMYPLATE_IMAGE_PATH);
+        this.backsideBoxController = new EquipmentController(BACKSIDEPLATE_IMAGE_PATH, BACKSIDEPLATE_SET_IMAGE_PATH);
+        equipmentControllers.add(backsideBoxController);
+        this.tummyBoxController = new EquipmentController(TUMMYPLATE_IMAGE_PATH, TUMMYPLATE_SET_IMAGE_PATH);
         equipmentControllers.add(tummyBoxController);
-        this.leftArmBoxController = new EquipmentController(LEFT_ARM, LEFTGLOVE_IMAGE_PATH);
+        this.leftArmBoxController = new EquipmentController(LEFTGLOVE_IMAGE_PATH, LEFTGLOVE_SET_IMAGE_PATH);
         equipmentControllers.add(leftArmBoxController);
-        this.rightArmBoxController = new EquipmentController(RIGHT_ARM, RIGHTGLOVE_IMAGE_PATH);
+        this.rightArmBoxController = new EquipmentController(RIGHTGLOVE_IMAGE_PATH, RIGHTGLOVE_SET_IMAGE_PATH);
         equipmentControllers.add(rightArmBoxController);
-        this.leftLegBoxController = new EquipmentController(LEFT_LEG, LEFTBOOT_IMAGE_PATH);
+        this.leftLegBoxController = new EquipmentController(LEFTBOOT_IMAGE_PATH, LEFTBOOT_SET_IMAGE_PATH);
         equipmentControllers.add(leftLegBoxController);
-        this.rightLegBoxController = new EquipmentController(RIGHT_LEG, RIGHTBOOT_IMAGE_PATH);
+        this.rightLegBoxController = new EquipmentController(RIGHTBOOT_IMAGE_PATH, RIGHTBOOT_SET_IMAGE_PATH);
         equipmentControllers.add(rightLegBoxController);
     }
 
@@ -90,6 +90,7 @@ public class SelectedGearBoxController implements RenderController {
         rightLegHBox.getChildren().add(rightLegBoxController.render());
         for (EquipmentController controller : equipmentControllers){
             controller.init();
+            controller.changeIconToNotSetMode();
         }
     }
 

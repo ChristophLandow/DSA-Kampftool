@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
 import java.io.FileInputStream;
@@ -19,17 +20,18 @@ import static de.cLandow.dsaKampftool.Constants.*;
 
 public class EquipmentController implements RenderController {
 
+
     @FXML BorderPane equipmentContainer;
     @FXML ImageView equipmentImageView;
 
     private final String imagePath;
-    private final String zone;
+    private final String imagePathSet;
     private Gear gear;
     private Tooltip newTooltip;
 
-    public EquipmentController(String zone, String imagePath){
-        this.zone = zone;
+    public EquipmentController(String imagePath, String imagePathSet){
         this.imagePath = imagePath;
+        this.imagePathSet = imagePathSet;
     }
 
     @Override
@@ -56,16 +58,6 @@ public class EquipmentController implements RenderController {
         return parent;
     }
 
-    private void addHoverEffekt() {
-        //addBorderPaneEffect((ImageView) pane.getCenter());
-        //addToolTipp((ImageView) pane.getCenter());
-    }
-
-    private void addBorderPaneEffect(ImageView view) {
-        view.setOnMouseEntered((event) -> {
-
-        });
-    }
     private void addToolTipp() {
         if((this.gear != null) && (gear.getName() != null)){
             newTooltip = new Tooltip(gear.getName());
@@ -76,13 +68,22 @@ public class EquipmentController implements RenderController {
     }
 
     public void changeIconToSetMode() {
-        equipmentImageView.setImage(loadImage(imagePath));
+        equipmentImageView.setImage(loadImage(true));
     }
 
-    private Image loadImage(String path){
+    public void changeIconToNotSetMode() {
+        equipmentImageView.setImage(loadImage(false));
+    }
+
+    private Image loadImage(Boolean state){
         FileInputStream input = null;
         try {
-            input = new FileInputStream(path);
+            if(state){
+                input = new FileInputStream(imagePathSet);
+            } else {
+                input = new FileInputStream(imagePath);
+            }
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -102,7 +103,11 @@ public class EquipmentController implements RenderController {
         equipmentImageView.setImage(null);
     }
 
-    public void removeTooltip(){
+    public void removeTooltip() {
         Tooltip.uninstall(equipmentImageView,newTooltip);
+    }
+
+    public void deleteThisItem(MouseEvent mouseEvent) {
+        setEmptyImage();
     }
 }
