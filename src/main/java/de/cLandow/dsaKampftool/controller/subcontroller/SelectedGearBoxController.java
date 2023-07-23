@@ -62,7 +62,7 @@ public class SelectedGearBoxController implements RenderController {
         this.chestBoxController = new EquipmentController(BREASTPLATE_IMAGE_PATH, BREASTPLATE_SET_IMAGE_PATH);
         equipmentControllers.add(chestBoxController);
         this.backsideBoxController = new EquipmentController(BACKSIDEPLATE_IMAGE_PATH, BACKSIDEPLATE_SET_IMAGE_PATH);
-        equipmentControllers.add(chestBoxController);
+        equipmentControllers.add(backsideBoxController);
         this.tummyBoxController = new EquipmentController(TUMMYPLATE_IMAGE_PATH, TUMMYPLATE_SET_IMAGE_PATH);
         equipmentControllers.add(tummyBoxController);
         this.leftArmBoxController = new EquipmentController(LEFTGLOVE_IMAGE_PATH, LEFTGLOVE_SET_IMAGE_PATH);
