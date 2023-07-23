@@ -90,6 +90,7 @@ public class SelectedGearBoxController implements RenderController {
         rightLegHBox.getChildren().add(rightLegBoxController.render());
         for (EquipmentController controller : equipmentControllers){
             controller.init();
+            controller.changeIconToNotSetMode();
         }
     }
 

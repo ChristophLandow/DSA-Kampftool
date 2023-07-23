@@ -68,13 +68,22 @@ public class EquipmentController implements RenderController {
     }
 
     public void changeIconToSetMode() {
-        equipmentImageView.setImage(loadImage(imagePath));
+        equipmentImageView.setImage(loadImage(true));
     }
 
-    private Image loadImage(String path){
+    public void changeIconToNotSetMode() {
+        equipmentImageView.setImage(loadImage(false));
+    }
+
+    private Image loadImage(Boolean state){
         FileInputStream input = null;
         try {
-            input = new FileInputStream(path);
+            if(state){
+                input = new FileInputStream(imagePathSet);
+            } else {
+                input = new FileInputStream(imagePath);
+            }
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
