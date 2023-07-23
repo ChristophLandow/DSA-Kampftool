@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
 import java.io.FileInputStream;
@@ -104,5 +105,8 @@ public class EquipmentController implements RenderController {
 
     public void removeTooltip(){
         Tooltip.uninstall(equipmentImageView,newTooltip);
+    }
+
+    public void deleteThisItem(MouseEvent mouseEvent) {
     }
 }

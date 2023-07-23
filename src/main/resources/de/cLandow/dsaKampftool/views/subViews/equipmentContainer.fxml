@@ -2,10 +2,13 @@
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-
+<?import javafx.scene.shape.Circle?>
 
 <BorderPane fx:id="equipmentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="55.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.EquipmentController">
    <center>
       <ImageView fx:id="equipmentImageView" fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
    </center>
+   <top>
+      <Circle fx:id="deleteItemCircle" fill="WHITE" onMouseClicked="#deleteThisItem" radius="5.0" stroke="BLACK" strokeType="INSIDE" BorderPane.alignment="TOP_LEFT" />
+   </top>
 </BorderPane>
