@@ -2,42 +2,105 @@ package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.model.Gear;
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class CharacterService {
+    private String name;
+    private Integer closeCombatAttack;
+    private Integer parade;
+    private Integer distanceCombatAttack;
+    private Integer initiative;
+    private Integer lifePoints;
+    private Integer endurancePoints;
+    private Integer strength;
+    private ObservableList<Gear> gearArrayList = FXCollections.observableArrayList();
+    private Character currentCharacter;
 
-    private final ArrayList<Gear> gearArrayList;
     public CharacterService(){
-        this.gearArrayList = new ArrayList<>();
     }
-
-
 
     public Character createCharacter(String name, Integer at, Integer pa, Integer fk, Integer ini, Integer lp, Integer aup, Integer kk){
         return new Character(name, at, pa, fk, ini, lp, aup, kk);
     }
 
-    public Character modifyNameOfCharacter(Character character, String newName){
-        character.setName(newName);
-        return character;
+    public String getName() {
+        return name;
     }
 
-    public Character modifyAttackOfCharacter(Character character, Integer newAttack){
-        character.setAt(newAttack);
-        return character;
+    public Character getCurrentCharacter() {
+        return currentCharacter;
     }
 
-    public Character modifyParadeOfCharacter(Character character, Integer newParade){
-        character.setPa(newParade);
-        return character;
+    public Integer getParade() {
+        return parade;
     }
 
-    public Character modifyDistancefightingOfCharacter(Character character, Integer newDf){
-        character.setPa(newDf);
-        return character;
+    public Integer getCloseCombatAttack() {
+        return closeCombatAttack;
     }
 
-    public ArrayList<Gear> getGearArrayList() {
+    public Integer getDistanceCombatAttack() {
+        return distanceCombatAttack;
+    }
+
+    public Integer getEndurancePoints() {
+        return endurancePoints;
+    }
+
+    public Integer getInitiative() {
+        return initiative;
+    }
+
+    public Integer getLifePoints() {
+        return lifePoints;
+    }
+
+    public Integer getStrength() {
+        return strength;
+    }
+
+    public ObservableList<Gear> getGearArrayList() {
         return gearArrayList;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCurrentCharacter(Character currentCharacter) {
+        this.currentCharacter = currentCharacter;
+    }
+
+    public void setCloseCombatAttack(Integer closeCombatAttack) {
+        this.closeCombatAttack = closeCombatAttack;
+    }
+
+    public void setDistanceCombatAttack(Integer distanceCombatAttack) {
+        this.distanceCombatAttack = distanceCombatAttack;
+    }
+
+    public void setEndurancePoints(Integer endurancePoints) {
+        this.endurancePoints = endurancePoints;
+    }
+
+    public void setGearArrayList(ObservableList<Gear> gearArrayList) {
+        this.gearArrayList = gearArrayList;
+    }
+
+    public void setInitiative(Integer initiative) {
+        this.initiative = initiative;
+    }
+
+    public void setLifePoints(Integer lifePoints) {
+        this.lifePoints = lifePoints;
+    }
+
+    public void setParade(Integer parade) {
+        this.parade = parade;
+    }
+
+    public void setStrength(Integer strength) {
+        this.strength = strength;
     }
 }
