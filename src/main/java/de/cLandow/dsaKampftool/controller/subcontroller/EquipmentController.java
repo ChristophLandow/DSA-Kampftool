@@ -57,16 +57,6 @@ public class EquipmentController implements RenderController {
         return parent;
     }
 
-    private void addHoverEffekt() {
-        //addBorderPaneEffect((ImageView) pane.getCenter());
-        //addToolTipp((ImageView) pane.getCenter());
-    }
-
-    private void addBorderPaneEffect(ImageView view) {
-        view.setOnMouseEntered((event) -> {
-
-        });
-    }
     private void addToolTipp() {
         if((this.gear != null) && (gear.getName() != null)){
             newTooltip = new Tooltip(gear.getName());
