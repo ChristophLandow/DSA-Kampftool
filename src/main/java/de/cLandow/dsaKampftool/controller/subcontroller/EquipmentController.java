@@ -20,17 +20,18 @@ import static de.cLandow.dsaKampftool.Constants.*;
 
 public class EquipmentController implements RenderController {
 
+
     @FXML BorderPane equipmentContainer;
     @FXML ImageView equipmentImageView;
 
     private final String imagePath;
-    private final String zone;
+    private final String imagePathSet;
     private Gear gear;
     private Tooltip newTooltip;
 
-    public EquipmentController(String zone, String imagePath){
-        this.zone = zone;
+    public EquipmentController(String imagePath, String imagePathSet){
         this.imagePath = imagePath;
+        this.imagePathSet = imagePathSet;
     }
 
     @Override
