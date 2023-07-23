@@ -93,19 +93,30 @@ public class Constants {
 
     //Images
 
-    public static final String MAINWEAPON_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sword_equiped.png";
-    public static final String SIDEWEAPON_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sideWeapon_set.png";
-    public static final String SHIELD_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/shield_set.png";
-    public static final String BREASTPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/breastPlate_set.png";
+    public static final String MAINWEAPON_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sword.png";
+    public static final String MAINWEAPON_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sword_equiped.png";
+    public static final String SIDEWEAPON_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sideWeapon.png";
+    public static final String SIDEWEAPON_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sideWeapon_set.png";
+    public static final String SHIELD_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/shield.png";
+    public static final String SHIELD_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/shield_set.png";
+    public static final String BREASTPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/breastPlate.png";
+    public static final String BREASTPLATE_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/breastPlate_set.png";
 
-    public static final String BACKSIDEPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/backsidePlate_set.png";
-    public static final String HELMET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/helmetIcon_set.png";
+    public static final String BACKSIDEPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/backsidePlate.png";
+    public static final String BACKSIDEPLATE_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/backsidePlate_set.png";
+    public static final String HELMET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/helmetIcon.png";
+    public static final String HELMET_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/helmetIcon_set.png";
 
-    public static final String TUMMYPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/tummyPlate_set.png";
-    public static final String LEFTBOOT_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/leftBoot_set.png";
-    public static final String RIGHTBOOT_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/rightBoot_set.png";
+    public static final String TUMMYPLATE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/tummyPlate.png";
+    public static final String TUMMYPLATE_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/tummyPlate_set.png";
+    public static final String LEFTBOOT_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/leftBoot.png";
+    public static final String LEFTBOOT_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/leftBoot_set.png";
+    public static final String RIGHTBOOT_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/rightBoot.png";
+    public static final String RIGHTBOOT_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/rightBoot_set.png";
     public static final String LEFTGLOVE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/leftGloveIcon_set.png";
-    public static final String RIGHTGLOVE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/rightGloveIcon_set.png";
+    public static final String LEFTGLOVE_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/leftGloveIcon.png";
+    public static final String RIGHTGLOVE_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/rightGloveIcon.png";
+    public static final String RIGHTGLOVE_SET_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/rightGloveIcon_set.png";
 
 
 }

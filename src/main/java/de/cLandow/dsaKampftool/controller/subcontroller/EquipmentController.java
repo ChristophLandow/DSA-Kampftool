@@ -93,7 +93,7 @@ public class EquipmentController implements RenderController {
         equipmentImageView.setImage(null);
     }
 
-    public void removeTooltip(){
+    public void removeTooltip() {
         Tooltip.uninstall(equipmentImageView,newTooltip);
     }
 
