@@ -59,7 +59,7 @@ public class SelectedGearBoxController implements RenderController {
         equipmentControllers.add(shildBoxController);
         this.headBoxController = new EquipmentController(HELMET_IMAGE_PATH, HELMET_SET_IMAGE_PATH);
         equipmentControllers.add(headBoxController);
-        this.chestBoxController = new EquipmentController(BREASTPLATE_IMAGE_PATH, BACKSIDEPLATE_SET_IMAGE_PATH);
+        this.chestBoxController = new EquipmentController(BREASTPLATE_IMAGE_PATH, BREASTPLATE_SET_IMAGE_PATH);
         equipmentControllers.add(chestBoxController);
         this.backsideBoxController = new EquipmentController(BACKSIDEPLATE_IMAGE_PATH, BACKSIDEPLATE_SET_IMAGE_PATH);
         equipmentControllers.add(chestBoxController);
