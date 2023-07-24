@@ -17,8 +17,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MenuController implements RenderController {
-
-    @FXML MenuItem showPathMenuItem;
     private final SetupScreenController setupScreenController;
     private Stage popupStage;
     private EditCharacterController editCharacterController;
@@ -30,7 +28,6 @@ public class MenuController implements RenderController {
 
     @Override
     public void init() {
-        showPathMenuItem.setText(CHARACTER_FILEPATH);
     }
 
     @Override
