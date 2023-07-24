@@ -5,25 +5,39 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.MenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.MenuController">
    <children>
       <MenuBar prefHeight="25.0" prefWidth="1200.0">
          <menus>
-            <Menu mnemonicParsing="false" text="Verzeichnis">
-               <items>
-                  <Menu mnemonicParsing="false" text="Verzeichnis anzeigen">
-                     <items>
-                        <MenuItem fx:id="showPathMenuItem" mnemonicParsing="false" text="Pfad" />
-                     </items>
-                  </Menu>
-                  <MenuItem mnemonicParsing="false" onAction="#editDirectory" text="Verzeichnis bearbeiten" />
-               </items>
-            </Menu>
             <Menu mnemonicParsing="false" text="Charakter">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#createNewChar" text="Neu" />
                   <MenuItem mnemonicParsing="false" onAction="#editChar" text="Bearbeiten" />
                   <MenuItem mnemonicParsing="false" onAction="#deleteChar" text="Löschen" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Waffen">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#createNewWeaponList" text="Liste neu erstellen" />
+                  <MenuItem mnemonicParsing="false" onAction="#reloadWeaponList" text="Liste neu laden" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Rüstung">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#createNewArmorList" text="Liste neu erstellen" />
+                  <MenuItem mnemonicParsing="false" onAction="#reloadArmorList" text="Liste neu laden" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Sonderfertigkeiten">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#createNewAbilityList" text="Liste neu erstellen" />
+                  <MenuItem mnemonicParsing="false" onAction="#reloadAbilityList" text="Liste neu laden" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Vor-/Nachteile">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#createNewCharacteristicsList" text="Liste neu erstellen" />
+                  <MenuItem mnemonicParsing="false" onAction="#reloadCharacteristicsList" text="Liste neu laden" />
                </items>
             </Menu>
          </menus>

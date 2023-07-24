@@ -4,23 +4,21 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import static de.cLandow.dsaKampftool.Constants.*;
+
+import de.cLandow.dsaKampftool.services.WriteAbilityFileService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
-import javafx.stage.DirectoryChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import java.io.File;
 import java.io.IOException;
 
 public class MenuController implements RenderController {
 
     @FXML MenuItem showPathMenuItem;
-
     private final SetupScreenController setupScreenController;
     private Stage popupStage;
     private EditCharacterController editCharacterController;
@@ -70,13 +68,33 @@ public class MenuController implements RenderController {
     public void deleteChar(ActionEvent actionEvent) {
     }
 
-    public void editDirectory(ActionEvent actionEvent) {
-        DirectoryChooser directoryChooser = new DirectoryChooser();
-        File selectedDirectory = directoryChooser.showDialog(setupScreenController.getTool().getPrimaryStage());
-        //prefService.saveDirectory(selectedDirectory.getPath());
-    }
-
     public SetupScreenController getSetupScreenController() {
         return setupScreenController;
+    }
+
+    public void createNewAbilityList(ActionEvent actionEvent) {
+        WriteAbilityFileService writeAbilityFileService = new WriteAbilityFileService();
+        writeAbilityFileService.createFile();
+    }
+
+    public void reloadAbilityList(ActionEvent actionEvent) {
+    }
+
+    public void createNewCharacteristicsList(ActionEvent actionEvent) {
+    }
+
+    public void reloadCharacteristicsList(ActionEvent actionEvent) {
+    }
+
+    public void reloadArmorList(ActionEvent actionEvent) {
+    }
+
+    public void createNewArmorList(ActionEvent actionEvent) {
+    }
+
+    public void reloadWeaponList(ActionEvent actionEvent) {
+    }
+
+    public void createNewWeaponList(ActionEvent actionEvent) {
     }
 }
