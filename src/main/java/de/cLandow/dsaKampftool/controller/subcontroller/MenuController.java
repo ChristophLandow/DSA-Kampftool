@@ -4,23 +4,21 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import static de.cLandow.dsaKampftool.Constants.*;
+
+import de.cLandow.dsaKampftool.services.WriteAbilityFileService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
-import javafx.stage.DirectoryChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
-import java.io.File;
 import java.io.IOException;
 
 public class MenuController implements RenderController {
 
     @FXML MenuItem showPathMenuItem;
-
     private final SetupScreenController setupScreenController;
     private Stage popupStage;
     private EditCharacterController editCharacterController;
@@ -74,7 +72,9 @@ public class MenuController implements RenderController {
         return setupScreenController;
     }
 
-    public void createNewAbility(ActionEvent actionEvent) {
+    public void createNewAbilityList(ActionEvent actionEvent) {
+        WriteAbilityFileService writeAbilityFileService = new WriteAbilityFileService();
+        writeAbilityFileService.createFile();
     }
 
     public void reloadAbilityList(ActionEvent actionEvent) {

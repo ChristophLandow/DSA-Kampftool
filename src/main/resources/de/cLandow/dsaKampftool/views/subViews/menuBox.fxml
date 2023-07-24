@@ -30,7 +30,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Sonderfertigkeiten">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#createNewAbility" text="Liste neu erstellen" />
+                  <MenuItem mnemonicParsing="false" onAction="#createNewAbilityList" text="Liste neu erstellen" />
                   <MenuItem mnemonicParsing="false" onAction="#reloadAbilityList" text="Liste neu laden" />
                </items>
             </Menu>
