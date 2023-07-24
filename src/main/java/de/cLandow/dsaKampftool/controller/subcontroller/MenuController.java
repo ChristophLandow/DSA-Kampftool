@@ -70,12 +70,6 @@ public class MenuController implements RenderController {
     public void deleteChar(ActionEvent actionEvent) {
     }
 
-    public void editDirectory(ActionEvent actionEvent) {
-        DirectoryChooser directoryChooser = new DirectoryChooser();
-        File selectedDirectory = directoryChooser.showDialog(setupScreenController.getTool().getPrimaryStage());
-        //prefService.saveDirectory(selectedDirectory.getPath());
-    }
-
     public SetupScreenController getSetupScreenController() {
         return setupScreenController;
     }
