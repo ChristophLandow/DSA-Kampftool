@@ -172,4 +172,8 @@ public class SelectedGearBoxController implements RenderController {
         controller.changeIconToNotSetMode();
         controller.removeTooltip();
     }
+
+    public void deleteArmorPiece(EquipmentController controller){
+
+    }
 }

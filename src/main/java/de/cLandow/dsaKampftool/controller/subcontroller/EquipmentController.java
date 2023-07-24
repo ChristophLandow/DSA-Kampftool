@@ -93,8 +93,10 @@ public class EquipmentController implements RenderController {
     }
 
     public void setGear(Gear gear) {
-        this.gear = gear;
-        addToolTipp();
+        if(gear != null){
+            this.gear = gear;
+            addToolTipp();
+        }
     }
 
     public void removeTooltip() {
@@ -102,6 +104,8 @@ public class EquipmentController implements RenderController {
     }
 
     public void deleteThisItem(MouseEvent mouseEvent) {
-
+        removeTooltip();
+        changeIconToNotSetMode();
+        setGear(null);
     }
 }
