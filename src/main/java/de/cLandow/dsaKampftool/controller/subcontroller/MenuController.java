@@ -74,13 +74,6 @@ public class MenuController implements RenderController {
         return setupScreenController;
     }
 
-    public void createNewGearList(ActionEvent actionEvent) {
-
-    }
-
-    public void reloadGearList(ActionEvent actionEvent) {
-    }
-
     public void createNewAbility(ActionEvent actionEvent) {
     }
 
@@ -91,5 +84,17 @@ public class MenuController implements RenderController {
     }
 
     public void reloadCharacteristicsList(ActionEvent actionEvent) {
+    }
+
+    public void reloadArmorList(ActionEvent actionEvent) {
+    }
+
+    public void createNewArmorList(ActionEvent actionEvent) {
+    }
+
+    public void reloadWeaponList(ActionEvent actionEvent) {
+    }
+
+    public void createNewWeaponList(ActionEvent actionEvent) {
     }
 }
