@@ -73,4 +73,22 @@ public class MenuController implements RenderController {
     public SetupScreenController getSetupScreenController() {
         return setupScreenController;
     }
+
+    public void createNewGearList(ActionEvent actionEvent) {
+    }
+
+    public void reloadGearList(ActionEvent actionEvent) {
+    }
+
+    public void createNewAbility(ActionEvent actionEvent) {
+    }
+
+    public void reloadAbilityList(ActionEvent actionEvent) {
+    }
+
+    public void createNewCharacteristicsList(ActionEvent actionEvent) {
+    }
+
+    public void reloadCharacteristicsList(ActionEvent actionEvent) {
+    }
 }
