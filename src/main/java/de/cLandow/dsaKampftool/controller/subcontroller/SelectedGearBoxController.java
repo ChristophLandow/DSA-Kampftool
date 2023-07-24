@@ -169,7 +169,7 @@ public class SelectedGearBoxController implements RenderController {
     }
 
     private void clearBox(EquipmentController controller){
-        controller.changeIconToSetMode();
+        controller.changeIconToNotSetMode();
         controller.removeTooltip();
     }
 }
