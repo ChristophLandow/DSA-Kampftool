@@ -75,6 +75,7 @@ public class MenuController implements RenderController {
     }
 
     public void createNewGearList(ActionEvent actionEvent) {
+
     }
 
     public void reloadGearList(ActionEvent actionEvent) {
