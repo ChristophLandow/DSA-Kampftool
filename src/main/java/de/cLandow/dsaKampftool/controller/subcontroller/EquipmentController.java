@@ -16,20 +16,18 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static de.cLandow.dsaKampftool.Constants.*;
-
 public class EquipmentController implements RenderController {
-
 
     @FXML BorderPane equipmentContainer;
     @FXML ImageView equipmentImageView;
-
+    private final SelectedGearBoxController selectedGearBoxController;
     private final String imagePath;
     private final String imagePathSet;
     private Gear gear;
     private Tooltip newTooltip;
 
-    public EquipmentController(String imagePath, String imagePathSet){
+    public EquipmentController(SelectedGearBoxController selectedGearBoxController, String imagePath, String imagePathSet){
+        this.selectedGearBoxController = selectedGearBoxController;
         this.imagePath = imagePath;
         this.imagePathSet = imagePathSet;
     }
@@ -95,12 +93,10 @@ public class EquipmentController implements RenderController {
     }
 
     public void setGear(Gear gear) {
-        this.gear = gear;
-        addToolTipp();
-    }
-
-    public void setEmptyImage(){
-        equipmentImageView.setImage(null);
+        if(gear != null){
+            this.gear = gear;
+            addToolTipp();
+        }
     }
 
     public void removeTooltip() {
@@ -108,6 +104,8 @@ public class EquipmentController implements RenderController {
     }
 
     public void deleteThisItem(MouseEvent mouseEvent) {
-        setEmptyImage();
+        removeTooltip();
+        changeIconToNotSetMode();
+        setGear(null);
     }
 }

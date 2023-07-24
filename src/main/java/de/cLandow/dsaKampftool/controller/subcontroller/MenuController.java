@@ -4,21 +4,16 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import static de.cLandow.dsaKampftool.Constants.*;
-
 import de.cLandow.dsaKampftool.services.WriteAbilityFileService;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MenuController implements RenderController {
-
-    @FXML MenuItem showPathMenuItem;
     private final SetupScreenController setupScreenController;
     private Stage popupStage;
     private EditCharacterController editCharacterController;
@@ -30,7 +25,6 @@ public class MenuController implements RenderController {
 
     @Override
     public void init() {
-        showPathMenuItem.setText(CHARACTER_FILEPATH);
     }
 
     @Override
