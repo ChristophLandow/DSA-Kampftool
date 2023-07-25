@@ -94,8 +94,8 @@ public class GearListBoxController implements RenderController {
     }
 
     private void loadSubGroupBox_Armor() {
-        gearSubGroupChoiceBox.getItems().add(CLOTHES);
         gearSubGroupChoiceBox.getItems().add(CLOTARMOR);
+        gearSubGroupChoiceBox.getItems().add(CLOTHES);
     }
 
     //choiceBoxListener
