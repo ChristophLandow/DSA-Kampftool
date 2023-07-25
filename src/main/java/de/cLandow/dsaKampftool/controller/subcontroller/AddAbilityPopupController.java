@@ -15,6 +15,7 @@ import java.io.IOException;
 
 public class AddAbilityPopupController implements RenderController {
 
+    @FXML TextArea explainingTextField;
     @FXML VBox abilityListVBox;
     @FXML VBox selectedAbilitiesVBox;
     @FXML Button closeButton;
