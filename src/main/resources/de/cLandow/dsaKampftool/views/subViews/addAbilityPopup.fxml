@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="addAbilityPopupAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.AddAbilityPopupController">
+<AnchorPane fx:id="addAbilityPopupAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.AddAbilityPopupController">
    <children>
-      <Button fx:id="closeButton" layoutX="248.0" layoutY="317.0" mnemonicParsing="false" onAction="#closeAddSpecialAbilityPopup" prefHeight="25.0" prefWidth="140.0" text="Abbrechen">
+      <Button fx:id="closeButton" layoutX="230.0" layoutY="304.0" mnemonicParsing="false" onAction="#closeAddSpecialAbilityPopup" prefHeight="25.0" prefWidth="140.0" text="Abbrechen">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="addButton" layoutX="248.0" layoutY="353.0" mnemonicParsing="false" onAction="#addSpecialAbilityToHero" prefHeight="25.0" prefWidth="140.0" text="Hinzufügen">
+      <Button fx:id="addButton" layoutX="230.0" layoutY="347.0" mnemonicParsing="false" onAction="#addSpecialAbilityToHero" prefHeight="25.0" prefWidth="140.0" text="Hinzufügen">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <VBox fx:id="abilityListVBox" layoutX="14.0" layoutY="15.0" prefHeight="370.0" prefWidth="190.0" />
-      <VBox fx:id="selectedAbilitiesVBox" layoutX="223.0" layoutY="15.0" prefHeight="290.0" prefWidth="190.0" />
+      <VBox fx:id="abilityListVBox" layoutX="14.0" layoutY="15.0" prefHeight="370.0" prefWidth="190.0" style="-fx-border-color: BLACK;" />
+      <VBox fx:id="selectedAbilitiesVBox" layoutX="396.0" layoutY="15.0" prefHeight="370.0" prefWidth="190.0" style="-fx-border-color: BLACK;" />
+      <TextArea fx:id="explainingTextFIeld" layoutX="215.0" layoutY="15.0" prefHeight="271.0" prefWidth="170.0" />
    </children>
 </AnchorPane>
