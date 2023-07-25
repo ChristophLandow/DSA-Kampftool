@@ -4,6 +4,7 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Gear;
 import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,14 +27,16 @@ public class EquipmentController implements RenderController {
     private final SelectedGearBoxController selectedGearBoxController;
     private final String imagePath;
     private final String imagePathSet;
-    private SimpleBooleanProperty notNullChecker;
+    private final SimpleBooleanProperty gearNotNullChecker;
     private Gear gear;
     private Tooltip newTooltip;
+    private ChangeListener gearSetChecker;
 
     public EquipmentController(SelectedGearBoxController selectedGearBoxController, String imagePath, String imagePathSet){
         this.selectedGearBoxController = selectedGearBoxController;
         this.imagePath = imagePath;
         this.imagePathSet = imagePathSet;
+        gearNotNullChecker = new SimpleBooleanProperty();
     }
 
     @Override
@@ -43,27 +46,9 @@ public class EquipmentController implements RenderController {
         setCircleButton();
     }
 
-    private void setCircleButton() {
-        deleteItemCircle.setVisible(false);
-        deleteItemCircle.setDisable(true);
-    }
-
-    private void addlisteners() {
-        notNullChecker = new SimpleBooleanProperty(false);
-        notNullChecker.addListener((observable, oldValue, newValue) -> {
-            if(newValue.equals(true)){
-                deleteItemCircle.setVisible(true);
-                deleteItemCircle.setDisable(false);
-            }else{
-                deleteItemCircle.setVisible(false);
-                deleteItemCircle.setDisable(true);
-            }
-        });
-    }
-
     @Override
     public void stop() {
-
+        gearNotNullChecker.removeListener(gearSetChecker);
     }
 
     @Override
@@ -77,6 +62,25 @@ public class EquipmentController implements RenderController {
             e.printStackTrace();
         }
         return parent;
+    }
+
+    private void setCircleButton() {
+        deleteItemCircle.setVisible(false);
+        deleteItemCircle.setDisable(true);
+    }
+
+    private void addlisteners() {
+        gearNotNullChecker.set(false);
+        gearSetChecker = (observable, oldValue, newValue) -> {
+            if (gearNotNullChecker.getValue()) {
+                deleteItemCircle.setDisable(false);
+                deleteItemCircle.setVisible(true);
+            } else {
+                deleteItemCircle.setDisable(true);
+                deleteItemCircle.setVisible(false);
+            }
+        };
+        gearNotNullChecker.addListener(gearSetChecker);
     }
 
     private void addToolTipp() {
@@ -118,7 +122,7 @@ public class EquipmentController implements RenderController {
     public void setGear(Gear gear) {
         if(gear != null){
             this.gear = gear;
-            notNullChecker.set(true);
+            gearNotNullChecker.set(true);
             addToolTipp();
         }
     }
@@ -130,7 +134,7 @@ public class EquipmentController implements RenderController {
     public void deleteThisItem(MouseEvent mouseEvent) {
         removeTooltip();
         changeIconToNotSetMode();
-        notNullChecker.set(false);
+        gearNotNullChecker.set(false);
         setGear(null);
     }
 }
