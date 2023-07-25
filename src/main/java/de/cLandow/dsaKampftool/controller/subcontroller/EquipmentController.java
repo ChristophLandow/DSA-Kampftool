@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Gear;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.shape.Circle;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,11 +20,13 @@ import java.io.IOException;
 
 public class EquipmentController implements RenderController {
 
+    @FXML Circle deleteItemCircle;
     @FXML BorderPane equipmentContainer;
     @FXML ImageView equipmentImageView;
     private final SelectedGearBoxController selectedGearBoxController;
     private final String imagePath;
     private final String imagePathSet;
+    private SimpleBooleanProperty notNullChecker;
     private Gear gear;
     private Tooltip newTooltip;
 
@@ -34,8 +38,27 @@ public class EquipmentController implements RenderController {
 
     @Override
     public void init() {
-       addToolTipp();
+        addlisteners();
+        addToolTipp();
+        setCircleButton();
+    }
 
+    private void setCircleButton() {
+        deleteItemCircle.setVisible(false);
+        deleteItemCircle.setDisable(true);
+    }
+
+    private void addlisteners() {
+        notNullChecker = new SimpleBooleanProperty(false);
+        notNullChecker.addListener((observable, oldValue, newValue) -> {
+            if(newValue.equals(true)){
+                deleteItemCircle.setVisible(true);
+                deleteItemCircle.setDisable(false);
+            }else{
+                deleteItemCircle.setVisible(false);
+                deleteItemCircle.setDisable(true);
+            }
+        });
     }
 
     @Override
@@ -95,6 +118,7 @@ public class EquipmentController implements RenderController {
     public void setGear(Gear gear) {
         if(gear != null){
             this.gear = gear;
+            notNullChecker.set(true);
             addToolTipp();
         }
     }
@@ -106,6 +130,7 @@ public class EquipmentController implements RenderController {
     public void deleteThisItem(MouseEvent mouseEvent) {
         removeTooltip();
         changeIconToNotSetMode();
+        notNullChecker.set(false);
         setGear(null);
     }
 }
