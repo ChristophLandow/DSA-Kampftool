@@ -6,7 +6,6 @@ import de.cLandow.dsaKampftool.controller.RenderController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
@@ -47,10 +46,5 @@ public class AddCharacteristicsPopupController implements RenderController {
 
     public void addCharacteristicsToHero(ActionEvent actionEvent) {
     }
-
-    public void addGearToList(MouseEvent mouseEvent) {
-    }
-
-    public void removeGearFromList(MouseEvent mouseEvent) {
-    }
+    
 }
