@@ -96,6 +96,9 @@ public class Constants {
     public static final String CHARACTERISTICS = "Vor-/Nachteile";
     public static final String CHARACTERISTIC = "Vor-/Nachteil";
 
+    public static final String POSITIVE = "Vor-/Nachteile";
+    public static final String NEGATIV = "Vor-/Nachteil";
+
     //Images
 
     public static final String MAINWEAPON_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sword.png";

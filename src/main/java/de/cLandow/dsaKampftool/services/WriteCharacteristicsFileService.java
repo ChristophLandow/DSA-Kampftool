@@ -34,10 +34,11 @@ public class WriteCharacteristicsFileService {
             // <Charakter>
             writer.writeStartElement("Liste_aller_Sonderfertigkeiten");
 
-            writer.writeStartElement(ABILITIES);
+            writer.writeStartElement(CHARACTERISTICS);
 
-            writer.writeStartElement(ABILITY);
+            writer.writeStartElement(CHARACTERISTIC);
             writer.writeAttribute(NAME, "Kampfreflexe");
+            writer.writeAttribute(ATTACK_MOD, "0");
             writer.writeAttribute(ATTACK_MOD, "0");
             writer.writeAttribute(PARADE_MOD, "0");
             writer.writeAttribute(INITIATIVEMOD, "4");
