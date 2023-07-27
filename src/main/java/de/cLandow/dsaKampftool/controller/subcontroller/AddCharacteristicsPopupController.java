@@ -16,11 +16,13 @@ public class AddCharacteristicsPopupController implements RenderController {
     @FXML VBox selectedCharacteristicsVBox;
     @FXML VBox characteristicsListVBox;
     private final CharacteristicsListBoxController characteristicsListBoxController;
+    private final SelectedCharacteristicsBoxController selectedCharacteristicsBoxController;
     private CharacterScreenController characterScreenController;
 
     public AddCharacteristicsPopupController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
         this.characteristicsListBoxController = new CharacteristicsListBoxController(this);
+        this.selectedCharacteristicsBoxController = new SelectedCharacteristicsBoxController(this);
     }
 
     @Override
@@ -28,6 +30,9 @@ public class AddCharacteristicsPopupController implements RenderController {
         //load VBox for characteristics list
         characteristicsListVBox.getChildren().add(characteristicsListBoxController.render());
         characteristicsListBoxController.init();
+        //load VBox for selected characteristics list
+        selectedCharacteristicsVBox.getChildren().add(selectedCharacteristicsBoxController.render());
+        selectedCharacteristicsBoxController.init();
     }
 
     @Override
