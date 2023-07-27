@@ -91,6 +91,14 @@ public class Constants {
     public static final String INIT_MOD = "Initiative-Modifikator";
     public static final String ENCUMBRANCE_MOD = "Behinderung-Modifikator";
 
+    //Characteristics
+
+    public static final String CHARACTERISTICS = "Vor-/Nachteile";
+    public static final String CHARACTERISTIC = "Vor-/Nachteil";
+    public static final String CHARACTERISTIC_GROUP = "Gruppe";
+    public static final String BENEFIT = "Vorteil";
+    public static final String DRAWBACK = "Nachteil";
+
     //Images
 
     public static final String MAINWEAPON_IMAGE_PATH = "src/main/resources/de/cLandow/dsaKampftool/images/sword.png";
