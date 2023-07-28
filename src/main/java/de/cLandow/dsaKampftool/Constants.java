@@ -97,7 +97,7 @@ public class Constants {
     public static final String CHARACTERISTICS = "Vor-/Nachteile";
     public static final String CHARACTERISTIC = "Vor-/Nachteil";
     public static final String CHARACTERISTIC_GROUP = "Gruppe";
-    public static final String BENEFIT = "Vorteil";
+    public static final String ADVANTAGE = "Vorteil";
     public static final String DRAWBACK = "Nachteil";
 
     //Images
