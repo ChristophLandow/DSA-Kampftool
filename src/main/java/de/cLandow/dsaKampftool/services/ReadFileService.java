@@ -110,4 +110,18 @@ public class ReadFileService {
         }
         return null;
     }
+
+    public ObservableList<Ability> loadCharacteristics(){
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        try {
+            CharacterFileReadHandler characterFileReadHandler = new CharacterFileReadHandler();
+            SAXParser saxParser = factory.newSAXParser();
+            saxParser.parse(CHARACTERISTICS_FILEPATH, characterFileReadHandler);
+            return characterFileReadHandler.getObservableAbilityList();
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

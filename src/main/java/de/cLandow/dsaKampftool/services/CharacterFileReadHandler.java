@@ -1,7 +1,10 @@
 package de.cLandow.dsaKampftool.services;
 
 
+import de.cLandow.dsaKampftool.model.Ability;
 import de.cLandow.dsaKampftool.model.Character;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 
@@ -18,6 +21,7 @@ public class CharacterFileReadHandler extends DefaultHandler {
     private int strength;
 
     StringBuilder nameBuilder = new StringBuilder();
+    private final ObservableList<Ability> observableList = FXCollections.observableArrayList();;
 
     @Override
     public void startDocument(){
@@ -71,4 +75,7 @@ public class CharacterFileReadHandler extends DefaultHandler {
     }
 
 
+    public ObservableList<Ability> getObservableAbilityList() {
+        return observableList;
+    }
 }
