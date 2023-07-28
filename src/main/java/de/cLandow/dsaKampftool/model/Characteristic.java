@@ -37,5 +37,4 @@ public class Characteristic {
     public ObservableList<Ability> getAbilityList() {
         return abilityList;
     }
-
 }
