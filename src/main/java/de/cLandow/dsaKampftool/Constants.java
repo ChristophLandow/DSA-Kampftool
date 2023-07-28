@@ -15,6 +15,7 @@ public class Constants {
     public static final String WEAPON_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Weapons.xml";
     public static final String ARMOR_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Armor.xml";
     public static final String ABILITY_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Abilities.xml";
+    public static final String CHARACTERISTICS_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Characteristics.xml";
     public static final String RIGHT_ARM = "Right Arm";
     public static final String LEFT_ARM = "Left Arm";
 
@@ -96,7 +97,7 @@ public class Constants {
     public static final String CHARACTERISTICS = "Vor-/Nachteile";
     public static final String CHARACTERISTIC = "Vor-/Nachteil";
     public static final String CHARACTERISTIC_GROUP = "Gruppe";
-    public static final String BENEFIT = "Vorteil";
+    public static final String ADVANTAGE = "Vorteil";
     public static final String DRAWBACK = "Nachteil";
 
     //Images

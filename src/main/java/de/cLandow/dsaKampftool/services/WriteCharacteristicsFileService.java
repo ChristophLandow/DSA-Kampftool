@@ -38,7 +38,7 @@ public class WriteCharacteristicsFileService {
 
             writer.writeStartElement(CHARACTERISTIC);
             writer.writeAttribute(NAME, "Balance");
-            writer.writeAttribute(CHARACTERISTIC_GROUP, BENEFIT);
+            writer.writeAttribute(CHARACTERISTIC_GROUP, ADVANTAGE);
             writer.writeAttribute(ATTACK_MOD, "0");
             writer.writeAttribute(PARADE_MOD, "0");
             writer.writeAttribute(INITIATIVEMOD, "0");
