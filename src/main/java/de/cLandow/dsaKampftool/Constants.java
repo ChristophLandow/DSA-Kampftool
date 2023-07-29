@@ -87,15 +87,15 @@ public class Constants {
     //Abilities
     public static final String ABILITIES = "Sonderfertigkeiten";
     public static final String ABILITY = "Sonderfertigkeit";
-    public static final String ATTACK_MOD = "Attacke-Modifikator";
-    public static final String PARADE_MOD = "Parade-Modifikator";
-    public static final String INIT_MOD = "Initiative-Modifikator";
-    public static final String ENCUMBRANCE_MOD = "Behinderung-Modifikator";
+    public static final String ATTACK_MOD = "AttackeModifikator";
+    public static final String PARADE_MOD = "ParadeModifikator";
+    public static final String INIT_MOD = "InitiativeModifikator";
+    public static final String ENCUMBRANCE_MOD = "BehinderungModifikator";
 
     //Characteristics
 
-    public static final String CHARACTERISTICS = "Vor-/Nachteile";
-    public static final String CHARACTERISTIC = "Vor-/Nachteil";
+    public static final String CHARACTERISTICS = "Vorteile_Nachteile";
+    public static final String CHARACTERISTIC = "Vorteil_Nachteil";
     public static final String CHARACTERISTIC_GROUP = "Gruppe";
     public static final String ADVANTAGE = "Vorteil";
     public static final String DRAWBACK = "Nachteil";
