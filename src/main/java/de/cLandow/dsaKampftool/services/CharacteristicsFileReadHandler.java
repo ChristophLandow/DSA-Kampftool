@@ -22,7 +22,7 @@ public class CharacteristicsFileReadHandler extends DefaultHandler {
 
     }
 
-    //Heißt endElement, wird aber noch vor startElement aufgerufen
+
     @Override
     public void endElement(String uri, String localName, String qName){
 
