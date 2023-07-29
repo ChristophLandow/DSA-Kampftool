@@ -2,10 +2,8 @@ package de.cLandow.dsaKampftool.services;
 
 import de.cLandow.dsaKampftool.controller.subcontroller.AbilityListBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
-import de.cLandow.dsaKampftool.model.Ability;
-import de.cLandow.dsaKampftool.model.Armor;
+import de.cLandow.dsaKampftool.model.*;
 import de.cLandow.dsaKampftool.model.Character;
-import de.cLandow.dsaKampftool.model.Weapon_closeCombat;
 import javafx.collections.ObservableList;
 import org.xml.sax.SAXException;
 
@@ -111,13 +109,13 @@ public class ReadFileService {
         return null;
     }
 
-    public ObservableList<Ability> loadCharacteristics(){
+    public ObservableList<Characteristic> loadCharacteristics(){
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
-            CharacterFileReadHandler characterFileReadHandler = new CharacterFileReadHandler();
+            CharacteristicsFileReadHandler characteristicsFileReadHandler = new CharacteristicsFileReadHandler();
             SAXParser saxParser = factory.newSAXParser();
-            saxParser.parse(CHARACTERISTICS_FILEPATH, characterFileReadHandler);
-            return characterFileReadHandler.getObservableAbilityList();
+            saxParser.parse(CHARACTERISTICS_FILEPATH, characteristicsFileReadHandler);
+            return characteristicsFileReadHandler.getObservableList();
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
