@@ -1,0 +1,63 @@
+package de.cLandow.dsaKampftool.controller.subcontroller;
+
+import de.cLandow.dsaKampftool.Tool;
+import de.cLandow.dsaKampftool.model.Characteristic;
+import de.cLandow.dsaKampftool.model.Gear;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
+
+import java.io.IOException;
+
+public class CharacteristicsListItemController extends ListCell<Characteristic> {
+
+    @FXML Label characteristicNameLabel;
+    @FXML Circle buttonCircle;
+    @FXML AnchorPane characteristicListItemAnchor;
+    private FXMLLoader listCellLoader;
+    private final CharacteristicsListBoxController characteristicsListBoxController;
+    private Characteristic characteristic;
+
+    public CharacteristicsListItemController(CharacteristicsListBoxController characteristicsListBoxController) {
+        this.characteristicsListBoxController = characteristicsListBoxController;
+    }
+
+    @Override
+    protected void updateItem(Characteristic characteristic, boolean empty) {
+        super.updateItem(characteristic, empty);
+
+        if(empty || characteristic == null) {
+            setText(null);
+            setGraphic(null);
+        } else {
+            render();
+            setCharacteristic(characteristic);
+            characteristicNameLabel.setText(characteristic.getName());
+            setText(null);
+            setGraphic(characteristicListItemAnchor);
+        }
+    }
+
+    private void render() {
+        if (listCellLoader == null) {
+            listCellLoader = new FXMLLoader(Tool.class.getResource("views/subViews/characteristicListItem.fxml"));
+            listCellLoader.setControllerFactory(c -> this);
+            try {
+                listCellLoader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void doubleClicked(MouseEvent mouseEvent) {
+    }
+
+    private void setCharacteristic(Characteristic characteristic) {
+        this.characteristic = characteristic;
+    }
+}

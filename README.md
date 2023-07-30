@@ -114,6 +114,7 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
    - [ ] Charakter verfügt über Sonderfertigkeiten
      - [X] Sonderfertigkeiten werden aus externer Liste geladen
      - [ ] Sonderfertigkeiten können einem Charakter hinzugefügt werden
+       - [ ] Sonderfertigkeiten höherer Stufe können nicht ohne ihre niederstufigen Versionen hinzugefügt werden
      - [ ] Sonderfertigkeiten können aus einem Charakter entfernt werden
      - [ ] Sonderfertigkeiten sind editierbar
    - [ ] Charakter verfügt über Ausrüstung
@@ -128,6 +129,7 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
      - [ ] Ausrüstung Modifikatoren
  - [ ] Basisprogramm ausführbar unter Windows 10/11
 --------------------------------------------------------------------------------------
+ - [ ] Rasse Ork, Goblin, Achaz auswählbar (Natürliche Waffe inklusive)
  - [ ] Ansprechende UI 
  - [ ] Websocket basierte Kommunikation zwischen Programmen
  - [ ] Programm ausführbar unter Apple und Linux
