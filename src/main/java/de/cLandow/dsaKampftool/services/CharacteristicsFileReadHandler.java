@@ -46,7 +46,7 @@ public class CharacteristicsFileReadHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName){
         if(CHARACTERISTIC.equals(qName)) {
-            Characteristic characteristic = new Characteristic(name,atkMod, defMod, initMod, abilityList);
+            Characteristic characteristic = new Characteristic(name, group, atkMod, defMod, initMod, abilityList);
             observableList.add(characteristic);
         }
     }
