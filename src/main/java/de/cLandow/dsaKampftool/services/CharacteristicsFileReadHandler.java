@@ -63,6 +63,6 @@ public class CharacteristicsFileReadHandler extends DefaultHandler {
     }
 
     public ObservableList<Characteristic> getObservableList() {
-        return null;
+        return observableList;
     }
 }
