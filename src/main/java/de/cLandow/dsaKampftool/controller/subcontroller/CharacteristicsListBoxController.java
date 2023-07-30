@@ -6,14 +6,19 @@ import de.cLandow.dsaKampftool.model.Characteristic;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
 public class CharacteristicsListBoxController implements RenderController {
-
+    @FXML ListView<Characteristic> characteristicsListView;
+    @FXML TextField searchCharacteristicsTextField;
     private final AddCharacteristicsPopupController addCharacteristicsPopupController;
+
     private ObservableList<Characteristic> characteristicObservableList = FXCollections.observableArrayList();
 
     public CharacteristicsListBoxController(AddCharacteristicsPopupController addCharacteristicsPopupController){
@@ -23,7 +28,8 @@ public class CharacteristicsListBoxController implements RenderController {
 
     @Override
     public void init() {
-
+        loadCharacteristicsList();
+        characteristicsListView.setCellFactory(characteristicsListView -> new CharacteristicsListItemController(this));
     }
 
     @Override
@@ -44,8 +50,10 @@ public class CharacteristicsListBoxController implements RenderController {
         return parent;
     }
 
-    private void loadCharacteristics(){
+    private void loadCharacteristicsList(){
         ReadFileService readFileService = new ReadFileService();
         characteristicObservableList = readFileService.loadCharacteristics();
     }
+
+
 }
