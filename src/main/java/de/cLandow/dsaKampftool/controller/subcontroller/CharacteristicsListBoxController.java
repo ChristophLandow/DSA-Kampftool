@@ -33,6 +33,7 @@ public class CharacteristicsListBoxController implements RenderController {
     public void init() {
         loadCharacteristicsList();
         characteristicsListView.setCellFactory(characteristicsListView -> new CharacteristicsListItemController(this));
+        characteristicsListView.setItems(characteristicObservableList);
     }
 
     @Override
