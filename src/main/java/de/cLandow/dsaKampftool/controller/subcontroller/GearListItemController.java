@@ -23,7 +23,7 @@ public class GearListItemController  extends ListCell<Gear> {
     private FXMLLoader listCellLoader;
     private GearListBoxController gearListBoxController;
 
-    private Gear equipedGear ;
+    private Gear equipedGear;
 
     public GearListItemController(GearListBoxController gearListBoxController) {
         this.gearListBoxController = gearListBoxController;

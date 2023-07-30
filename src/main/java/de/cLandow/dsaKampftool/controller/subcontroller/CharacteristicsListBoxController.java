@@ -11,10 +11,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
 public class CharacteristicsListBoxController implements RenderController {
+
+    @FXML AnchorPane characteristicsListAnchor;
     @FXML ListView<Characteristic> characteristicsListView;
     @FXML TextField searchCharacteristicsTextField;
     private final AddCharacteristicsPopupController addCharacteristicsPopupController;
