@@ -128,6 +128,7 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
      - [ ] Ausrüstung Modifikatoren
  - [ ] Basisprogramm ausführbar unter Windows 10/11
 --------------------------------------------------------------------------------------
+ - [ ] Rasse Ork, Goblin, Achaz auswählbar (Natürliche Waffe inklusive)
  - [ ] Ansprechende UI 
  - [ ] Websocket basierte Kommunikation zwischen Programmen
  - [ ] Programm ausführbar unter Apple und Linux
