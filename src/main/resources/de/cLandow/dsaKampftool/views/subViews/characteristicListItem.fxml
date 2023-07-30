@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane fx:id="characteristicListItemAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#doubleClicked" prefHeight="30.0" prefWidth="190.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.GearListItemController">
+   <children>
+      <Label fx:id="characteristicNameLabel" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="143.0" text="Characteristic" />
+      <Circle fx:id="buttonCircle" fill="DODGERBLUE" layoutX="167.0" layoutY="15.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
