@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Characteristic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,5 +59,10 @@ public class AddCharacteristicsPopupController implements RenderController {
 
     public void addCharacteristicsToHero(ActionEvent actionEvent) {
     }
-    
+
+    public void addCharacteristicToSelectedList(Characteristic characteristic) {
+        if(selectedCharacteristicsBoxController != null){
+            selectedCharacteristicsBoxController.addCharacteristicToList(characteristic);
+        }
+    }
 }

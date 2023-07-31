@@ -60,4 +60,10 @@ public class CharacteristicsListBoxController implements RenderController {
     }
 
 
+    public void addCharacteristicToList(Characteristic characteristic) {
+        if(addCharacteristicsPopupController != null){
+            addCharacteristicsPopupController.addCharacteristicToSelectedList(characteristic);
+        }
+
+    }
 }
