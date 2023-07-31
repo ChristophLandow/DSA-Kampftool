@@ -37,7 +37,6 @@ public class AddCharacteristicsPopupController implements RenderController {
 
     @Override
     public void stop() {
-
     }
 
     @Override

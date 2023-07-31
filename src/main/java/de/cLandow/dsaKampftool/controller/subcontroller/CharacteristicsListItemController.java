@@ -2,12 +2,10 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.model.Characteristic;
-import de.cLandow.dsaKampftool.model.Gear;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
@@ -15,8 +13,9 @@ import java.io.IOException;
 
 public class CharacteristicsListItemController extends ListCell<Characteristic> {
 
+    @FXML Circle selectCircle;
+    @FXML Circle removeCircle;
     @FXML Label characteristicNameLabel;
-    @FXML Circle buttonCircle;
     @FXML AnchorPane characteristicListItemAnchor;
     private FXMLLoader listCellLoader;
     private final CharacteristicsListBoxController characteristicsListBoxController;
@@ -52,9 +51,6 @@ public class CharacteristicsListItemController extends ListCell<Characteristic> 
                 e.printStackTrace();
             }
         }
-    }
-
-    public void doubleClicked(MouseEvent mouseEvent) {
     }
 
     private void setCharacteristic(Characteristic characteristic) {
