@@ -15,16 +15,24 @@ import java.io.IOException;
 
 public class CharacteristicsListItemController extends ListCell<Characteristic> {
 
+
     @FXML Circle selectCircle;
     @FXML Circle removeCircle;
     @FXML Label characteristicNameLabel;
     @FXML AnchorPane characteristicListItemAnchor;
     private FXMLLoader listCellLoader;
     private final CharacteristicsListBoxController characteristicsListBoxController;
+    private final SelectedCharacteristicsBoxController selectedCharacteristicsBoxController;
     private Characteristic characteristic;
 
     public CharacteristicsListItemController(CharacteristicsListBoxController characteristicsListBoxController) {
         this.characteristicsListBoxController = characteristicsListBoxController;
+        this.selectedCharacteristicsBoxController = null;
+    }
+
+    public CharacteristicsListItemController(SelectedCharacteristicsBoxController selectedCharacteristicsBoxController) {
+        this.selectedCharacteristicsBoxController = selectedCharacteristicsBoxController;
+        this.characteristicsListBoxController = null;
     }
 
     @Override
