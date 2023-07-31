@@ -3,6 +3,9 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Characteristic;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +17,8 @@ public class SelectedCharacteristicsBoxController implements RenderController {
 
     @FXML ListView<Characteristic> selectedCharacteristicsListView;
     private final AddCharacteristicsPopupController addCharacteristicsPopupController;
+    private ObservableList<Characteristic> characteristicObservableList = FXCollections.observableArrayList();
+    private ListChangeListener<Characteristic> listChangeListener;
 
     public SelectedCharacteristicsBoxController(AddCharacteristicsPopupController addCharacteristicsPopupController){
         this.addCharacteristicsPopupController = addCharacteristicsPopupController;
@@ -22,7 +27,10 @@ public class SelectedCharacteristicsBoxController implements RenderController {
     @Override
     public void init() {
         selectedCharacteristicsListView.setCellFactory(selectedCharacteristicListView -> new CharacteristicsListItemController(this));
+        createListChangeListener();
+        addListChangeListener();
     }
+
 
     @Override
     public void stop() {
@@ -43,6 +51,19 @@ public class SelectedCharacteristicsBoxController implements RenderController {
     }
 
     public void setCharacteristicToList(Characteristic characteristic) {
+        characteristicObservableList.add(characteristic);
+    }
 
+    private void createListChangeListener() {
+        listChangeListener = c -> {
+            if(c.next()){
+                selectedCharacteristicsListView.getItems().clear();
+                characteristicObservableList.forEach(characteristic -> selectedCharacteristicsListView.getItems().add(characteristic));
+            }
+        };
+    }
+
+    private void addListChangeListener() {
+        characteristicObservableList.addListener(listChangeListener);
     }
 }
