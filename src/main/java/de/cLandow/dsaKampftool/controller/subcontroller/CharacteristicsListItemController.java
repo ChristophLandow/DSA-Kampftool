@@ -85,9 +85,7 @@ public class CharacteristicsListItemController extends ListCell<Characteristic> 
 
     public void setCharacteristicToList(MouseEvent mouseEvent) {
         if(characteristicsListBoxController != null){
-            characteristicsListBoxController.setCharacteristicToList(characteristic);
-        }else{
-
+            characteristicsListBoxController.addCharacteristicToList(characteristic);
         }
     }
 }

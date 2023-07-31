@@ -60,9 +60,9 @@ public class AddCharacteristicsPopupController implements RenderController {
     public void addCharacteristicsToHero(ActionEvent actionEvent) {
     }
 
-    public void setCharacteristicToSelectedList(Characteristic characteristic) {
+    public void addCharacteristicToSelectedList(Characteristic characteristic) {
         if(selectedCharacteristicsBoxController != null){
-            selectedCharacteristicsBoxController.setCharacteristicToList(characteristic);
+            selectedCharacteristicsBoxController.addCharacteristicToList(characteristic);
         }
     }
 }

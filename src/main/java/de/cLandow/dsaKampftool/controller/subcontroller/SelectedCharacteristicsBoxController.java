@@ -50,7 +50,7 @@ public class SelectedCharacteristicsBoxController implements RenderController {
         return parent;
     }
 
-    public void setCharacteristicToList(Characteristic characteristic) {
+    public void addCharacteristicToList(Characteristic characteristic) {
         characteristicObservableList.add(characteristic);
     }
 
@@ -65,5 +65,14 @@ public class SelectedCharacteristicsBoxController implements RenderController {
 
     private void addListChangeListener() {
         characteristicObservableList.addListener(listChangeListener);
+    }
+
+    private Boolean checkList(Characteristic check){
+        for (Characteristic characteristic : characteristicObservableList) {
+            if (characteristic.getName().equals(check.getName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
