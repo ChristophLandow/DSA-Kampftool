@@ -44,8 +44,19 @@ public class CharacteristicsListItemController extends ListCell<Characteristic> 
             setGraphic(null);
         } else {
             render();
-            removeCircle.setVisible(false);
-            removeCircle.setDisable(true);
+            if((selectedCharacteristicsBoxController == null) && (characteristicsListBoxController != null)){
+                removeCircle.setVisible(false);
+                removeCircle.setDisable(true);
+                selectCircle.setVisible(true);
+                selectCircle.setDisable(false);
+            } else if ((selectedCharacteristicsBoxController != null) && (characteristicsListBoxController == null)) {
+                removeCircle.setVisible(true);
+                removeCircle.setDisable(false);
+                selectCircle.setVisible(false);
+                selectCircle.setDisable(true);
+            } else {
+                System.out.println("Kreis-Buttons für Vorteile/Nachteile werden nicht korrekt geladen)");
+            }
             setCharacteristic(characteristic);
             characteristicNameLabel.setText(characteristic.getName());
             setText(null);
