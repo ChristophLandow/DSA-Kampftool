@@ -41,4 +41,8 @@ public class SelectedCharacteristicsBoxController implements RenderController {
         }
         return parent;
     }
+
+    public void setCharacteristicToList(Characteristic characteristic) {
+
+    }
 }
