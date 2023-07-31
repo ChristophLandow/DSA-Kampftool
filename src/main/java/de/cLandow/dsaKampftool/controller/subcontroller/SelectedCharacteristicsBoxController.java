@@ -51,7 +51,9 @@ public class SelectedCharacteristicsBoxController implements RenderController {
     }
 
     public void addCharacteristicToList(Characteristic characteristic) {
-        characteristicObservableList.add(characteristic);
+        if(!checkList(characteristic)){
+            characteristicObservableList.add(characteristic);
+        }
     }
 
     private void createListChangeListener() {
