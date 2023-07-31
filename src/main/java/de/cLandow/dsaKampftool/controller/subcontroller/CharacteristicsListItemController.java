@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 
@@ -34,6 +36,8 @@ public class CharacteristicsListItemController extends ListCell<Characteristic> 
             setGraphic(null);
         } else {
             render();
+            removeCircle.setVisible(false);
+            removeCircle.setDisable(true);
             setCharacteristic(characteristic);
             characteristicNameLabel.setText(characteristic.getName());
             setText(null);
@@ -55,5 +59,11 @@ public class CharacteristicsListItemController extends ListCell<Characteristic> 
 
     private void setCharacteristic(Characteristic characteristic) {
         this.characteristic = characteristic;
+    }
+
+    public void removeCharacteristicFromList(MouseEvent mouseEvent) {
+    }
+
+    public void setCharacteristicToList(MouseEvent mouseEvent) {
     }
 }
