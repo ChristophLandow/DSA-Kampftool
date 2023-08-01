@@ -53,7 +53,7 @@ public class SelectedAbilitiesBoxController implements RenderController {
 
     public void addAbilityToSelectedList(Ability ability) {
         if(!checkForAbility(ability)){
-            selectionListView.getItems().add(ability);
+            observableAbilityList.add(ability);
         }
     }
 
