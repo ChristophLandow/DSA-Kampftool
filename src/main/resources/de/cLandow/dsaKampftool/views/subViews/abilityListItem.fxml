@@ -6,8 +6,8 @@
 
 <AnchorPane fx:id="abilityListItemAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="170.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.AbilityListItemController">
    <children>
-      <Label fx:id="abilityNameLabel" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="102.0" text="Ability" />
-      <Circle fx:id="addAbilityCircle" fill="#17da2b" layoutX="119.0" layoutY="15.0" onMouseClicked="#addAbility" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="deleteAbilityCircle" fill="#e81313" layoutX="156.0" layoutY="15.0" onMouseClicked="#deleteAbility" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="abilityNameLabel" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="Ability" />
+      <Circle fx:id="addAbilityCircle" fill="#17da2b" layoutX="149.0" layoutY="14.0" onMouseClicked="#addAbility" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="deleteAbilityCircle" fill="#e81313" layoutX="149.0" layoutY="15.0" onMouseClicked="#deleteAbility" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
