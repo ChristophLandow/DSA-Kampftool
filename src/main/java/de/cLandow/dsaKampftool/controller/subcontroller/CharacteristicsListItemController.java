@@ -81,6 +81,9 @@ public class CharacteristicsListItemController extends ListCell<Characteristic> 
     }
 
     public void removeCharacteristicFromList(MouseEvent mouseEvent) {
+        if(selectedCharacteristicsBoxController != null){
+            selectedCharacteristicsBoxController.removeCharacteristicFromSelectedList(characteristic);
+        }
     }
 
     public void setCharacteristicToList(MouseEvent mouseEvent) {
