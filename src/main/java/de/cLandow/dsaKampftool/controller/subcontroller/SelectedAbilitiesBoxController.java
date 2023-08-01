@@ -3,7 +3,9 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Ability;
+import de.cLandow.dsaKampftool.model.Characteristic;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +19,7 @@ public class SelectedAbilitiesBoxController implements RenderController {
     @FXML ListView<Ability> selectionListView;
 
     ObservableList<Ability> observableAbilityList = FXCollections.observableArrayList();
+    private ListChangeListener<Ability> listChangeListener;
     private final AddAbilityPopupController addAbilityPopupController;
 
     public SelectedAbilitiesBoxController(AddAbilityPopupController addAbilityPopupController){
@@ -26,6 +29,8 @@ public class SelectedAbilitiesBoxController implements RenderController {
     @Override
     public void init() {
         selectionListView.setCellFactory(selcetedAbilitiesListView -> new AbilityListItemController(this));
+        createListChangeListener();
+        observableAbilityList.addListener(listChangeListener);
     }
 
     @Override
@@ -49,13 +54,13 @@ public class SelectedAbilitiesBoxController implements RenderController {
     public void addAbilityToSelectedList(Ability ability) {
         if(!checkForAbility(ability)){
             selectionListView.getItems().add(ability);
-            observableAbilityList.add(ability);
         }
     }
 
     public void deleteAbilityfromSelectedList(Ability ability){
-        selectionListView.getItems().remove(ability);
-        observableAbilityList.remove(ability);
+        if(checkForAbility(ability)){
+            observableAbilityList.remove(ability);
+        }
     }
 
     public boolean checkForAbility(Ability check){
@@ -65,5 +70,14 @@ public class SelectedAbilitiesBoxController implements RenderController {
             }
         }
         return false;
+    }
+
+    private void createListChangeListener() {
+        listChangeListener = c -> {
+            if(c.next()){
+                selectionListView.getItems().clear();
+                observableAbilityList.forEach(ability -> selectionListView.getItems().add(ability));
+            }
+        };
     }
 }

@@ -28,7 +28,7 @@ public class SelectedCharacteristicsBoxController implements RenderController {
     public void init() {
         selectedCharacteristicsListView.setCellFactory(selectedCharacteristicListView -> new CharacteristicsListItemController(this));
         createListChangeListener();
-        addListChangeListener();
+        characteristicObservableList.addListener(listChangeListener);
     }
 
 
@@ -63,10 +63,6 @@ public class SelectedCharacteristicsBoxController implements RenderController {
                 characteristicObservableList.forEach(characteristic -> selectedCharacteristicsListView.getItems().add(characteristic));
             }
         };
-    }
-
-    private void addListChangeListener() {
-        characteristicObservableList.addListener(listChangeListener);
     }
 
     private Boolean checkList(Characteristic check){
