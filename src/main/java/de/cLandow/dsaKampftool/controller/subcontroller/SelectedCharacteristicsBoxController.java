@@ -34,7 +34,7 @@ public class SelectedCharacteristicsBoxController implements RenderController {
 
     @Override
     public void stop() {
-
+        characteristicObservableList.removeListener(listChangeListener);
     }
 
     @Override
