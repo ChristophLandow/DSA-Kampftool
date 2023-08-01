@@ -77,4 +77,10 @@ public class SelectedCharacteristicsBoxController implements RenderController {
         }
         return false;
     }
+
+    public void removeCharacteristicFromSelectedList(Characteristic characteristic) {
+        if(checkList(characteristic)){
+            characteristicObservableList.remove(characteristic);
+        }
+    }
 }
