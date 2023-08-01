@@ -8,6 +8,6 @@
    <children>
       <Label fx:id="characteristicNameLabel" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="143.0" text="Characteristic" />
       <Circle fx:id="selectCircle" fill="DODGERBLUE" layoutX="167.0" layoutY="15.0" onMouseClicked="#setCharacteristicToList" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="removeCircle" fill="DODGERBLUE" layoutX="167.0" layoutY="16.0" onMouseClicked="#removeCharacteristicFromList" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="removeCircle" fill="#e11212" layoutX="167.0" layoutY="16.0" onMouseClicked="#removeCharacteristicFromList" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
