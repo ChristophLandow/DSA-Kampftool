@@ -35,7 +35,7 @@ public class SelectedAbilitiesBoxController implements RenderController {
 
     @Override
     public void stop() {
-
+        observableAbilityList.removeListener(listChangeListener);
     }
 
     @Override
