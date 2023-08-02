@@ -94,14 +94,15 @@ public class CharacterLoadPopupController implements RenderController, Initializ
             noStatsWarning.setVisible(true);
         } else {
             try {
-                int attack = Integer.parseInt(newCharAtField.getCharacters().toString());
-                int parade = Integer.parseInt(newCharPaField.getCharacters().toString());
-                int shoot =  Integer.parseInt(newCharFkField.getCharacters().toString());
-                int initiative = Integer.parseInt(newCharAtField.getCharacters().toString());
-                int lifePoints = Integer.parseInt(newCharLifepointsField.getCharacters().toString());
-                int endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
-                int strength = Integer.parseInt(newCharStrengthField.getCharacters().toString());
-                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints, strength));
+                Integer attack = Integer.parseInt(newCharAtField.getCharacters().toString());
+                Integer parade = Integer.parseInt(newCharPaField.getCharacters().toString());
+                Integer shoot =  Integer.parseInt(newCharFkField.getCharacters().toString());
+                Integer initiative = Integer.parseInt(newCharAtField.getCharacters().toString());
+                Integer lifePoints = Integer.parseInt(newCharLifepointsField.getCharacters().toString());
+                Integer endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
+                Integer strength = Integer.parseInt(newCharStrengthField.getCharacters().toString());
+                Integer agility = Integer.parseInt(newCharStrengthField.getCharacters().toString());
+                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints, strength, agility));
                 saveCharacterName(newCharacterNameField.getText());
                 setupScreenController.loadStats();
                 stop();
