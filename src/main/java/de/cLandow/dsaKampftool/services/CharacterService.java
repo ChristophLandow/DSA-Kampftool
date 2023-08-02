@@ -14,14 +14,16 @@ public class CharacterService {
     private Integer lifePoints;
     private Integer endurancePoints;
     private Integer strength;
+
+    private Integer agility;
     private ObservableList<Gear> gearArrayList = FXCollections.observableArrayList();
     private Character currentCharacter;
 
     public CharacterService(){
     }
 
-    public Character createCharacter(String name, Integer at, Integer pa, Integer fk, Integer ini, Integer lp, Integer aup, Integer kk){
-        return new Character(name, at, pa, fk, ini, lp, aup, kk);
+    public Character createCharacter(String name, Integer at, Integer pa, Integer fk, Integer ini, Integer lp, Integer aup, Integer kk, Integer ge){
+        return new Character(name, at, pa, fk, ini, lp, aup, kk, ge);
     }
 
     public String getName() {
@@ -58,6 +60,10 @@ public class CharacterService {
 
     public Integer getStrength() {
         return strength;
+    }
+
+    public Integer getAgility() {
+        return agility;
     }
 
     public ObservableList<Gear> getGearArrayList() {
@@ -102,5 +108,9 @@ public class CharacterService {
 
     public void setStrength(Integer strength) {
         this.strength = strength;
+    }
+
+    public void setAgility(Integer agility) {
+        this.agility = agility;
     }
 }
