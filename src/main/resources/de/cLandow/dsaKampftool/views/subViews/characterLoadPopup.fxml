@@ -84,5 +84,10 @@
             <Font size="14.0" />
          </font>
       </TextField>
+      <TextField fx:id="newCharAgilityField" layoutX="339.0" layoutY="433.0" prefHeight="35.0" prefWidth="89.0" promptText="Gewandheit">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>
