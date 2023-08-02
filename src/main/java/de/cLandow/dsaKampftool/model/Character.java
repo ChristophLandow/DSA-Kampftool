@@ -1,18 +1,18 @@
 package de.cLandow.dsaKampftool.model;
 
 public class Character {
-
     private String name;
-    private int at;
-    private int pa;
-    private int fk;
-    private int ini;
-    private int lp;
-    private int aup;
-    private int kk;
+    private Integer at;
+    private Integer pa;
+    private Integer fk;
+    private Integer ini;
+    private Integer lp;
+    private Integer aup;
+    private Integer kk;
+    private Integer ge;
 
 
-    public Character(String name, int at, int pa, int fk, int ini, int lp, int aup, int kk){
+    public Character(String name, Integer at, Integer pa, Integer fk, Integer ini, Integer lp, Integer aup, Integer kk, Integer ge){
         this.name = name;
         this.at = at;
         this.pa = pa;
@@ -21,6 +21,7 @@ public class Character {
         this.lp = lp;
         this.aup = aup;
         this.kk = kk;
+        this.ge = ge;
     }
 
     public String getName() {
@@ -54,6 +55,10 @@ public class Character {
         return kk;
     }
 
+    public Integer getGe() {
+        return ge;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -84,5 +89,9 @@ public class Character {
 
     public void setKk(int kk){
         this.kk = kk;
+    }
+
+    public void setGe(Integer ge) {
+        this.ge = ge;
     }
 }

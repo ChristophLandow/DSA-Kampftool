@@ -18,9 +18,9 @@ public class WriteCharacterFileService {
     public WriteCharacterFileService(){
     }
 
-    public Character saveNewCharacterAsFXM(String name, int attack, int parade, int shooting, int initiative, int lifePoints, int endurancePoints, int strengh) {
+    public Character saveNewCharacterAsFXM(String name, Integer attack, Integer parade, Integer shooting, Integer initiative, Integer lifePoints, Integer endurancePoints, Integer strengh, Integer agility) {
         createCharacterFolder();
-        return createFile(new Character(name,attack,parade,shooting,initiative, lifePoints, endurancePoints, strengh));
+        return createFile(new Character(name,attack,parade,shooting,initiative, lifePoints, endurancePoints, strengh, agility));
     }
 
     public Character createFile(Character character){
@@ -88,6 +88,10 @@ public class WriteCharacterFileService {
 
             writer.writeStartElement("Koerperkraft");
             writer.writeAttribute("KK", String.valueOf(character.getKk()));
+            writer.writeEndElement();
+
+            writer.writeStartElement("Gewandheit");
+            writer.writeAttribute("GE", String.valueOf(character.getGe()));
             writer.writeEndElement();
 
             writer.writeEndElement();

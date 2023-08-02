@@ -12,13 +12,14 @@ public class CharacterFileReadHandler extends DefaultHandler {
 
     private Character character;
     private String name;
-    private int attacke;
-    private int parade;
-    private int fernkampf;
-    private int initiative;
-    private int lifePoints;
-    private int endurancePoints;
-    private int strength;
+    private Integer attacke;
+    private Integer parade;
+    private Integer fernkampf;
+    private Integer initiative;
+    private Integer lifePoints;
+    private Integer endurancePoints;
+    private Integer strength;
+    private Integer agility;
 
     StringBuilder nameBuilder = new StringBuilder();
     private final ObservableList<Ability> observableList = FXCollections.observableArrayList();;
@@ -29,7 +30,7 @@ public class CharacterFileReadHandler extends DefaultHandler {
 
     @Override
     public void endDocument(){
-        character = new Character(name, attacke, parade, fernkampf, initiative, lifePoints, endurancePoints, strength);
+        character = new Character(name, attacke, parade, fernkampf, initiative, lifePoints, endurancePoints, strength, agility);
     }
 
     @Override
