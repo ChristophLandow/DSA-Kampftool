@@ -95,6 +95,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
             noStatsWarning.setVisible(true);
         } else {
             try {
+                String name = parseToXmlSafeName(newCharacterNameField.getText());
                 Integer attack = Integer.parseInt(newCharAtField.getCharacters().toString());
                 Integer parade = Integer.parseInt(newCharPaField.getCharacters().toString());
                 Integer shoot =  Integer.parseInt(newCharFkField.getCharacters().toString());
@@ -103,7 +104,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 Integer endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
                 Integer strength = Integer.parseInt(newCharStrengthField.getCharacters().toString());
                 Integer agility = Integer.parseInt(newCharAgilityField.getCharacters().toString());
-                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints, strength, agility));
+                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(name, attack, parade, shoot, initiative, lifePoints, endurancePoints, strength, agility));
                 saveCharacterName(newCharacterNameField.getText());
                 setupScreenController.loadStats();
                 stop();
@@ -115,6 +116,10 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 newCharIniField.clear();
             }
         }
+    }
+
+    private String parseToXmlSafeName(String text) {
+        return text.replace(" ","ↂ");
     }
 
     public void saveCharacterName(String name){
