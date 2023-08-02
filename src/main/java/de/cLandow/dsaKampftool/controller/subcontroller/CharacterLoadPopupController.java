@@ -119,7 +119,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     }
 
     private String parseToXmlSafeName(String text) {
-        return text.replace(" ","ↂ");
+        return text.replace(" ","_");
     }
 
     public void saveCharacterName(String name){

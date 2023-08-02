@@ -67,7 +67,7 @@ public class CharacterFileReadHandler extends DefaultHandler {
     }
 
     private String parseToNameWithSpaces(String string) {
-        return string.replace("ↂ", " ");
+        return string.replace("_", " ");
     }
 
     @Override
