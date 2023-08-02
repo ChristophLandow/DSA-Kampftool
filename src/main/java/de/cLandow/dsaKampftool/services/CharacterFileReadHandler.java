@@ -62,14 +62,20 @@ public class CharacterFileReadHandler extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName){
         if("Name".equals(qName)){
-            name = nameBuilder.toString();
+            name = parseToNameWithSpaces(nameBuilder.toString());
         }
+    }
+
+    private String parseToNameWithSpaces(String string) {
+        return string.replace("_", " ");
     }
 
     @Override
     public void characters(char[] ch, int start, int length){
         nameBuilder.append(ch, start, length);
     }
+
+
 
     public Character getCharacter(){
         return this.character;

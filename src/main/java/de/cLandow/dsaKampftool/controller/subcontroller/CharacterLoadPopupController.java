@@ -25,13 +25,12 @@ import java.util.ResourceBundle;
 
 public class CharacterLoadPopupController implements RenderController, Initializable {
 
-    private final SetupScreenController setupScreenController;
+
     @FXML TextField newCharAgilityField;
     @FXML TextField newCharStrengthField;
 
     @FXML Spinner<String> newCharacterProtraitSpinner;
     @FXML Circle characterImageCircle;
-    @FXML Label directoryLabel;
     @FXML ComboBox<String> characterBox;
     @FXML TextField newCharacterNameField;
     @FXML TextField newCharAtField;
@@ -43,7 +42,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     @FXML TextField newCharEnduranceField;
     @FXML TextField newCharLifepointsField;
 
-
+    private final SetupScreenController setupScreenController;
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
     private final WriteCharacterFileService writeCharacterFileService;
@@ -95,6 +94,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
             noStatsWarning.setVisible(true);
         } else {
             try {
+                String name = parseToXmlSafeName(newCharacterNameField.getText());
                 Integer attack = Integer.parseInt(newCharAtField.getCharacters().toString());
                 Integer parade = Integer.parseInt(newCharPaField.getCharacters().toString());
                 Integer shoot =  Integer.parseInt(newCharFkField.getCharacters().toString());
@@ -103,7 +103,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 Integer endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
                 Integer strength = Integer.parseInt(newCharStrengthField.getCharacters().toString());
                 Integer agility = Integer.parseInt(newCharAgilityField.getCharacters().toString());
-                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(newCharacterNameField.getText(), attack, parade, shoot, initiative, lifePoints, endurancePoints, strength, agility));
+                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(name, attack, parade, shoot, initiative, lifePoints, endurancePoints, strength, agility));
                 saveCharacterName(newCharacterNameField.getText());
                 setupScreenController.loadStats();
                 stop();
@@ -117,13 +117,17 @@ public class CharacterLoadPopupController implements RenderController, Initializ
         }
     }
 
+    private String parseToXmlSafeName(String text) {
+        return text.replace(" ","_");
+    }
+
     public void saveCharacterName(String name){
         PrefService prefService = new PrefService();
         prefService.saveCharacterName(name);
     }
 
     public void loadCharacter() {
-        Character character = readFileService.loadCharacter(characterBox.getValue());
+        Character character = readFileService.loadCharacter(parseToXmlSafeName(characterBox.getValue()));
         setupScreenController.setActualCharacter(character);
         setupScreenController.loadStats();
         stop();

@@ -58,7 +58,8 @@ public class ReadFileService {
             for (File character : characterList) {
                 int index = character.getName().indexOf(".");
                 String name = character.getName().substring(0, index);
-                characterArray.add(name);
+                String safeName = name.replace("_"," ");
+                characterArray.add(safeName);
             }
         } else {
             return null;
