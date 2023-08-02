@@ -25,13 +25,12 @@ import java.util.ResourceBundle;
 
 public class CharacterLoadPopupController implements RenderController, Initializable {
 
-    private final SetupScreenController setupScreenController;
+
     @FXML TextField newCharAgilityField;
     @FXML TextField newCharStrengthField;
 
     @FXML Spinner<String> newCharacterProtraitSpinner;
     @FXML Circle characterImageCircle;
-    @FXML Label directoryLabel;
     @FXML ComboBox<String> characterBox;
     @FXML TextField newCharacterNameField;
     @FXML TextField newCharAtField;
@@ -43,7 +42,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     @FXML TextField newCharEnduranceField;
     @FXML TextField newCharLifepointsField;
 
-
+    private final SetupScreenController setupScreenController;
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
     private final WriteCharacterFileService writeCharacterFileService;
@@ -128,7 +127,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     }
 
     public void loadCharacter() {
-        Character character = readFileService.loadCharacter(characterBox.getValue());
+        Character character = readFileService.loadCharacter(parseToXmlSafeName(characterBox.getValue()));
         setupScreenController.setActualCharacter(character);
         setupScreenController.loadStats();
         stop();
