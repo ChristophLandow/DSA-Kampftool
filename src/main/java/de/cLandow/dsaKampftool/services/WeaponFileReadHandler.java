@@ -18,6 +18,7 @@ public class WeaponFileReadHandler extends DefaultHandler {
     private String damage = "";
     private String damageMod = "";
     private Boolean subListLoaded = false;
+    private Boolean twoHanded = false;
 
     private ObservableList<Weapon_closeCombat> temporaryWeaponLIst = FXCollections.observableArrayList();;
     private final ObservableList<Weapon_closeCombat> observableList = FXCollections.observableArrayList();;
@@ -56,13 +57,16 @@ public class WeaponFileReadHandler extends DefaultHandler {
         if (WEAPON.equals(qName)) {
             damageMod = attributes.getValue(DAMAGEMOD);
         }
+        if (WEAPON.equals(qName)) {
+            twoHanded = attributes.getValue(TWOHANDED);
+        }
     }
 
     @Override
     public void endElement(String uri, String localName, String qName){
         if(WEAPON.equals(qName)){
             subListLoaded = false;
-            Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),damage,damageMod,statMod,distance);
+            Weapon_closeCombat weapon = new Weapon_closeCombat(name,Integer.parseInt(initiative),damage,damageMod,statMod,distance, twoHanded);
             observableList.add(weapon);
             temporaryWeaponLIst.add(weapon);
         }
