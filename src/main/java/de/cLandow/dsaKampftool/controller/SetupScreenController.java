@@ -54,21 +54,21 @@ public class SetupScreenController implements RenderController {
             openChooseCharacterOrDirectoryPopup();
         }
         menuController.init();
-        //check/create Home-Directory in Home/Documents
-        //check/create Gear-Directory in Home-Directory
+        //check/write Home-Directory in Home/Documents
+        //check/write Gear-Directory in Home-Directory
         WriteSetupFileService setupFileService = new WriteSetupFileService();
         setupFileService.createMainFolder();
         setupFileService.createSetupFolder();
-        //check/create Character-Directory in Home-Directory
+        //check/write  Character-Directory in Home-Directory
         WriteCharacterFileService writeCharacterFileService = new WriteCharacterFileService();
         writeCharacterFileService.createCharacterFolder();
-        //create Weapon.xml
+        //Write  Weapon.xml
         WriteWeaponFileService writeGearFileService = new WriteWeaponFileService();
         writeGearFileService.createFile();
-        //create Armor.xml
+        //Write  Armor.xml
         WriteArmorFileService writeArmorFileService = new WriteArmorFileService();
         writeArmorFileService.createFile();
-        //create Ability.xml
+        //Write  Ability.xml
         WriteAbilityFileService writeAbilityFileService = new WriteAbilityFileService();
         writeAbilityFileService.createFile();
         //Write Characteristics.fxml
