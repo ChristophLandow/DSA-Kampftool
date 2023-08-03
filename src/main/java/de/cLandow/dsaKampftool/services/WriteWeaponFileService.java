@@ -42,6 +42,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "NS");
             writer.writeAttribute(INITIATIVEMOD, "1");
             writer.writeAttribute(STATMOD, "0/0");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -51,6 +52,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "0");
             writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -60,6 +62,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "2");
             writer.writeAttribute(STATMOD, "0/0");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -69,6 +72,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "NS");
             writer.writeAttribute(INITIATIVEMOD, "0");
             writer.writeAttribute(STATMOD, "0/0");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -78,6 +82,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "NS");
             writer.writeAttribute(INITIATIVEMOD, "1");
             writer.writeAttribute(STATMOD, "0/0");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeEndElement();
@@ -91,6 +96,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "-2");
             writer.writeAttribute(STATMOD, "-1/-4");
+            writer.writeAttribute(TWOHANDED, TRUE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -100,6 +106,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "NS");
             writer.writeAttribute(INITIATIVEMOD, "0");
             writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeAttribute(TWOHANDED, TRUE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -109,6 +116,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "-1");
             writer.writeAttribute(STATMOD, "0/-2");
+            writer.writeAttribute(TWOHANDED, TRUE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -118,6 +126,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "-2");
             writer.writeAttribute(STATMOD, "-1/-3");
+            writer.writeAttribute(TWOHANDED, TRUE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -127,6 +136,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "-2");
             writer.writeAttribute(STATMOD, "-1/-4");
+            writer.writeAttribute(TWOHANDED, TRUE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -136,6 +146,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "-2");
             writer.writeAttribute(STATMOD, "-1/-3");
+            writer.writeAttribute(TWOHANDED, TRUE);
             writer.writeEndElement();
 
             writer.writeEndElement();
@@ -149,6 +160,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "H");
             writer.writeAttribute(INITIATIVEMOD, "-1");
             writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -158,6 +170,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "H");
             writer.writeAttribute(INITIATIVEMOD, "0");
             writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -167,6 +180,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "H");
             writer.writeAttribute(INITIATIVEMOD, "0");
             writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -176,6 +190,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "H");
             writer.writeAttribute(INITIATIVEMOD, "0");
             writer.writeAttribute(STATMOD, "0/0");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeEndElement();
@@ -189,6 +204,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "2");
             writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -198,6 +214,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "3");
             writer.writeAttribute(STATMOD, "+1/-1");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeEndElement();
@@ -211,6 +228,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "-1");
             writer.writeAttribute(STATMOD, "0/-2");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -220,6 +238,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "-1");
             writer.writeAttribute(STATMOD, "-1/-2");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeStartElement(WEAPON);
@@ -229,6 +248,7 @@ public class WriteWeaponFileService {
             writer.writeAttribute(DISTANCE, "N");
             writer.writeAttribute(INITIATIVEMOD, "0");
             writer.writeAttribute(STATMOD, "0/-1");
+            writer.writeAttribute(TWOHANDED, FALSE);
             writer.writeEndElement();
 
             writer.writeEndElement();
