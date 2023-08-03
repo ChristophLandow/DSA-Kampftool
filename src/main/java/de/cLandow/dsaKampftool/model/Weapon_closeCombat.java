@@ -8,14 +8,16 @@ public class Weapon_closeCombat extends Gear{
     private String damageModificator;
     private String statModificator;
     private String distanceClass;
+    private Boolean twoHanded;
 
-    public Weapon_closeCombat(String name, int initiative, String damage, String damageMod, String statMod, String distance){
+    public Weapon_closeCombat(String name, int initiative, String damage, String damageMod, String statMod, String distance, Boolean twoHanded){
         super(name);
         this.ini = initiative;
         this.damage = damage;
         this.damageModificator = damageMod;
         this.statModificator = statMod;
         this.distanceClass = distance;
+        this.twoHanded = twoHanded;
     }
 
 
@@ -39,6 +41,9 @@ public class Weapon_closeCombat extends Gear{
         return distanceClass;
     }
 
+    public Boolean getTwoHanded() {
+        return twoHanded;
+    }
 
     public void setIni(int ini) {
         this.ini = ini;
@@ -58,5 +63,9 @@ public class Weapon_closeCombat extends Gear{
 
     public void setDistanceClass(String distanceClass) {
         this.distanceClass = distanceClass;
+    }
+
+    public void setTwoHanded(Boolean twoHanded) {
+        this.twoHanded = twoHanded;
     }
 }
