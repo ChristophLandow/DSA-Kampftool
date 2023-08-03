@@ -58,7 +58,11 @@ public class WeaponFileReadHandler extends DefaultHandler {
             damageMod = attributes.getValue(DAMAGEMOD);
         }
         if (WEAPON.equals(qName)) {
-            twoHanded = attributes.getValue(TWOHANDED);
+            if(attributes.getValue(TWOHANDED).equals(TRUE)){
+                twoHanded = true;
+            } else if (attributes.getValue(TWOHANDED).equals(FALSE)) {
+                twoHanded = false;
+            }
         }
     }
 

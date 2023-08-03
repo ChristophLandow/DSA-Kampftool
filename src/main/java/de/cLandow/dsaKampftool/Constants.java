@@ -79,6 +79,10 @@ public class Constants {
     public static final String DAGGERS = "Dolche";
     public static final String FENCING_WEAPONS = "Fechtwaffen";
     public static final String IMPACT_WEAPONS = "Hiebwaffen";
+    public static final String TWOHANDED = "Zweihaendige Waffe";
+    public static final String TRUE = "true";
+    public static final String FALSE = "false";
+
 
     //Gear Class
     public static final String CLOSECOMBATCLASS = "class de.cLandow.dsaKampftool.model.Weapon_closeCombat";
