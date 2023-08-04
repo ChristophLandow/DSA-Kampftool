@@ -2,10 +2,9 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -59,10 +58,7 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <Circle fx:id="characterImageCircle" fill="WHITE" layoutX="660.0" layoutY="349.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
       <Text fx:id="noStatsWarning" fill="RED" layoutX="58.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ein Held braucht At, Pa, Fk, Ini, Ausdauer und Lebenspunkt-Basiswerte...." wrappingWidth="265.13671875" />
-      <Spinner fx:id="newCharacterProtraitSpinner" layoutX="480.0" layoutY="320.0" prefHeight="25.0" prefWidth="81.0" />
-      <Button layoutX="480.0" layoutY="362.0" mnemonicParsing="false" onAction="#uploadOwnPicture" prefHeight="25.0" prefWidth="81.0" text="Hochladen" />
       <TextField fx:id="newCharEnduranceField" layoutX="241.0" layoutY="433.0" prefHeight="35.0" prefWidth="89.0" promptText="Start-AP">
          <font>
             <Font size="16.0" />
@@ -89,5 +85,6 @@
             <Font size="14.0" />
          </font>
       </TextField>
+      <VBox fx:id="characterImageVBox" layoutX="466.0" layoutY="282.0" prefHeight="185.0" prefWidth="300.0" />
    </children>
 </AnchorPane>
