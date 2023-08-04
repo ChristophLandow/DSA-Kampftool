@@ -17,6 +17,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
@@ -37,11 +38,9 @@ import static de.cLandow.dsaKampftool.Constants.*;
 public class CharacterLoadPopupController implements RenderController, Initializable {
 
 
+    @FXML VBox characterImageVBox;
     @FXML TextField newCharAgilityField;
     @FXML TextField newCharStrengthField;
-
-    @FXML Spinner<String> newCharacterProtraitSpinner;
-    @FXML Circle characterImageCircle;
     @FXML ComboBox<String> characterBox;
     @FXML TextField newCharacterNameField;
     @FXML TextField newCharAtField;
@@ -57,18 +56,22 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
     private final WriteCharacterFileService writeCharacterFileService;
+    private final CharacterImageBoxController characterImageBoxController;
 
 
     public CharacterLoadPopupController(SetupScreenController setupScreenController){
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
         this.writeCharacterFileService = new WriteCharacterFileService();
+        this.characterImageBoxController = new CharacterImageBoxController();
     }
 
     @Override
     public void init() {
         noNameWarning.setVisible(false);
         noStatsWarning.setVisible(false);
+        characterImageVBox.getChildren().add(characterImageBoxController.render());
+        characterImageBoxController.init();
     }
 
     @Override
@@ -145,25 +148,5 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     }
 
     public void close(ActionEvent actionEvent) {
-    }
-
-    public void uploadOwnPicture(ActionEvent actionEvent) throws IOException {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Choose Avatar", "*.PNG", "*.jpg"));
-        File avatarURL = fileChooser.showOpenDialog(null);
-        if(avatarURL != null) {
-            byte[] data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
-            String avatarB64 =  Base64.getEncoder().encodeToString(data);
-
-            Image newImage = new Image(avatarURL.getAbsolutePath());
-
-            if (avatarB64.length() > AVATAR_CHAR_LIMIT) {
-                System.out.println("ZU GROß!!");
-                //this.avatarStatusText.setText("Image exceeds file size limit");
-            } else {
-                //File newImageFile = new File()
-                //ImageIO.write(SwingFXUtils.fromFXImage(newImage, null,"png", file));
-            }
-        }
     }
 }
