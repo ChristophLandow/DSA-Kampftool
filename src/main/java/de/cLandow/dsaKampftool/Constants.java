@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool;
 public class Constants {
 
     public static final String SCREEN_TITLE = "DSA4.1 Kampftool";
+    public static final int AVATAR_CHAR_LIMIT = 16384;
 
     public static final String DIRECTORY = "Directory";
     public static final String NOSAVEFILE = "NoSaveFile";

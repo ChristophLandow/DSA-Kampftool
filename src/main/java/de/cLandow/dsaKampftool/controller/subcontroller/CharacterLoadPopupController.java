@@ -11,16 +11,28 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.ResourceBundle;
+
+import static de.cLandow.dsaKampftool.Constants.AVATAR_CHAR_LIMIT;
 
 public class CharacterLoadPopupController implements RenderController, Initializable {
 
@@ -135,6 +147,22 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     public void close(ActionEvent actionEvent) {
     }
 
-    public void uploadOwnPicture(ActionEvent actionEvent) {
+    public void uploadOwnPicture(ActionEvent actionEvent) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Choose Avatar", "*.PNG", "*.jpg"));
+        File avatarURL = fileChooser.showOpenDialog(null);
+        if(avatarURL != null) {
+            byte[] data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
+            String avatarB64 =  Base64.getEncoder().encodeToString(data);
+
+            Image newImage = new Image(avatarURL.getAbsolutePath());
+
+            if (avatarB64.length() > AVATAR_CHAR_LIMIT) {
+                //this.avatarStatusText.setText("Image exceeds file size limit");
+            } else {
+                //File newImageFile = new File()
+                //ImageIO.write(SwingFXUtils.fromFXImage(newImage, null,"png", file));
+            }
+        }
     }
 }
