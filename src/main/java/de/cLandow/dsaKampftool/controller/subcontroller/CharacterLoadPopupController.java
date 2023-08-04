@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.ResourceBundle;
 
-import static de.cLandow.dsaKampftool.Constants.AVATAR_CHAR_LIMIT;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class CharacterLoadPopupController implements RenderController, Initializable {
 
@@ -158,6 +158,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
             Image newImage = new Image(avatarURL.getAbsolutePath());
 
             if (avatarB64.length() > AVATAR_CHAR_LIMIT) {
+                System.out.println("ZU GROß!!");
                 //this.avatarStatusText.setText("Image exceeds file size limit");
             } else {
                 //File newImageFile = new File()
