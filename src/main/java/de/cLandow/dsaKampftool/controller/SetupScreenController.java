@@ -2,7 +2,6 @@ package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
-import de.cLandow.dsaKampftool.controller.subcontroller.ChooseCharacterOrDirectoryPopupController;
 import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
@@ -34,7 +33,6 @@ public class SetupScreenController implements RenderController {
     private final PrefService prefService;
     private Stage popupStage;
     private CharacterLoadPopupController characterLoadPopupController;
-    private ChooseCharacterOrDirectoryPopupController chooseCharacterOrDirectoryPopupController;
 
     private HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private Character actualCharacter;
@@ -51,7 +49,7 @@ public class SetupScreenController implements RenderController {
         menuController = new MenuController(this, popupStage);
         menuBox.getChildren().add(menuController.render());
         if(actualCharacter == null) {
-            openChooseCharacterOrDirectoryPopup();
+            openCharacterLoadPopup();
         }
         menuController.init();
         //check/write Home-Directory in Home/Documents
@@ -102,16 +100,6 @@ public class SetupScreenController implements RenderController {
         popupStage.setScene(new Scene(characterLoadPopupController.render()));
         popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
         characterLoadPopupController.init();
-        popupStage.show();
-    }
-
-    public void openChooseCharacterOrDirectoryPopup(){
-        popupStage = new Stage();
-        popupStage.initModality(Modality.WINDOW_MODAL);
-        chooseCharacterOrDirectoryPopupController = new ChooseCharacterOrDirectoryPopupController(this);
-        popupStage.setScene(new Scene(chooseCharacterOrDirectoryPopupController.render()));
-        popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
-        chooseCharacterOrDirectoryPopupController.init();
         popupStage.show();
     }
 

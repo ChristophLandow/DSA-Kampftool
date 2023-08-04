@@ -13,7 +13,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Circle;
@@ -88,9 +87,9 @@ public class CharacterLoadPopupController implements RenderController, Initializ
 
 
     public void createNewCharacter() {
-        if(checkTextField(newCharacterNameField)) {
+        if(newCharacterNameField.getText().isEmpty()) {
             noNameWarning.setVisible(true);
-        } else if ((checkTextField(newCharAtField)) || (checkTextField(newCharPaField)) || (checkTextField(newCharFkField)) || (checkTextField(newCharIniField))){
+        } else if ((newCharAtField.getText().isEmpty()) || (newCharPaField.getText().isEmpty()) || (newCharFkField.getText().isEmpty()) || (newCharIniField.getText().isEmpty())){
             noStatsWarning.setVisible(true);
         } else {
             try {
@@ -131,10 +130,6 @@ public class CharacterLoadPopupController implements RenderController, Initializ
         setupScreenController.setActualCharacter(character);
         setupScreenController.loadStats();
         stop();
-    }
-
-    public boolean checkTextField(TextField field){
-        return field.getText().length() == 0;
     }
 
     public void close(ActionEvent actionEvent) {
