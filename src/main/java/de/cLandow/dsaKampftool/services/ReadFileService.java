@@ -12,6 +12,9 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileVisitOption;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import static de.cLandow.dsaKampftool.Constants.*;
@@ -52,21 +55,32 @@ public class ReadFileService {
 
     public ArrayList<String> loadCharakterNamesForChoiceBox() {
         ArrayList<String> characterArray = new ArrayList<>();
-        File characterDirectory = new File(Paths.get(System.getProperty("user.home") + "//DSAKampftool//Charakter").toUri());
-        File[] characterList = characterDirectory.listFiles();
-        if (characterList != null) {
-            for (File character : characterList) {
-                int index = character.getName().indexOf(".");
-                String name = character.getName().substring(0, index);
-                String safeName = name.replace("_"," ");
-                characterArray.add(safeName);
+        try {
+            ArrayList<String> pathList = iterateCharacterDirectory();
+            for (String path : pathList) {
+                if(path.endsWith(".xml")){
+                    File newFile =  new File(path);
+                    String name = newFile.getName();
+                    int index = name.lastIndexOf(".");
+                    String nameWithoutXML = name.substring(0, index);
+                    String safeName = nameWithoutXML.replace("_", " ");
+                    characterArray.add(safeName);
+                }
             }
-        } else {
-            return null;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
         return characterArray;
     }
 
+    private ArrayList<String> iterateCharacterDirectory() throws Exception {
+        ArrayList<String> pathList = new ArrayList<>();
+        Files.walk(Paths.get(CHARACTER_FILEPATH), FileVisitOption.FOLLOW_LINKS).forEach((path) -> {
+            String stringPath = path.toString();
+            pathList.add(stringPath);
+        });
+        return pathList;
+    }
 
     public ObservableList<Weapon_closeCombat> loadWeapons(){
         SAXParserFactory factory = SAXParserFactory.newInstance();
