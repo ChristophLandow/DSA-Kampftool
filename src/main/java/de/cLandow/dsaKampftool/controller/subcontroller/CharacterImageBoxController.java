@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
 
@@ -61,14 +62,13 @@ public class CharacterImageBoxController implements RenderController {
         if(avatarURL != null) {
             byte[] data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
             String avatarB64 =  Base64.getEncoder().encodeToString(data);
-
-            Image newImage = new Image(avatarURL.getAbsolutePath());
-
             if (avatarB64.length() > AVATAR_CHAR_LIMIT) {
                 System.out.println("ZU GROß!!");
                 //this.avatarStatusText.setText("Image exceeds file size limit");
             } else {
-                //File newImageFile = new File()
+                Image image = new Image(avatarURL.toURI().toString());
+                characterImageCircle.setFill(new ImagePattern(image));
+                System.out.println("ERfolg");
                 //ImageIO.write(SwingFXUtils.fromFXImage(newImage, null,"png", file));
             }
         }
