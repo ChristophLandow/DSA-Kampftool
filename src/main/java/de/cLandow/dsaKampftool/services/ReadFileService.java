@@ -36,7 +36,7 @@ public class ReadFileService {
     }
 
     public Character loadCharacter(String name){
-        String path = CHARACTER_FILEPATH + name + ".xml";
+        String path = CHARACTER_FILEPATH +  name + "//" + name + ".xml";
         SAXParserFactory factory = SAXParserFactory.newInstance();
 
         try {
