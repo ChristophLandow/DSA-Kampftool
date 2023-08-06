@@ -68,7 +68,6 @@ public class CharacterImageBoxController implements RenderController {
             } else {
                 Image image = new Image(avatarURL.toURI().toString());
                 characterImageCircle.setFill(new ImagePattern(image));
-                System.out.println("ERfolg");
                 //ImageIO.write(SwingFXUtils.fromFXImage(newImage, null,"png", file));
             }
         }

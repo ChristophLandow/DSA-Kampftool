@@ -41,9 +41,7 @@ public class ReadFileService {
 
         try {
             SAXParser saxParser = factory.newSAXParser();
-
             CharacterFileReadHandler handler = new CharacterFileReadHandler();
-
             saxParser.parse(path, handler);
             return handler.getCharacter();
 
