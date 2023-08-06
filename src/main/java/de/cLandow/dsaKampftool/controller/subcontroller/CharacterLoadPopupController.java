@@ -127,6 +127,8 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 newCharPaField.clear();
                 newCharFkField.clear();
                 newCharIniField.clear();
+                newCharAgilityField.clear();
+                newCharStrengthField.clear();
             }
         }
     }
