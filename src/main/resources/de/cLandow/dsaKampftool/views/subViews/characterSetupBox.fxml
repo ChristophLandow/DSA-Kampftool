@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="characterBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.CharacterVBoxController">
+   <children>
+      <Circle fx:id="avatarCircle" fill="DODGERBLUE" layoutX="115.0" layoutY="99.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 5; -fx-stroke-type: inside;" />
+      <Label fx:id="nameLabel" alignment="CENTER" layoutX="20.0" layoutY="180.0" prefHeight="30.0" prefWidth="191.0" text="Name">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Text layoutX="22.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Basis-At : ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="baseAtLabel" alignment="CENTER" layoutX="131.0" layoutY="281.0" prefHeight="30.0" prefWidth="50.0" text="0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Text layoutX="21.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Basis-Pa : ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="basePaLabel" alignment="CENTER" layoutX="131.0" layoutY="321.0" prefHeight="30.0" prefWidth="50.0" text="0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Text layoutX="22.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Basis-Fk : ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="baseFkLabel" alignment="CENTER" layoutX="131.0" layoutY="371.0" prefHeight="0.0" prefWidth="50.0" text="0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Text layoutX="21.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Basis-Ini : ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="baseIniLabel" alignment="CENTER" layoutX="131.0" layoutY="421.0" prefHeight="30.0" prefWidth="50.0" text="0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Text layoutX="20.0" layoutY="496.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Körperkraft : ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="20.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gewandheit : ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="strengthLabel" alignment="CENTER" layoutX="156.0" layoutY="473.0" prefHeight="30.0" prefWidth="50.0" text="0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="agilityLabel" alignment="CENTER" layoutX="156.0" layoutY="512.0" prefHeight="30.0" prefWidth="50.0" text="0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <HBox fx:id="healthAndEnduranceBox" layoutX="14.0" layoutY="579.0" prefHeight="110.0" prefWidth="190.0" />
+   </children>
+</AnchorPane>

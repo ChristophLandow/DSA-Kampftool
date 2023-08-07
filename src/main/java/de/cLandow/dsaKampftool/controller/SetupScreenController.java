@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.CharacterVBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
@@ -11,7 +12,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -20,21 +20,19 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SetupScreenController implements RenderController {
-    @FXML HBox healthAndEnduranceBox;
+
+
+    @FXML VBox characterSetupVBox;
     @FXML VBox screenBox;
-    @FXML Label nameLabel;
-    @FXML Label baseAtLabel;
-    @FXML Label basePaLabel;
-    @FXML Label baseFkLabel;
-    @FXML Label baseIniLabel;
+
     @FXML HBox menuBox;
 
     private final Tool tool;
-    private final PrefService prefService;
     private Stage popupStage;
     private CharacterLoadPopupController characterLoadPopupController;
 
-    private HealthAndEnduranceBoxController healthAndEnduranceBoxController;
+    private CharacterVBoxController characterBoxController;
+
     private Character actualCharacter;
     private CharacterScreenController characterScreenController;
     private MenuController menuController;
@@ -42,7 +40,6 @@ public class SetupScreenController implements RenderController {
 
     public SetupScreenController(Tool tool){
         this.tool = tool;
-        this.prefService = new PrefService();
     }
     @Override
     public void init() {
@@ -106,9 +103,9 @@ public class SetupScreenController implements RenderController {
     }
 
     public void closeCharacterLoadPopup(){
-        closePopupStage();
         openCharacterScreen();
-        loadHealthAndEndurance();
+        loadCharacterSetupBox();
+        closePopupStage();
     }
 
     public void closePopupStage(){
@@ -117,14 +114,9 @@ public class SetupScreenController implements RenderController {
         }
     }
 
-    public void setActualCharacter(Character character){
+    public void setCurrentCharacter(Character character){
         this.actualCharacter = character;
     }
-
-    public void loadCharacterName(){
-        nameLabel.setText(actualCharacter.getName());
-    }
-
 
     public Stage getPopupStage(){
         return this.popupStage;
@@ -142,24 +134,17 @@ public class SetupScreenController implements RenderController {
         }
     }
 
-    public void loadStats() {
-        baseAtLabel.setText(Integer.toString(actualCharacter.getAt()));
-        basePaLabel.setText(Integer.toString(actualCharacter.getPa()));
-        baseFkLabel.setText(Integer.toString(actualCharacter.getFk()));
-        baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
-    }
-
-    private void loadHealthAndEndurance() {
-        this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(getCharacterScreenController());
-        healthAndEnduranceBox.getChildren().add(healthAndEnduranceBoxController.render());
-        healthAndEnduranceBoxController.init();
-    }
-
     public Tool getTool(){
         return this.tool;
     }
 
     public CharacterScreenController getCharacterScreenController(){
         return this.characterScreenController;
+    }
+
+    public void loadCharacterSetupBox() {
+        this.characterBoxController = new CharacterVBoxController(characterScreenController, actualCharacter);
+        characterSetupVBox.getChildren().add(characterBoxController.render());
+        characterBoxController.init();
     }
 }
