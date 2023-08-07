@@ -72,6 +72,8 @@ public class SetupScreenController implements RenderController {
         //Write Characteristics.fxml
         WriteCharacteristicsFileService writeCharacteristicsFileService = new WriteCharacteristicsFileService();
         writeCharacteristicsFileService.createFile();
+        //init Character Service
+        CharacterService characterService = new CharacterService();
     }
 
     @Override

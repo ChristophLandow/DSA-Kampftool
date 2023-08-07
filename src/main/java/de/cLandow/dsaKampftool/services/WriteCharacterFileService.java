@@ -43,8 +43,9 @@ public class WriteCharacterFileService {
         File folder = new File(path.toUri());
         if(!folder.exists()){
             return folder.mkdirs();
+        } else {
+            return folder.exists();
         }
-        return false;
     }
 
     public boolean createSpecificCharacterFolder(Character character){
@@ -52,8 +53,9 @@ public class WriteCharacterFileService {
         File folder = new File(path.toUri());
         if(!folder.exists()){
             return folder.mkdirs();
+        } else {
+            return folder.exists();
         }
-        return false;
     }
 
     private static void writeXml(OutputStream out, Character character)  {
