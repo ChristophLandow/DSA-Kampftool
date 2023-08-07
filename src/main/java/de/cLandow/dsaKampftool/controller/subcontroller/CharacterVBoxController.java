@@ -45,4 +45,10 @@ public class CharacterVBoxController implements RenderController {
         }
         return parent;
     }
+
+    private void loadHealthAndEndurance() {
+        healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(getCharacterScreenController());
+        healthAndEnduranceBox.getChildren().add(healthAndEnduranceBoxController.render());
+        healthAndEnduranceBoxController.init();
+    }
 }
