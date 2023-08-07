@@ -20,9 +20,12 @@ public class WriteCharacterFileService {
 
     public Character saveNewCharacterAsFXM(String name, Integer attack, Integer parade, Integer shooting, Integer initiative, Integer lifePoints, Integer endurancePoints, Integer strengh, Integer agility) {
         Character newCharacter = new Character(name,attack,parade,shooting,initiative, lifePoints, endurancePoints, strengh, agility);
-        createCharacterFolder();
-        createSpecificCharacterFolder(newCharacter);
-        return createFile(newCharacter);
+        if(createCharacterFolder()){
+            if(createSpecificCharacterFolder(newCharacter)){
+                return createFile(newCharacter);
+            }
+        }
+        return null;
     }
 
     public Character createFile(Character character){
