@@ -20,13 +20,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SetupScreenController implements RenderController {
-    @FXML HBox healthAndEnduranceBox;
+
+    @FXML VBox characterSetupVBox;
     @FXML VBox screenBox;
-    @FXML Label nameLabel;
-    @FXML Label baseAtLabel;
-    @FXML Label basePaLabel;
-    @FXML Label baseFkLabel;
-    @FXML Label baseIniLabel;
+
     @FXML HBox menuBox;
 
     private final Tool tool;
