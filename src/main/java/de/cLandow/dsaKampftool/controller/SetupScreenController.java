@@ -33,7 +33,7 @@ public class SetupScreenController implements RenderController {
     private CharacterLoadPopupController characterLoadPopupController;
 
     private HealthAndEnduranceBoxController healthAndEnduranceBoxController;
-    private final CharacterVBoxController characterBoxController;
+    private CharacterVBoxController characterBoxController;
 
     private Character actualCharacter;
     private CharacterScreenController characterScreenController;
@@ -42,8 +42,6 @@ public class SetupScreenController implements RenderController {
 
     public SetupScreenController(Tool tool){
         this.tool = tool;
-        this.characterBoxController = new CharacterVBoxController();
-
     }
     @Override
     public void init() {
@@ -107,11 +105,9 @@ public class SetupScreenController implements RenderController {
     }
 
     public void closeCharacterLoadPopup(){
-        loadCharacterSetupBox();
-        loadStats();
-        closePopupStage();
         openCharacterScreen();
-        loadHealthAndEndurance();
+        loadCharacterSetupBox();
+        closePopupStage();
     }
 
     public void closePopupStage(){
@@ -120,13 +116,11 @@ public class SetupScreenController implements RenderController {
         }
     }
 
-    public void setActualCharacter(Character character){
+    public void setCurrentCharacter(Character character){
         this.actualCharacter = character;
     }
 
-    public void loadCharacterName(){
-        nameLabel.setText(actualCharacter.getName());
-    }
+
 
 
     public Stage getPopupStage(){
@@ -145,13 +139,6 @@ public class SetupScreenController implements RenderController {
         }
     }
 
-    public void loadStats() {
-        baseAtLabel.setText(Integer.toString(actualCharacter.getAt()));
-        basePaLabel.setText(Integer.toString(actualCharacter.getPa()));
-        baseFkLabel.setText(Integer.toString(actualCharacter.getFk()));
-        baseIniLabel.setText(Integer.toString(actualCharacter.getIni()));
-    }
-
     public Tool getTool(){
         return this.tool;
     }
@@ -161,6 +148,7 @@ public class SetupScreenController implements RenderController {
     }
 
     public void loadCharacterSetupBox() {
+        this.characterBoxController = new CharacterVBoxController(characterScreenController, actualCharacter);
         characterSetupVBox.getChildren().add(characterBoxController.render());
         characterBoxController.init();
     }

@@ -65,7 +65,6 @@ public class CharacterLoadPopupController implements RenderController, Initializ
 
     @Override
     public void stop() {
-        setupScreenController.loadCharacterName();
         setupScreenController.closeCharacterLoadPopup();
     }
 
@@ -106,7 +105,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 Integer endurancePoints = Integer.parseInt(newCharEnduranceField.getCharacters().toString());
                 Integer strength = Integer.parseInt(newCharStrengthField.getCharacters().toString());
                 Integer agility = Integer.parseInt(newCharAgilityField.getCharacters().toString());
-                setupScreenController.setActualCharacter(writeCharacterFileService.saveNewCharacterAsFXM(name, attack, parade, shoot, initiative, lifePoints, endurancePoints, strength, agility));
+                setupScreenController.setCurrentCharacter(writeCharacterFileService.saveNewCharacterAsFXM(name, attack, parade, shoot, initiative, lifePoints, endurancePoints, strength, agility));
                 stop();
             } catch (NumberFormatException e) {
                 noStatsWarning.setVisible(true);
@@ -128,8 +127,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
 
     public void loadCharacter() {
         Character character = readFileService.loadCharacter(parseToXmlSafeName(characterBox.getValue()));
-        setupScreenController.setActualCharacter(character);
-        setupScreenController.loadStats();
+        setupScreenController.setCurrentCharacter(character);
         stop();
     }
 
