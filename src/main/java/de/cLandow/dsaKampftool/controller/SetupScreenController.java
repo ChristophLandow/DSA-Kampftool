@@ -12,7 +12,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -32,7 +31,6 @@ public class SetupScreenController implements RenderController {
     private Stage popupStage;
     private CharacterLoadPopupController characterLoadPopupController;
 
-    private HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private CharacterVBoxController characterBoxController;
 
     private Character actualCharacter;
@@ -119,9 +117,6 @@ public class SetupScreenController implements RenderController {
     public void setCurrentCharacter(Character character){
         this.actualCharacter = character;
     }
-
-
-
 
     public Stage getPopupStage(){
         return this.popupStage;

@@ -34,7 +34,9 @@ public class CharacterVBoxController implements RenderController {
 
     @Override
     public void init() {
-
+        loadCharacterName();
+        loadStats();
+        loadHealthAndEndurance();
     }
 
     @Override
