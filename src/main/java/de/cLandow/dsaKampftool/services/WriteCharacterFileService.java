@@ -19,13 +19,15 @@ public class WriteCharacterFileService {
     }
 
     public Character saveNewCharacterAsFXM(String name, Integer attack, Integer parade, Integer shooting, Integer initiative, Integer lifePoints, Integer endurancePoints, Integer strengh, Integer agility) {
+        Character newCharacter = new Character(name,attack,parade,shooting,initiative, lifePoints, endurancePoints, strengh, agility);
         createCharacterFolder();
-        return createFile(new Character(name,attack,parade,shooting,initiative, lifePoints, endurancePoints, strengh, agility));
+        createSpecificCharacterFolder(newCharacter);
+        return createFile(newCharacter);
     }
 
     public Character createFile(Character character){
         // send the output to a xml file
-        try(FileOutputStream out = new FileOutputStream(CHARACTER_FILEPATH + character.getName() + ".xml")){
+        try(FileOutputStream out = new FileOutputStream(CHARACTER_FILEPATH +  character.getName() + "//" + character.getName() + ".xml")){
             writeXml(out, character);
         } catch (IOException e) {
             e.printStackTrace();
@@ -34,7 +36,16 @@ public class WriteCharacterFileService {
     }
 
     public boolean createCharacterFolder(){
-        Path path = Paths.get(System.getProperty("user.home") + "//DSAKampftool//Charakter//");
+        Path path = Paths.get(CHARACTER_FILEPATH);
+        File folder = new File(path.toUri());
+        if(!folder.exists()){
+            return folder.mkdirs();
+        }
+        return false;
+    }
+
+    public boolean createSpecificCharacterFolder(Character character){
+        Path path = Paths.get(CHARACTER_FILEPATH +  character.getName() + "//");
         File folder = new File(path.toUri());
         if(!folder.exists()){
             return folder.mkdirs();
