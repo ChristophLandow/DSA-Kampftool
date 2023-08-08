@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,8 +12,11 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,19 +25,22 @@ import java.util.Base64;
 
 import static de.cLandow.dsaKampftool.Constants.AVATAR_CHAR_LIMIT;
 
-public class CharacterImageBoxController implements RenderController {
+public class ImageBoxController implements RenderController {
 
+    @FXML Text fileSizeText;
     @FXML AnchorPane imageBoxAnchor;
     @FXML Circle characterImageCircle;
     @FXML Spinner<String> newCharacterProtraitSpinner;
 
-    public CharacterImageBoxController(){
+    private final CharacterLoadPopupController characterLoadPopupController;
 
+    public ImageBoxController(CharacterLoadPopupController characterLoadPopupController){
+        this.characterLoadPopupController = characterLoadPopupController;
     }
 
     @Override
     public void init() {
-
+        fileSizeText.setVisible(false);
     }
 
     @Override
@@ -43,7 +50,7 @@ public class CharacterImageBoxController implements RenderController {
 
     @Override
     public Parent render() {
-        final FXMLLoader loader = new FXMLLoader(Tool.class.getResource("views/subViews/characterImageBox.fxml"));
+        final FXMLLoader loader = new FXMLLoader(Tool.class.getResource("views/subViews/imageBox.fxml"));
         loader.setControllerFactory(c->this);
         final Parent imageBoxParent;
         try {
@@ -63,13 +70,24 @@ public class CharacterImageBoxController implements RenderController {
             byte[] data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
             String avatarB64 =  Base64.getEncoder().encodeToString(data);
             if (avatarB64.length() > AVATAR_CHAR_LIMIT) {
-                System.out.println("ZU GROß!!");
-                //this.avatarStatusText.setText("Image exceeds file size limit");
+                fileSizeText.setVisible(true);
             } else {
+                fileSizeText.setVisible(false);
                 Image image = new Image(avatarURL.toURI().toString());
                 characterImageCircle.setFill(new ImagePattern(image));
-                //ImageIO.write(SwingFXUtils.fromFXImage(newImage, null,"png", file));
             }
+
+
+        }
+    }
+
+    public static void saveAsPNG(Image image, String path) {
+        File outputFile = new File(path);
+        BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
+        try {
+            ImageIO.write(bImage, "png", outputFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

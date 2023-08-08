@@ -4,7 +4,6 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
-import de.cLandow.dsaKampftool.services.PrefService;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import de.cLandow.dsaKampftool.services.WriteCharacterFileService;
 import javafx.event.ActionEvent;
@@ -21,8 +20,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
-import static de.cLandow.dsaKampftool.Constants.*;
 
 public class CharacterLoadPopupController implements RenderController, Initializable {
 
@@ -45,14 +42,14 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
     private final WriteCharacterFileService writeCharacterFileService;
-    private final CharacterImageBoxController characterImageBoxController;
+    private final ImageBoxController characterImageBoxController;
 
 
     public CharacterLoadPopupController(SetupScreenController setupScreenController){
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
         this.writeCharacterFileService = new WriteCharacterFileService();
-        this.characterImageBoxController = new CharacterImageBoxController();
+        this.characterImageBoxController = new ImageBoxController(this);
     }
 
     @Override
