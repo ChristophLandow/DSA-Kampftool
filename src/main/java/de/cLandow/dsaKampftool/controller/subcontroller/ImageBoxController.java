@@ -43,7 +43,7 @@ public class ImageBoxController implements RenderController {
 
     @Override
     public Parent render() {
-        final FXMLLoader loader = new FXMLLoader(Tool.class.getResource("views/subViews/characterImageBox.fxml"));
+        final FXMLLoader loader = new FXMLLoader(Tool.class.getResource("views/subViews/imageBox.fxml"));
         loader.setControllerFactory(c->this);
         final Parent imageBoxParent;
         try {
