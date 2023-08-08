@@ -81,4 +81,14 @@ public class ImageBoxController implements RenderController {
 
         }
     }
+
+    public static void saveAsPNG(Image image, String path) {
+        File outputFile = new File("C:/JavaFX/");
+        BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
+        try {
+            ImageIO.write(bImage, "png", outputFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
