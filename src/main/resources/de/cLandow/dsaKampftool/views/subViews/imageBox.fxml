@@ -12,7 +12,7 @@
       <Circle fx:id="characterImageCircle" fill="WHITE" layoutX="215.0" layoutY="86.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
       <Spinner fx:id="newCharacterProtraitSpinner" layoutX="23.0" layoutY="57.0" prefHeight="25.0" prefWidth="81.0" />
       <Button layoutX="23.0" layoutY="90.0" mnemonicParsing="false" onAction="#uploadOwnPicture" prefHeight="25.0" prefWidth="81.0" text="Hochladen" />
-      <Text fx:id="FileSizeText" fill="RED" layoutX="164.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datei zu groß !" wrappingWidth="101.13671875">
+      <Text fx:id="fileSizeText" fill="RED" layoutX="164.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Datei zu groß !" wrappingWidth="101.13671875">
          <font>
             <Font size="15.0" />
          </font>

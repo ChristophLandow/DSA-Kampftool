@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -23,6 +24,7 @@ import static de.cLandow.dsaKampftool.Constants.AVATAR_CHAR_LIMIT;
 
 public class ImageBoxController implements RenderController {
 
+    @FXML Text fileSizeText;
     @FXML AnchorPane imageBoxAnchor;
     @FXML Circle characterImageCircle;
     @FXML Spinner<String> newCharacterProtraitSpinner;
@@ -33,7 +35,7 @@ public class ImageBoxController implements RenderController {
 
     @Override
     public void init() {
-
+        fileSizeText.setVisible(false);
     }
 
     @Override
@@ -63,9 +65,9 @@ public class ImageBoxController implements RenderController {
             byte[] data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
             String avatarB64 =  Base64.getEncoder().encodeToString(data);
             if (avatarB64.length() > AVATAR_CHAR_LIMIT) {
-                System.out.println("ZU GROß!!");
-                //this.avatarStatusText.setText("Image exceeds file size limit");
+                fileSizeText.setVisible(true);
             } else {
+                fileSizeText.setVisible(false);
                 Image image = new Image(avatarURL.toURI().toString());
                 characterImageCircle.setFill(new ImagePattern(image));
                 //ImageIO.write(SwingFXUtils.fromFXImage(newImage, null,"png", file));
