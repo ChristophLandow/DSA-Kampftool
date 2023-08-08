@@ -75,7 +75,6 @@ public class ImageBoxController implements RenderController {
                 fileSizeText.setVisible(false);
                 Image image = new Image(avatarURL.toURI().toString());
                 characterImageCircle.setFill(new ImagePattern(image));
-
             }
 
 
@@ -83,7 +82,7 @@ public class ImageBoxController implements RenderController {
     }
 
     public static void saveAsPNG(Image image, String path) {
-        File outputFile = new File("C:/JavaFX/");
+        File outputFile = new File(path);
         BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
         try {
             ImageIO.write(bImage, "png", outputFile);
