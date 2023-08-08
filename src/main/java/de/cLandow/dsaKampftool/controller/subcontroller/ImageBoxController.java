@@ -21,13 +21,13 @@ import java.util.Base64;
 
 import static de.cLandow.dsaKampftool.Constants.AVATAR_CHAR_LIMIT;
 
-public class CharacterImageBoxController implements RenderController {
+public class ImageBoxController implements RenderController {
 
     @FXML AnchorPane imageBoxAnchor;
     @FXML Circle characterImageCircle;
     @FXML Spinner<String> newCharacterProtraitSpinner;
 
-    public CharacterImageBoxController(){
+    public ImageBoxController(){
 
     }
 
