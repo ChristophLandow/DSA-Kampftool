@@ -49,7 +49,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
         this.writeCharacterFileService = new WriteCharacterFileService();
-        this.characterImageBoxController = new ImageBoxController();
+        this.characterImageBoxController = new ImageBoxController(this);
     }
 
     @Override
