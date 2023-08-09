@@ -125,7 +125,11 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     public void loadCharacter() {
         Character character = readFileService.loadCharacter(parseToXmlSafeName(characterBox.getValue()));
         setupScreenController.setCurrentCharacter(character);
-        setupScreenController.setCharacterImage(characterImageBoxController.getImage());
+        if(characterImageBoxController != null){
+            if(characterImageBoxController.getImage() != null){
+                setupScreenController.setCharacterImage(characterImageBoxController.getImage());
+            }
+        }
         stop();
     }
 

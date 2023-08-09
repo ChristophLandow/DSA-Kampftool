@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="characterBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="775.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.CharacterVBoxController">
    <children>
-      <Circle fx:id="avatarCircle" fill="DODGERBLUE" layoutX="115.0" layoutY="129.0" radius="66.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 5; -fx-stroke-type: inside;" />
+      <Circle fx:id="avatarCircle" fill="WHITE" layoutX="215.0" layoutY="86.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
       <Label fx:id="nameLabel" alignment="CENTER" layoutX="20.0" layoutY="206.0" prefHeight="30.0" prefWidth="191.0" text="Name">
          <font>
             <Font name="System Bold" size="20.0" />

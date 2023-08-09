@@ -150,6 +150,7 @@ public class SetupScreenController implements RenderController {
     }
 
     public void setCharacterImage(Image image) {
+
         characterBoxController.setCharacterImage(image);
     }
 }
