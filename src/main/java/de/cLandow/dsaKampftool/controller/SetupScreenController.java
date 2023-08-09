@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -146,5 +147,9 @@ public class SetupScreenController implements RenderController {
         this.characterBoxController = new CharacterVBoxController(characterScreenController, actualCharacter);
         characterSetupVBox.getChildren().add(characterBoxController.render());
         characterBoxController.init();
+    }
+
+    public void setCharacterImage(Image image) {
+        characterBoxController.setCharacterImage(image);
     }
 }

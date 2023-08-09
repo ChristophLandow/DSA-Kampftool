@@ -4,17 +4,27 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.model.Character;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 public class CharacterVBoxController implements RenderController {
 
 
+    @FXML Circle avatarCircle;
+    @FXML Label strengthLabel;
+    @FXML Label agilityLabel;
     @FXML Label nameLabel;
     @FXML Label baseAtLabel;
     @FXML Label basePaLabel;
@@ -25,6 +35,7 @@ public class CharacterVBoxController implements RenderController {
     private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private final CharacterScreenController characterScreenController;
     private final Character currentCharacter;
+    private Image currentImage;
 
     public CharacterVBoxController(CharacterScreenController characterScreenController, Character currentCharacter){
         this.characterScreenController = characterScreenController;
@@ -71,5 +82,20 @@ public class CharacterVBoxController implements RenderController {
 
     public void loadCharacterName(){
         nameLabel.setText(currentCharacter.getName());
+    }
+
+    public void setCharacterImage(Image image) {
+        currentImage = image;
+        avatarCircle.setFill(new ImagePattern(currentImage));
+    }
+
+    public void saveAsPNG(Image image, String path) {
+        File outputFile = new File(path);
+        BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
+        try {
+            ImageIO.write(bImage, "png", outputFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
