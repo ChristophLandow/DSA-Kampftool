@@ -32,6 +32,8 @@ public class ImageBoxController implements RenderController {
     @FXML Circle characterImageCircle;
     @FXML Spinner<String> newCharacterProtraitSpinner;
 
+    private Image currentImage;
+
     private final CharacterLoadPopupController characterLoadPopupController;
 
     public ImageBoxController(CharacterLoadPopupController characterLoadPopupController){
@@ -73,8 +75,8 @@ public class ImageBoxController implements RenderController {
                 fileSizeText.setVisible(true);
             } else {
                 fileSizeText.setVisible(false);
-                Image image = new Image(avatarURL.toURI().toString());
-                characterImageCircle.setFill(new ImagePattern(image));
+                currentImage = new Image(avatarURL.toURI().toString());
+                characterImageCircle.setFill(new ImagePattern(currentImage));
             }
 
 
@@ -89,5 +91,9 @@ public class ImageBoxController implements RenderController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public Image getImage(){
+        return currentImage;
     }
 }
