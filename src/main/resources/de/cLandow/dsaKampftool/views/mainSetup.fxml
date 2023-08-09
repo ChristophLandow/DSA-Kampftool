@@ -6,8 +6,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="anchor_id" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.SetupScreenController">
    <children>
-      <VBox fx:id="screenBox" layoutX="230.0" layoutY="-4.0" prefHeight="800.0" prefWidth="970.0" />
+      <VBox fx:id="screenBox" layoutX="237.0" prefHeight="800.0" prefWidth="970.0" />
       <HBox fx:id="menuBox" layoutY="2.0" prefHeight="25.0" prefWidth="1200.0" />
-      <VBox fx:id="characterSetupVBox" prefHeight="800.0" prefWidth="230.0" />
+      <VBox fx:id="characterSetupVBox" layoutY="27.0" prefHeight="775.0" prefWidth="230.0" />
    </children>
 </AnchorPane>
