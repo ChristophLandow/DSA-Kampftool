@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
@@ -71,5 +72,9 @@ public class CharacterVBoxController implements RenderController {
 
     public void loadCharacterName(){
         nameLabel.setText(currentCharacter.getName());
+    }
+
+    public void setCharacterImage(Image image) {
+
     }
 }
