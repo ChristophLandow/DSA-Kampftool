@@ -10,12 +10,17 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 
 public class CharacterVBoxController implements RenderController {
 
 
+    @FXML Circle avatarCircle;
+    @FXML Label strengthLabel;
+    @FXML Label agilityLabel;
     @FXML Label nameLabel;
     @FXML Label baseAtLabel;
     @FXML Label basePaLabel;
@@ -26,6 +31,7 @@ public class CharacterVBoxController implements RenderController {
     private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private final CharacterScreenController characterScreenController;
     private final Character currentCharacter;
+    private Image currentImage;
 
     public CharacterVBoxController(CharacterScreenController characterScreenController, Character currentCharacter){
         this.characterScreenController = characterScreenController;
@@ -75,6 +81,7 @@ public class CharacterVBoxController implements RenderController {
     }
 
     public void setCharacterImage(Image image) {
-
+        currentImage = image;
+        avatarCircle.setFill(new ImagePattern(currentImage));
     }
 }
