@@ -144,7 +144,7 @@ public class SetupScreenController implements RenderController {
     }
 
     public void loadCharacterSetupBox() {
-        this.characterBoxController = new CharacterVBoxController(characterScreenController, actualCharacter);
+        this.characterBoxController = new CharacterVBoxController(this, characterScreenController, actualCharacter);
         characterSetupVBox.getChildren().add(characterBoxController.render());
         characterBoxController.init();
     }

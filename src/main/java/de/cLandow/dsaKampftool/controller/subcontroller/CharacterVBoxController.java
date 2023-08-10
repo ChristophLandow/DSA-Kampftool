@@ -3,6 +3,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
@@ -34,11 +35,13 @@ public class CharacterVBoxController implements RenderController {
 
     private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private final CharacterScreenController characterScreenController;
+    private final SetupScreenController setupScreenController;
     private final Character currentCharacter;
-    private Image currentImage;
+    private Image currentAvatar;
 
-    public CharacterVBoxController(CharacterScreenController characterScreenController, Character currentCharacter){
+    public CharacterVBoxController(SetupScreenController setupScreenController, CharacterScreenController characterScreenController, Character currentCharacter){
         this.characterScreenController = characterScreenController;
+        this.setupScreenController = setupScreenController;
         this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(characterScreenController);
         this.currentCharacter = currentCharacter;
     }
@@ -84,9 +87,11 @@ public class CharacterVBoxController implements RenderController {
         nameLabel.setText(currentCharacter.getName());
     }
 
-    public void setCharacterImage(Image image) {
-        currentImage = image;
-        avatarCircle.setFill(new ImagePattern(currentImage));
+    public void setCharacterImage() {
+        currentAvatar = setupScreenController.getCurrentAvatar();
+        if(currentAvatar != null){
+            avatarCircle.setFill(new ImagePattern(currentAvatar));
+        }
     }
 
     public void saveAsPNG(Image image, String path) {
