@@ -36,6 +36,7 @@ public class SetupScreenController implements RenderController {
     private Character actualCharacter;
     private CharacterScreenController characterScreenController;
     private MenuController menuController;
+    private Image currentAvatar;
 
 
     public SetupScreenController(Tool tool){
@@ -148,7 +149,7 @@ public class SetupScreenController implements RenderController {
         characterBoxController.init();
     }
 
-    public void setCharacterImage(Image image) {
-        characterBoxController.setCharacterImage(image);
+    public void setCurrentAvatar(Image image) {
+        currentAvatar = image;
     }
 }
