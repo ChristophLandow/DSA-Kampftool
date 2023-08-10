@@ -2,7 +2,6 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,8 +14,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -34,9 +31,9 @@ public class ImageBoxController implements RenderController {
 
     private Image currentImage;
 
-    private final CharacterLoadPopupController characterLoadPopupController;
+    private final LoadCharacterPopupController characterLoadPopupController;
 
-    public ImageBoxController(CharacterLoadPopupController characterLoadPopupController){
+    public ImageBoxController(LoadCharacterPopupController characterLoadPopupController){
         this.characterLoadPopupController = characterLoadPopupController;
     }
 

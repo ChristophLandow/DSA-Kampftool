@@ -1,9 +1,8 @@
 package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
-import de.cLandow.dsaKampftool.controller.subcontroller.CharacterLoadPopupController;
+import de.cLandow.dsaKampftool.controller.subcontroller.LoadCharacterPopupController;
 import de.cLandow.dsaKampftool.controller.subcontroller.CharacterVBoxController;
-import de.cLandow.dsaKampftool.controller.subcontroller.HealthAndEnduranceBoxController;
 import de.cLandow.dsaKampftool.controller.subcontroller.MenuController;
 import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.*;
@@ -30,7 +29,7 @@ public class SetupScreenController implements RenderController {
 
     private final Tool tool;
     private Stage popupStage;
-    private CharacterLoadPopupController characterLoadPopupController;
+    private LoadCharacterPopupController characterLoadPopupController;
 
     private CharacterVBoxController characterBoxController;
 
@@ -96,7 +95,7 @@ public class SetupScreenController implements RenderController {
     public void openCharacterLoadPopup() {
         popupStage = new Stage();
         popupStage.initModality(Modality.WINDOW_MODAL);
-        characterLoadPopupController = new CharacterLoadPopupController(this);
+        characterLoadPopupController = new LoadCharacterPopupController(this);
         popupStage.setScene(new Scene(characterLoadPopupController.render()));
         popupStage.getScene().getStylesheets().add("/de/cLandow/dsaKampftool/styles/characterLoadPopupStyles.css");
         characterLoadPopupController.init();

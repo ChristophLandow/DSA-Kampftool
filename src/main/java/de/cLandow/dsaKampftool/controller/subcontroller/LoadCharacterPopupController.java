@@ -21,7 +21,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CharacterLoadPopupController implements RenderController, Initializable {
+public class LoadCharacterPopupController implements RenderController, Initializable {
 
 
     @FXML VBox characterImageVBox;
@@ -45,7 +45,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     private final ImageBoxController characterImageBoxController;
 
 
-    public CharacterLoadPopupController(SetupScreenController setupScreenController){
+    public LoadCharacterPopupController(SetupScreenController setupScreenController){
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
         this.writeCharacterFileService = new WriteCharacterFileService();
