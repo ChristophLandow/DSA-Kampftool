@@ -22,14 +22,14 @@ public class CharacterScreenController implements RenderController {
     private Parent characterScreenParent;
     private Character actualCharacter;
 
-    private final CharModelController charModelController;
+    private final CharacterModelController charModelController;
 
     private final TabPaneController tabPaneController;
     private Stage popupStage;
 
     public CharacterScreenController(Character actualCharacter) {
         this.actualCharacter = actualCharacter;
-        this.charModelController = new CharModelController(this);
+        this.charModelController = new CharacterModelController(this);
         this.tabPaneController = new TabPaneController(this);
     }
 

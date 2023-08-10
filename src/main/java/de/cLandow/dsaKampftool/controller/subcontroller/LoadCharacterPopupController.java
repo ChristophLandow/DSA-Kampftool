@@ -21,7 +21,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CharacterLoadPopupController implements RenderController, Initializable {
+public class LoadCharacterPopupController implements RenderController, Initializable {
 
 
     @FXML VBox characterImageVBox;
@@ -45,7 +45,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     private final ImageBoxController characterImageBoxController;
 
 
-    public CharacterLoadPopupController(SetupScreenController setupScreenController){
+    public LoadCharacterPopupController(SetupScreenController setupScreenController){
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
         this.writeCharacterFileService = new WriteCharacterFileService();
@@ -103,6 +103,7 @@ public class CharacterLoadPopupController implements RenderController, Initializ
                 Integer strength = Integer.parseInt(newCharStrengthField.getCharacters().toString());
                 Integer agility = Integer.parseInt(newCharAgilityField.getCharacters().toString());
                 setupScreenController.setCurrentCharacter(writeCharacterFileService.saveNewCharacterAsFXM(name, attack, parade, shoot, initiative, lifePoints, endurancePoints, strength, agility));
+                setNewAvatar();
                 stop();
             } catch (NumberFormatException e) {
                 noStatsWarning.setVisible(true);
@@ -125,12 +126,15 @@ public class CharacterLoadPopupController implements RenderController, Initializ
     public void loadCharacter() {
         Character character = readFileService.loadCharacter(parseToXmlSafeName(characterBox.getValue()));
         setupScreenController.setCurrentCharacter(character);
+        stop();
+    }
+
+    private void setNewAvatar(){
         if(characterImageBoxController != null){
             if(characterImageBoxController.getImage() != null){
-                setupScreenController.setCharacterImage(characterImageBoxController.getImage());
+                setupScreenController.setCurrentAvatar(characterImageBoxController.getImage());
             }
         }
-        stop();
     }
 
     public void close(ActionEvent actionEvent) {
