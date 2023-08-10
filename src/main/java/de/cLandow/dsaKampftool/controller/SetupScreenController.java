@@ -152,4 +152,8 @@ public class SetupScreenController implements RenderController {
     public void setCurrentAvatar(Image image) {
         currentAvatar = image;
     }
+
+    public Image getCurrentAvatar() {
+        return currentAvatar;
+    }
 }
