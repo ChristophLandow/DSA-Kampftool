@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class CharModelController implements RenderController {
+public class CharacterModelController implements RenderController {
 
     @FXML ToggleButton rightLeg_toggleButton_1;
     @FXML ToggleButton rightLeg_toggleButton_2;
@@ -60,7 +60,7 @@ public class CharModelController implements RenderController {
     private final ArrayList<ToggleGroup> toggleGroupList = new ArrayList<>();
 
 
-    public CharModelController(CharacterScreenController characterScreenController){
+    public CharacterModelController(CharacterScreenController characterScreenController){
         this.characterScreenController = characterScreenController;
     }
 
