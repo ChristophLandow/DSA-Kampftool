@@ -51,6 +51,7 @@ public class CharacterVBoxController implements RenderController {
         loadCharacterName();
         loadStats();
         loadHealthAndEndurance();
+        setCharacterImage();
     }
 
     @Override
@@ -91,12 +92,13 @@ public class CharacterVBoxController implements RenderController {
         currentAvatar = setupScreenController.getCurrentAvatar();
         if(currentAvatar != null){
             avatarCircle.setFill(new ImagePattern(currentAvatar));
+            //saveAsPNG();
         }
     }
 
-    public void saveAsPNG(Image image, String path) {
+    public void saveAsPNG(String path) {
         File outputFile = new File(path);
-        BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
+        BufferedImage bImage = SwingFXUtils.fromFXImage(currentAvatar, null);
         try {
             ImageIO.write(bImage, "png", outputFile);
         } catch (IOException e) {
