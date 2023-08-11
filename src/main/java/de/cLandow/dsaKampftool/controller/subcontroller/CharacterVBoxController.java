@@ -90,7 +90,7 @@ public class CharacterVBoxController implements RenderController {
         if(currentAvatar != null){
             avatarCircle.setFill(new ImagePattern(currentAvatar));
             AvatarService avatarService = new AvatarService();
-            avatarService.saveImageAsFile(currentAvatar,CHARACTER_FILEPATH + currentCharacter.getName() + "//");
+            avatarService.saveImageAsFile(currentAvatar,CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName());
         }
     }
 }
