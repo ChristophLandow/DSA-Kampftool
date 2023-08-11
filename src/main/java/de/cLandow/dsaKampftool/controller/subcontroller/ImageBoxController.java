@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.services.AvatarService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -62,21 +63,16 @@ public class ImageBoxController implements RenderController {
     }
 
     public void uploadOwnPicture(ActionEvent actionEvent) throws IOException {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Wähle einen Avatar", "*.PNG", "*.jpg"));
-        File avatarURL = fileChooser.showOpenDialog(null);
+        AvatarService avatarService = new AvatarService();
+        File avatarURL = avatarService.loadAvatarURL();
         if(avatarURL != null) {
-            byte[] data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
-            String avatarB64 =  Base64.getEncoder().encodeToString(data);
-            if (avatarB64.length() > AVATAR_CHAR_LIMIT) {
-                fileSizeText.setVisible(true);
-            } else {
+            if(avatarService.checkFileSize(avatarURL)){
                 fileSizeText.setVisible(false);
                 currentImage = new Image(avatarURL.toURI().toString());
                 characterImageCircle.setFill(new ImagePattern(currentImage));
+            } else {
+                fileSizeText.setVisible(true);
             }
-
-
         }
     }
 

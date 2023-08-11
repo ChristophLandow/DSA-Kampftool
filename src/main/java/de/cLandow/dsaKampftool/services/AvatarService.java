@@ -29,22 +29,9 @@ public class AvatarService {
         }
     }
 
-    public void uploadOwnPicture() throws IOException {
+    public File loadAvatarURL() throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Wähle einen Avatar", "*.PNG", "*.jpg"));
-        File avatarURL = fileChooser.showOpenDialog(null);
-        if(avatarURL != null) {
-            byte[] data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
-            String avatarB64 =  Base64.getEncoder().encodeToString(data);
-            if (avatarB64.length() > AVATAR_CHAR_LIMIT) {
-                fileSizeText.setVisible(true);
-            } else {
-                fileSizeText.setVisible(false);
-                currentImage = new Image(avatarURL.toURI().toString());
-                characterImageCircle.setFill(new ImagePattern(currentImage));
-            }
-
-
-        }
+        return fileChooser.showOpenDialog(null);
     }
 }
