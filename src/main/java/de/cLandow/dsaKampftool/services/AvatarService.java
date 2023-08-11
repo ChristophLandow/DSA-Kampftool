@@ -20,7 +20,7 @@ public class AvatarService {
     }
 
     public Boolean checkFileSize(File avatarURL){
-        byte[] data = new byte[0];
+        byte[] data;
         try {
             data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
             String avatarB64 =  Base64.getEncoder().encodeToString(data);

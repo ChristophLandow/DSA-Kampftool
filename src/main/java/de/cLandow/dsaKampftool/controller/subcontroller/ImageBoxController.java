@@ -13,15 +13,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-import javafx.stage.FileChooser;
-
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Base64;
-
-import static de.cLandow.dsaKampftool.Constants.AVATAR_CHAR_LIMIT;
 
 public class ImageBoxController implements RenderController {
 
