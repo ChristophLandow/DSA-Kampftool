@@ -1,9 +1,7 @@
 package de.cLandow.dsaKampftool.services;
 
 import javafx.embed.swing.SwingFXUtils;
-import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
-import javafx.scene.paint.ImagePattern;
 import javafx.stage.FileChooser;
 
 import javax.imageio.ImageIO;
@@ -39,7 +37,7 @@ public class AvatarService {
     }
 
     public  void saveImageAsFile(Image image, String path) {
-        File outputFile = new File("C:/JavaFX/");
+        File outputFile = new File(path);
         BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
         try {
             ImageIO.write(bImage, "png", outputFile);
