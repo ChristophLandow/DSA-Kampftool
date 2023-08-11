@@ -63,7 +63,7 @@ public class ImageBoxController implements RenderController {
 
     public void uploadOwnPicture(ActionEvent actionEvent) throws IOException {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Choose Avatar", "*.PNG", "*.jpg"));
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Wähle einen Avatar", "*.PNG", "*.jpg"));
         File avatarURL = fileChooser.showOpenDialog(null);
         if(avatarURL != null) {
             byte[] data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
