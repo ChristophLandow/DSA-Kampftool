@@ -40,7 +40,7 @@ public class AvatarService {
         File outputFile = new File(path);
         BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
         try {
-            ImageIO.write(bImage, "png", outputFile);
+            ImageIO.write(bImage, "PNG", outputFile);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
