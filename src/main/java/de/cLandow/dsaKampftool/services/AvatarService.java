@@ -23,10 +23,7 @@ public class AvatarService {
         try {
             data = Files.readAllBytes(Paths.get(avatarURL.toURI()));
             String avatarB64 =  Base64.getEncoder().encodeToString(data);
-            if (avatarB64.length() > AVATAR_CHAR_LIMIT) {
-                return false;
-            }
-            return true;
+            return avatarB64.length() <= AVATAR_CHAR_LIMIT;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
