@@ -5,7 +5,7 @@ import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
-import javafx.embed.swing.SwingFXUtils;
+import de.cLandow.dsaKampftool.services.AvatarService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,11 +14,8 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
-
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class CharacterVBoxController implements RenderController {
 
@@ -92,17 +89,8 @@ public class CharacterVBoxController implements RenderController {
         currentAvatar = setupScreenController.getCurrentAvatar();
         if(currentAvatar != null){
             avatarCircle.setFill(new ImagePattern(currentAvatar));
-            //saveAsPNG();
-        }
-    }
-
-    public void saveAsPNG(String path) {
-        File outputFile = new File(path);
-        BufferedImage bImage = SwingFXUtils.fromFXImage(currentAvatar, null);
-        try {
-            ImageIO.write(bImage, "png", outputFile);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            AvatarService avatarService = new AvatarService();
+            avatarService.saveImageAsFile(currentAvatar,CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
         }
     }
 }
