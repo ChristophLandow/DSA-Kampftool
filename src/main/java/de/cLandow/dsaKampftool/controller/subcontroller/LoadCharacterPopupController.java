@@ -42,14 +42,14 @@ public class LoadCharacterPopupController implements RenderController, Initializ
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
     private final WriteCharacterFileService writeCharacterFileService;
-    private ImageBoxController characterImageBoxController;
+    private AvatarBoxController characterImageBoxController;
 
 
     public LoadCharacterPopupController(SetupScreenController setupScreenController){
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
         this.writeCharacterFileService = new WriteCharacterFileService();
-        this.characterImageBoxController = new ImageBoxController(this);
+        this.characterImageBoxController = new AvatarBoxController(this);
     }
 
     @Override

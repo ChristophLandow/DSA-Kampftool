@@ -15,7 +15,7 @@ import javafx.scene.text.Text;
 import java.io.File;
 import java.io.IOException;
 
-public class ImageBoxController implements RenderController {
+public class AvatarBoxController implements RenderController {
 
 
     @FXML Circle addAvatarCircle;
@@ -29,11 +29,11 @@ public class ImageBoxController implements RenderController {
     private LoadCharacterPopupController characterLoadPopupController;
     private CharacterVBoxController characterVBoxController;
 
-    public ImageBoxController(LoadCharacterPopupController characterLoadPopupController){
+    public AvatarBoxController(LoadCharacterPopupController characterLoadPopupController){
         this.characterLoadPopupController = characterLoadPopupController;
     }
 
-    public ImageBoxController(CharacterVBoxController characterVBoxController) {
+    public AvatarBoxController(CharacterVBoxController characterVBoxController) {
         this.characterVBoxController = characterVBoxController;
     }
 

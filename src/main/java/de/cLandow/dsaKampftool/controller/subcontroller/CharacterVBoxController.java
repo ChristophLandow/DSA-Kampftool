@@ -20,7 +20,7 @@ import static de.cLandow.dsaKampftool.Constants.*;
 public class CharacterVBoxController implements RenderController {
 
 
-    private final ImageBoxController avatarBoxController;
+    private final AvatarBoxController avatarBoxController;
     @FXML Circle avatarCircle;
     @FXML Label strengthLabel;
     @FXML Label agilityLabel;
@@ -42,7 +42,7 @@ public class CharacterVBoxController implements RenderController {
         this.setupScreenController = setupScreenController;
         this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(characterScreenController);
         this.currentCharacter = currentCharacter;
-        this.avatarBoxController = new ImageBoxController(this);
+        this.avatarBoxController = new AvatarBoxController(this);
     }
 
     @Override
