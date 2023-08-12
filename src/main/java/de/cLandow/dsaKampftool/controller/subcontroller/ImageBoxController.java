@@ -17,6 +17,7 @@ import java.io.IOException;
 
 public class ImageBoxController implements RenderController {
 
+
     @FXML Circle addAvatarCircle;
     @FXML Circle arrowUpCircle;
     @FXML Circle arrowDownCircle;
@@ -25,10 +26,15 @@ public class ImageBoxController implements RenderController {
     @FXML Circle characterImageCircle;
     private Image currentImage;
 
-    private final LoadCharacterPopupController characterLoadPopupController;
+    private LoadCharacterPopupController characterLoadPopupController;
+    private CharacterVBoxController characterVBoxController;
 
     public ImageBoxController(LoadCharacterPopupController characterLoadPopupController){
         this.characterLoadPopupController = characterLoadPopupController;
+    }
+
+    public ImageBoxController(CharacterVBoxController characterVBoxController) {
+        this.characterVBoxController = characterVBoxController;
     }
 
     @Override
