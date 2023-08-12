@@ -42,7 +42,7 @@ public class LoadCharacterPopupController implements RenderController, Initializ
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
     private final WriteCharacterFileService writeCharacterFileService;
-    private final ImageBoxController characterImageBoxController;
+    private ImageBoxController characterImageBoxController;
 
 
     public LoadCharacterPopupController(SetupScreenController setupScreenController){
@@ -62,6 +62,7 @@ public class LoadCharacterPopupController implements RenderController, Initializ
 
     @Override
     public void stop() {
+        this.characterImageBoxController = null;
         setupScreenController.closeCharacterLoadPopup();
     }
 
