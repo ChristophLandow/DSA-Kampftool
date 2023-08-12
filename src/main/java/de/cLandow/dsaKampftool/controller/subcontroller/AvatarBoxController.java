@@ -43,7 +43,9 @@ public class AvatarBoxController implements RenderController {
     @Override
     public void init() {
         fileSizeText.setVisible(false);
-        setAvatarImage();
+        if((currentAvatar != null) && (currentCharacter != null)){
+            setAvatarImage();
+        }
     }
 
     @Override
