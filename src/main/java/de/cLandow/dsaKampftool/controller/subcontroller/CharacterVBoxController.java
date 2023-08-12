@@ -5,22 +5,18 @@ import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
-import de.cLandow.dsaKampftool.services.AvatarService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Circle;
+
 import java.io.IOException;
-import static de.cLandow.dsaKampftool.Constants.*;
 
 public class CharacterVBoxController implements RenderController {
 
 
-    @FXML Circle avatarCircle;
+
     @FXML Label strengthLabel;
     @FXML Label agilityLabel;
     @FXML Label nameLabel;
@@ -33,14 +29,15 @@ public class CharacterVBoxController implements RenderController {
     private final HealthAndEnduranceBoxController healthAndEnduranceBoxController;
     private final CharacterScreenController characterScreenController;
     private final SetupScreenController setupScreenController;
+    private final AvatarBoxController avatarBoxController;
     private final Character currentCharacter;
-    private Image currentAvatar;
 
     public CharacterVBoxController(SetupScreenController setupScreenController, CharacterScreenController characterScreenController, Character currentCharacter){
         this.characterScreenController = characterScreenController;
         this.setupScreenController = setupScreenController;
         this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(characterScreenController);
         this.currentCharacter = currentCharacter;
+        this.avatarBoxController = new AvatarBoxController(this);
     }
 
     @Override
@@ -48,7 +45,7 @@ public class CharacterVBoxController implements RenderController {
         loadCharacterName();
         loadStats();
         loadHealthAndEndurance();
-        setCharacterImage();
+        loadCharacterAvatar();
     }
 
     @Override
@@ -85,12 +82,10 @@ public class CharacterVBoxController implements RenderController {
         nameLabel.setText(currentCharacter.getName());
     }
 
-    public void setCharacterImage() {
-        currentAvatar = setupScreenController.getCurrentAvatar();
-        if(currentAvatar != null){
-            avatarCircle.setFill(new ImagePattern(currentAvatar));
-            AvatarService avatarService = new AvatarService();
-            avatarService.saveImageAsFile(currentAvatar,CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
-        }
+    private void loadCharacterAvatar() {
+        avatarBoxController.render();
+        avatarBoxController.setCurrentCharacter(currentCharacter);
+        avatarBoxController.init();
     }
+
 }

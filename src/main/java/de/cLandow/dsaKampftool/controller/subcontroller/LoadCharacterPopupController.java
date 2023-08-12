@@ -42,14 +42,14 @@ public class LoadCharacterPopupController implements RenderController, Initializ
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
     private final WriteCharacterFileService writeCharacterFileService;
-    private final ImageBoxController characterImageBoxController;
+    private AvatarBoxController characterImageBoxController;
 
 
     public LoadCharacterPopupController(SetupScreenController setupScreenController){
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
         this.writeCharacterFileService = new WriteCharacterFileService();
-        this.characterImageBoxController = new ImageBoxController(this);
+        this.characterImageBoxController = new AvatarBoxController(this);
     }
 
     @Override
@@ -62,6 +62,7 @@ public class LoadCharacterPopupController implements RenderController, Initializ
 
     @Override
     public void stop() {
+        this.characterImageBoxController = null;
         setupScreenController.closeCharacterLoadPopup();
     }
 
@@ -131,8 +132,8 @@ public class LoadCharacterPopupController implements RenderController, Initializ
 
     private void setNewAvatar(){
         if(characterImageBoxController != null){
-            if(characterImageBoxController.getImage() != null){
-                setupScreenController.setCurrentAvatar(characterImageBoxController.getImage());
+            if(characterImageBoxController.getAvatar() != null){
+                setupScreenController.setCurrentAvatar(characterImageBoxController.getAvatar());
             }
         }
     }

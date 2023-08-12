@@ -85,6 +85,6 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <VBox fx:id="characterImageVBox" layoutX="466.0" layoutY="282.0" prefHeight="200.0" prefWidth="300.0" />
+      <VBox fx:id="characterImageVBox" layoutX="540.0" layoutY="283.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
