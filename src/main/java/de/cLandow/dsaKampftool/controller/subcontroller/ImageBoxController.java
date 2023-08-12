@@ -3,12 +3,11 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.services.AvatarService;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -18,11 +17,12 @@ import java.io.IOException;
 
 public class ImageBoxController implements RenderController {
 
+    @FXML Circle addAvatarCircle;
+    @FXML Circle arrowUpCircle;
+    @FXML Circle arrowDownCircle;
     @FXML Text fileSizeText;
     @FXML AnchorPane imageBoxAnchor;
     @FXML Circle characterImageCircle;
-    @FXML Spinner<String> newCharacterProtraitSpinner;
-
     private Image currentImage;
 
     private final LoadCharacterPopupController characterLoadPopupController;
@@ -55,7 +55,7 @@ public class ImageBoxController implements RenderController {
         return imageBoxParent;
     }
 
-    public void uploadOwnPicture(ActionEvent actionEvent) throws IOException {
+    public void uploadOwnAvatar(MouseEvent mouseEvent) throws IOException {
         AvatarService avatarService = new AvatarService();
         File avatarURL = avatarService.loadAvatarURL();
         if(avatarURL != null) {
@@ -71,5 +71,11 @@ public class ImageBoxController implements RenderController {
 
     public Image getImage(){
         return currentImage;
+    }
+
+    public void AvatarListUpScroll(MouseEvent mouseEvent) {
+    }
+
+    public void AvatarListDownScroll(MouseEvent mouseEvent) {
     }
 }
