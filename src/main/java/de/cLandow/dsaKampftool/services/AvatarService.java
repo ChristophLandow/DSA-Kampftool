@@ -1,5 +1,6 @@
 package de.cLandow.dsaKampftool.services;
 
+import de.cLandow.dsaKampftool.model.Character;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import javafx.stage.FileChooser;
@@ -13,6 +14,7 @@ import java.nio.file.Paths;
 import java.util.Base64;
 
 import static de.cLandow.dsaKampftool.Constants.AVATAR_CHAR_LIMIT;
+import static de.cLandow.dsaKampftool.Constants.CHARACTER_FILEPATH;
 
 public class AvatarService {
 
@@ -36,8 +38,8 @@ public class AvatarService {
         return fileChooser.showOpenDialog(null);
     }
 
-    public  void saveImageAsFile(Image image, String path) {
-        File outputFile = new File(path);
+    public  void saveImageAsFile(Image image, Character character) {
+        File outputFile = new File(CHARACTER_FILEPATH + character.getName() + "//" + character.getName() + ".png");
         BufferedImage bImage = SwingFXUtils.fromFXImage(image, null);
         try {
             ImageIO.write(bImage, "PNG", outputFile);

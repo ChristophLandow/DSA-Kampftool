@@ -132,8 +132,8 @@ public class LoadCharacterPopupController implements RenderController, Initializ
 
     private void setNewAvatar(){
         if(characterImageBoxController != null){
-            if(characterImageBoxController.getImage() != null){
-                setupScreenController.setCurrentAvatar(characterImageBoxController.getImage());
+            if(characterImageBoxController.getAvatar() != null){
+                setupScreenController.setCurrentAvatar(characterImageBoxController.getAvatar());
             }
         }
     }

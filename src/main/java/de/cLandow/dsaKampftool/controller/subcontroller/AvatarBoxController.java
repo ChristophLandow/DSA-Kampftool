@@ -15,7 +15,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import java.io.File;
 import java.io.IOException;
-import static de.cLandow.dsaKampftool.Constants.*;
 
 public class AvatarBoxController implements RenderController {
 
@@ -25,12 +24,11 @@ public class AvatarBoxController implements RenderController {
     @FXML Circle arrowDownCircle;
     @FXML Text fileSizeText;
     @FXML AnchorPane imageBoxAnchor;
-    @FXML Circle characterImageCircle;
-    private Image currentImage;
-
+    @FXML Circle characterAvatarCircle;
     private LoadCharacterPopupController characterLoadPopupController;
     private CharacterVBoxController characterVBoxController;
     private Character currentCharacter;
+    private Image currentAvatar;
 
     public AvatarBoxController(LoadCharacterPopupController characterLoadPopupController){
         this.characterLoadPopupController = characterLoadPopupController;
@@ -73,16 +71,16 @@ public class AvatarBoxController implements RenderController {
         if(avatarURL != null) {
             if(avatarService.checkFileSize(avatarURL)){
                 fileSizeText.setVisible(false);
-                currentImage = new Image(avatarURL.toURI().toString());
-                characterImageCircle.setFill(new ImagePattern(currentImage));
+                currentAvatar = new Image(avatarURL.toURI().toString());
+                characterAvatarCircle.setFill(new ImagePattern(currentAvatar));
             } else {
                 fileSizeText.setVisible(true);
             }
         }
     }
 
-    public Image getImage(){
-        return currentImage;
+    public Image getAvatar(){
+        return currentAvatar;
     }
 
     public void AvatarListUpScroll(MouseEvent mouseEvent) {
@@ -92,9 +90,9 @@ public class AvatarBoxController implements RenderController {
     }
 
     public void setAvatarImage() {
-        avatarCircle.setFill(new ImagePattern(currentAvatar));
+        characterAvatarCircle.setFill(new ImagePattern(currentAvatar));
         AvatarService avatarService = new AvatarService();
-        avatarService.saveImageAsFile(currentAvatar,CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
+        avatarService.saveImageAsFile(currentAvatar, currentCharacter);
     }
 
     public void setCurrentCharacter(Character character) {
