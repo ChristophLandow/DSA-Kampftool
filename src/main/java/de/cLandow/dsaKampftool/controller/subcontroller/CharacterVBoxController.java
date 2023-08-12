@@ -5,17 +5,13 @@ import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
-import de.cLandow.dsaKampftool.services.AvatarService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Circle;
+
 import java.io.IOException;
-import static de.cLandow.dsaKampftool.Constants.*;
 
 public class CharacterVBoxController implements RenderController {
 
@@ -88,6 +84,7 @@ public class CharacterVBoxController implements RenderController {
 
     private void loadCharacterAvatar() {
         avatarBoxController.render();
+        avatarBoxController.setCurrentCharacter(currentCharacter);
         avatarBoxController.init();
     }
 

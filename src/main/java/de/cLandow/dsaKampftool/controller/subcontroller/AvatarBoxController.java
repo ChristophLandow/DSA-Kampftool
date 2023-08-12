@@ -2,6 +2,7 @@ package de.cLandow.dsaKampftool.controller.subcontroller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import de.cLandow.dsaKampftool.model.Character;
 import de.cLandow.dsaKampftool.services.AvatarService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +30,7 @@ public class AvatarBoxController implements RenderController {
 
     private LoadCharacterPopupController characterLoadPopupController;
     private CharacterVBoxController characterVBoxController;
+    private Character currentCharacter;
 
     public AvatarBoxController(LoadCharacterPopupController characterLoadPopupController){
         this.characterLoadPopupController = characterLoadPopupController;
@@ -93,5 +95,9 @@ public class AvatarBoxController implements RenderController {
         avatarCircle.setFill(new ImagePattern(currentAvatar));
         AvatarService avatarService = new AvatarService();
         avatarService.saveImageAsFile(currentAvatar,CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
+    }
+
+    public void setCurrentCharacter(Character character) {
+        currentCharacter = character;
     }
 }
