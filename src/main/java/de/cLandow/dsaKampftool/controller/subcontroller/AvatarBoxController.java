@@ -14,6 +14,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import java.io.File;
 import java.io.IOException;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class AvatarBoxController implements RenderController {
 
@@ -31,15 +32,18 @@ public class AvatarBoxController implements RenderController {
 
     public AvatarBoxController(LoadCharacterPopupController characterLoadPopupController){
         this.characterLoadPopupController = characterLoadPopupController;
+        this.characterVBoxController = null;
     }
 
     public AvatarBoxController(CharacterVBoxController characterVBoxController) {
         this.characterVBoxController = characterVBoxController;
+        this.characterLoadPopupController = null;
     }
 
     @Override
     public void init() {
         fileSizeText.setVisible(false);
+        setAvatarImage();
     }
 
     @Override
@@ -83,5 +87,11 @@ public class AvatarBoxController implements RenderController {
     }
 
     public void AvatarListDownScroll(MouseEvent mouseEvent) {
+    }
+
+    public void setAvatarImage() {
+        avatarCircle.setFill(new ImagePattern(currentAvatar));
+        AvatarService avatarService = new AvatarService();
+        avatarService.saveImageAsFile(currentAvatar,CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
     }
 }

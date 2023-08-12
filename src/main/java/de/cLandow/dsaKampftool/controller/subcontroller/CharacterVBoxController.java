@@ -50,7 +50,7 @@ public class CharacterVBoxController implements RenderController {
         loadCharacterName();
         loadStats();
         loadHealthAndEndurance();
-        setCharacterImage();
+        loadCharacterAvatar();
     }
 
     @Override
@@ -87,12 +87,9 @@ public class CharacterVBoxController implements RenderController {
         nameLabel.setText(currentCharacter.getName());
     }
 
-    public void setCharacterImage() {
-        currentAvatar = setupScreenController.getCurrentAvatar();
-        if(currentAvatar != null){
-            avatarCircle.setFill(new ImagePattern(currentAvatar));
-            AvatarService avatarService = new AvatarService();
-            avatarService.saveImageAsFile(currentAvatar,CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
-        }
+    private void loadCharacterAvatar() {
+        avatarBoxController.render();
+        avatarBoxController.init();
     }
+
 }
