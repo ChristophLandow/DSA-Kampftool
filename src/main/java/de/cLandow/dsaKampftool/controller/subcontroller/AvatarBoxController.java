@@ -102,4 +102,8 @@ public class AvatarBoxController implements RenderController {
     public void setCurrentCharacter(Character character) {
         currentCharacter = character;
     }
+
+    public void setCurrentAvatar(Image avatar){
+        currentAvatar = avatar;
+    }
 }
