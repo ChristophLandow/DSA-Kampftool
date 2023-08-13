@@ -42,27 +42,27 @@ public class LoadCharacterPopupController implements RenderController, Initializ
     private ArrayList<String> characterNames = new ArrayList<>();
     private final ReadFileService readFileService;
     private final WriteCharacterFileService writeCharacterFileService;
-    private AvatarBoxController characterImageBoxController;
+    private AvatarBoxController avatarBoxController;
 
 
     public LoadCharacterPopupController(SetupScreenController setupScreenController){
         this.setupScreenController = setupScreenController;
         this.readFileService = new ReadFileService();
         this.writeCharacterFileService = new WriteCharacterFileService();
-        this.characterImageBoxController = new AvatarBoxController(this);
+        this.avatarBoxController = new AvatarBoxController(this);
     }
 
     @Override
     public void init() {
         noNameWarning.setVisible(false);
         noStatsWarning.setVisible(false);
-        characterImageVBox.getChildren().add(characterImageBoxController.render());
-        characterImageBoxController.init();
+        characterImageVBox.getChildren().add(avatarBoxController.render());
+        avatarBoxController.init();
     }
 
     @Override
     public void stop() {
-        this.characterImageBoxController = null;
+        this.avatarBoxController = null;
         setupScreenController.closeCharacterLoadPopup();
     }
 
@@ -131,9 +131,9 @@ public class LoadCharacterPopupController implements RenderController, Initializ
     }
 
     private void setNewAvatar(){
-        if(characterImageBoxController != null){
-            if(characterImageBoxController.getAvatar() != null){
-                setupScreenController.setCurrentAvatar(characterImageBoxController.getAvatar());
+        if(avatarBoxController != null){
+            if(avatarBoxController.getAvatar() != null){
+                setupScreenController.setCurrentAvatar(avatarBoxController.getAvatar());
             }
         }
     }

@@ -10,13 +10,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 public class CharacterVBoxController implements RenderController {
 
 
-
+    @FXML VBox avatarVBox;
     @FXML Label strengthLabel;
     @FXML Label agilityLabel;
     @FXML Label nameLabel;
@@ -45,7 +46,12 @@ public class CharacterVBoxController implements RenderController {
         loadCharacterName();
         loadStats();
         loadHealthAndEndurance();
+        loadAvatarBox();
         loadCharacterAvatar();
+    }
+
+    private void loadAvatarBox() {
+        avatarVBox.getChildren().add(avatarBoxController.render());
     }
 
     @Override
@@ -83,9 +89,10 @@ public class CharacterVBoxController implements RenderController {
     }
 
     private void loadCharacterAvatar() {
-        avatarBoxController.render();
+        avatarBoxController.setCurrentAvatar(setupScreenController.getCurrentAvatar());
         avatarBoxController.setCurrentCharacter(currentCharacter);
         avatarBoxController.init();
     }
+
 
 }

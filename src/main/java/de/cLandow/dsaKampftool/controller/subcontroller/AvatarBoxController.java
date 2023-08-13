@@ -43,6 +43,8 @@ public class AvatarBoxController implements RenderController {
     @Override
     public void init() {
         fileSizeText.setVisible(false);
+        arrowDownCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowDown.png")));
+        arrowUpCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowUp.png")));
         if((currentAvatar != null) && (currentCharacter != null)){
             setAvatarImage();
         }
@@ -99,5 +101,9 @@ public class AvatarBoxController implements RenderController {
 
     public void setCurrentCharacter(Character character) {
         currentCharacter = character;
+    }
+
+    public void setCurrentAvatar(Image avatar){
+        currentAvatar = avatar;
     }
 }
