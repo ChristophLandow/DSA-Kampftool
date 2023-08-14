@@ -35,8 +35,9 @@ public class AvatarBoxController implements RenderController {
         this.characterVBoxController = null;
     }
 
-    public AvatarBoxController(CharacterVBoxController characterVBoxController) {
+    public AvatarBoxController(CharacterVBoxController characterVBoxController, Character currentCharacter) {
         this.characterVBoxController = characterVBoxController;
+        this.currentCharacter = currentCharacter;
         this.characterLoadPopupController = null;
     }
 
@@ -45,7 +46,8 @@ public class AvatarBoxController implements RenderController {
         fileSizeText.setVisible(false);
         arrowDownCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowDown.png")));
         arrowUpCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowUp.png")));
-        if((currentAvatar != null) && (currentCharacter != null)){
+        if(currentCharacter != null){
+            loadAvatarForCurrentCharacter();
             setAvatarImage();
         }
     }
@@ -95,8 +97,6 @@ public class AvatarBoxController implements RenderController {
 
     public void setAvatarImage() {
         characterAvatarCircle.setFill(new ImagePattern(currentAvatar));
-        AvatarService avatarService = new AvatarService();
-        avatarService.saveImageAsFile(currentAvatar, currentCharacter);
     }
 
     public void setCurrentCharacter(Character character) {
@@ -105,5 +105,15 @@ public class AvatarBoxController implements RenderController {
 
     public void setCurrentAvatar(Image avatar){
         currentAvatar = avatar;
+    }
+
+    public void loadAvatarForCurrentCharacter(){
+        AvatarService avatarService = new AvatarService();
+        currentAvatar = avatarService.loadAvatarFromCharacterDirectory(currentCharacter);
+    }
+
+    public void safePngFromCurrentCharacter(){
+        AvatarService avatarService = new AvatarService();
+        avatarService.saveImageAsFile(currentAvatar, currentCharacter);
     }
 }
