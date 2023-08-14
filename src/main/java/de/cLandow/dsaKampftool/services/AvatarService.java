@@ -11,7 +11,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
 
@@ -50,11 +52,27 @@ public class AvatarService {
     }
 
     public Image loadAvatarFromCharacterDirectory(Character currentCharacter){
+        String path = CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName();
         try {
-            return new Image(CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
+            if(directoryHasAvatarFile(path)){
+                return new Image(CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
+            } else {
+                return new Image(STANDARD_CHARACTER_AVATAR_FILEPATH);
+            }
         } catch (IllegalArgumentException e){
             return new Image(STANDARD_CHARACTER_AVATAR_FILEPATH);
         }
+    }
 
+    public boolean directoryHasAvatarFile(String path) {
+        Path dir = Path.of(path);
+        if (Files.isDirectory(dir)) {
+            try (DirectoryStream<Path> directory = Files.newDirectoryStream(dir)) {
+                return !directory.iterator().next().endsWith(".png");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
     }
 }
