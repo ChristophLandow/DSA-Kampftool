@@ -8,13 +8,14 @@ import javafx.stage.FileChooser;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Base64;
 
-import static de.cLandow.dsaKampftool.Constants.AVATAR_CHAR_LIMIT;
-import static de.cLandow.dsaKampftool.Constants.CHARACTER_FILEPATH;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class AvatarService {
 
@@ -49,6 +50,11 @@ public class AvatarService {
     }
 
     public Image loadAvatarFromCharacterDirectory(Character currentCharacter){
-        return new Image(CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
+        try {
+            return new Image(CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
+        } catch (IllegalArgumentException e){
+            return new Image(STANDARD_CHARACTER_AVATAR_FILEPATH);
+        }
+
     }
 }

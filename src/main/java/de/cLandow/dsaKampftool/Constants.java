@@ -17,6 +17,8 @@ public class Constants {
     public static final String ARMOR_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Armor.xml";
     public static final String ABILITY_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Abilities.xml";
     public static final String CHARACTERISTICS_FILEPATH = System.getProperty("user.home") + "//DSAKampftool//Setup//Characteristics.xml";
+
+    public static final String STANDARD_CHARACTER_AVATAR_FILEPATH = "de/cLandow/dsaKampftool/images/person.png";
     public static final String RIGHT_ARM = "Right Arm";
     public static final String LEFT_ARM = "Left Arm";
 
