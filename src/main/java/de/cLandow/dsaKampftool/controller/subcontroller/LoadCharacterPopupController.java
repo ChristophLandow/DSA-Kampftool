@@ -4,6 +4,7 @@ import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
+import de.cLandow.dsaKampftool.services.AvatarService;
 import de.cLandow.dsaKampftool.services.ReadFileService;
 import de.cLandow.dsaKampftool.services.WriteCharacterFileService;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -127,6 +129,7 @@ public class LoadCharacterPopupController implements RenderController, Initializ
     public void loadCharacter() {
         Character character = readFileService.loadCharacter(parseToXmlSafeName(characterBox.getValue()));
         setupScreenController.setCurrentCharacter(character);
+        loadAvatarFromFile(character);
         stop();
     }
 
@@ -139,5 +142,11 @@ public class LoadCharacterPopupController implements RenderController, Initializ
     }
 
     public void close(ActionEvent actionEvent) {
+    }
+
+    public void loadAvatarFromFile(Character character){
+        AvatarService avatarService = new AvatarService();
+        Image avatar = avatarService.loadAvatarFromCharacterDirectory(character);
+        setupScreenController.setCurrentAvatar(avatar);
     }
 }

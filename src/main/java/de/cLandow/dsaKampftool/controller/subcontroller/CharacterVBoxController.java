@@ -48,14 +48,24 @@ public class CharacterVBoxController implements RenderController {
         loadStats();
         loadHealthAndEndurance();
         loadAvatarBox();
-        avatarBoxController.safePngFromCurrentCharacter();
+        safePngFromCurrentCharacter();
         loadCharacterAvatar();
+    }
+
+    private void safePngFromCurrentCharacter() {
+        avatarBoxController.safePngFromCurrentCharacter();
     }
 
     private void loadAvatarBox() {
         avatarVBox.getChildren().add(avatarBoxController.render());
-        avatarBoxController.setCurrentAvatar(setupScreenController.getCurrentAvatar());
         avatarBoxController.setCurrentCharacter(currentCharacter);
+        if(setupScreenController.getCurrentAvatar() != null){
+            avatarBoxController.setCurrentAvatar(setupScreenController.getCurrentAvatar());
+        } else {
+            AvatarService avatarService = new AvatarService();
+            avatarService.loadAvatarFromCharacterDirectory(currentCharacter);
+        }
+
     }
 
     @Override
