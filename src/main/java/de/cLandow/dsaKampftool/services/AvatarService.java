@@ -52,7 +52,7 @@ public class AvatarService {
     }
 
     public Image loadAvatarFromCharacterDirectory(Character currentCharacter){
-        String path = CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName();
+        String path = CHARACTER_FILEPATH + currentCharacter.getName();
         try {
             if(directoryHasAvatarFile(path)){
                 return new Image(CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
