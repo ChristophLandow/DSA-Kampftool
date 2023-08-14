@@ -14,8 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Base64;
 
-import static de.cLandow.dsaKampftool.Constants.AVATAR_CHAR_LIMIT;
-import static de.cLandow.dsaKampftool.Constants.CHARACTER_FILEPATH;
+import static de.cLandow.dsaKampftool.Constants.*;
 
 public class AvatarService {
 
@@ -53,7 +52,7 @@ public class AvatarService {
         try {
             return new Image(CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
         } catch (IllegalArgumentException e){
-            return new Image(CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
+            return new Image(STANDARD_CHARACTER_AVATAR_FILEPATH);
         }
 
     }
