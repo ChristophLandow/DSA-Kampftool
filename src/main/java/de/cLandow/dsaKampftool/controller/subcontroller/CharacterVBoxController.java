@@ -5,6 +5,7 @@ import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
+import de.cLandow.dsaKampftool.services.AvatarService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -48,6 +49,7 @@ public class CharacterVBoxController implements RenderController {
         loadHealthAndEndurance();
         loadAvatarBox();
         loadCharacterAvatar();
+        avatarBoxController.safePngFromCurrentCharacter();
     }
 
     private void loadAvatarBox() {
@@ -93,6 +95,8 @@ public class CharacterVBoxController implements RenderController {
         avatarBoxController.setCurrentCharacter(currentCharacter);
         avatarBoxController.init();
     }
+
+
 
 
 }
