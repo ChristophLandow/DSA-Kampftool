@@ -38,7 +38,7 @@ public class CharacterVBoxController implements RenderController {
         this.setupScreenController = setupScreenController;
         this.healthAndEnduranceBoxController = new HealthAndEnduranceBoxController(characterScreenController);
         this.currentCharacter = currentCharacter;
-        this.avatarBoxController = new AvatarBoxController(this);
+        this.avatarBoxController = new AvatarBoxController(this, currentCharacter);
     }
 
     @Override
