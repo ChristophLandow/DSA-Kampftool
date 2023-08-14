@@ -47,4 +47,8 @@ public class AvatarService {
             throw new RuntimeException(e);
         }
     }
+
+    public Image loadAvatarFromCharacterDirectory(Character currentCharacter){
+        return new Image(CHARACTER_FILEPATH + currentCharacter.getName() + "//" + currentCharacter.getName() + ".png");
+    }
 }
