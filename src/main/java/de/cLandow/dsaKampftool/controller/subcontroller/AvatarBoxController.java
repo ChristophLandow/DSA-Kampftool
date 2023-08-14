@@ -46,6 +46,7 @@ public class AvatarBoxController implements RenderController {
         fileSizeText.setVisible(false);
         arrowDownCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowDown.png")));
         arrowUpCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowUp.png")));
+        addAvatarCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/plus.png")));
         if(currentCharacter != null){
             loadAvatarForCurrentCharacter();
             setAvatarImage();

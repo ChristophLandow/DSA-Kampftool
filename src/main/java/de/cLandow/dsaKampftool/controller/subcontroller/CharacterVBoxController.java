@@ -5,6 +5,7 @@ import de.cLandow.dsaKampftool.controller.CharacterScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import de.cLandow.dsaKampftool.model.Character;
+import de.cLandow.dsaKampftool.services.AvatarService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -47,11 +48,24 @@ public class CharacterVBoxController implements RenderController {
         loadStats();
         loadHealthAndEndurance();
         loadAvatarBox();
+        safePngFromCurrentCharacter();
         loadCharacterAvatar();
+    }
+
+    private void safePngFromCurrentCharacter() {
+        avatarBoxController.safePngFromCurrentCharacter();
     }
 
     private void loadAvatarBox() {
         avatarVBox.getChildren().add(avatarBoxController.render());
+        avatarBoxController.setCurrentCharacter(currentCharacter);
+        if(setupScreenController.getCurrentAvatar() != null){
+            avatarBoxController.setCurrentAvatar(setupScreenController.getCurrentAvatar());
+        } else {
+            AvatarService avatarService = new AvatarService();
+            avatarService.loadAvatarFromCharacterDirectory(currentCharacter);
+        }
+
     }
 
     @Override
@@ -89,10 +103,10 @@ public class CharacterVBoxController implements RenderController {
     }
 
     private void loadCharacterAvatar() {
-        avatarBoxController.setCurrentAvatar(setupScreenController.getCurrentAvatar());
-        avatarBoxController.setCurrentCharacter(currentCharacter);
         avatarBoxController.init();
     }
+
+
 
 
 }
