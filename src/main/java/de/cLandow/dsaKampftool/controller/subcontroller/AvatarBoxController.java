@@ -60,7 +60,7 @@ public class AvatarBoxController implements RenderController {
 
     @Override
     public Parent render() {
-        final FXMLLoader loader = new FXMLLoader(Tool.class.getResource("views/subViews/imageBox.fxml"));
+        final FXMLLoader loader = new FXMLLoader(Tool.class.getResource("views/subViews/avatarBox.fxml"));
         loader.setControllerFactory(c->this);
         final Parent imageBoxParent;
         try {
