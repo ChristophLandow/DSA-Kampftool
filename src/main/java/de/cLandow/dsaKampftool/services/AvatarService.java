@@ -75,4 +75,9 @@ public class AvatarService {
         }
         return false;
     }
+
+    public Boolean deleteAvatarFile(Character character){
+        File avatarFile = new File(CHARACTER_FILEPATH + character.getName() + "//" + character.getName() + ".png");
+        return avatarFile.delete();
+    }
 }
