@@ -20,8 +20,6 @@ public class AvatarBoxController implements RenderController {
 
 
     @FXML Circle addAvatarCircle;
-    @FXML Circle arrowUpCircle;
-    @FXML Circle arrowDownCircle;
     @FXML Text fileSizeText;
     @FXML AnchorPane imageBoxAnchor;
     @FXML Circle characterAvatarCircle;
@@ -44,8 +42,6 @@ public class AvatarBoxController implements RenderController {
     @Override
     public void init() {
         fileSizeText.setVisible(false);
-        arrowDownCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowDown.png")));
-        arrowUpCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowUp.png")));
         addAvatarCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/plus.png")));
         if(currentCharacter != null){
             loadAvatarForCurrentCharacter();
