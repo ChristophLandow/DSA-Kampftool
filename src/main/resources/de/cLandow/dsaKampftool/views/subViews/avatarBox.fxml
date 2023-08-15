@@ -14,7 +14,5 @@
          </font>
       </Text>
       <Circle fx:id="addAvatarCircle" fill="WHITE" layoutX="157.0" layoutY="43.0" onMouseClicked="#uploadOwnAvatar" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="arrowUpCircle" fill="WHITE" layoutX="27.0" layoutY="71.0" onMouseClicked="#AvatarListUpScroll" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="arrowDownCircle" fill="WHITE" layoutX="27.0" layoutY="107.0" onMouseClicked="#AvatarListDownScroll" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

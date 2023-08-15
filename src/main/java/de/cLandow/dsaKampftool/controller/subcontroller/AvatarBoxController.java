@@ -20,8 +20,6 @@ public class AvatarBoxController implements RenderController {
 
 
     @FXML Circle addAvatarCircle;
-    @FXML Circle arrowUpCircle;
-    @FXML Circle arrowDownCircle;
     @FXML Text fileSizeText;
     @FXML AnchorPane imageBoxAnchor;
     @FXML Circle characterAvatarCircle;
@@ -44,8 +42,6 @@ public class AvatarBoxController implements RenderController {
     @Override
     public void init() {
         fileSizeText.setVisible(false);
-        arrowDownCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowDown.png")));
-        arrowUpCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/arrowUp.png")));
         addAvatarCircle.setFill(new ImagePattern(new Image("de/cLandow/dsaKampftool/images/plus.png")));
         if(currentCharacter != null){
             loadAvatarForCurrentCharacter();
@@ -60,7 +56,7 @@ public class AvatarBoxController implements RenderController {
 
     @Override
     public Parent render() {
-        final FXMLLoader loader = new FXMLLoader(Tool.class.getResource("views/subViews/imageBox.fxml"));
+        final FXMLLoader loader = new FXMLLoader(Tool.class.getResource("views/subViews/avatarBox.fxml"));
         loader.setControllerFactory(c->this);
         final Parent imageBoxParent;
         try {
@@ -90,12 +86,6 @@ public class AvatarBoxController implements RenderController {
         return currentAvatar;
     }
 
-    public void AvatarListUpScroll(MouseEvent mouseEvent) {
-    }
-
-    public void AvatarListDownScroll(MouseEvent mouseEvent) {
-    }
-
     public void setAvatarImage() {
         characterAvatarCircle.setFill(new ImagePattern(currentAvatar));
     }
@@ -115,6 +105,7 @@ public class AvatarBoxController implements RenderController {
 
     public void safePngFromCurrentCharacter(){
         AvatarService avatarService = new AvatarService();
+        avatarService.deleteAvatarFile(currentCharacter);
         avatarService.saveImageAsFile(currentAvatar, currentCharacter);
     }
 }
