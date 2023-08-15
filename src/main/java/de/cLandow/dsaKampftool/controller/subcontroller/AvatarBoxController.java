@@ -90,12 +90,6 @@ public class AvatarBoxController implements RenderController {
         return currentAvatar;
     }
 
-    public void AvatarListUpScroll(MouseEvent mouseEvent) {
-    }
-
-    public void AvatarListDownScroll(MouseEvent mouseEvent) {
-    }
-
     public void setAvatarImage() {
         characterAvatarCircle.setFill(new ImagePattern(currentAvatar));
     }
