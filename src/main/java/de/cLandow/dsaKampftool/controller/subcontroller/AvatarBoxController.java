@@ -105,6 +105,7 @@ public class AvatarBoxController implements RenderController {
 
     public void safePngFromCurrentCharacter(){
         AvatarService avatarService = new AvatarService();
+        avatarService.deleteAvatarFile(currentCharacter);
         avatarService.saveImageAsFile(currentAvatar, currentCharacter);
     }
 }
