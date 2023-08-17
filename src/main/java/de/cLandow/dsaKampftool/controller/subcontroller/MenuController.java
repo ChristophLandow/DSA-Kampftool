@@ -5,6 +5,7 @@ import de.cLandow.dsaKampftool.controller.RenderController;
 import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -42,5 +43,20 @@ public class MenuController implements RenderController {
 
     public SetupScreenController getSetupScreenController() {
         return setupScreenController;
+    }
+
+    public void openAbilitiesScreen(MouseEvent mouseEvent) {
+    }
+
+    public void openCharacteristicsScreen(MouseEvent mouseEvent) {
+    }
+
+    public void openGearScreen(MouseEvent mouseEvent) {
+    }
+
+    public void openCharacterScreen(MouseEvent mouseEvent) {
+    }
+
+    public void openFightScreen(MouseEvent mouseEvent) {
     }
 }
