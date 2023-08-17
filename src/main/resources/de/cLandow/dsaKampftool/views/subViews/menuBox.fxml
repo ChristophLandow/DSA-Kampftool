@@ -1,46 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.cLandow.dsaKampftool.controller.subcontroller.MenuController">
    <children>
-      <MenuBar prefHeight="60.0" prefWidth="1200.0">
-         <menus>
-            <Menu mnemonicParsing="false" text="Charakter">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#createNewChar" text="Neu" />
-                  <MenuItem mnemonicParsing="false" onAction="#editChar" text="Bearbeiten" />
-                  <MenuItem mnemonicParsing="false" onAction="#deleteChar" text="Löschen" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Waffen">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#createNewWeaponList" text="Liste neu erstellen" />
-                  <MenuItem mnemonicParsing="false" onAction="#reloadWeaponList" text="Liste neu laden" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Rüstung">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#createNewArmorList" text="Liste neu erstellen" />
-                  <MenuItem mnemonicParsing="false" onAction="#reloadArmorList" text="Liste neu laden" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Sonderfertigkeiten">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#createNewAbilityList" text="Liste neu erstellen" />
-                  <MenuItem mnemonicParsing="false" onAction="#reloadAbilityList" text="Liste neu laden" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Vor-/Nachteile">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#createNewCharacteristicsList" text="Liste neu erstellen" />
-                  <MenuItem mnemonicParsing="false" onAction="#reloadCharacteristicsList" text="Liste neu laden" />
-               </items>
-            </Menu>
-         </menus>
-      </MenuBar>
+      <Button fx:id="abilitiesMenuButton" layoutX="858.0" mnemonicParsing="false" onMouseClicked="#openAbilitiesScreen" prefHeight="60.0" prefWidth="171.0" text="Sonderfertigkeiten">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="characteristicsMenuButton" layoutX="687.0" mnemonicParsing="false" onMouseClicked="#openCharacteristicsScreen" prefHeight="60.0" prefWidth="171.0" text="Vor-/Nachteile">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="gearMenuButton" layoutX="516.0" mnemonicParsing="false" onMouseClicked="#openGearScreen" prefHeight="60.0" prefWidth="171.0" text="Ausrüstung">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="characterMenuButton" layoutX="345.0" mnemonicParsing="false" onMouseClicked="#openCharacterScreen" prefHeight="60.0" prefWidth="171.0" text="Charakter">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="fightMenuButton" layoutX="1029.0" mnemonicParsing="false" onMouseClicked="#openFightScreen" prefHeight="60.0" prefWidth="171.0" text="Kampf">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
