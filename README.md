@@ -94,6 +94,8 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
    - [X] SetupScreen
      - [X] Container CharacterScreen
      - [X] Attribute/Lebenspunkte angezeigt
+   - [ ] CharacterList Screen
+     - [ ] Angelegte Charaktere werden geladen und aufgelistet  
    - [ ] CharacterScreen
      - [X] Container für Charaktermodell 
      - [X] Container für Ergebnisse
