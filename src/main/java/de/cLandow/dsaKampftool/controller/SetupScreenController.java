@@ -72,6 +72,8 @@ public class SetupScreenController implements RenderController {
         writeCharacteristicsFileService.createFile();
         //init Character Service
         CharacterService characterService = new CharacterService();
+        ScreenSizeService screenSizeService = new ScreenSizeService();
+        screenSizeService.PrintScreenSize();
     }
 
     @Override
