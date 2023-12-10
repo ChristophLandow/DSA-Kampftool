@@ -2,12 +2,16 @@ package de.cLandow.dsaKampftool.controller;
 
 import de.cLandow.dsaKampftool.Tool;
 import de.cLandow.dsaKampftool.controller.subController.CharacterIconMenuController;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 
 public class MainScreenController implements RenderController {
+
+    @FXML HBox characterMenuBox;
 
     public CharacterIconMenuController characterIconMenuController;
 
@@ -42,7 +46,7 @@ public class MainScreenController implements RenderController {
 
     private void loadCharacterIconMenu() {
         characterIconMenuController = new CharacterIconMenuController(this);
-        characterIconMenuController.render();
+        characterMenuBox.getChildren().add(characterIconMenuController.render());
         characterIconMenuController.init();
     }
 }
