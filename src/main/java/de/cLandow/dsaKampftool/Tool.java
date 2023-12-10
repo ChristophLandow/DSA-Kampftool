@@ -1,6 +1,6 @@
 package de.cLandow.dsaKampftool;
 
-import de.cLandow.dsaKampftool.controller.SetupScreenController;
+import de.cLandow.dsaKampftool.controller.MainScreenController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 public class Tool extends Application {
 
     private static Stage primaryStage;
-    private SetupScreenController setupScreenController;
+    private MainScreenController mainScreenController;
     public Tool() {
     }
 
@@ -19,7 +19,7 @@ public class Tool extends Application {
         primaryStage = stage;
         showSetupScreen();
         primaryStage.show();
-        setupScreenController.init();
+        mainScreenController.init();
         primaryStage.setOnCloseRequest(t -> {
             Platform.exit();
             System.exit(0);
@@ -31,9 +31,8 @@ public class Tool extends Application {
     }
 
     private void showSetupScreen() {
-        setupScreenController = new SetupScreenController(this);
-        Scene newestScene = new Scene(setupScreenController.render());
-        newestScene.getStylesheets().add("/de/cLandow/dsaKampftool/styles/globalStyles.css");
+        mainScreenController = new MainScreenController(this);
+        Scene newestScene = new Scene(mainScreenController.render());
         primaryStage.setScene(newestScene);
         primaryStage.centerOnScreen();
     }
