@@ -13,8 +13,10 @@ public class MainScreenController implements RenderController {
     }
     @Override
     public void init() {
-
+        loadCharacterIconMenu(this);
     }
+
+
 
     @Override
     public void stop() {
@@ -33,5 +35,8 @@ public class MainScreenController implements RenderController {
             return null;
         }
         return setupScreenParent;
+    }
+
+    private void loadCharacterIconMenu(MainScreenController mainScreenController) {
     }
 }
