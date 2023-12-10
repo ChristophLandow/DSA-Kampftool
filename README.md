@@ -91,22 +91,22 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
      - [ ] Ausrüstungsliste kann gewechselt werden
      - [ ] Liste der Sonderfertigkeiten kann gewechselt werden
      - [ ] Liste der Vor-/Nachteile kann gewechselt werden
-   - [X] SetupScreen
-     - [X] Container CharacterScreen
-     - [X] Attribute/Lebenspunkte angezeigt
+   - [ ] SetupScreen
+     - [ ] Container CharacterScreen
+     - [ ] Attribute/Lebenspunkte angezeigt
    - [ ] CharacterList Screen
      - [ ] Angelegte Charaktere werden geladen und aufgelistet  
    - [ ] CharacterScreen
-     - [X] Container für Charaktermodell 
-     - [X] Container für Ergebnisse
+     - [ ] Container für Charaktermodell 
+     - [ ] Container für Ergebnisse
      - [ ] Auswahlbuttons für Modifikationen 
-     - [X] Button Ausrüstungsmenü 
-     - [X] Button Vor-/Nachteile Menü 
-     - [X] Button Sonderfertigkeiten 
-   - [X] Charakter kann mit Grundwerten angelegt werden
-   - [X] Charakter kann als .xml gespeichert werden
-   - [X] Charakter kann aus .xml geladen werden
-   - [X] Charakter verfügt über Lebenspunkte und Ausdauer 
+     - [ ] Button Ausrüstungsmenü 
+     - [ ] Button Vor-/Nachteile Menü 
+     - [ ] Button Sonderfertigkeiten 
+   - [ ] Charakter kann mit Grundwerten angelegt werden
+   - [ ] Charakter kann als .xml gespeichert werden
+   - [ ] Charakter kann aus .xml geladen werden
+   - [ ] Charakter verfügt über Lebenspunkte und Ausdauer 
      - [ ] inklusive Schwellenwerte
    - [ ] Charakter verfügt über Vor-/Nachteile
      - [ ] Vor-/Nachteile werden aus externer Liste geladen
@@ -114,14 +114,14 @@ Sobald die Beta fertiggestellt ist, wird es hier präziser...
      - [ ] Vor-/Nachteile können aus einem Charakter entfernt werden
      - [ ] Vor-/Nachteile sind editierbar
    - [ ] Charakter verfügt über Sonderfertigkeiten
-     - [X] Sonderfertigkeiten werden aus externer Liste geladen
+     - [ ] Sonderfertigkeiten werden aus externer Liste geladen
      - [ ] Sonderfertigkeiten können einem Charakter hinzugefügt werden
        - [ ] Sonderfertigkeiten höherer Stufe können nicht ohne ihre niederstufigen Versionen hinzugefügt werden
      - [ ] Sonderfertigkeiten können aus einem Charakter entfernt werden
      - [ ] Sonderfertigkeiten sind editierbar
    - [ ] Charakter verfügt über Ausrüstung
-     - [x] Ausrüstung wird aus externer Liste geladen 
-       - [X] Ausrüstung ist in Gruppen unterteilt
+     - [ ] Ausrüstung wird aus externer Liste geladen 
+       - [ ] Ausrüstung ist in Gruppen unterteilt
        - [ ] Ausrüstung ist editierbar
      - [ ] Ausrüstung kann in Inventar hinzugefügt werden
      - [ ] Ausrüstung kann aus Inventar entfernt werden
