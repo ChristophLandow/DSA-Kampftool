@@ -1,12 +1,19 @@
 package de.cLandow.dsaKampftool.controller.subController;
 
+import de.cLandow.dsaKampftool.Tool;
+import de.cLandow.dsaKampftool.controller.MainScreenController;
 import de.cLandow.dsaKampftool.controller.RenderController;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+
+import java.io.IOException;
 
 public class CharacterIconMenuController implements RenderController {
 
-    public CharacterIconMenuController(){
+    private final MainScreenController mainScreenController;
 
+    public CharacterIconMenuController(MainScreenController mainScreenController){
+        this.mainScreenController = mainScreenController;
     }
 
 
@@ -22,6 +29,15 @@ public class CharacterIconMenuController implements RenderController {
 
     @Override
     public Parent render() {
-        return null;
+        final FXMLLoader loader = new FXMLLoader(Tool.class.getResource("views/subViews/characterIconMenu.fxml"));
+        loader.setControllerFactory(c->this);
+        final Parent characterIconMenuParent;
+        try {
+            characterIconMenuParent =  loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return characterIconMenuParent;
     }
 }
