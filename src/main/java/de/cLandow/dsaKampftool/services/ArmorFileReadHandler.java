@@ -1,6 +1,5 @@
 package de.cLandow.dsaKampftool.services;
 
-import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.Armor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

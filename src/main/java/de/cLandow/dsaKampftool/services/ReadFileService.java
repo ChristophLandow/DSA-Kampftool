@@ -1,7 +1,5 @@
 package de.cLandow.dsaKampftool.services;
 
-import de.cLandow.dsaKampftool.controller.subcontroller.AbilityListBoxController;
-import de.cLandow.dsaKampftool.controller.subcontroller.GearListBoxController;
 import de.cLandow.dsaKampftool.model.*;
 import de.cLandow.dsaKampftool.model.Character;
 import javafx.collections.ObservableList;
@@ -14,7 +12,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileVisitOption;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import static de.cLandow.dsaKampftool.Constants.*;

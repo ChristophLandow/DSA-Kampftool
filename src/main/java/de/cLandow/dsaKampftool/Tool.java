@@ -1,6 +1,5 @@
 package de.cLandow.dsaKampftool;
 
-import de.cLandow.dsaKampftool.controller.SetupScreenController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
